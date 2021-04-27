@@ -42,7 +42,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 body = opensilexClientToolsPython.GroupCreationDTO() # GroupCreationDTO | Group description (optional)
 
@@ -93,7 +93,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 body = opensilexClientToolsPython.ProfileCreationDTO() # ProfileCreationDTO | Profile description (optional)
 
@@ -144,7 +144,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 body = opensilexClientToolsPython.UserCreationDTO() # UserCreationDTO | User description (optional)
 
@@ -195,9 +195,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Group URI
+uri = 'http://example.com/' # str | Group URI
 
 
 try:
@@ -246,9 +246,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Profile URI
+uri = 'http://example.com/' # str | Profile URI
 
 
 try:
@@ -297,9 +297,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | User URI
+uri = 'http://example.com/' # str | User URI
 
 
 try:
@@ -348,9 +348,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 
 
 try:
@@ -400,9 +400,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"dev-groups:admin_group\"' # str | Group URI
+uri = 'dev-groups:admin_group' # str | Group URI
 
 
 try:
@@ -452,7 +452,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 uris = ['uris_example'] # list[str] | Groups URIs
 
@@ -504,9 +504,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"dev-users:Admin_OpenSilex\"' # str | Profile URI
+uri = 'dev-users:Admin_OpenSilex' # str | Profile URI
 
 
 try:
@@ -556,9 +556,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"dev-users:Admin_OpenSilex\"' # str | User URI
+uri = 'dev-users:Admin_OpenSilex' # str | User URI
 
 
 try:
@@ -608,9 +608,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | User URI
+uri = 'http://example.com/' # str | User URI
 
 
 try:
@@ -660,7 +660,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 uris = ['uris_example'] # list[str] | Users URIs
 
@@ -712,10 +712,10 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name (optional) (default to .*)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -770,10 +770,10 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name (optional) (default to .*)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -828,10 +828,10 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name or email (optional) (default to .*)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -886,7 +886,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 body = opensilexClientToolsPython.GroupUpdateDTO() # GroupUpdateDTO | Group description (optional)
 
@@ -938,7 +938,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 body = opensilexClientToolsPython.ProfileUpdateDTO() # ProfileUpdateDTO | Profile description (optional)
 
@@ -990,7 +990,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 body = opensilexClientToolsPython.UserUpdateDTO() # UserUpdateDTO | User description (optional)
 

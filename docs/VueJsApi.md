@@ -29,7 +29,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
 
 
@@ -79,9 +79,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module = '\"opensilex\"' # str | Module identifier
+module = 'opensilex' # str | Module identifier
 
 
 try:
@@ -131,9 +131,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module = '\"opensilex\"' # str | Module identifier
+module = 'opensilex' # str | Module identifier
 
 
 try:
@@ -183,10 +183,10 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = '\"opensilex-front\"' # str | Module identifier
-theme_id = '\"phis\"' # str | Theme identifier
+module_id = 'opensilex-front' # str | Module identifier
+theme_id = 'phis' # str | Theme identifier
 
 
 try:
@@ -237,10 +237,10 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = '\"opensilex-front\"' # str | Module identifier
-theme_id = '\"phis\"' # str | Theme identifier
+module_id = 'opensilex-front' # str | Module identifier
+theme_id = 'phis' # str | Theme identifier
 
 
 try:
@@ -291,11 +291,11 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = '\"opensilex-front\"' # str | Module identifier
-theme_id = '\"phis\"' # str | Theme identifier
-file_path = '\"images/opensilex.png\"' # str | Resource path (optional)
+module_id = 'opensilex-front' # str | Module identifier
+theme_id = 'phis' # str | Theme identifier
+file_path = 'images/opensilex.png' # str | Resource path (optional)
 
 
 try:

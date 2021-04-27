@@ -39,7 +39,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 body = opensilexClientToolsPython.InfrastructureCreationDTO() # InfrastructureCreationDTO | Organisation description (optional)
 
@@ -91,7 +91,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 body = opensilexClientToolsPython.InfrastructureFacilityCreationDTO() # InfrastructureFacilityCreationDTO | Facility description (optional)
 
@@ -143,7 +143,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 body = opensilexClientToolsPython.InfrastructureTeamDTO() # InfrastructureTeamDTO | Team description (optional)
 
@@ -195,9 +195,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Organisation URI
+uri = 'http://example.com/' # str | Organisation URI
 
 
 try:
@@ -247,9 +247,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Facility URI
+uri = 'http://example.com/' # str | Facility URI
 
 
 try:
@@ -299,9 +299,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Team URI
+uri = 'http://example.com/' # str | Team URI
 
 
 try:
@@ -351,7 +351,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 
 
@@ -401,7 +401,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 uris = ['uris_example'] # list[str] | Facilities URIs
 
@@ -453,9 +453,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = '\"http://opensilex.dev/organisation/phenoarch\"' # str | Organisation URI
+uri = 'http://opensilex.dev/organisation/phenoarch' # str | Organisation URI
 
 
 try:
@@ -505,9 +505,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = '\"http://opensilex.dev/organisations/facility/phenoarch\"' # str | facility URI
+uri = 'http://opensilex.dev/organisations/facility/phenoarch' # str | facility URI
 
 
 try:
@@ -557,9 +557,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Team URI
+uri = 'http://example.com/' # str | Team URI
 
 
 try:
@@ -609,7 +609,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 pattern = '.*' # str | Regex pattern for filtering facilities by names (optional) (default to .*)
 order_by = ['order_by_example'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -667,7 +667,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 pattern = '.*' # str | Regex pattern for filtering list by names (optional) (default to .*)
 organisation_uris = ['organisation_uris_example'] # list[str] |  organisation URIs (optional)
@@ -721,7 +721,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 body = opensilexClientToolsPython.InfrastructureUpdateDTO() # InfrastructureUpdateDTO | Organisation description (optional)
 
@@ -773,7 +773,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 body = opensilexClientToolsPython.InfrastructureFacilityUpdateDTO() # InfrastructureFacilityUpdateDTO | Facility description (optional)
 
@@ -825,7 +825,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
 body = opensilexClientToolsPython.InfrastructureTeamDTO() # InfrastructureTeamDTO | Team description (optional)
 

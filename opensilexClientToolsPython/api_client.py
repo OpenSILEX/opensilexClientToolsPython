@@ -75,7 +75,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/0.1.0/python'
+        self.user_agent = 'Swagger-Codegen/1.0.0/python'
 
     def __del__(self):
         if self._pool is not None:
@@ -659,9 +659,9 @@ class ApiClient(object):
                 instance = self.__deserialize(data, klass_name)
         return instance
 
-    def connect_to_opensilex_ws(self, username=None, password=None, host = None):
-            if(username == None):
-                raise Exception("Username not defined")
+    def connect_to_opensilex_ws(self, identifier=None, password=None, host = None):
+            if(identifier == None):
+                raise Exception("Identifier not defined")
             if(password == None):
                 raise Exception("Password not defined")
             if(host != None):
@@ -669,7 +669,7 @@ class ApiClient(object):
                 
             token_api_instance = opensilexClientToolsPython.AuthenticationApi(self)
             token_request = opensilexClientToolsPython.AuthenticationDTO(
-                                                identifier=username,
+                                                identifier=identifier,
                                                 password=password
                                                 )
             # issue on return because of return format

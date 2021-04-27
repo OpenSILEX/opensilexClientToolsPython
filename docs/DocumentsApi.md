@@ -29,7 +29,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
 description = 'description_example' # str | File description with metadata
 file = '/path/to/file.txt' # file | file (optional)
@@ -83,7 +83,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
 uri = 'uri_example' # str | Document URI
 
@@ -135,9 +135,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
-uri = '\"http://opensilex.dev/set/documents/ZA17\"' # str | Document URI
+uri = 'http://opensilex.dev/set/documents/ZA17' # str | Document URI
 
 
 try:
@@ -186,9 +186,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
-uri = '\"http://opensilex.dev/set/documents/ZA17\"' # str | Document URI
+uri = 'http://opensilex.dev/set/documents/ZA17' # str | Document URI
 
 
 try:
@@ -238,17 +238,17 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
-rdf_type = '\"http://www.opensilex.org/vocabulary/oeso#ScientificDocument\"' # str | Search by type (optional)
-title = '\"experimental_protocol_3\"' # str | Regex pattern for filtering list by title (optional)
-_date = '\"2020\"' # str | Regex pattern for filtering list by date (optional)
-targets = '\"dev-expe:za17\"' # str | Search by targets (optional)
-authors = '\"Firstname Lastname\"' # str | Regex pattern for filtering list by author (optional)
-keyword = '\"keyword\"' # str | Regex pattern for filtering list by keyword (optional)
-multiple = '\"keyword or title\"' # str | Regex pattern for filtering list by keyword or title (optional)
-deprecated = '\"true\"' # str | Search deprecated file (optional)
-order_by = ['\"date=asc\"'] # list[str] | List of fields to sort as an array of fieldTitle=asc|desc (optional)
+rdf_type = 'http://www.opensilex.org/vocabulary/oeso#ScientificDocument' # str | Search by type (optional)
+title = 'experimental_protocol_3' # str | Regex pattern for filtering list by title (optional)
+_date = '2020' # str | Regex pattern for filtering list by date (optional)
+targets = 'dev-expe:za17' # str | Search by targets (optional)
+authors = 'Firstname Lastname' # str | Regex pattern for filtering list by author (optional)
+keyword = 'keyword' # str | Regex pattern for filtering list by keyword (optional)
+multiple = 'keyword or title' # str | Regex pattern for filtering list by keyword or title (optional)
+deprecated = 'true' # str | Search deprecated file (optional)
+order_by = ['date=asc'] # list[str] | List of fields to sort as an array of fieldTitle=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -310,7 +310,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
 description = 'description_example' # str | description
 

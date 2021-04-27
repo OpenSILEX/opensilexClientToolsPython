@@ -29,7 +29,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ProjectsApi(pythonClient)
 body = opensilexClientToolsPython.ProjectCreationDTO() # ProjectCreationDTO | Project description (optional)
 
@@ -81,9 +81,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ProjectsApi(pythonClient)
-uri = '\"http://opensilex/set/project/BW1\"' # str | Project URI
+uri = 'http://opensilex/set/project/BW1' # str | Project URI
 
 
 try:
@@ -133,9 +133,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ProjectsApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Project URI
+uri = 'http://example.com/' # str | Project URI
 
 
 try:
@@ -185,7 +185,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ProjectsApi(pythonClient)
 uris = ['uris_example'] # list[str] | Projects URIs
 
@@ -237,13 +237,13 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ProjectsApi(pythonClient)
-name = '\"PJ17\"' # str | Regex pattern for filtering by name or shortname (optional)
+name = 'PJ17' # str | Regex pattern for filtering by name or shortname (optional)
 year = 2017 # int | Search by year (optional)
-keyword = '\"climate\"' # str | Regex pattern for filtering on description or objective (optional)
-financial_funding = '\"ANR\"' # str | Regex pattern for filtering by financial funding (optional)
-order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+keyword = 'climate' # str | Regex pattern for filtering on description or objective (optional)
+financial_funding = 'ANR' # str | Regex pattern for filtering by financial funding (optional)
+order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -301,7 +301,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ProjectsApi(pythonClient)
 body = opensilexClientToolsPython.ProjectCreationDTO() # ProjectCreationDTO | Project description (optional)
 

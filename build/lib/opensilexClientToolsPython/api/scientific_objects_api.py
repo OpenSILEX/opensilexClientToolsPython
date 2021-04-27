@@ -907,6 +907,7 @@ class ScientificObjectsApi(object):
         :param str parent: Parent object URI
         :param str experiment: Experiment URI
         :param str facility: Facility
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
         :param int page: Page number
         :param int page_size: Page size
         :param str accept_language: Request accepted language
@@ -935,6 +936,7 @@ class ScientificObjectsApi(object):
         :param str parent: Parent object URI
         :param str experiment: Experiment URI
         :param str facility: Facility
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
         :param int page: Page number
         :param int page_size: Page size
         :param str accept_language: Request accepted language
@@ -943,7 +945,7 @@ class ScientificObjectsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['parent', 'experiment', 'facility', 'page', 'page_size', ]  # noqa: E501
+        all_params = ['parent', 'experiment', 'facility', 'order_by', 'page', 'page_size', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -974,6 +976,9 @@ class ScientificObjectsApi(object):
             query_params.append(('experiment', params['experiment']))  # noqa: E501
         if 'facility' in params:
             query_params.append(('facility', params['facility']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+            collection_formats['order_by'] = 'multi'  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
         if 'page_size' in params:

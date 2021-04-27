@@ -38,7 +38,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 body = opensilexClientToolsPython.OWLClassPropertyRestrictionDTO() # OWLClassPropertyRestrictionDTO | Property description (optional)
 
@@ -90,7 +90,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 rdf_types = ['rdf_types_example'] # list[str] | rdf_types list you want to check on the given uris list
 body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | URIs list (optional)
@@ -144,7 +144,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 body = opensilexClientToolsPython.RDFPropertyDTO() # RDFPropertyDTO | Property description (optional)
 
@@ -196,7 +196,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | RDF type
 property_uri = 'property_uri_example' # str | Property URI
@@ -250,7 +250,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 property_uri = 'property_uri_example' # str | Property URI (optional)
 property_type = 'property_type_example' # str | Property type (optional)
@@ -304,7 +304,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 rdf_type = ['rdf_type_example'] # list[str] | RDF classes URI
 parent_type = 'parent_type_example' # str | Parent RDF class URI (optional)
@@ -358,7 +358,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI (optional)
 
@@ -410,7 +410,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI (optional)
 
@@ -462,7 +462,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI (optional)
 
@@ -514,7 +514,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 uri = 'uri_example' # str | Property URI (optional)
 rdf_type = 'rdf_type_example' # str | Property type (optional)
@@ -570,7 +570,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | RDF type URI
 parent_type = 'parent_type_example' # str | Parent RDF class URI (optional)
@@ -624,7 +624,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 parent_type = 'parent_type_example' # str | Parent RDF class URI (optional)
 ignore_root_classes = false # bool | Flag to determine if only sub-classes must be include in result (optional) (default to false)
@@ -678,7 +678,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 uri = 'uri_example' # str | URI to get label from
 
@@ -730,7 +730,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 body = opensilexClientToolsPython.OWLClassPropertyRestrictionDTO() # OWLClassPropertyRestrictionDTO | Property description (optional)
 
@@ -782,7 +782,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(api_id="ws_custom",username="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 body = opensilexClientToolsPython.RDFPropertyDTO() # RDFPropertyDTO | Property description (optional)
 

@@ -3,9 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **str** |  | 
-**bbox** | **list[float]** |  | [optional] 
-**coordinates** | **list[float]** |  | [optional] 
 **properties** | **dict(str, object)** |  | [optional] 
 **geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
 **id** | **str** |  | [optional] 

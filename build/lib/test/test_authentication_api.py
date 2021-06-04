@@ -43,6 +43,13 @@ class TestAuthenticationApi(unittest.TestCase):
         """
         pass
 
+    def test_forgot_password(self):
+        """Test case for forgot_password
+
+        Send an e-mail confirmation  # noqa: E501
+        """
+        pass
+
     def test_get_credentials_groups(self):
         """Test case for get_credentials_groups
 
@@ -54,6 +61,13 @@ class TestAuthenticationApi(unittest.TestCase):
         """Test case for logout
 
         Logout by discarding a user token  # noqa: E501
+        """
+        pass
+
+    def test_renew_password(self):
+        """Test case for renew_password
+
+        Update user password  # noqa: E501
         """
         pass
 

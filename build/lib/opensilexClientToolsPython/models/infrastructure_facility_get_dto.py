@@ -35,7 +35,8 @@ class InfrastructureFacilityGetDTO(object):
         'rdf_type': 'str',
         'rdf_type_name': 'str',
         'name': 'str',
-        'organisation': 'str'
+        'organisation': 'str',
+        'relations': 'list[RDFObjectRelationDTO]'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class InfrastructureFacilityGetDTO(object):
         'rdf_type': 'rdf_type',
         'rdf_type_name': 'rdf_type_name',
         'name': 'name',
-        'organisation': 'organisation'
+        'organisation': 'organisation',
+        'relations': 'relations'
     }
 
-    def __init__(self, uri=None, rdf_type=None, rdf_type_name=None, name=None, organisation=None):  # noqa: E501
+    def __init__(self, uri=None, rdf_type=None, rdf_type_name=None, name=None, organisation=None, relations=None):  # noqa: E501
         """InfrastructureFacilityGetDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -54,6 +56,7 @@ class InfrastructureFacilityGetDTO(object):
         self._rdf_type_name = None
         self._name = None
         self._organisation = None
+        self._relations = None
         self.discriminator = None
 
         if uri is not None:
@@ -65,6 +68,8 @@ class InfrastructureFacilityGetDTO(object):
         if name is not None:
             self.name = name
         self.organisation = organisation
+        if relations is not None:
+            self.relations = relations
 
     @property
     def uri(self):
@@ -172,6 +177,27 @@ class InfrastructureFacilityGetDTO(object):
             raise ValueError("Invalid value for `organisation`, must not be `None`")  # noqa: E501
 
         self._organisation = organisation
+
+    @property
+    def relations(self):
+        """Gets the relations of this InfrastructureFacilityGetDTO.  # noqa: E501
+
+
+        :return: The relations of this InfrastructureFacilityGetDTO.  # noqa: E501
+        :rtype: list[RDFObjectRelationDTO]
+        """
+        return self._relations
+
+    @relations.setter
+    def relations(self, relations):
+        """Sets the relations of this InfrastructureFacilityGetDTO.
+
+
+        :param relations: The relations of this InfrastructureFacilityGetDTO.  # noqa: E501
+        :type: list[RDFObjectRelationDTO]
+        """
+
+        self._relations = relations
 
     def to_dict(self):
         """Returns the model properties as a dict"""

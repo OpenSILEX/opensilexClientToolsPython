@@ -212,7 +212,7 @@ class Configuration(object):
         :return: The token for basic HTTP authentication.
         """
         return urllib3.util.make_headers(
-            basic_auth=self.identifier + ':' + self.password
+            basic_auth=self.username + ':' + self.password
         ).get('authorization')
 
     def auth_settings(self):
@@ -233,5 +233,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: INSTANCE-SNAPSHOT\n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 2.0.0-beta".\
                format(env=sys.platform, pyversion=sys.version)

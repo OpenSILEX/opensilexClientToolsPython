@@ -35,7 +35,7 @@ class DataFilePathCreationDTO(object):
         'rdf_type': 'str',
         '_date': 'str',
         'timezone': 'str',
-        'scientific_objects': 'list[str]',
+        'scientific_object': 'str',
         'provenance': 'DataProvenanceModel',
         'metadata': 'dict(str, object)',
         'relative_path': 'str'
@@ -46,20 +46,20 @@ class DataFilePathCreationDTO(object):
         'rdf_type': 'rdf_type',
         '_date': 'date',
         'timezone': 'timezone',
-        'scientific_objects': 'scientific_objects',
+        'scientific_object': 'scientific_object',
         'provenance': 'provenance',
         'metadata': 'metadata',
         'relative_path': 'relative_path'
     }
 
-    def __init__(self, uri=None, rdf_type=None, _date=None, timezone=None, scientific_objects=None, provenance=None, metadata=None, relative_path=None):  # noqa: E501
+    def __init__(self, uri=None, rdf_type=None, _date=None, timezone=None, scientific_object=None, provenance=None, metadata=None, relative_path=None):  # noqa: E501
         """DataFilePathCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
         self._rdf_type = None
         self.__date = None
         self._timezone = None
-        self._scientific_objects = None
+        self._scientific_object = None
         self._provenance = None
         self._metadata = None
         self._relative_path = None
@@ -72,8 +72,8 @@ class DataFilePathCreationDTO(object):
             self._date = _date
         if timezone is not None:
             self.timezone = timezone
-        if scientific_objects is not None:
-            self.scientific_objects = scientific_objects
+        if scientific_object is not None:
+            self.scientific_object = scientific_object
         self.provenance = provenance
         if metadata is not None:
             self.metadata = metadata
@@ -172,27 +172,27 @@ class DataFilePathCreationDTO(object):
         self._timezone = timezone
 
     @property
-    def scientific_objects(self):
-        """Gets the scientific_objects of this DataFilePathCreationDTO.  # noqa: E501
+    def scientific_object(self):
+        """Gets the scientific_object of this DataFilePathCreationDTO.  # noqa: E501
 
         scientific objects URIs on which the data have been collected  # noqa: E501
 
-        :return: The scientific_objects of this DataFilePathCreationDTO.  # noqa: E501
-        :rtype: list[str]
+        :return: The scientific_object of this DataFilePathCreationDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._scientific_objects
+        return self._scientific_object
 
-    @scientific_objects.setter
-    def scientific_objects(self, scientific_objects):
-        """Sets the scientific_objects of this DataFilePathCreationDTO.
+    @scientific_object.setter
+    def scientific_object(self, scientific_object):
+        """Sets the scientific_object of this DataFilePathCreationDTO.
 
         scientific objects URIs on which the data have been collected  # noqa: E501
 
-        :param scientific_objects: The scientific_objects of this DataFilePathCreationDTO.  # noqa: E501
-        :type: list[str]
+        :param scientific_object: The scientific_object of this DataFilePathCreationDTO.  # noqa: E501
+        :type: str
         """
 
-        self._scientific_objects = scientific_objects
+        self._scientific_object = scientific_object
 
     @property
     def provenance(self):

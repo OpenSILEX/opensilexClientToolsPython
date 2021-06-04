@@ -33,42 +33,45 @@ class DataGetDTO(object):
     swagger_types = {
         'uri': 'str',
         '_date': 'str',
-        'scientific_objects': 'list[str]',
+        'scientific_object': 'str',
         'variable': 'str',
         'value': 'object',
         'confidence': 'float',
         'provenance': 'DataProvenanceModel',
-        'metadata': 'dict(str, object)'
+        'metadata': 'dict(str, object)',
+        'raw_data': 'list[object]'
     }
 
     attribute_map = {
         'uri': 'uri',
         '_date': 'date',
-        'scientific_objects': 'scientific_objects',
+        'scientific_object': 'scientific_object',
         'variable': 'variable',
         'value': 'value',
         'confidence': 'confidence',
         'provenance': 'provenance',
-        'metadata': 'metadata'
+        'metadata': 'metadata',
+        'raw_data': 'raw_data'
     }
 
-    def __init__(self, uri=None, _date=None, scientific_objects=None, variable=None, value=None, confidence=None, provenance=None, metadata=None):  # noqa: E501
+    def __init__(self, uri=None, _date=None, scientific_object=None, variable=None, value=None, confidence=None, provenance=None, metadata=None, raw_data=None):  # noqa: E501
         """DataGetDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
         self.__date = None
-        self._scientific_objects = None
+        self._scientific_object = None
         self._variable = None
         self._value = None
         self._confidence = None
         self._provenance = None
         self._metadata = None
+        self._raw_data = None
         self.discriminator = None
 
         self.uri = uri
         self._date = _date
-        if scientific_objects is not None:
-            self.scientific_objects = scientific_objects
+        if scientific_object is not None:
+            self.scientific_object = scientific_object
         self.variable = variable
         self.value = value
         if confidence is not None:
@@ -76,6 +79,8 @@ class DataGetDTO(object):
         self.provenance = provenance
         if metadata is not None:
             self.metadata = metadata
+        if raw_data is not None:
+            self.raw_data = raw_data
 
     @property
     def uri(self):
@@ -128,27 +133,27 @@ class DataGetDTO(object):
         self.__date = _date
 
     @property
-    def scientific_objects(self):
-        """Gets the scientific_objects of this DataGetDTO.  # noqa: E501
+    def scientific_object(self):
+        """Gets the scientific_object of this DataGetDTO.  # noqa: E501
 
-        scientific objects URIs on which the data have been collected  # noqa: E501
+        scientific objects URI on which the data have been collected  # noqa: E501
 
-        :return: The scientific_objects of this DataGetDTO.  # noqa: E501
-        :rtype: list[str]
+        :return: The scientific_object of this DataGetDTO.  # noqa: E501
+        :rtype: str
         """
-        return self._scientific_objects
+        return self._scientific_object
 
-    @scientific_objects.setter
-    def scientific_objects(self, scientific_objects):
-        """Sets the scientific_objects of this DataGetDTO.
+    @scientific_object.setter
+    def scientific_object(self, scientific_object):
+        """Sets the scientific_object of this DataGetDTO.
 
-        scientific objects URIs on which the data have been collected  # noqa: E501
+        scientific objects URI on which the data have been collected  # noqa: E501
 
-        :param scientific_objects: The scientific_objects of this DataGetDTO.  # noqa: E501
-        :type: list[str]
+        :param scientific_object: The scientific_object of this DataGetDTO.  # noqa: E501
+        :type: str
         """
 
-        self._scientific_objects = scientific_objects
+        self._scientific_object = scientific_object
 
     @property
     def variable(self):
@@ -272,6 +277,29 @@ class DataGetDTO(object):
         """
 
         self._metadata = metadata
+
+    @property
+    def raw_data(self):
+        """Gets the raw_data of this DataGetDTO.  # noqa: E501
+
+        list of repetition values  # noqa: E501
+
+        :return: The raw_data of this DataGetDTO.  # noqa: E501
+        :rtype: list[object]
+        """
+        return self._raw_data
+
+    @raw_data.setter
+    def raw_data(self, raw_data):
+        """Sets the raw_data of this DataGetDTO.
+
+        list of repetition values  # noqa: E501
+
+        :param raw_data: The raw_data of this DataGetDTO.  # noqa: E501
+        :type: list[object]
+        """
+
+        self._raw_data = raw_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authenticate**](AuthenticationApi.md#authenticate) | **POST** /security/authenticate | Authenticate a user and return an access token
 [**authenticate_open_id**](AuthenticationApi.md#authenticate_open_id) | **GET** /security/openid | Authenticate a user and return an access token
+[**forgot_password**](AuthenticationApi.md#forgot_password) | **POST** /security/forgot-password | Send an e-mail confirmation
 [**get_credentials_groups**](AuthenticationApi.md#get_credentials_groups) | **GET** /security/credentials | Get list of existing credentials indexed by Swagger @API concepts in the application
 [**logout**](AuthenticationApi.md#logout) | **DELETE** /security/logout | Logout by discarding a user token
+[**renew_password**](AuthenticationApi.md#renew_password) | **PUT** /security/renew-password | Update user password
 [**renew_token**](AuthenticationApi.md#renew_token) | **PUT** /security/renew-token | Send back a new token if the provided one is still valid
 
 
@@ -115,6 +117,57 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **forgot_password**
+> forgot_password(identifier)
+
+Send an e-mail confirmation
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.AuthenticationApi(pythonClient)
+identifier = 'identifier_example' # str | User e-mail or uri
+
+
+try:
+    # Send an e-mail confirmation
+    api_instance.forgot_password(identifier)
+except ApiException as e:
+    print("Exception when calling AuthenticationApi->forgot_password: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **identifier** | **str**| User e-mail or uri | 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_credentials_groups**
 > list[CredentialsGroupDTO] get_credentials_groups()
 
@@ -209,6 +262,62 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **renew_password**
+> TokenGetDTO renew_password(renew_token, check_only=check_only, password=password)
+
+Update user password
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.AuthenticationApi(pythonClient)
+renew_token = 'renew_token_example' # str | User renew token
+check_only = false # bool | Check only renew token (optional) (default to false)
+password = 'password_example' # str | User password (optional)
+
+
+try:
+    # Update user password
+    api_response = api_instance.renew_password(renew_token, check_only=check_only, password=password)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthenticationApi->renew_password: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **renew_token** | **str**| User renew token | 
+ **check_only** | **bool**| Check only renew token | [optional] [default to false]
+ **password** | **str**| User password | [optional] 
+
+
+### Return type
+
+[**TokenGetDTO**](TokenGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

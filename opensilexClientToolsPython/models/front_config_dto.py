@@ -43,7 +43,8 @@ class FrontConfigDTO(object):
         'theme_module': 'str',
         'theme_name': 'str',
         'open_id_authentication_uri': 'str',
-        'open_id_connection_title': 'str'
+        'open_id_connection_title': 'str',
+        'activate_reset_password': 'bool'
     }
 
     attribute_map = {
@@ -59,10 +60,11 @@ class FrontConfigDTO(object):
         'theme_module': 'themeModule',
         'theme_name': 'themeName',
         'open_id_authentication_uri': 'openIDAuthenticationURI',
-        'open_id_connection_title': 'openIDConnectionTitle'
+        'open_id_connection_title': 'openIDConnectionTitle',
+        'activate_reset_password': 'activateResetPassword'
     }
 
-    def __init__(self, path_prefix=None, home_component=None, not_found_component=None, header_component=None, login_component=None, menu_component=None, footer_component=None, menu=None, routes=None, theme_module=None, theme_name=None, open_id_authentication_uri=None, open_id_connection_title=None):  # noqa: E501
+    def __init__(self, path_prefix=None, home_component=None, not_found_component=None, header_component=None, login_component=None, menu_component=None, footer_component=None, menu=None, routes=None, theme_module=None, theme_name=None, open_id_authentication_uri=None, open_id_connection_title=None, activate_reset_password=None):  # noqa: E501
         """FrontConfigDTO - a model defined in Swagger"""  # noqa: E501
 
         self._path_prefix = None
@@ -78,6 +80,7 @@ class FrontConfigDTO(object):
         self._theme_name = None
         self._open_id_authentication_uri = None
         self._open_id_connection_title = None
+        self._activate_reset_password = None
         self.discriminator = None
 
         self.path_prefix = path_prefix
@@ -97,6 +100,8 @@ class FrontConfigDTO(object):
             self.open_id_authentication_uri = open_id_authentication_uri
         if open_id_connection_title is not None:
             self.open_id_connection_title = open_id_connection_title
+        if activate_reset_password is not None:
+            self.activate_reset_password = activate_reset_password
 
     @property
     def path_prefix(self):
@@ -412,6 +417,27 @@ class FrontConfigDTO(object):
         """
 
         self._open_id_connection_title = open_id_connection_title
+
+    @property
+    def activate_reset_password(self):
+        """Gets the activate_reset_password of this FrontConfigDTO.  # noqa: E501
+
+
+        :return: The activate_reset_password of this FrontConfigDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self._activate_reset_password
+
+    @activate_reset_password.setter
+    def activate_reset_password(self, activate_reset_password):
+        """Sets the activate_reset_password of this FrontConfigDTO.
+
+
+        :param activate_reset_password: The activate_reset_password of this FrontConfigDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self._activate_reset_password = activate_reset_password
 
     def to_dict(self):
         """Returns the model properties as a dict"""

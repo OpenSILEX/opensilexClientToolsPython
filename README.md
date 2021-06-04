@@ -17,7 +17,7 @@ Python 2.7 and 3.4+
 If the python package is hosted on Github, you can install directly from Github
 
 ```sh
-pip install git+https://github.com/OpenSILEX/opensilexClientToolsPython.git@v1.0.0-beta
+pip install git+https://github.com/OpenSILEX/opensilexClientToolsPython.git@1.0.0-beta
 ```
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com/OpenSILEX/opensilexClientToolsPython.git@v1.0.0-beta`)
 

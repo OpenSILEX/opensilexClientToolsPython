@@ -258,13 +258,14 @@ class DevicesApi(object):
 
         :param async_req bool
         :param str authorization: Authentication token (required)
-        :param str name_pattern: Regex pattern for filtering by name
         :param str rdf_type: RDF type filter
+        :param bool include_subtypes: Set this param to true when filtering on rdf_type to also retrieve sub-types
+        :param str name: Regex pattern for filtering by name
         :param int year: Search by year
         :param date existence_date: Date to filter device existence
-        :param str brand_pattern: Regex pattern for filtering by brand
-        :param str model_pattern: Regex pattern for filtering by model
-        :param str serial_number_pattern: Regex pattern for filtering by serial number
+        :param str brand: Regex pattern for filtering by brand
+        :param str model: Regex pattern for filtering by model
+        :param str serial_number: Regex pattern for filtering by serial number
         :param str metadata: Search by metadata
         :param str accept_language: Request accepted language
         :return: None
@@ -289,13 +290,14 @@ class DevicesApi(object):
 
         :param async_req bool
         :param str authorization: Authentication token (required)
-        :param str name_pattern: Regex pattern for filtering by name
         :param str rdf_type: RDF type filter
+        :param bool include_subtypes: Set this param to true when filtering on rdf_type to also retrieve sub-types
+        :param str name: Regex pattern for filtering by name
         :param int year: Search by year
         :param date existence_date: Date to filter device existence
-        :param str brand_pattern: Regex pattern for filtering by brand
-        :param str model_pattern: Regex pattern for filtering by model
-        :param str serial_number_pattern: Regex pattern for filtering by serial number
+        :param str brand: Regex pattern for filtering by brand
+        :param str model: Regex pattern for filtering by model
+        :param str serial_number: Regex pattern for filtering by serial number
         :param str metadata: Search by metadata
         :param str accept_language: Request accepted language
         :return: None
@@ -303,7 +305,7 @@ class DevicesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['name_pattern', 'rdf_type', 'year', 'existence_date', 'brand_pattern', 'model_pattern', 'serial_number_pattern', 'metadata', ]  # noqa: E501
+        all_params = ['rdf_type', 'include_subtypes', 'name', 'year', 'existence_date', 'brand', 'model', 'serial_number', 'metadata', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -328,20 +330,22 @@ class DevicesApi(object):
         path_params = {}
 
         query_params = []
-        if 'name_pattern' in params:
-            query_params.append(('namePattern', params['name_pattern']))  # noqa: E501
         if 'rdf_type' in params:
-            query_params.append(('rdfType', params['rdf_type']))  # noqa: E501
+            query_params.append(('rdf_type', params['rdf_type']))  # noqa: E501
+        if 'include_subtypes' in params:
+            query_params.append(('include_subtypes', params['include_subtypes']))  # noqa: E501
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
         if 'year' in params:
             query_params.append(('year', params['year']))  # noqa: E501
         if 'existence_date' in params:
             query_params.append(('existence_date', params['existence_date']))  # noqa: E501
-        if 'brand_pattern' in params:
-            query_params.append(('brandPattern', params['brand_pattern']))  # noqa: E501
-        if 'model_pattern' in params:
-            query_params.append(('modelPattern', params['model_pattern']))  # noqa: E501
-        if 'serial_number_pattern' in params:
-            query_params.append(('serialNumberPattern', params['serial_number_pattern']))  # noqa: E501
+        if 'brand' in params:
+            query_params.append(('brand', params['brand']))  # noqa: E501
+        if 'model' in params:
+            query_params.append(('model', params['model']))  # noqa: E501
+        if 'serial_number' in params:
+            query_params.append(('serial_number', params['serial_number']))  # noqa: E501
         if 'metadata' in params:
             query_params.append(('metadata', params['metadata']))  # noqa: E501
 
@@ -585,6 +589,114 @@ class DevicesApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='DeviceGetDetailsDTO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_device_by_uris(self, uris, **kwargs):  # noqa: E501
+        """Get devices by uris  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_device_by_uris(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Device URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[DeviceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_device_by_uris_with_http_info(uris, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_device_by_uris_with_http_info(uris, **kwargs)  # noqa: E501
+            return data
+
+    def get_device_by_uris_with_http_info(self, uris, **kwargs):  # noqa: E501
+        """Get devices by uris  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_device_by_uris_with_http_info(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Device URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[DeviceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uris', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_device_by_uris" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uris' is set
+        if ('uris' not in params or
+                params['uris'] is None):
+            raise ValueError("Missing the required parameter `uris` when calling `get_device_by_uris`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'uris' in params:
+            query_params.append(('uris', params['uris']))  # noqa: E501
+            collection_formats['uris'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/devices/by_uris', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[DeviceGetDTO]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1255,6 +1367,7 @@ class DevicesApi(object):
         :param async_req bool
         :param str authorization: Authentication token (required)
         :param str rdf_type: RDF type filter
+        :param bool include_subtypes: Set this param to true when filtering on rdf_type to also retrieve sub-types
         :param str name: Regex pattern for filtering by name
         :param int year: Search by year
         :param date existence_date: Date to filter device existence
@@ -1289,6 +1402,7 @@ class DevicesApi(object):
         :param async_req bool
         :param str authorization: Authentication token (required)
         :param str rdf_type: RDF type filter
+        :param bool include_subtypes: Set this param to true when filtering on rdf_type to also retrieve sub-types
         :param str name: Regex pattern for filtering by name
         :param int year: Search by year
         :param date existence_date: Date to filter device existence
@@ -1305,7 +1419,7 @@ class DevicesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['rdf_type', 'name', 'year', 'existence_date', 'brand', 'model', 'serial_number', 'metadata', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params = ['rdf_type', 'include_subtypes', 'name', 'year', 'existence_date', 'brand', 'model', 'serial_number', 'metadata', 'order_by', 'page', 'page_size', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1336,6 +1450,8 @@ class DevicesApi(object):
         query_params = []
         if 'rdf_type' in params:
             query_params.append(('rdf_type', params['rdf_type']))  # noqa: E501
+        if 'include_subtypes' in params:
+            query_params.append(('include_subtypes', params['include_subtypes']))  # noqa: E501
         if 'name' in params:
             query_params.append(('name', params['name']))  # noqa: E501
         if 'year' in params:

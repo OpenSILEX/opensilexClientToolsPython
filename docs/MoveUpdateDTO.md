@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **_from** | **str** |  | [optional] 
 **to** | **str** |  | [optional] 
-**targets_positions** | [**list[ConcernedItemPositionCreationDTO]**](ConcernedItemPositionCreationDTO.md) |  | [optional] 
+**targets_positions** | [**list[TargetPositionCreationDTO]**](TargetPositionCreationDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

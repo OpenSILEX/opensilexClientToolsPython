@@ -29,6 +29,13 @@ class TestEventsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_count_events(self):
+        """Test case for count_events
+
+        Count events  # noqa: E501
+        """
+        pass
+
     def test_create_events(self):
         """Test case for create_events
 
@@ -81,14 +88,14 @@ class TestEventsApi(unittest.TestCase):
     def test_import_event_csv(self):
         """Test case for import_event_csv
 
-        Import a CSV file with one move and one concerned item per line  # noqa: E501
+        Import a CSV file with one move and one target per line  # noqa: E501
         """
         pass
 
     def test_import_move_csv(self):
         """Test case for import_move_csv
 
-        Import a CSV file with one move and one concerned item per line  # noqa: E501
+        Import a CSV file with one move and one target per line  # noqa: E501
         """
         pass
 
@@ -116,14 +123,14 @@ class TestEventsApi(unittest.TestCase):
     def test_validate_event_csv(self):
         """Test case for validate_event_csv
 
-        Check a CSV file with one move and one concerned item per line  # noqa: E501
+        Check a CSV file with one move and one target per line  # noqa: E501
         """
         pass
 
     def test_validate_move_csv(self):
         """Test case for validate_move_csv
 
-        Check a CSV file with one move and one concerned item per line  # noqa: E501
+        Check a CSV file with one move and one target per line  # noqa: E501
         """
         pass
 

@@ -67,7 +67,7 @@ class TestOntologyApi(unittest.TestCase):
     def test_get_classes(self):
         """Test case for get_classes
 
-        Return classes models definitions with properties for a list of rdt types  # noqa: E501
+        Return classes models definitions with properties for a list of rdf types  # noqa: E501
         """
         pass
 
@@ -117,6 +117,13 @@ class TestOntologyApi(unittest.TestCase):
         """Test case for get_uri_label
 
         Return associated rdfs:label of an uri if exists  # noqa: E501
+        """
+        pass
+
+    def test_search_sub_classes_of(self):
+        """Test case for search_sub_classes_of
+
+        Search sub-classes tree of an RDF class  # noqa: E501
         """
         pass
 

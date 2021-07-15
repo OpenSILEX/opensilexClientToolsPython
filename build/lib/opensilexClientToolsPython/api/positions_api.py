@@ -144,17 +144,17 @@ class PositionsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_position_history(self, concerned_item_uri, **kwargs):  # noqa: E501
+    def search_position_history(self, target, **kwargs):  # noqa: E501
         """Search history of position of an object  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_position_history(concerned_item_uri, async_req=True)
+        >>> thread = api.search_position_history(target, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str concerned_item_uri: Concerned item URI (required)
+        :param str target: Target URI (required)
         :param str authorization: Authentication token (required)
         :param str start_date_time: Start date : match position affected after the given start date
         :param str end_date_time: End date : match position affected before the given end date
@@ -168,22 +168,22 @@ class PositionsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.search_position_history_with_http_info(concerned_item_uri, **kwargs)  # noqa: E501
+            return self.search_position_history_with_http_info(target, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_position_history_with_http_info(concerned_item_uri, **kwargs)  # noqa: E501
+            (data) = self.search_position_history_with_http_info(target, **kwargs)  # noqa: E501
             return data
 
-    def search_position_history_with_http_info(self, concerned_item_uri, **kwargs):  # noqa: E501
+    def search_position_history_with_http_info(self, target, **kwargs):  # noqa: E501
         """Search history of position of an object  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_position_history_with_http_info(concerned_item_uri, async_req=True)
+        >>> thread = api.search_position_history_with_http_info(target, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str concerned_item_uri: Concerned item URI (required)
+        :param str target: Target URI (required)
         :param str authorization: Authentication token (required)
         :param str start_date_time: Start date : match position affected after the given start date
         :param str end_date_time: End date : match position affected before the given end date
@@ -196,7 +196,7 @@ class PositionsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['concerned_item_uri', 'start_date_time', 'end_date_time', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params = ['target', 'start_date_time', 'end_date_time', 'order_by', 'page', 'page_size', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -211,18 +211,18 @@ class PositionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'concerned_item_uri' is set
-        if ('concerned_item_uri' not in params or
-                params['concerned_item_uri'] is None):
-            raise ValueError("Missing the required parameter `concerned_item_uri` when calling `search_position_history`")  # noqa: E501
+        # verify the required parameter 'target' is set
+        if ('target' not in params or
+                params['target'] is None):
+            raise ValueError("Missing the required parameter `target` when calling `search_position_history`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'concerned_item_uri' in params:
-            query_params.append(('concernedItemUri', params['concerned_item_uri']))  # noqa: E501
+        if 'target' in params:
+            query_params.append(('target', params['target']))  # noqa: E501
         if 'start_date_time' in params:
             query_params.append(('startDateTime', params['start_date_time']))  # noqa: E501
         if 'end_date_time' in params:

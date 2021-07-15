@@ -47,8 +47,6 @@ opensilexClientToolsPython/models/characteristic_creation_dto.py
 opensilexClientToolsPython/models/characteristic_details_dto.py
 opensilexClientToolsPython/models/characteristic_get_dto.py
 opensilexClientToolsPython/models/characteristic_update_dto.py
-opensilexClientToolsPython/models/concerned_item_position_creation_dto.py
-opensilexClientToolsPython/models/concerned_item_position_get_dto.py
 opensilexClientToolsPython/models/contact.py
 opensilexClientToolsPython/models/credential_dto.py
 opensilexClientToolsPython/models/credentials_group_dto.py
@@ -182,6 +180,8 @@ opensilexClientToolsPython/models/species_dto.py
 opensilexClientToolsPython/models/status_dto.py
 opensilexClientToolsPython/models/study_details_dto.py
 opensilexClientToolsPython/models/study_dto.py
+opensilexClientToolsPython/models/target_position_creation_dto.py
+opensilexClientToolsPython/models/target_position_get_dto.py
 opensilexClientToolsPython/models/theme_config_dto.py
 opensilexClientToolsPython/models/token_get_dto.py
 opensilexClientToolsPython/models/trait.py
@@ -224,8 +224,6 @@ test/test_characteristic_creation_dto.py
 test/test_characteristic_details_dto.py
 test/test_characteristic_get_dto.py
 test/test_characteristic_update_dto.py
-test/test_concerned_item_position_creation_dto.py
-test/test_concerned_item_position_get_dto.py
 test/test_contact.py
 test/test_credential_dto.py
 test/test_credentials_group_dto.py
@@ -373,6 +371,8 @@ test/test_species_dto.py
 test/test_status_dto.py
 test/test_study_details_dto.py
 test/test_study_dto.py
+test/test_target_position_creation_dto.py
+test/test_target_position_get_dto.py
 test/test_theme_config_dto.py
 test/test_token_get_dto.py
 test/test_trait.py

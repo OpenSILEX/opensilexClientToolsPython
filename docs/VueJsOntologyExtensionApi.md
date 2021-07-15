@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**delete_rdf_type**](VueJsOntologyExtensionApi.md#delete_rdf_type) | **DELETE** /vuejs/owl_extension/rdf_type | Delete a RDF type
 [**get_data_types1**](VueJsOntologyExtensionApi.md#get_data_types1) | **GET** /vuejs/owl_extension/data_types | Return literal datatypes definition
 [**get_object_types**](VueJsOntologyExtensionApi.md#get_object_types) | **GET** /vuejs/owl_extension/object_types | Return object types definition
-[**get_rdf_type1**](VueJsOntologyExtensionApi.md#get_rdf_type1) | **GET** /vuejs/owl_extension/rdf_type | Return rdt type model definition with properties
+[**get_rdf_type1**](VueJsOntologyExtensionApi.md#get_rdf_type1) | **GET** /vuejs/owl_extension/rdf_type | Return rdf type model definition with properties
 [**get_rdf_type_properties**](VueJsOntologyExtensionApi.md#get_rdf_type_properties) | **GET** /vuejs/owl_extension/rdf_type_properties | Return class model properties definitions
 [**get_rdf_types_parameters**](VueJsOntologyExtensionApi.md#get_rdf_types_parameters) | **GET** /vuejs/owl_extension/rdf_types_parameters | Return RDF types parameters for Vue.js application
 [**set_rdf_type_properties_order**](VueJsOntologyExtensionApi.md#set_rdf_type_properties_order) | **PUT** /vuejs/owl_extension/properties_order | Define properties order
@@ -32,7 +32,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 body = opensilexClientToolsPython.VueRDFTypeDTO() # VueRDFTypeDTO | Class description (optional)
 
@@ -84,7 +84,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | RDF type (optional)
 
@@ -136,7 +136,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 
 
@@ -184,7 +184,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 
 
@@ -218,7 +218,7 @@ No authorization required
 # **get_rdf_type1**
 > VueRDFTypeDTO get_rdf_type1(rdf_type, authorization, parent_type=parent_type, accept_language=accept_language)
 
-Return rdt type model definition with properties
+Return rdf type model definition with properties
 
 
 
@@ -232,14 +232,14 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | RDF type URI
 parent_type = 'parent_type_example' # str | Parent RDF class URI (optional)
 
 
 try:
-    # Return rdt type model definition with properties
+    # Return rdf type model definition with properties
     api_response = api_instance.get_rdf_type1(rdf_type, parent_type=parent_type, )
     pprint(api_response)
 except ApiException as e:
@@ -286,7 +286,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | RDF class URI
 parent_type = 'parent_type_example' # str | Parent RDF class URI
@@ -340,7 +340,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 
 
@@ -388,7 +388,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | RDF type
 body = [opensilexClientToolsPython.list[str]()] # list[str] | Array of properties (optional)
@@ -442,7 +442,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
 body = opensilexClientToolsPython.VueRDFTypeDTO() # VueRDFTypeDTO | RDF type definition (optional)
 

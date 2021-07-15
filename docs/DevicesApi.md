@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**export_devices**](DevicesApi.md#export_devices) | **GET** /core/devices/export | export devices
 [**export_list**](DevicesApi.md#export_list) | **POST** /core/devices/export_by_uris | export devices
 [**get_device**](DevicesApi.md#get_device) | **GET** /core/devices/{uri} | Get device detail
+[**get_device_by_uris**](DevicesApi.md#get_device_by_uris) | **GET** /core/devices/by_uris | Get devices by uris
 [**get_device_data_files_provenances**](DevicesApi.md#get_device_data_files_provenances) | **GET** /core/devices/{uri}/datafiles/provenances | Get provenances of datafiles linked to this device
 [**get_device_data_provenances**](DevicesApi.md#get_device_data_provenances) | **GET** /core/devices/{uri}/data/provenances | Get provenances of data that have been measured on this device
 [**get_device_variables**](DevicesApi.md#get_device_variables) | **GET** /core/devices/{uri}/variables | Get variables measured by the device
@@ -35,7 +36,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.DeviceCreationDTO() # DeviceCreationDTO | Device description (optional)
 check_only = false # bool | Checking only (optional) (default to false)
@@ -89,7 +90,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 
@@ -125,7 +126,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_devices**
-> export_devices(authorization, name_pattern=name_pattern, rdf_type=rdf_type, year=year, existence_date=existence_date, brand_pattern=brand_pattern, model_pattern=model_pattern, serial_number_pattern=serial_number_pattern, metadata=metadata, accept_language=accept_language)
+> export_devices(authorization, rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, accept_language=accept_language)
 
 export devices
 
@@ -141,21 +142,22 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-name_pattern = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 rdf_type = 'vocabulary:SensingDevice' # str | RDF type filter (optional)
+include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
+name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 year = 2017 # int | Search by year (optional)
 existence_date = '2013-10-20' # date | Date to filter device existence (optional)
-brand_pattern = '.*' # str | Regex pattern for filtering by brand (optional)
-model_pattern = '.*' # str | Regex pattern for filtering by model (optional)
-serial_number_pattern = '.*' # str | Regex pattern for filtering by serial number (optional)
-metadata = '{}' # str | Search by metadata (optional)
+brand = '.*' # str | Regex pattern for filtering by brand (optional)
+model = '.*' # str | Regex pattern for filtering by model (optional)
+serial_number = '.*' # str | Regex pattern for filtering by serial number (optional)
+metadata = '{ \"Group\" : \"weather station\", \"Group2\" : \"A\"}' # str | Search by metadata (optional)
 
 
 try:
     # export devices
-    api_instance.export_devices(name_pattern=name_pattern, rdf_type=rdf_type, year=year, existence_date=existence_date, brand_pattern=brand_pattern, model_pattern=model_pattern, serial_number_pattern=serial_number_pattern, metadata=metadata, )
+    api_instance.export_devices(rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, )
 except ApiException as e:
     print("Exception when calling DevicesApi->export_devices: %s\n" % e)
 ```
@@ -164,13 +166,14 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name_pattern** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **rdf_type** | **str**| RDF type filter | [optional] 
+ **include_subtypes** | **bool**| Set this param to true when filtering on rdf_type to also retrieve sub-types | [optional] [default to false]
+ **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **year** | **int**| Search by year | [optional] 
  **existence_date** | **date**| Date to filter device existence | [optional] 
- **brand_pattern** | **str**| Regex pattern for filtering by brand | [optional] 
- **model_pattern** | **str**| Regex pattern for filtering by model | [optional] 
- **serial_number_pattern** | **str**| Regex pattern for filtering by serial number | [optional] 
+ **brand** | **str**| Regex pattern for filtering by brand | [optional] 
+ **model** | **str**| Regex pattern for filtering by model | [optional] 
+ **serial_number** | **str**| Regex pattern for filtering by serial number | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
 
 
@@ -206,7 +209,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of device URI (optional)
 
@@ -257,7 +260,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | device URI
 
@@ -292,6 +295,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_device_by_uris**
+> list[DeviceGetDTO] get_device_by_uris(uris, authorization, accept_language=accept_language)
+
+Get devices by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
+uris = ['uris_example'] # list[str] | Device URIs
+
+
+try:
+    # Get devices by uris
+    api_response = api_instance.get_device_by_uris(uris, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DevicesApi->get_device_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Device URIs | 
+
+
+### Return type
+
+[**list[DeviceGetDTO]**](DeviceGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_device_data_files_provenances**
 > list[ProvenanceGetDTO] get_device_data_files_provenances(uri, authorization, accept_language=accept_language)
 
@@ -309,7 +364,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 
@@ -361,7 +416,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 
@@ -413,7 +468,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 
@@ -465,7 +520,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
@@ -541,7 +596,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
@@ -599,7 +654,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_devices**
-> list[DeviceGetDTO] search_devices(authorization, rdf_type=rdf_type, name=name, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[DeviceGetDTO] search_devices(authorization, rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search devices
 
@@ -615,9 +670,10 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 rdf_type = 'vocabulary:SensingDevice' # str | RDF type filter (optional)
+include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 year = 2017 # int | Search by year (optional)
 existence_date = '2013-10-20' # date | Date to filter device existence (optional)
@@ -632,7 +688,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search devices
-    api_response = api_instance.search_devices(rdf_type=rdf_type, name=name, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_devices(rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DevicesApi->search_devices: %s\n" % e)
@@ -643,6 +699,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rdf_type** | **str**| RDF type filter | [optional] 
+ **include_subtypes** | **bool**| Set this param to true when filtering on rdf_type to also retrieve sub-types | [optional] [default to false]
  **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **year** | **int**| Search by year | [optional] 
  **existence_date** | **date**| Date to filter device existence | [optional] 
@@ -687,7 +744,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.DeviceCreationDTO() # DeviceCreationDTO | Device description
 

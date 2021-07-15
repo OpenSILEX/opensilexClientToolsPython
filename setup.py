@@ -14,7 +14,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "opensilexClientToolsPython"
-VERSION = "2.0.0-beta"
+VERSION = "1.0.0-beta+2"
 # To install the library, run the following
 #
 # python setup.py install

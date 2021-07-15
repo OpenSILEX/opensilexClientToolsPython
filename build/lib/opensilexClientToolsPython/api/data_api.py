@@ -568,6 +568,178 @@ class DataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def export_data(self, **kwargs):  # noqa: E501
+        """export data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.export_data(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str start_date: Search by minimal date
+        :param str end_date: Search by maximal date
+        :param str timezone: Precise the timezone corresponding to the given dates
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] scientific_objects: Search by objects
+        :param list[str] variables: Search by variables
+        :param float min_confidence: Search by minimal confidence index
+        :param float max_confidence: Search by maximal confidence index
+        :param list[str] provenances: Search by provenances
+        :param str metadata: Search by metadata
+        :param str mode: Format wide or long
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.export_data_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.export_data_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def export_data_with_http_info(self, **kwargs):  # noqa: E501
+        """export data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.export_data_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str start_date: Search by minimal date
+        :param str end_date: Search by maximal date
+        :param str timezone: Precise the timezone corresponding to the given dates
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] scientific_objects: Search by objects
+        :param list[str] variables: Search by variables
+        :param float min_confidence: Search by minimal confidence index
+        :param float max_confidence: Search by maximal confidence index
+        :param list[str] provenances: Search by provenances
+        :param str metadata: Search by metadata
+        :param str mode: Format wide or long
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['start_date', 'end_date', 'timezone', 'experiments', 'scientific_objects', 'variables', 'min_confidence', 'max_confidence', 'provenances', 'metadata', 'mode', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method export_data" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'min_confidence' in params and params['min_confidence'] > 1:  # noqa: E501
+            raise ValueError("Invalid value for parameter `min_confidence` when calling `export_data`, must be a value less than or equal to `1`")  # noqa: E501
+        if 'min_confidence' in params and params['min_confidence'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `min_confidence` when calling `export_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'max_confidence' in params and params['max_confidence'] > 1:  # noqa: E501
+            raise ValueError("Invalid value for parameter `max_confidence` when calling `export_data`, must be a value less than or equal to `1`")  # noqa: E501
+        if 'max_confidence' in params and params['max_confidence'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `max_confidence` when calling `export_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `export_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'page_size' in params and params['page_size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page_size` when calling `export_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'timezone' in params:
+            query_params.append(('timezone', params['timezone']))  # noqa: E501
+        if 'experiments' in params:
+            query_params.append(('experiments', params['experiments']))  # noqa: E501
+            collection_formats['experiments'] = 'multi'  # noqa: E501
+        if 'scientific_objects' in params:
+            query_params.append(('scientific_objects', params['scientific_objects']))  # noqa: E501
+            collection_formats['scientific_objects'] = 'multi'  # noqa: E501
+        if 'variables' in params:
+            query_params.append(('variables', params['variables']))  # noqa: E501
+            collection_formats['variables'] = 'multi'  # noqa: E501
+        if 'min_confidence' in params:
+            query_params.append(('min_confidence', params['min_confidence']))  # noqa: E501
+        if 'max_confidence' in params:
+            query_params.append(('max_confidence', params['max_confidence']))  # noqa: E501
+        if 'provenances' in params:
+            query_params.append(('provenances', params['provenances']))  # noqa: E501
+            collection_formats['provenances'] = 'multi'  # noqa: E501
+        if 'metadata' in params:
+            query_params.append(('metadata', params['metadata']))  # noqa: E501
+        if 'mode' in params:
+            query_params.append(('mode', params['mode']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+            collection_formats['order_by'] = 'multi'  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/data/export', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_data(self, uri, **kwargs):  # noqa: E501
         """Get data  # noqa: E501
 
@@ -1373,7 +1545,7 @@ class DataApi(object):
     def post_data_file(self, description, file, **kwargs):  # noqa: E501
         """Add a data file  # noqa: E501
 
-        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"scientific_objects\":[\"http://plot01\"], \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
+        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"scientific_object\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_data_file(description, file, async_req=True)
@@ -1398,7 +1570,7 @@ class DataApi(object):
     def post_data_file_with_http_info(self, description, file, **kwargs):  # noqa: E501
         """Add a data file  # noqa: E501
 
-        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"scientific_objects\":[\"http://plot01\"], \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
+        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"scientific_object\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_data_file_with_http_info(description, file, async_req=True)

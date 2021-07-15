@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **_from** | [**InfrastructureFacilityNamedDTO**](InfrastructureFacilityNamedDTO.md) |  | [optional] 
 **to** | [**InfrastructureFacilityNamedDTO**](InfrastructureFacilityNamedDTO.md) |  | [optional] 
-**targets_positions** | [**list[ConcernedItemPositionGetDTO]**](ConcernedItemPositionGetDTO.md) |  | [optional] 
+**targets_positions** | [**list[TargetPositionGetDTO]**](TargetPositionGetDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -41,7 +41,7 @@ class MoveUpdateDTO(object):
         'relations': 'list[RDFObjectRelationDTO]',
         '_from': 'str',
         'to': 'str',
-        'targets_positions': 'list[ConcernedItemPositionCreationDTO]'
+        'targets_positions': 'list[TargetPositionCreationDTO]'
     }
 
     attribute_map = {
@@ -322,7 +322,7 @@ class MoveUpdateDTO(object):
 
 
         :return: The targets_positions of this MoveUpdateDTO.  # noqa: E501
-        :rtype: list[ConcernedItemPositionCreationDTO]
+        :rtype: list[TargetPositionCreationDTO]
         """
         return self._targets_positions
 
@@ -332,7 +332,7 @@ class MoveUpdateDTO(object):
 
 
         :param targets_positions: The targets_positions of this MoveUpdateDTO.  # noqa: E501
-        :type: list[ConcernedItemPositionCreationDTO]
+        :type: list[TargetPositionCreationDTO]
         """
 
         self._targets_positions = targets_positions

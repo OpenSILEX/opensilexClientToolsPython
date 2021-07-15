@@ -1,4 +1,4 @@
-# ConcernedItemPositionGetDTO
+# TargetPositionGetDTO
 
 ## Properties
 Name | Type | Description | Notes

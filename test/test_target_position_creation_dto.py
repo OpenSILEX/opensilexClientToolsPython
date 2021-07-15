@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import opensilexClientToolsPython
-from opensilexClientToolsPython.models.concerned_item_position_creation_dto import ConcernedItemPositionCreationDTO  # noqa: E501
+from opensilexClientToolsPython.models.target_position_creation_dto import TargetPositionCreationDTO  # noqa: E501
 from opensilexClientToolsPython.rest import ApiException
 
 
-class TestConcernedItemPositionCreationDTO(unittest.TestCase):
-    """ConcernedItemPositionCreationDTO unit test stubs"""
+class TestTargetPositionCreationDTO(unittest.TestCase):
+    """TargetPositionCreationDTO unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestConcernedItemPositionCreationDTO(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testConcernedItemPositionCreationDTO(self):
-        """Test ConcernedItemPositionCreationDTO"""
+    def testTargetPositionCreationDTO(self):
+        """Test TargetPositionCreationDTO"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = opensilexClientToolsPython.models.concerned_item_position_creation_dto.ConcernedItemPositionCreationDTO()  # noqa: E501
+        # model = opensilexClientToolsPython.models.target_position_creation_dto.TargetPositionCreationDTO()  # noqa: E501
         pass
 
 

@@ -422,7 +422,7 @@ class VueJsOntologyExtensionApi(object):
             collection_formats=collection_formats)
 
     def get_rdf_type1(self, rdf_type, **kwargs):  # noqa: E501
-        """Return rdt type model definition with properties  # noqa: E501
+        """Return rdf type model definition with properties  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -447,7 +447,7 @@ class VueJsOntologyExtensionApi(object):
             return data
 
     def get_rdf_type1_with_http_info(self, rdf_type, **kwargs):  # noqa: E501
-        """Return rdt type model definition with properties  # noqa: E501
+        """Return rdf type model definition with properties  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

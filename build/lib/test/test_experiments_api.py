@@ -46,7 +46,7 @@ class TestExperimentsApi(unittest.TestCase):
     def test_export_experiment_data_list(self):
         """Test case for export_experiment_data_list
 
-        export data  # noqa: E501
+        export experiment data  # noqa: E501
         """
         pass
 
@@ -75,6 +75,13 @@ class TestExperimentsApi(unittest.TestCase):
         """Test case for get_experiment
 
         Get an experiment  # noqa: E501
+        """
+        pass
+
+    def test_get_experiments_by_ur_is(self):
+        """Test case for get_experiments_by_ur_is
+
+        Get experiments URIs  # noqa: E501
         """
         pass
 

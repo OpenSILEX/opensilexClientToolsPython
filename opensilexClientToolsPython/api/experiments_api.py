@@ -244,7 +244,7 @@ class ExperimentsApi(object):
             collection_formats=collection_formats)
 
     def export_experiment_data_list(self, uri, **kwargs):  # noqa: E501
-        """export data  # noqa: E501
+        """export experiment data  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -281,7 +281,7 @@ class ExperimentsApi(object):
             return data
 
     def export_experiment_data_list_with_http_info(self, uri, **kwargs):  # noqa: E501
-        """export data  # noqa: E501
+        """export experiment data  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -838,6 +838,114 @@ class ExperimentsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ExperimentGetDTO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_experiments_by_ur_is(self, uris, **kwargs):  # noqa: E501
+        """Get experiments URIs  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_experiments_by_ur_is(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Experiments URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[ExperimentGetListDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_experiments_by_ur_is_with_http_info(uris, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_experiments_by_ur_is_with_http_info(uris, **kwargs)  # noqa: E501
+            return data
+
+    def get_experiments_by_ur_is_with_http_info(self, uris, **kwargs):  # noqa: E501
+        """Get experiments URIs  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_experiments_by_ur_is_with_http_info(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Experiments URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[ExperimentGetListDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uris', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_experiments_by_ur_is" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uris' is set
+        if ('uris' not in params or
+                params['uris'] is None):
+            raise ValueError("Missing the required parameter `uris` when calling `get_experiments_by_ur_is`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'uris' in params:
+            query_params.append(('uris', params['uris']))  # noqa: E501
+            collection_formats['uris'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/experiments/by_uris', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ExperimentGetListDTO]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

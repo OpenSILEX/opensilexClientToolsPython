@@ -64,6 +64,13 @@ class TestDevicesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_device_by_uris(self):
+        """Test case for get_device_by_uris
+
+        Get devices by uris  # noqa: E501
+        """
+        pass
+
     def test_get_device_data_files_provenances(self):
         """Test case for get_device_data_files_provenances
 

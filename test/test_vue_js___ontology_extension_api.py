@@ -60,7 +60,7 @@ class TestVueJsOntologyExtensionApi(unittest.TestCase):
     def test_get_rdf_type1(self):
         """Test case for get_rdf_type1
 
-        Return rdt type model definition with properties  # noqa: E501
+        Return rdf type model definition with properties  # noqa: E501
         """
         pass
 

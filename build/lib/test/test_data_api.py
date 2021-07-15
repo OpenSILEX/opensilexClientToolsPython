@@ -64,6 +64,13 @@ class TestDataApi(unittest.TestCase):
         """
         pass
 
+    def test_export_data(self):
+        """Test case for export_data
+
+        export data  # noqa: E501
+        """
+        pass
+
     def test_get_data(self):
         """Test case for get_data
 

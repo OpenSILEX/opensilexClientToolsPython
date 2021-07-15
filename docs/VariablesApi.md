@@ -51,7 +51,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.CharacteristicCreationDTO() # CharacteristicCreationDTO | Characteristic description (optional)
 
@@ -103,7 +103,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.EntityCreationDTO() # EntityCreationDTO | Entity description (optional)
 
@@ -155,7 +155,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.MethodCreationDTO() # MethodCreationDTO | Method description (optional)
 
@@ -207,7 +207,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.UnitCreationDTO() # UnitCreationDTO | Unit description (optional)
 
@@ -259,7 +259,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.VariableCreationDTO() # VariableCreationDTO | Variable description (optional)
 
@@ -311,7 +311,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/characteristic/Height' # str | Characteristic URI
 
@@ -363,7 +363,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/entity/Plant' # str | Entity URI
 
@@ -415,7 +415,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/method/ImageAnalysis' # str | Method URI
 
@@ -467,7 +467,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/unit/Centimeter' # str | Unit URI
 
@@ -519,7 +519,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/Plant_Height' # str | Variable URI
 
@@ -571,7 +571,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/characteristic/Height' # str | Characteristic URI
 
@@ -623,7 +623,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 
 
@@ -673,7 +673,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/entity/Plant' # str | Entity URI
 
@@ -725,7 +725,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/method/ImageAnalysis' # str | Method URI
 
@@ -777,7 +777,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/unit/Centimeter' # str | Unit URI
 
@@ -829,7 +829,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = 'http://opensilex.dev/set/variables/Plant_Height' # str | Variable URI
 
@@ -881,7 +881,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Variables URIs
 
@@ -933,7 +933,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'Height' # str | Name (regex) (optional)
 order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -991,7 +991,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'plant' # str | Name (regex) (optional)
 order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -1049,7 +1049,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'ImageAnalysis' # str | Name (regex) (optional)
 order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -1107,7 +1107,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'Centimeter' # str | Name (regex) (optional)
 order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -1165,7 +1165,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'plant_height' # str | Name regex pattern (optional)
 order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -1223,7 +1223,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'plant_height' # str | Name regex pattern (optional)
 order_by = ['_entity_name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -1281,7 +1281,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.CharacteristicUpdateDTO() # CharacteristicUpdateDTO | Characteristic description (optional)
 
@@ -1333,7 +1333,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.EntityUpdateDTO() # EntityUpdateDTO | Entity description (optional)
 
@@ -1385,7 +1385,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.MethodUpdateDTO() # MethodUpdateDTO | Method description (optional)
 
@@ -1437,7 +1437,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.UnitUpdateDTO() # UnitUpdateDTO | Unit description (optional)
 
@@ -1489,7 +1489,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 body = opensilexClientToolsPython.VariableUpdateDTO() # VariableUpdateDTO | Variable description (optional)
 

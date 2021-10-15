@@ -92,15 +92,15 @@ class TestExperimentsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_used_variables(self):
-        """Test case for get_used_variables
+    def test_get_used_variables1(self):
+        """Test case for get_used_variables1
 
         Get variables involved in an experiment  # noqa: E501
         """
         pass
 
-    def test_import_csv_data(self):
-        """Test case for import_csv_data
+    def test_import_csv_data1(self):
+        """Test case for import_csv_data1
 
         Import a CSV file for the given experiment URI and scientific object type.  # noqa: E501
         """
@@ -134,8 +134,8 @@ class TestExperimentsApi(unittest.TestCase):
         """
         pass
 
-    def test_validate_csv(self):
-        """Test case for validate_csv
+    def test_validate_csv1(self):
+        """Test case for validate_csv1
 
         Import a CSV file for the given experiment URI and scientific object type.  # noqa: E501
         """

@@ -32,6 +32,7 @@ class CSVValidationModel(object):
     """
     swagger_types = {
         'missing_headers': 'list[str]',
+        'empty_headers': 'list[int]',
         'invalid_header_ur_is': 'dict(str, str)',
         'datatype_errors': 'dict(str, list[CSVDatatypeError])',
         'uri_not_found_errors': 'dict(str, list[CSVURINotFoundError])',
@@ -44,6 +45,7 @@ class CSVValidationModel(object):
 
     attribute_map = {
         'missing_headers': 'missingHeaders',
+        'empty_headers': 'emptyHeaders',
         'invalid_header_ur_is': 'invalidHeaderURIs',
         'datatype_errors': 'datatypeErrors',
         'uri_not_found_errors': 'uriNotFoundErrors',
@@ -54,10 +56,11 @@ class CSVValidationModel(object):
         'duplicate_uri_errors': 'duplicateURIErrors'
     }
 
-    def __init__(self, missing_headers=None, invalid_header_ur_is=None, datatype_errors=None, uri_not_found_errors=None, invalid_uri_errors=None, missing_required_value_errors=None, invalid_value_errors=None, already_existing_uri_errors=None, duplicate_uri_errors=None):  # noqa: E501
+    def __init__(self, missing_headers=None, empty_headers=None, invalid_header_ur_is=None, datatype_errors=None, uri_not_found_errors=None, invalid_uri_errors=None, missing_required_value_errors=None, invalid_value_errors=None, already_existing_uri_errors=None, duplicate_uri_errors=None):  # noqa: E501
         """CSVValidationModel - a model defined in Swagger"""  # noqa: E501
 
         self._missing_headers = None
+        self._empty_headers = None
         self._invalid_header_ur_is = None
         self._datatype_errors = None
         self._uri_not_found_errors = None
@@ -70,6 +73,8 @@ class CSVValidationModel(object):
 
         if missing_headers is not None:
             self.missing_headers = missing_headers
+        if empty_headers is not None:
+            self.empty_headers = empty_headers
         if invalid_header_ur_is is not None:
             self.invalid_header_ur_is = invalid_header_ur_is
         if datatype_errors is not None:
@@ -107,6 +112,27 @@ class CSVValidationModel(object):
         """
 
         self._missing_headers = missing_headers
+
+    @property
+    def empty_headers(self):
+        """Gets the empty_headers of this CSVValidationModel.  # noqa: E501
+
+
+        :return: The empty_headers of this CSVValidationModel.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._empty_headers
+
+    @empty_headers.setter
+    def empty_headers(self, empty_headers):
+        """Sets the empty_headers of this CSVValidationModel.
+
+
+        :param empty_headers: The empty_headers of this CSVValidationModel.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._empty_headers = empty_headers
 
     @property
     def invalid_header_ur_is(self):

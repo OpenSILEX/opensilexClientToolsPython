@@ -5,6 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_calls**](BRAPIApi.md#get_calls) | **GET** /brapi/v1/calls | Check the available BrAPI calls
+[**get_germplasm_by_search**](BRAPIApi.md#get_germplasm_by_search) | **GET** /brapi/v1/germplasm | Submit a search request for germplasm
 [**get_observation_units**](BRAPIApi.md#get_observation_units) | **GET** /brapi/v1/studies/{studyDbId}/observationunits | List all the observation units measured in the study.
 [**get_observation_variables**](BRAPIApi.md#get_observation_variables) | **GET** /brapi/v1/studies/{studyDbId}/observationvariables | List all the observation variables measured in the study.
 [**get_observations**](BRAPIApi.md#get_observations) | **GET** /brapi/v1/studies/{studyDbId}/observations | Get the observations associated to a specific study
@@ -32,7 +33,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -71,6 +72,68 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_germplasm_by_search**
+> GermplasmDTO get_germplasm_by_search(authorization, germplasm_db_id=germplasm_db_id, germplasm_pui=germplasm_pui, germplasm_name=germplasm_name, common_crop_name=common_crop_name, page=page, page_size=page_size, accept_language=accept_language)
+
+Submit a search request for germplasm
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
+germplasm_db_id = 'germplasm_db_id_example' # str | Search by germplasmDbId (optional)
+germplasm_pui = 'germplasm_pui_example' # str | Search by germplasmPUI (optional)
+germplasm_name = 'germplasm_name_example' # str | Search by germplasmName (optional)
+common_crop_name = 'common_crop_name_example' # str | Search by commonCropName (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+
+
+try:
+    # Submit a search request for germplasm
+    api_response = api_instance.get_germplasm_by_search(germplasm_db_id=germplasm_db_id, germplasm_pui=germplasm_pui, germplasm_name=germplasm_name, common_crop_name=common_crop_name, page=page, page_size=page_size, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BRAPIApi->get_germplasm_by_search: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **germplasm_db_id** | **str**| Search by germplasmDbId | [optional] 
+ **germplasm_pui** | **str**| Search by germplasmPUI | [optional] 
+ **germplasm_name** | **str**| Search by germplasmName | [optional] 
+ **common_crop_name** | **str**| Search by commonCropName | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**GermplasmDTO**](GermplasmDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_observation_units**
 > list[ObservationUnitDTO] get_observation_units(study_db_id, authorization, observation_level=observation_level, page_size=page_size, page=page, accept_language=accept_language)
 
@@ -88,7 +151,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 study_db_id = 'study_db_id_example' # str | studyDbId
 observation_level = 'Plot' # str | observationLevel (optional)
@@ -146,7 +209,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 study_db_id = 'study_db_id_example' # str | studyDbId
 page_size = 20 # int | pageSize (optional) (default to 20)
@@ -202,7 +265,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 study_db_id = 'study_db_id_example' # str | studyDbId
 observation_variable_db_ids = ['observation_variable_db_ids_example'] # list[str] | observationVariableDbIds (optional)
@@ -260,7 +323,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 study_db_id = 'study_db_id_example' # str | Search by studyDbId (optional)
 active = 'active_example' # str | Filter active status true/false (optional)
@@ -322,7 +385,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 study_db_id = 'study_db_id_example' # str | Search by studyDbId (optional)
 active = 'active_example' # str | Filter active status true/false (optional)
@@ -384,7 +447,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 study_db_id = 'study_db_id_example' # str | Search by studyDbId
 
@@ -436,7 +499,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 observation_variable_db_id = 'observation_variable_db_id_example' # str | A variable URI (Unique Resource Identifier)
 
@@ -488,7 +551,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 observation_variable_db_id = 'observation_variable_db_id_example' # str | observationVariableDbId (optional)
 page_size = 20 # int | pageSize (optional) (default to 20)

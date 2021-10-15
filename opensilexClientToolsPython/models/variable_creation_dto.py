@@ -41,6 +41,7 @@ class VariableCreationDTO(object):
         'trait_name': 'str',
         'method': 'str',
         'unit': 'str',
+        'species': 'str',
         'datatype': 'str',
         'time_interval': 'str',
         'sampling_interval': 'str',
@@ -61,6 +62,7 @@ class VariableCreationDTO(object):
         'trait_name': 'trait_name',
         'method': 'method',
         'unit': 'unit',
+        'species': 'species',
         'datatype': 'datatype',
         'time_interval': 'time_interval',
         'sampling_interval': 'sampling_interval',
@@ -70,7 +72,7 @@ class VariableCreationDTO(object):
         'narrow_match': 'narrow_match'
     }
 
-    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, datatype=None, time_interval=None, sampling_interval=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
+    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, species=None, datatype=None, time_interval=None, sampling_interval=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
         """VariableCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -83,6 +85,7 @@ class VariableCreationDTO(object):
         self._trait_name = None
         self._method = None
         self._unit = None
+        self._species = None
         self._datatype = None
         self._time_interval = None
         self._sampling_interval = None
@@ -108,6 +111,8 @@ class VariableCreationDTO(object):
         if method is not None:
             self.method = method
         self.unit = unit
+        if species is not None:
+            self.species = species
         self.datatype = datatype
         if time_interval is not None:
             self.time_interval = time_interval
@@ -339,6 +344,27 @@ class VariableCreationDTO(object):
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
 
         self._unit = unit
+
+    @property
+    def species(self):
+        """Gets the species of this VariableCreationDTO.  # noqa: E501
+
+
+        :return: The species of this VariableCreationDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._species
+
+    @species.setter
+    def species(self, species):
+        """Sets the species of this VariableCreationDTO.
+
+
+        :param species: The species of this VariableCreationDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._species = species
 
     @property
     def datatype(self):

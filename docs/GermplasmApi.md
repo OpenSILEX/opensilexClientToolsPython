@@ -32,7 +32,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 body = opensilexClientToolsPython.GermplasmCreationDTO() # GermplasmCreationDTO | Germplasm description (optional)
 check_only = false # bool | Checking only (optional) (default to false)
@@ -86,7 +86,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uri = 'http://example.com/' # str | Germplasm URI
 
@@ -137,7 +137,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Regex pattern for filtering list by uri (optional)
 rdf_type = 'http://www.opensilex.org/vocabulary/oeso#Variety' # str | Search by type (optional)
@@ -210,7 +210,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of germplasm URI (optional)
 
@@ -261,7 +261,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uri = 'http://www.phenome-fppn.fr/id/species/zeamays' # str | germplasm URI
 
@@ -313,7 +313,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uri = 'dev-germplasm:g01' # str | germplasm URI
 name = '.*' # str | Regex pattern for filtering experiments by name (optional) (default to .*)
@@ -373,7 +373,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uris = ['uris_example'] # list[str] | Germplasms URIs
 
@@ -425,7 +425,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Regex pattern for filtering list by uri (optional)
 rdf_type = 'http://www.opensilex.org/vocabulary/oeso#Variety' # str | Search by type (optional)
@@ -438,7 +438,7 @@ accession = 'accession_example' # str | Search by accession (optional)
 institute = 'INRA' # str | Search by institute (optional)
 experiment = 'experiment_example' # str | Search by experiment (optional)
 metadata = '{ \"water_stress\" : \"resistant\", \"yield\" : \"moderate\"}' # str | Search by metadata (optional)
-order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -503,7 +503,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 body = opensilexClientToolsPython.GermplasmUpdateDTO() # GermplasmUpdateDTO | Germplasm description (optional)
 

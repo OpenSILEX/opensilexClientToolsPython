@@ -35,7 +35,7 @@ class DataFileGetDTO(object):
         'rdf_type': 'str',
         '_date': 'str',
         'timezone': 'str',
-        'scientific_object': 'str',
+        'target': 'str',
         'provenance': 'DataProvenanceModel',
         'metadata': 'dict(str, object)'
     }
@@ -45,19 +45,19 @@ class DataFileGetDTO(object):
         'rdf_type': 'rdf_type',
         '_date': 'date',
         'timezone': 'timezone',
-        'scientific_object': 'scientific_object',
+        'target': 'target',
         'provenance': 'provenance',
         'metadata': 'metadata'
     }
 
-    def __init__(self, uri=None, rdf_type=None, _date=None, timezone=None, scientific_object=None, provenance=None, metadata=None):  # noqa: E501
+    def __init__(self, uri=None, rdf_type=None, _date=None, timezone=None, target=None, provenance=None, metadata=None):  # noqa: E501
         """DataFileGetDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
         self._rdf_type = None
         self.__date = None
         self._timezone = None
-        self._scientific_object = None
+        self._target = None
         self._provenance = None
         self._metadata = None
         self.discriminator = None
@@ -68,8 +68,8 @@ class DataFileGetDTO(object):
             self._date = _date
         if timezone is not None:
             self.timezone = timezone
-        if scientific_object is not None:
-            self.scientific_object = scientific_object
+        if target is not None:
+            self.target = target
         self.provenance = provenance
         if metadata is not None:
             self.metadata = metadata
@@ -169,27 +169,27 @@ class DataFileGetDTO(object):
         self._timezone = timezone
 
     @property
-    def scientific_object(self):
-        """Gets the scientific_object of this DataFileGetDTO.  # noqa: E501
+    def target(self):
+        """Gets the target of this DataFileGetDTO.  # noqa: E501
 
-        scientific objects URIs on which the data have been collected  # noqa: E501
+        target URI on which the data have been collected  # noqa: E501
 
-        :return: The scientific_object of this DataFileGetDTO.  # noqa: E501
+        :return: The target of this DataFileGetDTO.  # noqa: E501
         :rtype: str
         """
-        return self._scientific_object
+        return self._target
 
-    @scientific_object.setter
-    def scientific_object(self, scientific_object):
-        """Sets the scientific_object of this DataFileGetDTO.
+    @target.setter
+    def target(self, target):
+        """Sets the target of this DataFileGetDTO.
 
-        scientific objects URIs on which the data have been collected  # noqa: E501
+        target URI on which the data have been collected  # noqa: E501
 
-        :param scientific_object: The scientific_object of this DataFileGetDTO.  # noqa: E501
+        :param target: The target of this DataFileGetDTO.  # noqa: E501
         :type: str
         """
 
-        self._scientific_object = scientific_object
+        self._target = target
 
     @property
     def provenance(self):

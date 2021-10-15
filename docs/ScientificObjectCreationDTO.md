@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uri** | **str** |  | [optional] 
+**uri** | **str** | Scientific object URI | [optional] 
 **rdf_type** | **str** | Scientific object type | 
-**name** | **str** | Scientific object name | [optional] 
+**name** | **str** | Scientific object name | 
 **experiment** | **str** | Scientific object experiment URI | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **geometry** | [**GeoJsonObject**](GeoJsonObject.md) | The geographical coordinates of the Geospatial | [optional] 

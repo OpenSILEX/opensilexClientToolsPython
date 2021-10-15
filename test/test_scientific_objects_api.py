@@ -134,8 +134,8 @@ class TestScientificObjectsApi(unittest.TestCase):
         """
         pass
 
-    def test_validate_csv1(self):
-        """Test case for validate_csv1
+    def test_validate_csv2(self):
+        """Test case for validate_csv2
 
         Validate a CSV file for the given experiment URI and scientific object type.  # noqa: E501
         """

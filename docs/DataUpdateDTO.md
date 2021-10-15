@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **uri** | **str** | URI of the data being updated | 
 **_date** | **str** | date or datetime | 
 **timezone** | **str** | to specify if the offset is not in the date and if the timezone is different from the default one | [optional] 
-**scientific_object** | **str** | scientific objects URI on which the data have been collected | [optional] 
+**target** | **str** | target URI on which the data have been collected (e.g. a scientific object) | [optional] 
 **variable** | **str** | variable URI | 
 **value** | **object** | can be decimal, integer, boolean, string or date | 
 **confidence** | **float** | confidence index | [optional] 

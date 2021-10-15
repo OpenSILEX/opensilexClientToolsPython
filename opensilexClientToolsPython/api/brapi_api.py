@@ -136,6 +136,129 @@ class BRAPIApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_germplasm_by_search(self, **kwargs):  # noqa: E501
+        """Submit a search request for germplasm  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_germplasm_by_search(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str germplasm_db_id: Search by germplasmDbId
+        :param str germplasm_pui: Search by germplasmPUI
+        :param str germplasm_name: Search by germplasmName
+        :param str common_crop_name: Search by commonCropName
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: GermplasmDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_germplasm_by_search_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_germplasm_by_search_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_germplasm_by_search_with_http_info(self, **kwargs):  # noqa: E501
+        """Submit a search request for germplasm  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_germplasm_by_search_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str germplasm_db_id: Search by germplasmDbId
+        :param str germplasm_pui: Search by germplasmPUI
+        :param str germplasm_name: Search by germplasmName
+        :param str common_crop_name: Search by commonCropName
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: GermplasmDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['germplasm_db_id', 'germplasm_pui', 'germplasm_name', 'common_crop_name', 'page', 'page_size', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_germplasm_by_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `get_germplasm_by_search`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'page_size' in params and params['page_size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page_size` when calling `get_germplasm_by_search`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'germplasm_db_id' in params:
+            query_params.append(('germplasmDbId', params['germplasm_db_id']))  # noqa: E501
+        if 'germplasm_pui' in params:
+            query_params.append(('germplasmPUI', params['germplasm_pui']))  # noqa: E501
+        if 'germplasm_name' in params:
+            query_params.append(('germplasmName', params['germplasm_name']))  # noqa: E501
+        if 'common_crop_name' in params:
+            query_params.append(('commonCropName', params['common_crop_name']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/brapi/v1/germplasm', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GermplasmDTO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_observation_units(self, study_db_id, **kwargs):  # noqa: E501
         """List all the observation units measured in the study.  # noqa: E501
 

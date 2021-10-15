@@ -28,7 +28,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AreaApi(pythonClient)
 body = opensilexClientToolsPython.AreaCreationDTO() # AreaCreationDTO | Area description (optional)
 
@@ -80,7 +80,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AreaApi(pythonClient)
 uri = 'uri_example' # str | Area URI
 
@@ -132,7 +132,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AreaApi(pythonClient)
 uri = 'uri_example' # str | area URI
 
@@ -168,7 +168,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_intersects**
-> list[AreaGetDTO] search_intersects(body, authorization, accept_language=accept_language)
+> list[AreaGetDTO] search_intersects(body, authorization, start=start, end=end, accept_language=accept_language)
 
 Get area whose geometry corresponds to the Intersections
 
@@ -184,14 +184,16 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AreaApi(pythonClient)
 body = opensilexClientToolsPython.GeoJsonObject() # GeoJsonObject | geometry GeoJSON
+start = '2019-09-08T12:00:00+01:00' # str | Start date : match temporal area after the given start date (optional)
+end = '2021-09-08T12:00:00+01:00' # str | End date : match temporal area before the given end date (optional)
 
 
 try:
     # Get area whose geometry corresponds to the Intersections
-    api_response = api_instance.search_intersects(body, )
+    api_response = api_instance.search_intersects(body, start=start, end=end, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AreaApi->search_intersects: %s\n" % e)
@@ -202,6 +204,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**GeoJsonObject**](GeoJsonObject.md)| geometry GeoJSON | 
+ **start** | **str**| Start date : match temporal area after the given start date | [optional] 
+ **end** | **str**| End date : match temporal area before the given end date | [optional] 
 
 
 ### Return type
@@ -236,7 +240,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AreaApi(pythonClient)
 body = opensilexClientToolsPython.AreaUpdateDTO() # AreaUpdateDTO | Area description
 

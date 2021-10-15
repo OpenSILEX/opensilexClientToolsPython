@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **missing_headers** | **list[str]** |  | [optional] 
+**empty_headers** | **list[int]** |  | [optional] 
 **invalid_header_ur_is** | **dict(str, str)** |  | [optional] 
 **datatype_errors** | **dict(str, list[CSVDatatypeError])** |  | [optional] 
 **uri_not_found_errors** | **dict(str, list[CSVURINotFoundError])** |  | [optional] 

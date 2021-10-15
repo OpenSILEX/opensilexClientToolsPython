@@ -14,6 +14,7 @@ from opensilexClientToolsPython.api.events_api import EventsApi
 from opensilexClientToolsPython.api.experiments_api import ExperimentsApi
 from opensilexClientToolsPython.api.factors_api import FactorsApi
 from opensilexClientToolsPython.api.germplasm_api import GermplasmApi
+from opensilexClientToolsPython.api.mobile_api import MobileApi
 from opensilexClientToolsPython.api.ontology_api import OntologyApi
 from opensilexClientToolsPython.api.organisations_api import OrganisationsApi
 from opensilexClientToolsPython.api.positions_api import PositionsApi
@@ -21,6 +22,7 @@ from opensilexClientToolsPython.api.projects_api import ProjectsApi
 from opensilexClientToolsPython.api.scientific_objects_api import ScientificObjectsApi
 from opensilexClientToolsPython.api.security_api import SecurityApi
 from opensilexClientToolsPython.api.species_api import SpeciesApi
+from opensilexClientToolsPython.api.system_api import SystemApi
 from opensilexClientToolsPython.api.variables_api import VariablesApi
 from opensilexClientToolsPython.api.vue_js_api import VueJsApi
 from opensilexClientToolsPython.api.vue_js___ontology_extension_api import VueJsOntologyExtensionApi

@@ -33,7 +33,7 @@ class DataGetDTO(object):
     swagger_types = {
         'uri': 'str',
         '_date': 'str',
-        'scientific_object': 'str',
+        'target': 'str',
         'variable': 'str',
         'value': 'object',
         'confidence': 'float',
@@ -45,7 +45,7 @@ class DataGetDTO(object):
     attribute_map = {
         'uri': 'uri',
         '_date': 'date',
-        'scientific_object': 'scientific_object',
+        'target': 'target',
         'variable': 'variable',
         'value': 'value',
         'confidence': 'confidence',
@@ -54,12 +54,12 @@ class DataGetDTO(object):
         'raw_data': 'raw_data'
     }
 
-    def __init__(self, uri=None, _date=None, scientific_object=None, variable=None, value=None, confidence=None, provenance=None, metadata=None, raw_data=None):  # noqa: E501
+    def __init__(self, uri=None, _date=None, target=None, variable=None, value=None, confidence=None, provenance=None, metadata=None, raw_data=None):  # noqa: E501
         """DataGetDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
         self.__date = None
-        self._scientific_object = None
+        self._target = None
         self._variable = None
         self._value = None
         self._confidence = None
@@ -70,8 +70,8 @@ class DataGetDTO(object):
 
         self.uri = uri
         self._date = _date
-        if scientific_object is not None:
-            self.scientific_object = scientific_object
+        if target is not None:
+            self.target = target
         self.variable = variable
         self.value = value
         if confidence is not None:
@@ -133,27 +133,27 @@ class DataGetDTO(object):
         self.__date = _date
 
     @property
-    def scientific_object(self):
-        """Gets the scientific_object of this DataGetDTO.  # noqa: E501
+    def target(self):
+        """Gets the target of this DataGetDTO.  # noqa: E501
 
-        scientific objects URI on which the data have been collected  # noqa: E501
+        target URI on which the data have been collected (e.g. a scientific object)  # noqa: E501
 
-        :return: The scientific_object of this DataGetDTO.  # noqa: E501
+        :return: The target of this DataGetDTO.  # noqa: E501
         :rtype: str
         """
-        return self._scientific_object
+        return self._target
 
-    @scientific_object.setter
-    def scientific_object(self, scientific_object):
-        """Sets the scientific_object of this DataGetDTO.
+    @target.setter
+    def target(self, target):
+        """Sets the target of this DataGetDTO.
 
-        scientific objects URI on which the data have been collected  # noqa: E501
+        target URI on which the data have been collected (e.g. a scientific object)  # noqa: E501
 
-        :param scientific_object: The scientific_object of this DataGetDTO.  # noqa: E501
+        :param target: The target of this DataGetDTO.  # noqa: E501
         :type: str
         """
 
-        self._scientific_object = scientific_object
+        self._target = target
 
     @property
     def variable(self):

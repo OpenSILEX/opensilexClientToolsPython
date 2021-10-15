@@ -29,6 +29,13 @@ class TestDevicesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_count_device_data(self):
+        """Test case for count_device_data
+
+        Count device data  # noqa: E501
+        """
+        pass
+
     def test_create_device(self):
         """Test case for create_device
 
@@ -88,7 +95,7 @@ class TestDevicesApi(unittest.TestCase):
     def test_get_device_variables(self):
         """Test case for get_device_variables
 
-        Get variables measured by the device  # noqa: E501
+        Get variables linked to the device  # noqa: E501
         """
         pass
 

@@ -38,7 +38,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 targets = ['targets_example'] # list[str] | Targets URIs
 
@@ -90,7 +90,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 body = [opensilexClientToolsPython.EventCreationDTO()] # list[EventCreationDTO] |  (optional)
 
@@ -142,7 +142,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 body = [opensilexClientToolsPython.MoveCreationDTO()] # list[MoveCreationDTO] |  (optional)
 
@@ -194,7 +194,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 uri = 'http://opensilex.dev/events/deplacement/1865162374' # str | Event URI
 
@@ -246,7 +246,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 uri = 'http://opensilex.dev/events/deplacement/1865162374' # str | Event URI
 
@@ -298,7 +298,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 uri = 'http://opensilex.dev/events/1865162374' # str | Event URI
 
@@ -350,7 +350,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 uri = 'http://opensilex.dev/events/1865162374' # str | Event URI
 
@@ -402,7 +402,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 uri = 'http://opensilex.dev/events/1865162374' # str | Move URI
 
@@ -454,7 +454,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 file = '/path/to/file.txt' # file | Event file
 
@@ -506,7 +506,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 file = '/path/to/file.txt' # file | Move file
 
@@ -558,14 +558,14 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 rdf_type = 'http://www.opensilex.org/vocabulary/oeev#MoveFrom' # str | Event type (optional)
 start = '2019-09-08T12:00:00+01:00' # str | Start date : match event after the given start date (optional)
 end = '2021-09-08T12:00:00+01:00' # str | End date : match event before the given end date (optional)
-target = 'http://www.opensilex.org/demo/2018/o18000076' # str | Target URI (optional)
+target = 'http://www.opensilex.org/demo/2018/o18000076(exact match) or o18000076(partial match)' # str | Target partial/exact URI (optional)
 description = 'The pest attack' # str | Description regex pattern (optional)
-order_by = ['order_by_example'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['end=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 56 # int | Page number (optional)
 page_size = 56 # int | Page size (optional)
 
@@ -585,7 +585,7 @@ Name | Type | Description  | Notes
  **rdf_type** | **str**| Event type | [optional] 
  **start** | **str**| Start date : match event after the given start date | [optional] 
  **end** | **str**| End date : match event before the given end date | [optional] 
- **target** | **str**| Target URI | [optional] 
+ **target** | **str**| Target partial/exact URI | [optional] 
  **description** | **str**| Description regex pattern | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] 
@@ -624,7 +624,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 body = opensilexClientToolsPython.EventUpdateDTO() # EventUpdateDTO | Event description (optional)
 
@@ -676,7 +676,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 body = opensilexClientToolsPython.MoveUpdateDTO() # MoveUpdateDTO | Event description (optional)
 
@@ -728,7 +728,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 file = '/path/to/file.txt' # file | Event file
 
@@ -780,7 +780,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
 file = '/path/to/file.txt' # file | Move file
 

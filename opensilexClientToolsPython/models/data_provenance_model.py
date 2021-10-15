@@ -33,6 +33,7 @@ class DataProvenanceModel(object):
     swagger_types = {
         'uri': 'str',
         'prov_used': 'list[ProvEntityModel]',
+        'prov_was_associated_with': 'list[ProvEntityModel]',
         'settings': 'dict(str, object)',
         'experiments': 'list[str]'
     }
@@ -40,15 +41,17 @@ class DataProvenanceModel(object):
     attribute_map = {
         'uri': 'uri',
         'prov_used': 'prov_used',
+        'prov_was_associated_with': 'prov_was_associated_with',
         'settings': 'settings',
         'experiments': 'experiments'
     }
 
-    def __init__(self, uri=None, prov_used=None, settings=None, experiments=None):  # noqa: E501
+    def __init__(self, uri=None, prov_used=None, prov_was_associated_with=None, settings=None, experiments=None):  # noqa: E501
         """DataProvenanceModel - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
         self._prov_used = None
+        self._prov_was_associated_with = None
         self._settings = None
         self._experiments = None
         self.discriminator = None
@@ -56,6 +59,8 @@ class DataProvenanceModel(object):
         self.uri = uri
         if prov_used is not None:
             self.prov_used = prov_used
+        if prov_was_associated_with is not None:
+            self.prov_was_associated_with = prov_was_associated_with
         if settings is not None:
             self.settings = settings
         if experiments is not None:
@@ -108,6 +113,29 @@ class DataProvenanceModel(object):
         """
 
         self._prov_used = prov_used
+
+    @property
+    def prov_was_associated_with(self):
+        """Gets the prov_was_associated_with of this DataProvenanceModel.  # noqa: E501
+
+        allow an activity to be linked to an agent  # noqa: E501
+
+        :return: The prov_was_associated_with of this DataProvenanceModel.  # noqa: E501
+        :rtype: list[ProvEntityModel]
+        """
+        return self._prov_was_associated_with
+
+    @prov_was_associated_with.setter
+    def prov_was_associated_with(self, prov_was_associated_with):
+        """Sets the prov_was_associated_with of this DataProvenanceModel.
+
+        allow an activity to be linked to an agent  # noqa: E501
+
+        :param prov_was_associated_with: The prov_was_associated_with of this DataProvenanceModel.  # noqa: E501
+        :type: list[ProvEntityModel]
+        """
+
+        self._prov_was_associated_with = prov_was_associated_with
 
     @property
     def settings(self):

@@ -136,6 +136,162 @@ class DataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def count_data(self, **kwargs):  # noqa: E501
+        """Count data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.count_data(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str start_date: Search by minimal date
+        :param str end_date: Search by maximal date
+        :param str timezone: Precise the timezone corresponding to the given dates
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by target uris
+        :param list[str] variables: Search by variables uris
+        :param list[str] devices: Search by devices uris
+        :param float min_confidence: Search by minimal confidence index
+        :param float max_confidence: Search by maximal confidence index
+        :param list[str] provenances: Search by provenances
+        :param str metadata: Search by metadata
+        :param str accept_language: Request accepted language
+        :return: int
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.count_data_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.count_data_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def count_data_with_http_info(self, **kwargs):  # noqa: E501
+        """Count data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.count_data_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str start_date: Search by minimal date
+        :param str end_date: Search by maximal date
+        :param str timezone: Precise the timezone corresponding to the given dates
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by target uris
+        :param list[str] variables: Search by variables uris
+        :param list[str] devices: Search by devices uris
+        :param float min_confidence: Search by minimal confidence index
+        :param float max_confidence: Search by maximal confidence index
+        :param list[str] provenances: Search by provenances
+        :param str metadata: Search by metadata
+        :param str accept_language: Request accepted language
+        :return: int
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['start_date', 'end_date', 'timezone', 'experiments', 'targets', 'variables', 'devices', 'min_confidence', 'max_confidence', 'provenances', 'metadata', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method count_data" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'min_confidence' in params and params['min_confidence'] > 1:  # noqa: E501
+            raise ValueError("Invalid value for parameter `min_confidence` when calling `count_data`, must be a value less than or equal to `1`")  # noqa: E501
+        if 'min_confidence' in params and params['min_confidence'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `min_confidence` when calling `count_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'max_confidence' in params and params['max_confidence'] > 1:  # noqa: E501
+            raise ValueError("Invalid value for parameter `max_confidence` when calling `count_data`, must be a value less than or equal to `1`")  # noqa: E501
+        if 'max_confidence' in params and params['max_confidence'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `max_confidence` when calling `count_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'timezone' in params:
+            query_params.append(('timezone', params['timezone']))  # noqa: E501
+        if 'experiments' in params:
+            query_params.append(('experiments', params['experiments']))  # noqa: E501
+            collection_formats['experiments'] = 'multi'  # noqa: E501
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))  # noqa: E501
+            collection_formats['targets'] = 'multi'  # noqa: E501
+        if 'variables' in params:
+            query_params.append(('variables', params['variables']))  # noqa: E501
+            collection_formats['variables'] = 'multi'  # noqa: E501
+        if 'devices' in params:
+            query_params.append(('devices', params['devices']))  # noqa: E501
+            collection_formats['devices'] = 'multi'  # noqa: E501
+        if 'min_confidence' in params:
+            query_params.append(('min_confidence', params['min_confidence']))  # noqa: E501
+        if 'max_confidence' in params:
+            query_params.append(('max_confidence', params['max_confidence']))  # noqa: E501
+        if 'provenances' in params:
+            query_params.append(('provenances', params['provenances']))  # noqa: E501
+            collection_formats['provenances'] = 'multi'  # noqa: E501
+        if 'metadata' in params:
+            query_params.append(('metadata', params['metadata']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/data/count', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='int',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_provenance(self, **kwargs):  # noqa: E501
         """Add a provenance  # noqa: E501
 
@@ -358,7 +514,7 @@ class DataApi(object):
         :param async_req bool
         :param str authorization: Authentication token (required)
         :param str experiment: Search by experiment uri
-        :param str scientific_object: Search by object uri
+        :param str target: Search by target uri
         :param str variable: Search by variable uri
         :param str provenance: Search by provenance uri
         :param str accept_language: Request accepted language
@@ -385,7 +541,7 @@ class DataApi(object):
         :param async_req bool
         :param str authorization: Authentication token (required)
         :param str experiment: Search by experiment uri
-        :param str scientific_object: Search by object uri
+        :param str target: Search by target uri
         :param str variable: Search by variable uri
         :param str provenance: Search by provenance uri
         :param str accept_language: Request accepted language
@@ -394,7 +550,7 @@ class DataApi(object):
                  returns the request thread.
         """
 
-        all_params = ['experiment', 'scientific_object', 'variable', 'provenance', ]  # noqa: E501
+        all_params = ['experiment', 'target', 'variable', 'provenance', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -417,8 +573,8 @@ class DataApi(object):
         query_params = []
         if 'experiment' in params:
             query_params.append(('experiment', params['experiment']))  # noqa: E501
-        if 'scientific_object' in params:
-            query_params.append(('scientific_object', params['scientific_object']))  # noqa: E501
+        if 'target' in params:
+            query_params.append(('target', params['target']))  # noqa: E501
         if 'variable' in params:
             query_params.append(('variable', params['variable']))  # noqa: E501
         if 'provenance' in params:
@@ -569,7 +725,7 @@ class DataApi(object):
             collection_formats=collection_formats)
 
     def export_data(self, **kwargs):  # noqa: E501
-        """export data  # noqa: E501
+        """Export data  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -583,13 +739,15 @@ class DataApi(object):
         :param str end_date: Search by maximal date
         :param str timezone: Precise the timezone corresponding to the given dates
         :param list[str] experiments: Search by experiment uris
-        :param list[str] scientific_objects: Search by objects
+        :param list[str] targets: Search by targets
         :param list[str] variables: Search by variables
+        :param list[str] devices: Search by devices uris
         :param float min_confidence: Search by minimal confidence index
         :param float max_confidence: Search by maximal confidence index
         :param list[str] provenances: Search by provenances
         :param str metadata: Search by metadata
         :param str mode: Format wide or long
+        :param bool with_raw_data: Export also raw_data
         :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
         :param int page: Page number
         :param int page_size: Page size
@@ -606,7 +764,7 @@ class DataApi(object):
             return data
 
     def export_data_with_http_info(self, **kwargs):  # noqa: E501
-        """export data  # noqa: E501
+        """Export data  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -620,13 +778,15 @@ class DataApi(object):
         :param str end_date: Search by maximal date
         :param str timezone: Precise the timezone corresponding to the given dates
         :param list[str] experiments: Search by experiment uris
-        :param list[str] scientific_objects: Search by objects
+        :param list[str] targets: Search by targets
         :param list[str] variables: Search by variables
+        :param list[str] devices: Search by devices uris
         :param float min_confidence: Search by minimal confidence index
         :param float max_confidence: Search by maximal confidence index
         :param list[str] provenances: Search by provenances
         :param str metadata: Search by metadata
         :param str mode: Format wide or long
+        :param bool with_raw_data: Export also raw_data
         :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
         :param int page: Page number
         :param int page_size: Page size
@@ -636,7 +796,7 @@ class DataApi(object):
                  returns the request thread.
         """
 
-        all_params = ['start_date', 'end_date', 'timezone', 'experiments', 'scientific_objects', 'variables', 'min_confidence', 'max_confidence', 'provenances', 'metadata', 'mode', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params = ['start_date', 'end_date', 'timezone', 'experiments', 'targets', 'variables', 'devices', 'min_confidence', 'max_confidence', 'provenances', 'metadata', 'mode', 'with_raw_data', 'order_by', 'page', 'page_size', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -678,12 +838,15 @@ class DataApi(object):
         if 'experiments' in params:
             query_params.append(('experiments', params['experiments']))  # noqa: E501
             collection_formats['experiments'] = 'multi'  # noqa: E501
-        if 'scientific_objects' in params:
-            query_params.append(('scientific_objects', params['scientific_objects']))  # noqa: E501
-            collection_formats['scientific_objects'] = 'multi'  # noqa: E501
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))  # noqa: E501
+            collection_formats['targets'] = 'multi'  # noqa: E501
         if 'variables' in params:
             query_params.append(('variables', params['variables']))  # noqa: E501
             collection_formats['variables'] = 'multi'  # noqa: E501
+        if 'devices' in params:
+            query_params.append(('devices', params['devices']))  # noqa: E501
+            collection_formats['devices'] = 'multi'  # noqa: E501
         if 'min_confidence' in params:
             query_params.append(('min_confidence', params['min_confidence']))  # noqa: E501
         if 'max_confidence' in params:
@@ -695,6 +858,8 @@ class DataApi(object):
             query_params.append(('metadata', params['metadata']))  # noqa: E501
         if 'mode' in params:
             query_params.append(('mode', params['mode']))  # noqa: E501
+        if 'with_raw_data' in params:
+            query_params.append(('with_raw_data', params['with_raw_data']))  # noqa: E501
         if 'order_by' in params:
             query_params.append(('order_by', params['order_by']))  # noqa: E501
             collection_formats['order_by'] = 'multi'  # noqa: E501
@@ -1072,8 +1237,9 @@ class DataApi(object):
         :param str start_date: Search by minimal date
         :param str end_date: Search by maximal date
         :param str timezone: Precise the timezone corresponding to the given dates
-        :param list[str] experiment: Search by experiments
-        :param list[str] scientific_objects: Search by object uris list
+        :param list[str] experiments: Search by experiments
+        :param list[str] targets: Search by targets uris list
+        :param list[str] devices: Search by devices uris
         :param list[str] provenances: Search by provenance uris list
         :param str metadata: Search by metadata
         :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
@@ -1106,8 +1272,9 @@ class DataApi(object):
         :param str start_date: Search by minimal date
         :param str end_date: Search by maximal date
         :param str timezone: Precise the timezone corresponding to the given dates
-        :param list[str] experiment: Search by experiments
-        :param list[str] scientific_objects: Search by object uris list
+        :param list[str] experiments: Search by experiments
+        :param list[str] targets: Search by targets uris list
+        :param list[str] devices: Search by devices uris
         :param list[str] provenances: Search by provenance uris list
         :param str metadata: Search by metadata
         :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
@@ -1119,7 +1286,7 @@ class DataApi(object):
                  returns the request thread.
         """
 
-        all_params = ['rdf_type', 'start_date', 'end_date', 'timezone', 'experiment', 'scientific_objects', 'provenances', 'metadata', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params = ['rdf_type', 'start_date', 'end_date', 'timezone', 'experiments', 'targets', 'devices', 'provenances', 'metadata', 'order_by', 'page', 'page_size', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1152,12 +1319,15 @@ class DataApi(object):
             query_params.append(('end_date', params['end_date']))  # noqa: E501
         if 'timezone' in params:
             query_params.append(('timezone', params['timezone']))  # noqa: E501
-        if 'experiment' in params:
-            query_params.append(('experiment', params['experiment']))  # noqa: E501
-            collection_formats['experiment'] = 'multi'  # noqa: E501
-        if 'scientific_objects' in params:
-            query_params.append(('scientific_objects', params['scientific_objects']))  # noqa: E501
-            collection_formats['scientific_objects'] = 'multi'  # noqa: E501
+        if 'experiments' in params:
+            query_params.append(('experiments', params['experiments']))  # noqa: E501
+            collection_formats['experiments'] = 'multi'  # noqa: E501
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))  # noqa: E501
+            collection_formats['targets'] = 'multi'  # noqa: E501
+        if 'devices' in params:
+            query_params.append(('devices', params['devices']))  # noqa: E501
+            collection_formats['devices'] = 'multi'  # noqa: E501
         if 'provenances' in params:
             query_params.append(('provenances', params['provenances']))  # noqa: E501
             collection_formats['provenances'] = 'multi'  # noqa: E501
@@ -1197,6 +1367,120 @@ class DataApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[DataFileGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_datafiles_provenances(self, **kwargs):  # noqa: E501
+        """Get provenances linked to datafiles  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_datafiles_provenances(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
+        :param list[str] devices: Search by devices uris
+        :param str accept_language: Request accepted language
+        :return: list[ProvenanceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_datafiles_provenances_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_datafiles_provenances_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_datafiles_provenances_with_http_info(self, **kwargs):  # noqa: E501
+        """Get provenances linked to datafiles  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_datafiles_provenances_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
+        :param list[str] devices: Search by devices uris
+        :param str accept_language: Request accepted language
+        :return: list[ProvenanceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['experiments', 'targets', 'devices', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_datafiles_provenances" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'experiments' in params:
+            query_params.append(('experiments', params['experiments']))  # noqa: E501
+            collection_formats['experiments'] = 'multi'  # noqa: E501
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))  # noqa: E501
+            collection_formats['targets'] = 'multi'  # noqa: E501
+        if 'devices' in params:
+            query_params.append(('devices', params['devices']))  # noqa: E501
+            collection_formats['devices'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/datafiles/provenances', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ProvenanceGetDTO]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1542,10 +1826,358 @@ class DataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_used_provenances(self, **kwargs):  # noqa: E501
+        """Get provenances linked to data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_used_provenances(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
+        :param list[str] variables: Search by variables uris
+        :param list[str] devices: Search by devices uris
+        :param str accept_language: Request accepted language
+        :return: list[ProvenanceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_used_provenances_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_used_provenances_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_used_provenances_with_http_info(self, **kwargs):  # noqa: E501
+        """Get provenances linked to data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_used_provenances_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
+        :param list[str] variables: Search by variables uris
+        :param list[str] devices: Search by devices uris
+        :param str accept_language: Request accepted language
+        :return: list[ProvenanceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['experiments', 'targets', 'variables', 'devices', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_used_provenances" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'experiments' in params:
+            query_params.append(('experiments', params['experiments']))  # noqa: E501
+            collection_formats['experiments'] = 'multi'  # noqa: E501
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))  # noqa: E501
+            collection_formats['targets'] = 'multi'  # noqa: E501
+        if 'variables' in params:
+            query_params.append(('variables', params['variables']))  # noqa: E501
+            collection_formats['variables'] = 'multi'  # noqa: E501
+        if 'devices' in params:
+            query_params.append(('devices', params['devices']))  # noqa: E501
+            collection_formats['devices'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/data/provenances', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ProvenanceGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_used_variables(self, **kwargs):  # noqa: E501
+        """Get variables linked to data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_used_variables(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
+        :param list[str] provenances: Search by provenance uris
+        :param str accept_language: Request accepted language
+        :return: list[ProvenanceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_used_variables_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.get_used_variables_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def get_used_variables_with_http_info(self, **kwargs):  # noqa: E501
+        """Get variables linked to data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_used_variables_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
+        :param list[str] provenances: Search by provenance uris
+        :param str accept_language: Request accepted language
+        :return: list[ProvenanceGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['experiments', 'targets', 'provenances', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_used_variables" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'experiments' in params:
+            query_params.append(('experiments', params['experiments']))  # noqa: E501
+            collection_formats['experiments'] = 'multi'  # noqa: E501
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))  # noqa: E501
+            collection_formats['targets'] = 'multi'  # noqa: E501
+        if 'provenances' in params:
+            query_params.append(('provenances', params['provenances']))  # noqa: E501
+            collection_formats['provenances'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/data/variables', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[ProvenanceGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def import_csv_data(self, provenance, file, **kwargs):  # noqa: E501
+        """Import a CSV file for the given provenanceURI  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.import_csv_data(provenance, file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provenance: Provenance URI (required)
+        :param file file: File (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: DataCSVValidationDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.import_csv_data_with_http_info(provenance, file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.import_csv_data_with_http_info(provenance, file, **kwargs)  # noqa: E501
+            return data
+
+    def import_csv_data_with_http_info(self, provenance, file, **kwargs):  # noqa: E501
+        """Import a CSV file for the given provenanceURI  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.import_csv_data_with_http_info(provenance, file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provenance: Provenance URI (required)
+        :param file file: File (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: DataCSVValidationDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provenance', 'file', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method import_csv_data" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'provenance' is set
+        if ('provenance' not in params or
+                params['provenance'] is None):
+            raise ValueError("Missing the required parameter `provenance` when calling `import_csv_data`")  # noqa: E501
+        # verify the required parameter 'file' is set
+        if ('file' not in params or
+                params['file'] is None):
+            raise ValueError("Missing the required parameter `file` when calling `import_csv_data`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'provenance' in params:
+            query_params.append(('provenance', params['provenance']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'file' in params:
+            local_var_files['file'] = params['file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/data/import', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DataCSVValidationDTO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def post_data_file(self, description, file, **kwargs):  # noqa: E501
         """Add a data file  # noqa: E501
 
-        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"scientific_object\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
+        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"targets\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_data_file(description, file, async_req=True)
@@ -1570,7 +2202,7 @@ class DataApi(object):
     def post_data_file_with_http_info(self, description, file, **kwargs):  # noqa: E501
         """Add a data file  # noqa: E501
 
-        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"scientific_object\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
+        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"targets\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_data_file_with_http_info(description, file, async_req=True)
@@ -1778,9 +2410,10 @@ class DataApi(object):
         :param str start_date: Search by minimal date
         :param str end_date: Search by maximal date
         :param str timezone: Precise the timezone corresponding to the given dates
-        :param list[str] experiment: Search by experiment uris
-        :param list[str] scientific_objects: Search by objects uris
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
         :param list[str] variables: Search by variables uris
+        :param list[str] devices: Search by devices uris
         :param float min_confidence: Search by minimal confidence index
         :param float max_confidence: Search by maximal confidence index
         :param list[str] provenances: Search by provenances
@@ -1814,9 +2447,10 @@ class DataApi(object):
         :param str start_date: Search by minimal date
         :param str end_date: Search by maximal date
         :param str timezone: Precise the timezone corresponding to the given dates
-        :param list[str] experiment: Search by experiment uris
-        :param list[str] scientific_objects: Search by objects uris
+        :param list[str] experiments: Search by experiment uris
+        :param list[str] targets: Search by targets uris
         :param list[str] variables: Search by variables uris
+        :param list[str] devices: Search by devices uris
         :param float min_confidence: Search by minimal confidence index
         :param float max_confidence: Search by maximal confidence index
         :param list[str] provenances: Search by provenances
@@ -1830,7 +2464,7 @@ class DataApi(object):
                  returns the request thread.
         """
 
-        all_params = ['start_date', 'end_date', 'timezone', 'experiment', 'scientific_objects', 'variables', 'min_confidence', 'max_confidence', 'provenances', 'metadata', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params = ['start_date', 'end_date', 'timezone', 'experiments', 'targets', 'variables', 'devices', 'min_confidence', 'max_confidence', 'provenances', 'metadata', 'order_by', 'page', 'page_size', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1869,15 +2503,18 @@ class DataApi(object):
             query_params.append(('end_date', params['end_date']))  # noqa: E501
         if 'timezone' in params:
             query_params.append(('timezone', params['timezone']))  # noqa: E501
-        if 'experiment' in params:
-            query_params.append(('experiment', params['experiment']))  # noqa: E501
-            collection_formats['experiment'] = 'multi'  # noqa: E501
-        if 'scientific_objects' in params:
-            query_params.append(('scientific_objects', params['scientific_objects']))  # noqa: E501
-            collection_formats['scientific_objects'] = 'multi'  # noqa: E501
+        if 'experiments' in params:
+            query_params.append(('experiments', params['experiments']))  # noqa: E501
+            collection_formats['experiments'] = 'multi'  # noqa: E501
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))  # noqa: E501
+            collection_formats['targets'] = 'multi'  # noqa: E501
         if 'variables' in params:
             query_params.append(('variables', params['variables']))  # noqa: E501
             collection_formats['variables'] = 'multi'  # noqa: E501
+        if 'devices' in params:
+            query_params.append(('devices', params['devices']))  # noqa: E501
+            collection_formats['devices'] = 'multi'  # noqa: E501
         if 'min_confidence' in params:
             query_params.append(('min_confidence', params['min_confidence']))  # noqa: E501
         if 'max_confidence' in params:
@@ -2175,109 +2812,6 @@ class DataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update1(self, **kwargs):  # noqa: E501
-        """Update a provenance  # noqa: E501
-
-          # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update1(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str authorization: Authentication token (required)
-        :param ProvenanceUpdateDTO body: Provenance description
-        :param str accept_language: Request accepted language
-        :return: ObjectUriResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.update1_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.update1_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def update1_with_http_info(self, **kwargs):  # noqa: E501
-        """Update a provenance  # noqa: E501
-
-          # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update1_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str authorization: Authentication token (required)
-        :param ProvenanceUpdateDTO body: Provenance description
-        :param str accept_language: Request accepted language
-        :return: ObjectUriResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', ]  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method update1" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-        #if 'authorization' in params:
-        #    header_params['Authorization'] = params['authorization']  # noqa: E501
-        #if 'accept_language' in params:
-        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/core/provenances', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='ObjectUriResponse',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def update_confidence(self, uri, **kwargs):  # noqa: E501
         """Update confidence index  # noqa: E501
 
@@ -2382,6 +2916,224 @@ class DataApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ObjectUriResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_provenance(self, **kwargs):  # noqa: E501
+        """Update a provenance  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_provenance(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param ProvenanceUpdateDTO body: Provenance description
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_provenance_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.update_provenance_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def update_provenance_with_http_info(self, **kwargs):  # noqa: E501
+        """Update a provenance  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_provenance_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param ProvenanceUpdateDTO body: Provenance description
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_provenance" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/provenances', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ObjectUriResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def validate_csv(self, provenance, file, **kwargs):  # noqa: E501
+        """Import a CSV file for the given provenanceURI.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_csv(provenance, file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provenance: Provenance URI (required)
+        :param file file: File (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: DataCSVValidationDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.validate_csv_with_http_info(provenance, file, **kwargs)  # noqa: E501
+        else:
+            (data) = self.validate_csv_with_http_info(provenance, file, **kwargs)  # noqa: E501
+            return data
+
+    def validate_csv_with_http_info(self, provenance, file, **kwargs):  # noqa: E501
+        """Import a CSV file for the given provenanceURI.  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.validate_csv_with_http_info(provenance, file, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str provenance: Provenance URI (required)
+        :param file file: File (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: DataCSVValidationDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provenance', 'file', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method validate_csv" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'provenance' is set
+        if ('provenance' not in params or
+                params['provenance'] is None):
+            raise ValueError("Missing the required parameter `provenance` when calling `validate_csv`")  # noqa: E501
+        # verify the required parameter 'file' is set
+        if ('file' not in params or
+                params['file'] is None):
+            raise ValueError("Missing the required parameter `file` when calling `validate_csv`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'provenance' in params:
+            query_params.append(('provenance', params['provenance']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+        if 'file' in params:
+            local_var_files['file'] = params['file']  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/data/import_validation', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DataCSVValidationDTO',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

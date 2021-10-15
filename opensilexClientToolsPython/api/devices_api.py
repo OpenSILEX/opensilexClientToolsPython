@@ -33,6 +33,160 @@ class DevicesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def count_device_data(self, uri, **kwargs):  # noqa: E501
+        """Count device data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.count_device_data(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Device URI (required)
+        :param str authorization: Authentication token (required)
+        :param str start_date: Search by minimal date
+        :param str end_date: Search by maximal date
+        :param str timezone: Precise the timezone corresponding to the given dates
+        :param list[str] experiment: Search by experiment uris
+        :param list[str] variable: Search by variables
+        :param float min_confidence: Search by minimal confidence index
+        :param float max_confidence: Search by maximal confidence index
+        :param list[str] provenance: Search by provenance uri
+        :param str metadata: Search by metadata
+        :param str accept_language: Request accepted language
+        :return: int
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.count_device_data_with_http_info(uri, **kwargs)  # noqa: E501
+        else:
+            (data) = self.count_device_data_with_http_info(uri, **kwargs)  # noqa: E501
+            return data
+
+    def count_device_data_with_http_info(self, uri, **kwargs):  # noqa: E501
+        """Count device data  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.count_device_data_with_http_info(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Device URI (required)
+        :param str authorization: Authentication token (required)
+        :param str start_date: Search by minimal date
+        :param str end_date: Search by maximal date
+        :param str timezone: Precise the timezone corresponding to the given dates
+        :param list[str] experiment: Search by experiment uris
+        :param list[str] variable: Search by variables
+        :param float min_confidence: Search by minimal confidence index
+        :param float max_confidence: Search by maximal confidence index
+        :param list[str] provenance: Search by provenance uri
+        :param str metadata: Search by metadata
+        :param str accept_language: Request accepted language
+        :return: int
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uri', 'start_date', 'end_date', 'timezone', 'experiment', 'variable', 'min_confidence', 'max_confidence', 'provenance', 'metadata', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method count_device_data" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uri' is set
+        if ('uri' not in params or
+                params['uri'] is None):
+            raise ValueError("Missing the required parameter `uri` when calling `count_device_data`")  # noqa: E501
+
+        if 'min_confidence' in params and params['min_confidence'] > 1:  # noqa: E501
+            raise ValueError("Invalid value for parameter `min_confidence` when calling `count_device_data`, must be a value less than or equal to `1`")  # noqa: E501
+        if 'min_confidence' in params and params['min_confidence'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `min_confidence` when calling `count_device_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'max_confidence' in params and params['max_confidence'] > 1:  # noqa: E501
+            raise ValueError("Invalid value for parameter `max_confidence` when calling `count_device_data`, must be a value less than or equal to `1`")  # noqa: E501
+        if 'max_confidence' in params and params['max_confidence'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `max_confidence` when calling `count_device_data`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'uri' in params:
+            path_params['uri'] = params['uri']  # noqa: E501
+
+        query_params = []
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'timezone' in params:
+            query_params.append(('timezone', params['timezone']))  # noqa: E501
+        if 'experiment' in params:
+            query_params.append(('experiment', params['experiment']))  # noqa: E501
+            collection_formats['experiment'] = 'multi'  # noqa: E501
+        if 'variable' in params:
+            query_params.append(('variable', params['variable']))  # noqa: E501
+            collection_formats['variable'] = 'multi'  # noqa: E501
+        if 'min_confidence' in params:
+            query_params.append(('min_confidence', params['min_confidence']))  # noqa: E501
+        if 'max_confidence' in params:
+            query_params.append(('max_confidence', params['max_confidence']))  # noqa: E501
+        if 'provenance' in params:
+            query_params.append(('provenance', params['provenance']))  # noqa: E501
+            collection_formats['provenance'] = 'multi'  # noqa: E501
+        if 'metadata' in params:
+            query_params.append(('metadata', params['metadata']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/devices/{uri}/data/count', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='int',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_device(self, **kwargs):  # noqa: E501
         """Create a device  # noqa: E501
 
@@ -919,7 +1073,7 @@ class DevicesApi(object):
             collection_formats=collection_formats)
 
     def get_device_variables(self, uri, **kwargs):  # noqa: E501
-        """Get variables measured by the device  # noqa: E501
+        """Get variables linked to the device  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
@@ -943,7 +1097,7 @@ class DevicesApi(object):
             return data
 
     def get_device_variables_with_http_info(self, uri, **kwargs):  # noqa: E501
-        """Get variables measured by the device  # noqa: E501
+        """Get variables linked to the device  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an

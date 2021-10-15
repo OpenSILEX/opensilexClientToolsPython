@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **trait_name** | **str** |  | [optional] 
 **method** | **str** |  | [optional] 
 **unit** | **str** |  | 
+**species** | **str** |  | [optional] 
 **datatype** | **str** |  | 
 **time_interval** | **str** |  | [optional] 
 **sampling_interval** | **str** |  | [optional] 

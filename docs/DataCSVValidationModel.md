@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **missing_headers** | **list[str]** |  | [optional] 
+**empty_headers** | **list[int]** |  | [optional] 
 **invalid_header_ur_is** | **dict(str, str)** |  | [optional] 
 **datatype_errors** | **dict(str, list[CSVDatatypeError])** |  | [optional] 
 **uri_not_found_errors** | **dict(str, list[CSVURINotFoundError])** |  | [optional] 
@@ -15,7 +16,12 @@ Name | Type | Description | Notes
 **invalid_object_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **invalid_date_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **invalid_data_type_errors** | **dict(str, list[CSVCell])** |  | [optional] 
+**invalid_experiment_errors** | **dict(str, list[CSVCell])** |  | [optional] 
+**invalid_device_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **duplicated_data_errors** | **dict(str, list[CSVCell])** |  | [optional] 
+**duplicated_object_errors** | **dict(str, list[CSVCell])** |  | [optional] 
+**duplicated_experiment_errors** | **dict(str, list[CSVCell])** |  | [optional] 
+**duplicated_device_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **headers** | **list[str]** |  | [optional] 
 **headers_labels** | **list[str]** |  | [optional] 
 **nb_lines_imported** | **int** |  | [optional] 

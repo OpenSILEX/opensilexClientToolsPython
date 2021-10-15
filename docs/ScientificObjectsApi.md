@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**search_scientific_objects**](ScientificObjectsApi.md#search_scientific_objects) | **GET** /core/scientific_objects | Search list of scientific objects
 [**search_scientific_objects_with_geometry_list_by_uris**](ScientificObjectsApi.md#search_scientific_objects_with_geometry_list_by_uris) | **GET** /core/scientific_objects/geometry | Get scientific objet list with geometry of a given experiment URI
 [**update_scientific_object**](ScientificObjectsApi.md#update_scientific_object) | **PUT** /core/scientific_objects | Update a scientific object for the given experiment
-[**validate_csv1**](ScientificObjectsApi.md#validate_csv1) | **POST** /core/scientific_objects/import_validation | Validate a CSV file for the given experiment URI and scientific object type.
+[**validate_csv2**](ScientificObjectsApi.md#validate_csv2) | **POST** /core/scientific_objects/import_validation | Validate a CSV file for the given experiment URI and scientific object type.
 
 
 # **create_scientific_object**
@@ -39,7 +39,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 body = opensilexClientToolsPython.ScientificObjectCreationDTO() # ScientificObjectCreationDTO | Scientific object description
 
@@ -91,10 +91,10 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = 'http://example.com/' # str | scientific object URI
-experiment = 'http://example.com/' # str | Experiment URI (optional)
+uri = 'http://opensilex.org/id/Plot 12' # str | scientific object URI
+experiment = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI (optional)
 
 
 try:
@@ -145,9 +145,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-body = opensilexClientToolsPython.ScientificObjectCsvExportDTO() # ScientificObjectCsvExportDTO | CSV export configuration (optional)
+body = opensilexClientToolsPython.ScientificObjectSearchDTO() # ScientificObjectSearchDTO | CSV export configuration (optional)
 
 
 try:
@@ -161,7 +161,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ScientificObjectCsvExportDTO**](ScientificObjectCsvExportDTO.md)| CSV export configuration | [optional] 
+ **body** | [**ScientificObjectSearchDTO**](ScientificObjectSearchDTO.md)| CSV export configuration | [optional] 
 
 
 ### Return type
@@ -196,9 +196,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = 'http://example.com/' # str | Scientific Object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | Scientific Object URI
 
 
 try:
@@ -248,9 +248,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = 'http://example.com/' # str | Scientific Object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | Scientific Object URI
 
 
 try:
@@ -300,7 +300,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 uri = 'http://opensilex.org/set/scientific-objects/so-1357dz_pg_34zm4384wwveg_323_37arch2017-03-30' # str | scientific object URI
 experiment = 'http://opensilex.org/set/experiments/21ik1_cims-on' # str | Experiment URI (optional)
@@ -354,9 +354,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = 'http://example.com/' # str | scientific object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | scientific object URI
 
 
 try:
@@ -406,9 +406,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = 'http://example.com/' # str | Scientific Object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | Scientific Object URI
 
 
 try:
@@ -442,7 +442,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_scientific_objects_children**
-> list[ScientificObjectNodeWithChildrenDTO] get_scientific_objects_children(authorization, parent=parent, experiment=experiment, facility=facility, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[ScientificObjectNodeWithChildrenDTO] get_scientific_objects_children(authorization, parent=parent, experiment=experiment, rdf_types=rdf_types, name=name, factor_levels=factor_levels, facility=facility, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Get list of scientific object children
 
@@ -458,10 +458,13 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-parent = 'http://example.com/' # str | Parent object URI (optional)
-experiment = 'http://example.com/' # str | Experiment URI (optional)
+parent = 'http://opensilex.org/id/Plot 12' # str | Parent object URI (optional)
+experiment = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI (optional)
+rdf_types = ['vocabulary:Plant'] # list[str] | RDF type filter (optional)
+name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
+factor_levels = ['vocabulary:IrrigationStress'] # list[str] | Factor levels URI (optional)
 facility = 'diaphen:serre-2' # str | Facility (optional)
 order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
@@ -470,7 +473,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Get list of scientific object children
-    api_response = api_instance.get_scientific_objects_children(parent=parent, experiment=experiment, facility=facility, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.get_scientific_objects_children(parent=parent, experiment=experiment, rdf_types=rdf_types, name=name, factor_levels=factor_levels, facility=facility, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_objects_children: %s\n" % e)
@@ -482,6 +485,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **parent** | **str**| Parent object URI | [optional] 
  **experiment** | **str**| Experiment URI | [optional] 
+ **rdf_types** | [**list[str]**](str.md)| RDF type filter | [optional] 
+ **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
+ **factor_levels** | [**list[str]**](str.md)| Factor levels URI | [optional] 
  **facility** | **str**| Facility | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
@@ -520,9 +526,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = 'http://example.com/' # str | Experiment URI (optional)
+experiment = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI (optional)
 body = [opensilexClientToolsPython.list[str]()] # list[str] | Scientific object uris (optional)
 
 
@@ -574,9 +580,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = 'http://example.com/' # str | Experiment URI (optional)
+experiment = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI (optional)
 
 
 try:
@@ -626,7 +632,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 description = 'description_example' # str | File description with metadata
 file = '/path/to/file.txt' # file | Data file
@@ -680,18 +686,18 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = 'http://example.com/' # str | Experiment URI (optional)
+experiment = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI (optional)
 rdf_types = ['vocabulary:Plant'] # list[str] | RDF type filter (optional)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
-parent = 'http://example.com/' # str | Parent URI (optional)
+parent = 'http://opensilex.org/id/Plot 12' # str | Parent URI (optional)
 germplasm = 'http://aims.fao.org/aos/agrovoc/c_1066' # str | Germplasm URI (optional)
 factor_levels = ['vocabulary:IrrigationStress'] # list[str] | Factor levels URI (optional)
 facility = 'diaphen:serre-2' # str | Facility (optional)
 existence_date = '2013-10-20' # date | Date to filter object existence (optional)
 creation_date = '2013-10-20' # date | Date to filter object creation (optional)
-order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -738,7 +744,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_scientific_objects_with_geometry_list_by_uris**
-> list[ScientificObjectNodeDTO] search_scientific_objects_with_geometry_list_by_uris(experiment, authorization, accept_language=accept_language)
+> list[ScientificObjectNodeDTO] search_scientific_objects_with_geometry_list_by_uris(experiment, authorization, start_date=start_date, end_date=end_date, accept_language=accept_language)
 
 Get scientific objet list with geometry of a given experiment URI
 
@@ -754,14 +760,16 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 experiment = 'http://example.com/' # str | Context URI
+start_date = '2020-08-21' # str | Search by minimal date (optional)
+end_date = '2020-08-22' # str | Search by maximal date (optional)
 
 
 try:
     # Get scientific objet list with geometry of a given experiment URI
-    api_response = api_instance.search_scientific_objects_with_geometry_list_by_uris(experiment, )
+    api_response = api_instance.search_scientific_objects_with_geometry_list_by_uris(experiment, start_date=start_date, end_date=end_date, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ScientificObjectsApi->search_scientific_objects_with_geometry_list_by_uris: %s\n" % e)
@@ -772,6 +780,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **experiment** | **str**| Context URI | 
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
 
 
 ### Return type
@@ -806,9 +816,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-body = opensilexClientToolsPython.ScientificObjectCreationDTO() # ScientificObjectCreationDTO | Scientific object description
+body = opensilexClientToolsPython.ScientificObjectUpdateDTO() # ScientificObjectUpdateDTO | Scientific object description
 
 
 try:
@@ -823,7 +833,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ScientificObjectCreationDTO**](ScientificObjectCreationDTO.md)| Scientific object description | 
+ **body** | [**ScientificObjectUpdateDTO**](ScientificObjectUpdateDTO.md)| Scientific object description | 
 
 
 ### Return type
@@ -841,8 +851,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **validate_csv1**
-> CSVValidationDTO validate_csv1(description, file, authorization, accept_language=accept_language)
+# **validate_csv2**
+> CSVValidationDTO validate_csv2(description, file, authorization, accept_language=accept_language)
 
 Validate a CSV file for the given experiment URI and scientific object type.
 
@@ -858,7 +868,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 description = 'description_example' # str | File description with metadata
 file = '/path/to/file.txt' # file | Data file
@@ -866,10 +876,10 @@ file = '/path/to/file.txt' # file | Data file
 
 try:
     # Validate a CSV file for the given experiment URI and scientific object type.
-    api_response = api_instance.validate_csv1(description, file, )
+    api_response = api_instance.validate_csv2(description, file, )
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ScientificObjectsApi->validate_csv1: %s\n" % e)
+    print("Exception when calling ScientificObjectsApi->validate_csv2: %s\n" % e)
 ```
 
 ### Parameters

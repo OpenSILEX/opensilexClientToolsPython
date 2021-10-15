@@ -13,13 +13,13 @@ Method | HTTP request | Description
 [**get_experiment**](ExperimentsApi.md#get_experiment) | **GET** /core/experiments/{uri} | Get an experiment
 [**get_experiments_by_ur_is**](ExperimentsApi.md#get_experiments_by_ur_is) | **GET** /core/experiments/by_uris | Get experiments URIs
 [**get_facilities**](ExperimentsApi.md#get_facilities) | **GET** /core/experiments/{uri}/facilities | Get facilities involved in an experiment
-[**get_used_variables**](ExperimentsApi.md#get_used_variables) | **GET** /core/experiments/{uri}/variables | Get variables involved in an experiment
-[**import_csv_data**](ExperimentsApi.md#import_csv_data) | **POST** /core/experiments/{uri}/data/import | Import a CSV file for the given experiment URI and scientific object type.
+[**get_used_variables1**](ExperimentsApi.md#get_used_variables1) | **GET** /core/experiments/{uri}/variables | Get variables involved in an experiment
+[**import_csv_data1**](ExperimentsApi.md#import_csv_data1) | **POST** /core/experiments/{uri}/data/import | Import a CSV file for the given experiment URI and scientific object type.
 [**search_experiment_data_list**](ExperimentsApi.md#search_experiment_data_list) | **GET** /core/experiments/{uri}/data | Search data
 [**search_experiment_provenances**](ExperimentsApi.md#search_experiment_provenances) | **GET** /core/experiments/{uri}/provenances | Get provenances involved in an experiment
 [**search_experiments**](ExperimentsApi.md#search_experiments) | **GET** /core/experiments | Search experiments
 [**update_experiment**](ExperimentsApi.md#update_experiment) | **PUT** /core/experiments | Update an experiment
-[**validate_csv**](ExperimentsApi.md#validate_csv) | **POST** /core/experiments/{uri}/data/import_validation | Import a CSV file for the given experiment URI and scientific object type.
+[**validate_csv1**](ExperimentsApi.md#validate_csv1) | **POST** /core/experiments/{uri}/data/import_validation | Import a CSV file for the given experiment URI and scientific object type.
 
 
 # **create_experiment**
@@ -39,7 +39,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 body = opensilexClientToolsPython.ExperimentCreationDTO() # ExperimentCreationDTO | Experiment description (optional)
 
@@ -91,7 +91,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 
@@ -143,7 +143,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
@@ -220,7 +220,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 
@@ -272,7 +272,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 
@@ -324,7 +324,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 
@@ -376,9 +376,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = 'http://opensilex.dev/set/experiments/ZA17' # str | Experiment URI
+uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 
 
 try:
@@ -428,7 +428,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uris = ['uris_example'] # list[str] | Experiments URIs
 
@@ -480,7 +480,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 
@@ -515,8 +515,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_used_variables**
-> list[NamedResourceDTO] get_used_variables(uri, authorization, scientific_objects=scientific_objects, accept_language=accept_language)
+# **get_used_variables1**
+> list[NamedResourceDTO] get_used_variables1(uri, authorization, scientific_objects=scientific_objects, accept_language=accept_language)
 
 Get variables involved in an experiment
 
@@ -532,7 +532,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 scientific_objects = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by objects uris (optional)
@@ -540,10 +540,10 @@ scientific_objects = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[st
 
 try:
     # Get variables involved in an experiment
-    api_response = api_instance.get_used_variables(uri, scientific_objects=scientific_objects, )
+    api_response = api_instance.get_used_variables1(uri, scientific_objects=scientific_objects, )
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ExperimentsApi->get_used_variables: %s\n" % e)
+    print("Exception when calling ExperimentsApi->get_used_variables1: %s\n" % e)
 ```
 
 ### Parameters
@@ -569,8 +569,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **import_csv_data**
-> DataCSVValidationDTO import_csv_data(uri, provenance, file, authorization, accept_language=accept_language)
+# **import_csv_data1**
+> DataCSVValidationDTO import_csv_data1(uri, provenance, file, authorization, accept_language=accept_language)
 
 Import a CSV file for the given experiment URI and scientific object type.
 
@@ -586,7 +586,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
@@ -595,10 +595,10 @@ file = '/path/to/file.txt' # file | Data file
 
 try:
     # Import a CSV file for the given experiment URI and scientific object type.
-    api_response = api_instance.import_csv_data(uri, provenance, file, )
+    api_response = api_instance.import_csv_data1(uri, provenance, file, )
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ExperimentsApi->import_csv_data: %s\n" % e)
+    print("Exception when calling ExperimentsApi->import_csv_data1: %s\n" % e)
 ```
 
 ### Parameters
@@ -642,7 +642,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
@@ -718,7 +718,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
@@ -788,7 +788,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 name = 'ZA17' # str | Regex pattern for filtering by name (optional)
 year = 2017 # int | Search by year (optional)
@@ -797,7 +797,7 @@ species = ['http://www.phenome-fppn.fr/id/species/zeamays'] # list[str] | Search
 factors = ['http://purl.obolibrary.org/obo/CHEBI_25555'] # list[str] | Search by studied effect (optional)
 projects = ['http://www.phenome-fppn.fr/projects/ZA17 http://www.phenome-fppn.fr/id/projects/ZA18'] # list[str] | Search by related project uri (optional)
 is_public = true # bool | Search private(false) or public experiments(true) (optional)
-order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -858,7 +858,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 body = opensilexClientToolsPython.ExperimentCreationDTO() # ExperimentCreationDTO | Experiment description (optional)
 
@@ -893,8 +893,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **validate_csv**
-> DataCSVValidationDTO validate_csv(uri, provenance, file, authorization, accept_language=accept_language)
+# **validate_csv1**
+> DataCSVValidationDTO validate_csv1(uri, provenance, file, authorization, accept_language=accept_language)
 
 Import a CSV file for the given experiment URI and scientific object type.
 
@@ -910,7 +910,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = 'http://opensilex/set/experiments/ZA17' # str | Experiment URI
 provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
@@ -919,10 +919,10 @@ file = '/path/to/file.txt' # file | Data file
 
 try:
     # Import a CSV file for the given experiment URI and scientific object type.
-    api_response = api_instance.validate_csv(uri, provenance, file, )
+    api_response = api_instance.validate_csv1(uri, provenance, file, )
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ExperimentsApi->validate_csv: %s\n" % e)
+    print("Exception when calling ExperimentsApi->validate_csv1: %s\n" % e)
 ```
 
 ### Parameters

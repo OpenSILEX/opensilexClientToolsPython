@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** | data URI | 
 **_date** | **str** | date or datetime | 
-**scientific_object** | **str** | scientific objects URI on which the data have been collected | [optional] 
+**target** | **str** | target URI on which the data have been collected (e.g. a scientific object) | [optional] 
 **variable** | **str** | variable URI | 
 **value** | **object** | can be decimal, integer, boolean, string or date | 
 **confidence** | **float** | confidence index | [optional] 

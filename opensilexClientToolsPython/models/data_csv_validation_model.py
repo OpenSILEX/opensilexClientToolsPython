@@ -32,6 +32,7 @@ class DataCSVValidationModel(object):
     """
     swagger_types = {
         'missing_headers': 'list[str]',
+        'empty_headers': 'list[int]',
         'invalid_header_ur_is': 'dict(str, str)',
         'datatype_errors': 'dict(str, list[CSVDatatypeError])',
         'uri_not_found_errors': 'dict(str, list[CSVURINotFoundError])',
@@ -43,7 +44,12 @@ class DataCSVValidationModel(object):
         'invalid_object_errors': 'dict(str, list[CSVCell])',
         'invalid_date_errors': 'dict(str, list[CSVCell])',
         'invalid_data_type_errors': 'dict(str, list[CSVCell])',
+        'invalid_experiment_errors': 'dict(str, list[CSVCell])',
+        'invalid_device_errors': 'dict(str, list[CSVCell])',
         'duplicated_data_errors': 'dict(str, list[CSVCell])',
+        'duplicated_object_errors': 'dict(str, list[CSVCell])',
+        'duplicated_experiment_errors': 'dict(str, list[CSVCell])',
+        'duplicated_device_errors': 'dict(str, list[CSVCell])',
         'headers': 'list[str]',
         'headers_labels': 'list[str]',
         'nb_lines_imported': 'int',
@@ -57,6 +63,7 @@ class DataCSVValidationModel(object):
 
     attribute_map = {
         'missing_headers': 'missingHeaders',
+        'empty_headers': 'emptyHeaders',
         'invalid_header_ur_is': 'invalidHeaderURIs',
         'datatype_errors': 'datatypeErrors',
         'uri_not_found_errors': 'uriNotFoundErrors',
@@ -68,7 +75,12 @@ class DataCSVValidationModel(object):
         'invalid_object_errors': 'invalidObjectErrors',
         'invalid_date_errors': 'invalidDateErrors',
         'invalid_data_type_errors': 'invalidDataTypeErrors',
+        'invalid_experiment_errors': 'invalidExperimentErrors',
+        'invalid_device_errors': 'invalidDeviceErrors',
         'duplicated_data_errors': 'duplicatedDataErrors',
+        'duplicated_object_errors': 'duplicatedObjectErrors',
+        'duplicated_experiment_errors': 'duplicatedExperimentErrors',
+        'duplicated_device_errors': 'duplicatedDeviceErrors',
         'headers': 'headers',
         'headers_labels': 'headersLabels',
         'nb_lines_imported': 'nbLinesImported',
@@ -80,10 +92,11 @@ class DataCSVValidationModel(object):
         'error_message': 'errorMessage'
     }
 
-    def __init__(self, missing_headers=None, invalid_header_ur_is=None, datatype_errors=None, uri_not_found_errors=None, invalid_uri_errors=None, missing_required_value_errors=None, invalid_value_errors=None, already_existing_uri_errors=None, duplicate_uri_errors=None, invalid_object_errors=None, invalid_date_errors=None, invalid_data_type_errors=None, duplicated_data_errors=None, headers=None, headers_labels=None, nb_lines_imported=None, nb_lines_to_import=None, validation_step=None, insertion_step=None, valid_csv=None, too_large_dataset=None, error_message=None):  # noqa: E501
+    def __init__(self, missing_headers=None, empty_headers=None, invalid_header_ur_is=None, datatype_errors=None, uri_not_found_errors=None, invalid_uri_errors=None, missing_required_value_errors=None, invalid_value_errors=None, already_existing_uri_errors=None, duplicate_uri_errors=None, invalid_object_errors=None, invalid_date_errors=None, invalid_data_type_errors=None, invalid_experiment_errors=None, invalid_device_errors=None, duplicated_data_errors=None, duplicated_object_errors=None, duplicated_experiment_errors=None, duplicated_device_errors=None, headers=None, headers_labels=None, nb_lines_imported=None, nb_lines_to_import=None, validation_step=None, insertion_step=None, valid_csv=None, too_large_dataset=None, error_message=None):  # noqa: E501
         """DataCSVValidationModel - a model defined in Swagger"""  # noqa: E501
 
         self._missing_headers = None
+        self._empty_headers = None
         self._invalid_header_ur_is = None
         self._datatype_errors = None
         self._uri_not_found_errors = None
@@ -95,7 +108,12 @@ class DataCSVValidationModel(object):
         self._invalid_object_errors = None
         self._invalid_date_errors = None
         self._invalid_data_type_errors = None
+        self._invalid_experiment_errors = None
+        self._invalid_device_errors = None
         self._duplicated_data_errors = None
+        self._duplicated_object_errors = None
+        self._duplicated_experiment_errors = None
+        self._duplicated_device_errors = None
         self._headers = None
         self._headers_labels = None
         self._nb_lines_imported = None
@@ -109,6 +127,8 @@ class DataCSVValidationModel(object):
 
         if missing_headers is not None:
             self.missing_headers = missing_headers
+        if empty_headers is not None:
+            self.empty_headers = empty_headers
         if invalid_header_ur_is is not None:
             self.invalid_header_ur_is = invalid_header_ur_is
         if datatype_errors is not None:
@@ -131,8 +151,18 @@ class DataCSVValidationModel(object):
             self.invalid_date_errors = invalid_date_errors
         if invalid_data_type_errors is not None:
             self.invalid_data_type_errors = invalid_data_type_errors
+        if invalid_experiment_errors is not None:
+            self.invalid_experiment_errors = invalid_experiment_errors
+        if invalid_device_errors is not None:
+            self.invalid_device_errors = invalid_device_errors
         if duplicated_data_errors is not None:
             self.duplicated_data_errors = duplicated_data_errors
+        if duplicated_object_errors is not None:
+            self.duplicated_object_errors = duplicated_object_errors
+        if duplicated_experiment_errors is not None:
+            self.duplicated_experiment_errors = duplicated_experiment_errors
+        if duplicated_device_errors is not None:
+            self.duplicated_device_errors = duplicated_device_errors
         if headers is not None:
             self.headers = headers
         if headers_labels is not None:
@@ -172,6 +202,27 @@ class DataCSVValidationModel(object):
         """
 
         self._missing_headers = missing_headers
+
+    @property
+    def empty_headers(self):
+        """Gets the empty_headers of this DataCSVValidationModel.  # noqa: E501
+
+
+        :return: The empty_headers of this DataCSVValidationModel.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._empty_headers
+
+    @empty_headers.setter
+    def empty_headers(self, empty_headers):
+        """Sets the empty_headers of this DataCSVValidationModel.
+
+
+        :param empty_headers: The empty_headers of this DataCSVValidationModel.  # noqa: E501
+        :type: list[int]
+        """
+
+        self._empty_headers = empty_headers
 
     @property
     def invalid_header_ur_is(self):
@@ -405,6 +456,48 @@ class DataCSVValidationModel(object):
         self._invalid_data_type_errors = invalid_data_type_errors
 
     @property
+    def invalid_experiment_errors(self):
+        """Gets the invalid_experiment_errors of this DataCSVValidationModel.  # noqa: E501
+
+
+        :return: The invalid_experiment_errors of this DataCSVValidationModel.  # noqa: E501
+        :rtype: dict(str, list[CSVCell])
+        """
+        return self._invalid_experiment_errors
+
+    @invalid_experiment_errors.setter
+    def invalid_experiment_errors(self, invalid_experiment_errors):
+        """Sets the invalid_experiment_errors of this DataCSVValidationModel.
+
+
+        :param invalid_experiment_errors: The invalid_experiment_errors of this DataCSVValidationModel.  # noqa: E501
+        :type: dict(str, list[CSVCell])
+        """
+
+        self._invalid_experiment_errors = invalid_experiment_errors
+
+    @property
+    def invalid_device_errors(self):
+        """Gets the invalid_device_errors of this DataCSVValidationModel.  # noqa: E501
+
+
+        :return: The invalid_device_errors of this DataCSVValidationModel.  # noqa: E501
+        :rtype: dict(str, list[CSVCell])
+        """
+        return self._invalid_device_errors
+
+    @invalid_device_errors.setter
+    def invalid_device_errors(self, invalid_device_errors):
+        """Sets the invalid_device_errors of this DataCSVValidationModel.
+
+
+        :param invalid_device_errors: The invalid_device_errors of this DataCSVValidationModel.  # noqa: E501
+        :type: dict(str, list[CSVCell])
+        """
+
+        self._invalid_device_errors = invalid_device_errors
+
+    @property
     def duplicated_data_errors(self):
         """Gets the duplicated_data_errors of this DataCSVValidationModel.  # noqa: E501
 
@@ -424,6 +517,69 @@ class DataCSVValidationModel(object):
         """
 
         self._duplicated_data_errors = duplicated_data_errors
+
+    @property
+    def duplicated_object_errors(self):
+        """Gets the duplicated_object_errors of this DataCSVValidationModel.  # noqa: E501
+
+
+        :return: The duplicated_object_errors of this DataCSVValidationModel.  # noqa: E501
+        :rtype: dict(str, list[CSVCell])
+        """
+        return self._duplicated_object_errors
+
+    @duplicated_object_errors.setter
+    def duplicated_object_errors(self, duplicated_object_errors):
+        """Sets the duplicated_object_errors of this DataCSVValidationModel.
+
+
+        :param duplicated_object_errors: The duplicated_object_errors of this DataCSVValidationModel.  # noqa: E501
+        :type: dict(str, list[CSVCell])
+        """
+
+        self._duplicated_object_errors = duplicated_object_errors
+
+    @property
+    def duplicated_experiment_errors(self):
+        """Gets the duplicated_experiment_errors of this DataCSVValidationModel.  # noqa: E501
+
+
+        :return: The duplicated_experiment_errors of this DataCSVValidationModel.  # noqa: E501
+        :rtype: dict(str, list[CSVCell])
+        """
+        return self._duplicated_experiment_errors
+
+    @duplicated_experiment_errors.setter
+    def duplicated_experiment_errors(self, duplicated_experiment_errors):
+        """Sets the duplicated_experiment_errors of this DataCSVValidationModel.
+
+
+        :param duplicated_experiment_errors: The duplicated_experiment_errors of this DataCSVValidationModel.  # noqa: E501
+        :type: dict(str, list[CSVCell])
+        """
+
+        self._duplicated_experiment_errors = duplicated_experiment_errors
+
+    @property
+    def duplicated_device_errors(self):
+        """Gets the duplicated_device_errors of this DataCSVValidationModel.  # noqa: E501
+
+
+        :return: The duplicated_device_errors of this DataCSVValidationModel.  # noqa: E501
+        :rtype: dict(str, list[CSVCell])
+        """
+        return self._duplicated_device_errors
+
+    @duplicated_device_errors.setter
+    def duplicated_device_errors(self, duplicated_device_errors):
+        """Sets the duplicated_device_errors of this DataCSVValidationModel.
+
+
+        :param duplicated_device_errors: The duplicated_device_errors of this DataCSVValidationModel.  # noqa: E501
+        :type: dict(str, list[CSVCell])
+        """
+
+        self._duplicated_device_errors = duplicated_device_errors
 
     @property
     def headers(self):

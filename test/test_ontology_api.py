@@ -120,6 +120,13 @@ class TestOntologyApi(unittest.TestCase):
         """
         pass
 
+    def test_get_uri_labels_list(self):
+        """Test case for get_uri_labels_list
+
+        Return associated rdfs:label of uris if they exist  # noqa: E501
+        """
+        pass
+
     def test_search_sub_classes_of(self):
         """Test case for search_sub_classes_of
 

@@ -36,6 +36,13 @@ class TestDataApi(unittest.TestCase):
         """
         pass
 
+    def test_count_data(self):
+        """Test case for count_data
+
+        Count data  # noqa: E501
+        """
+        pass
+
     def test_create_provenance(self):
         """Test case for create_provenance
 
@@ -67,7 +74,7 @@ class TestDataApi(unittest.TestCase):
     def test_export_data(self):
         """Test case for export_data
 
-        export data  # noqa: E501
+        Export data  # noqa: E501
         """
         pass
 
@@ -99,6 +106,13 @@ class TestDataApi(unittest.TestCase):
         """
         pass
 
+    def test_get_datafiles_provenances(self):
+        """Test case for get_datafiles_provenances
+
+        Get provenances linked to datafiles  # noqa: E501
+        """
+        pass
+
     def test_get_pictures_thumbnails(self):
         """Test case for get_pictures_thumbnails
 
@@ -117,6 +131,27 @@ class TestDataApi(unittest.TestCase):
         """Test case for get_provenances_by_ur_is
 
         Get a list of provenances by their URIs  # noqa: E501
+        """
+        pass
+
+    def test_get_used_provenances(self):
+        """Test case for get_used_provenances
+
+        Get provenances linked to data  # noqa: E501
+        """
+        pass
+
+    def test_get_used_variables(self):
+        """Test case for get_used_variables
+
+        Get variables linked to data  # noqa: E501
+        """
+        pass
+
+    def test_import_csv_data(self):
+        """Test case for import_csv_data
+
+        Import a CSV file for the given provenanceURI  # noqa: E501
         """
         pass
 
@@ -155,17 +190,24 @@ class TestDataApi(unittest.TestCase):
         """
         pass
 
-    def test_update1(self):
-        """Test case for update1
+    def test_update_confidence(self):
+        """Test case for update_confidence
+
+        Update confidence index  # noqa: E501
+        """
+        pass
+
+    def test_update_provenance(self):
+        """Test case for update_provenance
 
         Update a provenance  # noqa: E501
         """
         pass
 
-    def test_update_confidence(self):
-        """Test case for update_confidence
+    def test_validate_csv(self):
+        """Test case for validate_csv
 
-        Update confidence index  # noqa: E501
+        Import a CSV file for the given provenanceURI.  # noqa: E501
         """
         pass
 

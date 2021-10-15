@@ -1110,7 +1110,7 @@ class EventsApi(object):
         :param str rdf_type: Event type
         :param str start: Start date : match event after the given start date
         :param str end: End date : match event before the given end date
-        :param str target: Target URI
+        :param str target: Target partial/exact URI
         :param str description: Description regex pattern
         :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
         :param int page: Page number
@@ -1141,7 +1141,7 @@ class EventsApi(object):
         :param str rdf_type: Event type
         :param str start: Start date : match event after the given start date
         :param str end: End date : match event before the given end date
-        :param str target: Target URI
+        :param str target: Target partial/exact URI
         :param str description: Description regex pattern
         :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
         :param int page: Page number

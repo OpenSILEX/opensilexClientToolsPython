@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **trait_name** | **str** |  | [optional] 
 **method** | [**MethodGetDTO**](MethodGetDTO.md) |  | [optional] 
 **unit** | [**UnitGetDTO**](UnitGetDTO.md) |  | [optional] 
+**species** | [**SpeciesDTO**](SpeciesDTO.md) |  | [optional] 
 **time_interval** | **str** |  | [optional] 
 **sampling_interval** | **str** |  | [optional] 
 **datatype** | **str** |  | [optional] 

@@ -358,6 +358,8 @@ class AreaApi(object):
         :param async_req bool
         :param GeoJsonObject body: geometry GeoJSON (required)
         :param str authorization: Authentication token (required)
+        :param str start: Start date : match temporal area after the given start date
+        :param str end: End date : match temporal area before the given end date
         :param str accept_language: Request accepted language
         :return: list[AreaGetDTO]
                  If the method is called asynchronously,
@@ -382,13 +384,15 @@ class AreaApi(object):
         :param async_req bool
         :param GeoJsonObject body: geometry GeoJSON (required)
         :param str authorization: Authentication token (required)
+        :param str start: Start date : match temporal area after the given start date
+        :param str end: End date : match temporal area before the given end date
         :param str accept_language: Request accepted language
         :return: list[AreaGetDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', ]  # noqa: E501
+        all_params = ['body', 'start', 'end', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -413,6 +417,10 @@ class AreaApi(object):
         path_params = {}
 
         query_params = []
+        if 'start' in params:
+            query_params.append(('start', params['start']))  # noqa: E501
+        if 'end' in params:
+            query_params.append(('end', params['end']))  # noqa: E501
 
         header_params = {}
         #if 'authorization' in params:

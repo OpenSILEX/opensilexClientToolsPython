@@ -64,6 +64,13 @@ class TestVariablesApi(unittest.TestCase):
         """
         pass
 
+    def test_create_variables_group(self):
+        """Test case for create_variables_group
+
+        Add a variables group  # noqa: E501
+        """
+        pass
+
     def test_delete_characteristic(self):
         """Test case for delete_characteristic
 
@@ -96,6 +103,13 @@ class TestVariablesApi(unittest.TestCase):
         """Test case for delete_variable
 
         Delete a variable  # noqa: E501
+        """
+        pass
+
+    def test_delete_variables_group(self):
+        """Test case for delete_variables_group
+
+        Delete a variables group  # noqa: E501
         """
         pass
 
@@ -148,6 +162,20 @@ class TestVariablesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_variables_group(self):
+        """Test case for get_variables_group
+
+        Get a variables group  # noqa: E501
+        """
+        pass
+
+    def test_get_variables_group_by_ur_is(self):
+        """Test case for get_variables_group_by_ur_is
+
+        Get variables groups by their URIs  # noqa: E501
+        """
+        pass
+
     def test_search_characteristics(self):
         """Test case for search_characteristics
 
@@ -190,6 +218,13 @@ class TestVariablesApi(unittest.TestCase):
         """
         pass
 
+    def test_search_variables_groups(self):
+        """Test case for search_variables_groups
+
+        Search variables groups  # noqa: E501
+        """
+        pass
+
     def test_update_characteristic(self):
         """Test case for update_characteristic
 
@@ -222,6 +257,13 @@ class TestVariablesApi(unittest.TestCase):
         """Test case for update_variable
 
         Update a variable  # noqa: E501
+        """
+        pass
+
+    def test_update_variables_group(self):
+        """Test case for update_variables_group
+
+        Update a variables group  # noqa: E501
         """
         pass
 

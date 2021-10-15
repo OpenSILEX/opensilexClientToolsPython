@@ -41,6 +41,7 @@ class VariableDetailsDTO(object):
         'trait_name': 'str',
         'method': 'MethodGetDTO',
         'unit': 'UnitGetDTO',
+        'species': 'SpeciesDTO',
         'time_interval': 'str',
         'sampling_interval': 'str',
         'datatype': 'str',
@@ -61,6 +62,7 @@ class VariableDetailsDTO(object):
         'trait_name': 'trait_name',
         'method': 'method',
         'unit': 'unit',
+        'species': 'species',
         'time_interval': 'time_interval',
         'sampling_interval': 'sampling_interval',
         'datatype': 'datatype',
@@ -70,7 +72,7 @@ class VariableDetailsDTO(object):
         'narrow_match': 'narrow_match'
     }
 
-    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, time_interval=None, sampling_interval=None, datatype=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
+    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, species=None, time_interval=None, sampling_interval=None, datatype=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
         """VariableDetailsDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -83,6 +85,7 @@ class VariableDetailsDTO(object):
         self._trait_name = None
         self._method = None
         self._unit = None
+        self._species = None
         self._time_interval = None
         self._sampling_interval = None
         self._datatype = None
@@ -112,6 +115,8 @@ class VariableDetailsDTO(object):
             self.method = method
         if unit is not None:
             self.unit = unit
+        if species is not None:
+            self.species = species
         if time_interval is not None:
             self.time_interval = time_interval
         if sampling_interval is not None:
@@ -336,6 +341,27 @@ class VariableDetailsDTO(object):
         """
 
         self._unit = unit
+
+    @property
+    def species(self):
+        """Gets the species of this VariableDetailsDTO.  # noqa: E501
+
+
+        :return: The species of this VariableDetailsDTO.  # noqa: E501
+        :rtype: SpeciesDTO
+        """
+        return self._species
+
+    @species.setter
+    def species(self, species):
+        """Sets the species of this VariableDetailsDTO.
+
+
+        :param species: The species of this VariableDetailsDTO.  # noqa: E501
+        :type: SpeciesDTO
+        """
+
+        self._species = species
 
     @property
     def time_interval(self):

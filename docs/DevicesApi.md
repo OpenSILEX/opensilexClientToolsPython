@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**count_device_data**](DevicesApi.md#count_device_data) | **GET** /core/devices/{uri}/data/count | Count device data
 [**create_device**](DevicesApi.md#create_device) | **POST** /core/devices | Create a device
 [**delete_device**](DevicesApi.md#delete_device) | **DELETE** /core/devices/{uri} | Delete a device
 [**export_devices**](DevicesApi.md#export_devices) | **GET** /core/devices/export | export devices
@@ -12,12 +13,82 @@ Method | HTTP request | Description
 [**get_device_by_uris**](DevicesApi.md#get_device_by_uris) | **GET** /core/devices/by_uris | Get devices by uris
 [**get_device_data_files_provenances**](DevicesApi.md#get_device_data_files_provenances) | **GET** /core/devices/{uri}/datafiles/provenances | Get provenances of datafiles linked to this device
 [**get_device_data_provenances**](DevicesApi.md#get_device_data_provenances) | **GET** /core/devices/{uri}/data/provenances | Get provenances of data that have been measured on this device
-[**get_device_variables**](DevicesApi.md#get_device_variables) | **GET** /core/devices/{uri}/variables | Get variables measured by the device
+[**get_device_variables**](DevicesApi.md#get_device_variables) | **GET** /core/devices/{uri}/variables | Get variables linked to the device
 [**search_device_data**](DevicesApi.md#search_device_data) | **GET** /core/devices/{uri}/data | Search device data
 [**search_device_datafiles**](DevicesApi.md#search_device_datafiles) | **GET** /core/devices/{uri}/datafiles | Search device datafiles descriptions
 [**search_devices**](DevicesApi.md#search_devices) | **GET** /core/devices | Search devices
 [**update_device**](DevicesApi.md#update_device) | **PUT** /core/devices | Update a device
 
+
+# **count_device_data**
+> int count_device_data(uri, authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiment=experiment, variable=variable, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, accept_language=accept_language)
+
+Count device data
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
+uri = 'http://example.com/' # str | Device URI
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiment = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiment uris (optional)
+variable = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables (optional)
+min_confidence = 0.5 # float | Search by minimal confidence index (optional)
+max_confidence = 0.5 # float | Search by maximal confidence index (optional)
+provenance = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uri (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+
+
+try:
+    # Count device data
+    api_response = api_instance.count_device_data(uri, start_date=start_date, end_date=end_date, timezone=timezone, experiment=experiment, variable=variable, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DevicesApi->count_device_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Device URI | 
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
+ **timezone** | **str**| Precise the timezone corresponding to the given dates | [optional] 
+ **experiment** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
+ **variable** | [**list[str]**](str.md)| Search by variables | [optional] 
+ **min_confidence** | **float**| Search by minimal confidence index | [optional] 
+ **max_confidence** | **float**| Search by maximal confidence index | [optional] 
+ **provenance** | [**list[str]**](str.md)| Search by provenance uri | [optional] 
+ **metadata** | **str**| Search by metadata | [optional] 
+
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_device**
 > ObjectUriResponse create_device(authorization, body=body, check_only=check_only, accept_language=accept_language)
@@ -36,7 +107,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.DeviceCreationDTO() # DeviceCreationDTO | Device description (optional)
 check_only = false # bool | Checking only (optional) (default to false)
@@ -90,9 +161,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = 'http://example.com/' # str | Device URI
+uri = 'http://opensilex.dev/set/device/sensingdevice-sensor_01' # str | Device URI
 
 
 try:
@@ -142,7 +213,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 rdf_type = 'vocabulary:SensingDevice' # str | RDF type filter (optional)
 include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
@@ -209,7 +280,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of device URI (optional)
 
@@ -260,9 +331,9 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = 'http://example.com/' # str | device URI
+uri = 'http://opensilex.dev/set/device/sensingdevice-sensor_01' # str | device URI
 
 
 try:
@@ -312,7 +383,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Device URIs
 
@@ -364,7 +435,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 
@@ -416,7 +487,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 
@@ -454,7 +525,7 @@ No authorization required
 # **get_device_variables**
 > list[NamedResourceDTO] get_device_variables(uri, authorization, accept_language=accept_language)
 
-Get variables measured by the device
+Get variables linked to the device
 
 
 
@@ -468,13 +539,13 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = 'http://example.com/' # str | Device URI
+uri = 'http://opensilex.dev/set/device/sensingdevice-sensor_01' # str | Device URI
 
 
 try:
-    # Get variables measured by the device
+    # Get variables linked to the device
     api_response = api_instance.get_device_variables(uri, )
     pprint(api_response)
 except ApiException as e:
@@ -520,7 +591,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
@@ -596,7 +667,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = 'http://example.com/' # str | Device URI
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
@@ -670,7 +741,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 rdf_type = 'vocabulary:SensingDevice' # str | RDF type filter (optional)
 include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
@@ -681,7 +752,7 @@ brand = '.*' # str | Regex pattern for filtering by brand (optional)
 model = '.*' # str | Regex pattern for filtering by model (optional)
 serial_number = '.*' # str | Regex pattern for filtering by serial number (optional)
 metadata = '{ \"Group\" : \"weather station\", \"Group2\" : \"A\"}' # str | Search by metadata (optional)
-order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -744,7 +815,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.DeviceCreationDTO() # DeviceCreationDTO | Device description
 

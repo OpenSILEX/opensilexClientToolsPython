@@ -36,6 +36,13 @@ class TestBRAPIApi(unittest.TestCase):
         """
         pass
 
+    def test_get_germplasm_by_search(self):
+        """Test case for get_germplasm_by_search
+
+        Submit a search request for germplasm  # noqa: E501
+        """
+        pass
+
     def test_get_observation_units(self):
         """Test case for get_observation_units
 

@@ -62,8 +62,7 @@ class ScientificObjectCreationDTO(object):
         if uri is not None:
             self.uri = uri
         self.rdf_type = rdf_type
-        if name is not None:
-            self.name = name
+        self.name = name
         if experiment is not None:
             self.experiment = experiment
         if relations is not None:
@@ -75,6 +74,7 @@ class ScientificObjectCreationDTO(object):
     def uri(self):
         """Gets the uri of this ScientificObjectCreationDTO.  # noqa: E501
 
+        Scientific object URI  # noqa: E501
 
         :return: The uri of this ScientificObjectCreationDTO.  # noqa: E501
         :rtype: str
@@ -85,6 +85,7 @@ class ScientificObjectCreationDTO(object):
     def uri(self, uri):
         """Sets the uri of this ScientificObjectCreationDTO.
 
+        Scientific object URI  # noqa: E501
 
         :param uri: The uri of this ScientificObjectCreationDTO.  # noqa: E501
         :type: str
@@ -137,6 +138,8 @@ class ScientificObjectCreationDTO(object):
         :param name: The name of this ScientificObjectCreationDTO.  # noqa: E501
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 

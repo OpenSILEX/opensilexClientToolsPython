@@ -548,6 +548,109 @@ class VariablesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def create_variables_group(self, **kwargs):  # noqa: E501
+        """Add a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_variables_group(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param VariablesGroupCreationDTO body: Variables group description
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.create_variables_group_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.create_variables_group_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def create_variables_group_with_http_info(self, **kwargs):  # noqa: E501
+        """Add a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.create_variables_group_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param VariablesGroupCreationDTO body: Variables group description
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_variables_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/variables_group', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ObjectUriResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def delete_characteristic(self, uri, **kwargs):  # noqa: E501
         """Delete a characteristic  # noqa: E501
 
@@ -1069,6 +1172,113 @@ class VariablesApi(object):
 
         return self.api_client.call_api(
             '/core/variables/{uri}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ObjectUriResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_variables_group(self, uri, **kwargs):  # noqa: E501
+        """Delete a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_variables_group(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Variables group URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.delete_variables_group_with_http_info(uri, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_variables_group_with_http_info(uri, **kwargs)  # noqa: E501
+            return data
+
+    def delete_variables_group_with_http_info(self, uri, **kwargs):  # noqa: E501
+        """Delete a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_variables_group_with_http_info(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Variables group URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uri', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_variables_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uri' is set
+        if ('uri' not in params or
+                params['uri'] is None):
+            raise ValueError("Missing the required parameter `uri` when calling `delete_variables_group`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'uri' in params:
+            path_params['uri'] = params['uri']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/variables_group/{uri}', 'DELETE',
             path_params,
             query_params,
             header_params,
@@ -1825,6 +2035,221 @@ class VariablesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_variables_group(self, uri, **kwargs):  # noqa: E501
+        """Get a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_variables_group(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Variables group URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: VariablesGroupGetDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_variables_group_with_http_info(uri, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_variables_group_with_http_info(uri, **kwargs)  # noqa: E501
+            return data
+
+    def get_variables_group_with_http_info(self, uri, **kwargs):  # noqa: E501
+        """Get a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_variables_group_with_http_info(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Variables group URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: VariablesGroupGetDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uri', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_variables_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uri' is set
+        if ('uri' not in params or
+                params['uri'] is None):
+            raise ValueError("Missing the required parameter `uri` when calling `get_variables_group`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'uri' in params:
+            path_params['uri'] = params['uri']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/variables_group/{uri}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='VariablesGroupGetDTO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_variables_group_by_ur_is(self, uris, **kwargs):  # noqa: E501
+        """Get variables groups by their URIs  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_variables_group_by_ur_is(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Variables group URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[VariablesGroupGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.get_variables_group_by_ur_is_with_http_info(uris, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_variables_group_by_ur_is_with_http_info(uris, **kwargs)  # noqa: E501
+            return data
+
+    def get_variables_group_by_ur_is_with_http_info(self, uris, **kwargs):  # noqa: E501
+        """Get variables groups by their URIs  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_variables_group_by_ur_is_with_http_info(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Variables group URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[VariablesGroupGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uris', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_variables_group_by_ur_is" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uris' is set
+        if ('uris' not in params or
+                params['uris'] is None):
+            raise ValueError("Missing the required parameter `uris` when calling `get_variables_group_by_ur_is`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'uris' in params:
+            query_params.append(('uris', params['uris']))  # noqa: E501
+            collection_formats['uris'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/variables_group/by_uris', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[VariablesGroupGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def search_characteristics(self, **kwargs):  # noqa: E501
         """Search characteristics by name  # noqa: E501
 
@@ -2545,6 +2970,130 @@ class VariablesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def search_variables_groups(self, **kwargs):  # noqa: E501
+        """Search variables groups  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.search_variables_groups(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str name: Regex pattern for filtering by name
+        :param str variable_uri: Variable URI
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: list[VariablesGroupGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.search_variables_groups_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.search_variables_groups_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def search_variables_groups_with_http_info(self, **kwargs):  # noqa: E501
+        """Search variables groups  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.search_variables_groups_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str name: Regex pattern for filtering by name
+        :param str variable_uri: Variable URI
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: list[VariablesGroupGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'variable_uri', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method search_variables_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `search_variables_groups`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'page_size' in params and params['page_size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page_size` when calling `search_variables_groups`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
+        if 'variable_uri' in params:
+            query_params.append(('variableUri', params['variable_uri']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+            collection_formats['order_by'] = 'multi'  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/variables_group', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[VariablesGroupGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def update_characteristic(self, **kwargs):  # noqa: E501
         """Update a characteristic  # noqa: E501
 
@@ -3046,6 +3595,109 @@ class VariablesApi(object):
 
         return self.api_client.call_api(
             '/core/variables', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ObjectUriResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def update_variables_group(self, **kwargs):  # noqa: E501
+        """Update a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_variables_group(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param VariablesGroupUpdateDTO body: Variables group description
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.update_variables_group_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.update_variables_group_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def update_variables_group_with_http_info(self, **kwargs):  # noqa: E501
+        """Update a variables group  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_variables_group_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param VariablesGroupUpdateDTO body: Variables group description
+        :param str accept_language: Request accepted language
+        :return: ObjectUriResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_variables_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/core/variables_group', 'PUT',
             path_params,
             query_params,
             header_params,

@@ -60,7 +60,6 @@ pythonClient.connect_to_opensilex_ws(
 
 anotation_api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 target = "http://www.opensilex.org/demo/2018/o18000076" # str | Target URI (optional)
-api_instance = opensilexClientTools.AnnotationsApi(pythonClient)
 
 try:
     # Count annotations

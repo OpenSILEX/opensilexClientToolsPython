@@ -34,7 +34,7 @@ class FormGetDTO(object):
         'type': 'str',
         'timezone': 'str',
         'uri': 'str',
-        'creation_date': 'str',
+        'modified_date': 'str',
         'form_data': 'dict(str, object)'
     }
 
@@ -42,17 +42,17 @@ class FormGetDTO(object):
         'type': 'type',
         'timezone': 'timezone',
         'uri': 'uri',
-        'creation_date': 'creation_date',
+        'modified_date': 'modified_date',
         'form_data': 'form_data'
     }
 
-    def __init__(self, type=None, timezone=None, uri=None, creation_date=None, form_data=None):  # noqa: E501
+    def __init__(self, type=None, timezone=None, uri=None, modified_date=None, form_data=None):  # noqa: E501
         """FormGetDTO - a model defined in Swagger"""  # noqa: E501
 
         self._type = None
         self._timezone = None
         self._uri = None
-        self._creation_date = None
+        self._modified_date = None
         self._form_data = None
         self.discriminator = None
 
@@ -61,7 +61,7 @@ class FormGetDTO(object):
         if timezone is not None:
             self.timezone = timezone
         self.uri = uri
-        self.creation_date = creation_date
+        self.modified_date = modified_date
         if form_data is not None:
             self.form_data = form_data
 
@@ -135,29 +135,29 @@ class FormGetDTO(object):
         self._uri = uri
 
     @property
-    def creation_date(self):
-        """Gets the creation_date of this FormGetDTO.  # noqa: E501
+    def modified_date(self):
+        """Gets the modified_date of this FormGetDTO.  # noqa: E501
 
         timestamp  # noqa: E501
 
-        :return: The creation_date of this FormGetDTO.  # noqa: E501
+        :return: The modified_date of this FormGetDTO.  # noqa: E501
         :rtype: str
         """
-        return self._creation_date
+        return self._modified_date
 
-    @creation_date.setter
-    def creation_date(self, creation_date):
-        """Sets the creation_date of this FormGetDTO.
+    @modified_date.setter
+    def modified_date(self, modified_date):
+        """Sets the modified_date of this FormGetDTO.
 
         timestamp  # noqa: E501
 
-        :param creation_date: The creation_date of this FormGetDTO.  # noqa: E501
+        :param modified_date: The modified_date of this FormGetDTO.  # noqa: E501
         :type: str
         """
-        if creation_date is None:
-            raise ValueError("Invalid value for `creation_date`, must not be `None`")  # noqa: E501
+        if modified_date is None:
+            raise ValueError("Invalid value for `modified_date`, must not be `None`")  # noqa: E501
 
-        self._creation_date = creation_date
+        self._modified_date = modified_date
 
     @property
     def form_data(self):

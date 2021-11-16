@@ -36,6 +36,7 @@ class VariableDetailsDTO(object):
         'alternative_name': 'str',
         'description': 'str',
         'entity': 'EntityGetDTO',
+        'entity_of_interest': 'NamedResourceDTOInterestEntityModel',
         'characteristic': 'CharacteristicGetDTO',
         'trait': 'str',
         'trait_name': 'str',
@@ -57,6 +58,7 @@ class VariableDetailsDTO(object):
         'alternative_name': 'alternative_name',
         'description': 'description',
         'entity': 'entity',
+        'entity_of_interest': 'entity_of_interest',
         'characteristic': 'characteristic',
         'trait': 'trait',
         'trait_name': 'trait_name',
@@ -72,7 +74,7 @@ class VariableDetailsDTO(object):
         'narrow_match': 'narrow_match'
     }
 
-    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, species=None, time_interval=None, sampling_interval=None, datatype=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
+    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, entity_of_interest=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, species=None, time_interval=None, sampling_interval=None, datatype=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
         """VariableDetailsDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -80,6 +82,7 @@ class VariableDetailsDTO(object):
         self._alternative_name = None
         self._description = None
         self._entity = None
+        self._entity_of_interest = None
         self._characteristic = None
         self._trait = None
         self._trait_name = None
@@ -105,6 +108,8 @@ class VariableDetailsDTO(object):
             self.description = description
         if entity is not None:
             self.entity = entity
+        if entity_of_interest is not None:
+            self.entity_of_interest = entity_of_interest
         if characteristic is not None:
             self.characteristic = characteristic
         if trait is not None:
@@ -236,6 +241,27 @@ class VariableDetailsDTO(object):
         """
 
         self._entity = entity
+
+    @property
+    def entity_of_interest(self):
+        """Gets the entity_of_interest of this VariableDetailsDTO.  # noqa: E501
+
+
+        :return: The entity_of_interest of this VariableDetailsDTO.  # noqa: E501
+        :rtype: NamedResourceDTOInterestEntityModel
+        """
+        return self._entity_of_interest
+
+    @entity_of_interest.setter
+    def entity_of_interest(self, entity_of_interest):
+        """Sets the entity_of_interest of this VariableDetailsDTO.
+
+
+        :param entity_of_interest: The entity_of_interest of this VariableDetailsDTO.  # noqa: E501
+        :type: NamedResourceDTOInterestEntityModel
+        """
+
+        self._entity_of_interest = entity_of_interest
 
     @property
     def characteristic(self):

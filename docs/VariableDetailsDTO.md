@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **alternative_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **entity** | [**EntityGetDTO**](EntityGetDTO.md) |  | [optional] 
+**entity_of_interest** | [**NamedResourceDTOInterestEntityModel**](NamedResourceDTOInterestEntityModel.md) |  | [optional] 
 **characteristic** | [**CharacteristicGetDTO**](CharacteristicGetDTO.md) |  | [optional] 
 **trait** | **str** |  | [optional] 
 **trait_name** | **str** |  | [optional] 

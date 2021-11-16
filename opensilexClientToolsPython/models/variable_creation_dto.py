@@ -36,6 +36,7 @@ class VariableCreationDTO(object):
         'alternative_name': 'str',
         'description': 'str',
         'entity': 'str',
+        'entity_of_interest': 'str',
         'characteristic': 'str',
         'trait': 'str',
         'trait_name': 'str',
@@ -57,6 +58,7 @@ class VariableCreationDTO(object):
         'alternative_name': 'alternative_name',
         'description': 'description',
         'entity': 'entity',
+        'entity_of_interest': 'entity_of_interest',
         'characteristic': 'characteristic',
         'trait': 'trait',
         'trait_name': 'trait_name',
@@ -72,7 +74,7 @@ class VariableCreationDTO(object):
         'narrow_match': 'narrow_match'
     }
 
-    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, species=None, datatype=None, time_interval=None, sampling_interval=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
+    def __init__(self, uri=None, name=None, alternative_name=None, description=None, entity=None, entity_of_interest=None, characteristic=None, trait=None, trait_name=None, method=None, unit=None, species=None, datatype=None, time_interval=None, sampling_interval=None, exact_match=None, close_match=None, broad_match=None, narrow_match=None):  # noqa: E501
         """VariableCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -80,6 +82,7 @@ class VariableCreationDTO(object):
         self._alternative_name = None
         self._description = None
         self._entity = None
+        self._entity_of_interest = None
         self._characteristic = None
         self._trait = None
         self._trait_name = None
@@ -103,13 +106,14 @@ class VariableCreationDTO(object):
         if description is not None:
             self.description = description
         self.entity = entity
+        if entity_of_interest is not None:
+            self.entity_of_interest = entity_of_interest
         self.characteristic = characteristic
         if trait is not None:
             self.trait = trait
         if trait_name is not None:
             self.trait_name = trait_name
-        if method is not None:
-            self.method = method
+        self.method = method
         self.unit = unit
         if species is not None:
             self.species = species
@@ -237,6 +241,27 @@ class VariableCreationDTO(object):
         self._entity = entity
 
     @property
+    def entity_of_interest(self):
+        """Gets the entity_of_interest of this VariableCreationDTO.  # noqa: E501
+
+
+        :return: The entity_of_interest of this VariableCreationDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._entity_of_interest
+
+    @entity_of_interest.setter
+    def entity_of_interest(self, entity_of_interest):
+        """Sets the entity_of_interest of this VariableCreationDTO.
+
+
+        :param entity_of_interest: The entity_of_interest of this VariableCreationDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._entity_of_interest = entity_of_interest
+
+    @property
     def characteristic(self):
         """Gets the characteristic of this VariableCreationDTO.  # noqa: E501
 
@@ -319,6 +344,8 @@ class VariableCreationDTO(object):
         :param method: The method of this VariableCreationDTO.  # noqa: E501
         :type: str
         """
+        if method is None:
+            raise ValueError("Invalid value for `method`, must not be `None`")  # noqa: E501
 
         self._method = method
 

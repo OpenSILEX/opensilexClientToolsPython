@@ -4,21 +4,26 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**classic_export_variable_by_ur_is**](VariablesApi.md#classic_export_variable_by_ur_is) | **POST** /core/variables/export_classic_by_uris | export variable by list of uris
 [**create_characteristic**](VariablesApi.md#create_characteristic) | **POST** /core/characteristics | Add a characteristic
 [**create_entity**](VariablesApi.md#create_entity) | **POST** /core/entities | Add an entity
+[**create_interest_entity**](VariablesApi.md#create_interest_entity) | **POST** /core/entities_of_interest | Add an entity of interest
 [**create_method**](VariablesApi.md#create_method) | **POST** /core/methods | Add a method
 [**create_unit**](VariablesApi.md#create_unit) | **POST** /core/units | Add an unit
 [**create_variable**](VariablesApi.md#create_variable) | **POST** /core/variables | Add a variable
 [**create_variables_group**](VariablesApi.md#create_variables_group) | **POST** /core/variables_group | Add a variables group
 [**delete_characteristic**](VariablesApi.md#delete_characteristic) | **DELETE** /core/characteristics/{uri} | Delete a characteristic
 [**delete_entity**](VariablesApi.md#delete_entity) | **DELETE** /core/entities/{uri} | Delete an entity
+[**delete_interest_entity**](VariablesApi.md#delete_interest_entity) | **DELETE** /core/entities_of_interest/{uri} | Delete an entity of interest
 [**delete_method**](VariablesApi.md#delete_method) | **DELETE** /core/methods/{uri} | Delete a method
 [**delete_unit**](VariablesApi.md#delete_unit) | **DELETE** /core/units/{uri} | Delete an unit
 [**delete_variable**](VariablesApi.md#delete_variable) | **DELETE** /core/variables/{uri} | Delete a variable
 [**delete_variables_group**](VariablesApi.md#delete_variables_group) | **DELETE** /core/variables_group/{uri} | Delete a variables group
+[**details_export_variable_by_ur_is**](VariablesApi.md#details_export_variable_by_ur_is) | **POST** /core/variables/export_details_by_uris | export detailed variable by list of uris
 [**get_characteristic**](VariablesApi.md#get_characteristic) | **GET** /core/characteristics/{uri} | Get a characteristic
 [**get_datatypes**](VariablesApi.md#get_datatypes) | **GET** /core/variables/datatypes | Get variables datatypes
 [**get_entity**](VariablesApi.md#get_entity) | **GET** /core/entities/{uri} | Get an entity
+[**get_interest_entity**](VariablesApi.md#get_interest_entity) | **GET** /core/entities_of_interest/{uri} | Get an entity of interest
 [**get_method**](VariablesApi.md#get_method) | **GET** /core/methods/{uri} | Get a method
 [**get_unit**](VariablesApi.md#get_unit) | **GET** /core/units/{uri} | Get an unit
 [**get_variable**](VariablesApi.md#get_variable) | **GET** /core/variables/{uri} | Get a variable
@@ -27,6 +32,7 @@ Method | HTTP request | Description
 [**get_variables_group_by_ur_is**](VariablesApi.md#get_variables_group_by_ur_is) | **GET** /core/variables_group/by_uris | Get variables groups by their URIs
 [**search_characteristics**](VariablesApi.md#search_characteristics) | **GET** /core/characteristics | Search characteristics by name
 [**search_entities**](VariablesApi.md#search_entities) | **GET** /core/entities | Search entities by name
+[**search_interest_entity**](VariablesApi.md#search_interest_entity) | **GET** /core/entities_of_interest | Search entities of interest by name
 [**search_methods**](VariablesApi.md#search_methods) | **GET** /core/methods | Search methods by name
 [**search_units**](VariablesApi.md#search_units) | **GET** /core/units | Search units by name
 [**search_variables**](VariablesApi.md#search_variables) | **GET** /core/variables | Search variables by name, long name, entity, characteristic, method or unit name
@@ -34,11 +40,63 @@ Method | HTTP request | Description
 [**search_variables_groups**](VariablesApi.md#search_variables_groups) | **GET** /core/variables_group | Search variables groups
 [**update_characteristic**](VariablesApi.md#update_characteristic) | **PUT** /core/characteristics | Update a characteristic
 [**update_entity**](VariablesApi.md#update_entity) | **PUT** /core/entities | Update an entity
+[**update_interest_entity**](VariablesApi.md#update_interest_entity) | **PUT** /core/entities_of_interest | Update an entity of interest
 [**update_method**](VariablesApi.md#update_method) | **PUT** /core/methods | Update a method
 [**update_unit**](VariablesApi.md#update_unit) | **PUT** /core/units | Update an unit
 [**update_variable**](VariablesApi.md#update_variable) | **PUT** /core/variables | Update a variable
 [**update_variables_group**](VariablesApi.md#update_variables_group) | **PUT** /core/variables_group | Update a variables group
 
+
+# **classic_export_variable_by_ur_is**
+> classic_export_variable_by_ur_is(authorization, body=body, accept_language=accept_language)
+
+export variable by list of uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of variable URI (optional)
+
+
+try:
+    # export variable by list of uris
+    api_instance.classic_export_variable_by_ur_is(body=body, )
+except ApiException as e:
+    print("Exception when calling VariablesApi->classic_export_variable_by_ur_is: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**URIsListPostDTO**](URIsListPostDTO.md)| List of variable URI | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_characteristic**
 > ObjectUriResponse create_characteristic(authorization, body=body, accept_language=accept_language)
@@ -127,6 +185,58 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**EntityCreationDTO**](EntityCreationDTO.md)| Entity description | [optional] 
+
+
+### Return type
+
+[**ObjectUriResponse**](ObjectUriResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_interest_entity**
+> ObjectUriResponse create_interest_entity(authorization, body=body, accept_language=accept_language)
+
+Add an entity of interest
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.InterestEntityCreationDTO() # InterestEntityCreationDTO | Entity of interest description (optional)
+
+
+try:
+    # Add an entity of interest
+    api_response = api_instance.create_interest_entity(body=body, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->create_interest_entity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**InterestEntityCreationDTO**](InterestEntityCreationDTO.md)| Entity of interest description | [optional] 
 
 
 ### Return type
@@ -456,6 +566,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **delete_interest_entity**
+> ObjectUriResponse delete_interest_entity(uri, authorization, accept_language=accept_language)
+
+Delete an entity of interest
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+uri = 'http://opensilex.dev/set/variables/entity_of_interest/Plot' # str | Entity of interest URI
+
+
+try:
+    # Delete an entity of interest
+    api_response = api_instance.delete_interest_entity(uri, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->delete_interest_entity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Entity of interest URI | 
+
+
+### Return type
+
+[**ObjectUriResponse**](ObjectUriResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_method**
 > ObjectUriResponse delete_method(uri, authorization, accept_language=accept_language)
 
@@ -664,6 +826,57 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **details_export_variable_by_ur_is**
+> details_export_variable_by_ur_is(authorization, body=body, accept_language=accept_language)
+
+export detailed variable by list of uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of variable URI (optional)
+
+
+try:
+    # export detailed variable by list of uris
+    api_instance.details_export_variable_by_ur_is(body=body, )
+except ApiException as e:
+    print("Exception when calling VariablesApi->details_export_variable_by_ur_is: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**URIsListPostDTO**](URIsListPostDTO.md)| List of variable URI | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_characteristic**
 > CharacteristicDetailsDTO get_characteristic(uri, authorization, accept_language=accept_language)
 
@@ -806,6 +1019,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EntityDetailsDTO**](EntityDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_interest_entity**
+> InterestEntityDetailsDTO get_interest_entity(uri, authorization, accept_language=accept_language)
+
+Get an entity of interest
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+uri = 'http://opensilex.dev/set/variables/entity_of_interest/Plot' # str | Entity of interest URI
+
+
+try:
+    # Get an entity of interest
+    api_response = api_instance.get_interest_entity(uri, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->get_interest_entity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Entity of interest URI | 
+
+
+### Return type
+
+[**InterestEntityDetailsDTO**](InterestEntityDetailsDTO.md)
 
 ### Authorization
 
@@ -1246,6 +1511,64 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_interest_entity**
+> list[InterestEntityGetDTO] search_interest_entity(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+
+Search entities of interest by name
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+name = 'plot' # str | Name (regex) (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+
+
+try:
+    # Search entities of interest by name
+    api_response = api_instance.search_interest_entity(name=name, order_by=order_by, page=page, page_size=page_size, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->search_interest_entity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Name (regex) | [optional] 
+ **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[InterestEntityGetDTO]**](InterestEntityGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_methods**
 > list[MethodGetDTO] search_methods(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -1625,6 +1948,58 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**EntityUpdateDTO**](EntityUpdateDTO.md)| Entity description | [optional] 
+
+
+### Return type
+
+[**ObjectUriResponse**](ObjectUriResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_interest_entity**
+> ObjectUriResponse update_interest_entity(authorization, body=body, accept_language=accept_language)
+
+Update an entity of interest
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.InterestEntityUpdateDTO() # InterestEntityUpdateDTO | Entity of interest description (optional)
+
+
+try:
+    # Update an entity of interest
+    api_response = api_instance.update_interest_entity(body=body, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->update_interest_entity: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**InterestEntityUpdateDTO**](InterestEntityUpdateDTO.md)| Entity of interest description | [optional] 
 
 
 ### Return type

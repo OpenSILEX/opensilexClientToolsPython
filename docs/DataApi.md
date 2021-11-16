@@ -1068,7 +1068,7 @@ No authorization required
 
 Add a data file
 
-{\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"targets\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}
+{\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"target\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}
 
 ### Example
 ```python

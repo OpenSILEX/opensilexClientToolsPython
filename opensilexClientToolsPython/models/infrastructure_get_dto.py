@@ -37,7 +37,7 @@ class InfrastructureGetDTO(object):
         'name': 'str',
         'parent': 'str',
         'children': 'list[str]',
-        'groups': 'list[InfrastructureTeamDTO]',
+        'groups': 'list[NamedResourceDTOGroupModel]',
         'facilities': 'list[InfrastructureFacilityGetDTO]'
     }
 
@@ -214,7 +214,7 @@ class InfrastructureGetDTO(object):
 
 
         :return: The groups of this InfrastructureGetDTO.  # noqa: E501
-        :rtype: list[InfrastructureTeamDTO]
+        :rtype: list[NamedResourceDTOGroupModel]
         """
         return self._groups
 
@@ -224,7 +224,7 @@ class InfrastructureGetDTO(object):
 
 
         :param groups: The groups of this InfrastructureGetDTO.  # noqa: E501
-        :type: list[InfrastructureTeamDTO]
+        :type: list[NamedResourceDTOGroupModel]
         """
 
         self._groups = groups

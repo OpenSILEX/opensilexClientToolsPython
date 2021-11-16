@@ -29,6 +29,13 @@ class TestVariablesApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_classic_export_variable_by_ur_is(self):
+        """Test case for classic_export_variable_by_ur_is
+
+        export variable by list of uris  # noqa: E501
+        """
+        pass
+
     def test_create_characteristic(self):
         """Test case for create_characteristic
 
@@ -40,6 +47,13 @@ class TestVariablesApi(unittest.TestCase):
         """Test case for create_entity
 
         Add an entity  # noqa: E501
+        """
+        pass
+
+    def test_create_interest_entity(self):
+        """Test case for create_interest_entity
+
+        Add an entity of interest  # noqa: E501
         """
         pass
 
@@ -85,6 +99,13 @@ class TestVariablesApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_interest_entity(self):
+        """Test case for delete_interest_entity
+
+        Delete an entity of interest  # noqa: E501
+        """
+        pass
+
     def test_delete_method(self):
         """Test case for delete_method
 
@@ -113,6 +134,13 @@ class TestVariablesApi(unittest.TestCase):
         """
         pass
 
+    def test_details_export_variable_by_ur_is(self):
+        """Test case for details_export_variable_by_ur_is
+
+        export detailed variable by list of uris  # noqa: E501
+        """
+        pass
+
     def test_get_characteristic(self):
         """Test case for get_characteristic
 
@@ -131,6 +159,13 @@ class TestVariablesApi(unittest.TestCase):
         """Test case for get_entity
 
         Get an entity  # noqa: E501
+        """
+        pass
+
+    def test_get_interest_entity(self):
+        """Test case for get_interest_entity
+
+        Get an entity of interest  # noqa: E501
         """
         pass
 
@@ -190,6 +225,13 @@ class TestVariablesApi(unittest.TestCase):
         """
         pass
 
+    def test_search_interest_entity(self):
+        """Test case for search_interest_entity
+
+        Search entities of interest by name  # noqa: E501
+        """
+        pass
+
     def test_search_methods(self):
         """Test case for search_methods
 
@@ -236,6 +278,13 @@ class TestVariablesApi(unittest.TestCase):
         """Test case for update_entity
 
         Update an entity  # noqa: E501
+        """
+        pass
+
+    def test_update_interest_entity(self):
+        """Test case for update_interest_entity
+
+        Update an entity of interest  # noqa: E501
         """
         pass
 

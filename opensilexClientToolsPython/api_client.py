@@ -75,7 +75,7 @@ class ApiClient(object):
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/1.0.0-rc/python'
+        self.user_agent = 'Swagger-Codegen/1.0.0-rc+1/python'
 
     def __del__(self):
         if self._pool is not None:
@@ -299,6 +299,11 @@ class ApiClient(object):
         elif klass == datetime.datetime:
             return self.__deserialize_datatime(data)
         else:
+            if "ScientificObjectNodeDTO" in str(klass):
+                if(data.get("geometry") is not None):
+                    geoTmp = data.get("geometry").get("geometry")
+                    data["geometry"] = geoTmp
+                    
             return self.__deserialize_model(data, klass)
 
     def call_api(self, resource_path, method,

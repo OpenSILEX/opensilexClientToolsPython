@@ -43,13 +43,6 @@ class TestOrganisationsApi(unittest.TestCase):
         """
         pass
 
-    def test_create_infrastructure_team(self):
-        """Test case for create_infrastructure_team
-
-        Create a team  # noqa: E501
-        """
-        pass
-
     def test_delete_infrastructure(self):
         """Test case for delete_infrastructure
 
@@ -61,13 +54,6 @@ class TestOrganisationsApi(unittest.TestCase):
         """Test case for delete_infrastructure_facility
 
         Delete a facility  # noqa: E501
-        """
-        pass
-
-    def test_delete_infrastructure_team(self):
-        """Test case for delete_infrastructure_team
-
-        Delete a team  # noqa: E501
         """
         pass
 
@@ -99,13 +85,6 @@ class TestOrganisationsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_infrastructure_team(self):
-        """Test case for get_infrastructure_team
-
-        Get a team  # noqa: E501
-        """
-        pass
-
     def test_search_infrastructure_facilities(self):
         """Test case for search_infrastructure_facilities
 
@@ -131,13 +110,6 @@ class TestOrganisationsApi(unittest.TestCase):
         """Test case for update_infrastructure_facility
 
         Update a facility  # noqa: E501
-        """
-        pass
-
-    def test_update_infrastructure_team(self):
-        """Test case for update_infrastructure_team
-
-        Update a team  # noqa: E501
         """
         pass
 

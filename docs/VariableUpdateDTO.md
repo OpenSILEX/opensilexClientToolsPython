@@ -8,10 +8,11 @@ Name | Type | Description | Notes
 **alternative_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **entity** | **str** |  | 
+**entity_of_interest** | **str** |  | [optional] 
 **characteristic** | **str** |  | 
 **trait** | **str** |  | [optional] 
 **trait_name** | **str** |  | [optional] 
-**method** | **str** |  | [optional] 
+**method** | **str** |  | 
 **unit** | **str** |  | 
 **species** | **str** |  | [optional] 
 **datatype** | **str** |  | 

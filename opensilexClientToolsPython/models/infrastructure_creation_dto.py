@@ -33,44 +33,49 @@ class InfrastructureCreationDTO(object):
     swagger_types = {
         'uri': 'str',
         'rdf_type': 'str',
-        'rdf_type_name': 'str',
         'name': 'str',
         'parent': 'str',
-        'children': 'list[str]'
+        'children': 'list[str]',
+        'groups': 'list[str]',
+        'rdf_type_name': 'str'
     }
 
     attribute_map = {
         'uri': 'uri',
         'rdf_type': 'rdf_type',
-        'rdf_type_name': 'rdf_type_name',
         'name': 'name',
         'parent': 'parent',
-        'children': 'children'
+        'children': 'children',
+        'groups': 'groups',
+        'rdf_type_name': 'rdf_type_name'
     }
 
-    def __init__(self, uri=None, rdf_type=None, rdf_type_name=None, name=None, parent=None, children=None):  # noqa: E501
+    def __init__(self, uri=None, rdf_type=None, name=None, parent=None, children=None, groups=None, rdf_type_name=None):  # noqa: E501
         """InfrastructureCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
         self._rdf_type = None
-        self._rdf_type_name = None
         self._name = None
         self._parent = None
         self._children = None
+        self._groups = None
+        self._rdf_type_name = None
         self.discriminator = None
 
         if uri is not None:
             self.uri = uri
         if rdf_type is not None:
             self.rdf_type = rdf_type
-        if rdf_type_name is not None:
-            self.rdf_type_name = rdf_type_name
         if name is not None:
             self.name = name
         if parent is not None:
             self.parent = parent
         if children is not None:
             self.children = children
+        if groups is not None:
+            self.groups = groups
+        if rdf_type_name is not None:
+            self.rdf_type_name = rdf_type_name
 
     @property
     def uri(self):
@@ -113,27 +118,6 @@ class InfrastructureCreationDTO(object):
         """
 
         self._rdf_type = rdf_type
-
-    @property
-    def rdf_type_name(self):
-        """Gets the rdf_type_name of this InfrastructureCreationDTO.  # noqa: E501
-
-
-        :return: The rdf_type_name of this InfrastructureCreationDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._rdf_type_name
-
-    @rdf_type_name.setter
-    def rdf_type_name(self, rdf_type_name):
-        """Sets the rdf_type_name of this InfrastructureCreationDTO.
-
-
-        :param rdf_type_name: The rdf_type_name of this InfrastructureCreationDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._rdf_type_name = rdf_type_name
 
     @property
     def name(self):
@@ -197,6 +181,48 @@ class InfrastructureCreationDTO(object):
         """
 
         self._children = children
+
+    @property
+    def groups(self):
+        """Gets the groups of this InfrastructureCreationDTO.  # noqa: E501
+
+
+        :return: The groups of this InfrastructureCreationDTO.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._groups
+
+    @groups.setter
+    def groups(self, groups):
+        """Sets the groups of this InfrastructureCreationDTO.
+
+
+        :param groups: The groups of this InfrastructureCreationDTO.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._groups = groups
+
+    @property
+    def rdf_type_name(self):
+        """Gets the rdf_type_name of this InfrastructureCreationDTO.  # noqa: E501
+
+
+        :return: The rdf_type_name of this InfrastructureCreationDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._rdf_type_name
+
+    @rdf_type_name.setter
+    def rdf_type_name(self, rdf_type_name):
+        """Sets the rdf_type_name of this InfrastructureCreationDTO.
+
+
+        :param rdf_type_name: The rdf_type_name of this InfrastructureCreationDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._rdf_type_name = rdf_type_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -6,20 +6,16 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_infrastructure**](OrganisationsApi.md#create_infrastructure) | **POST** /core/organisations | Create an organisation
 [**create_infrastructure_facility**](OrganisationsApi.md#create_infrastructure_facility) | **POST** /core/facilities | Create a facility
-[**create_infrastructure_team**](OrganisationsApi.md#create_infrastructure_team) | **POST** /core/teams | Create a team
 [**delete_infrastructure**](OrganisationsApi.md#delete_infrastructure) | **DELETE** /core/organisations/{uri} | Delete an organisation
 [**delete_infrastructure_facility**](OrganisationsApi.md#delete_infrastructure_facility) | **DELETE** /core/facilities/{uri} | Delete a facility
-[**delete_infrastructure_team**](OrganisationsApi.md#delete_infrastructure_team) | **DELETE** /core/teams/{uri} | Delete a team
 [**get_all_facilities**](OrganisationsApi.md#get_all_facilities) | **GET** /core/facilities/all_facilities | Get all facilities
 [**get_facilities_by_uri**](OrganisationsApi.md#get_facilities_by_uri) | **GET** /core/facilities/by_uris | Get facilities by their URIs
 [**get_infrastructure**](OrganisationsApi.md#get_infrastructure) | **GET** /core/organisations/{uri} | Get an organisation 
 [**get_infrastructure_facility**](OrganisationsApi.md#get_infrastructure_facility) | **GET** /core/facilities/{uri} | Get a facility
-[**get_infrastructure_team**](OrganisationsApi.md#get_infrastructure_team) | **GET** /core/teams/{uri} | Get a team
 [**search_infrastructure_facilities**](OrganisationsApi.md#search_infrastructure_facilities) | **GET** /core/facilities | Search facilities
 [**search_infrastructures_tree**](OrganisationsApi.md#search_infrastructures_tree) | **GET** /core/organisations | Search organisations
 [**update_infrastructure**](OrganisationsApi.md#update_infrastructure) | **PUT** /core/organisations | Update an organisation
 [**update_infrastructure_facility**](OrganisationsApi.md#update_infrastructure_facility) | **PUT** /core/facilities | Update a facility
-[**update_infrastructure_team**](OrganisationsApi.md#update_infrastructure_team) | **PUT** /core/teams | Update a team
 
 
 # **create_infrastructure**
@@ -126,58 +122,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_infrastructure_team**
-> ObjectUriResponse create_infrastructure_team(authorization, body=body, accept_language=accept_language)
-
-Create a team
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-body = opensilexClientToolsPython.InfrastructureTeamDTO() # InfrastructureTeamDTO | Team description (optional)
-
-
-try:
-    # Create a team
-    api_response = api_instance.create_infrastructure_team(body=body, )
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->create_infrastructure_team: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**InfrastructureTeamDTO**](InfrastructureTeamDTO.md)| Team description | [optional] 
-
-
-### Return type
-
-[**ObjectUriResponse**](ObjectUriResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **delete_infrastructure**
 > ObjectUriResponse delete_infrastructure(uri, authorization, accept_language=accept_language)
 
@@ -265,58 +209,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | **str**| Facility URI | 
-
-
-### Return type
-
-[**ObjectUriResponse**](ObjectUriResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_infrastructure_team**
-> ObjectUriResponse delete_infrastructure_team(uri, authorization, accept_language=accept_language)
-
-Delete a team
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = 'http://example.com/' # str | Team URI
-
-
-try:
-    # Delete a team
-    api_response = api_instance.delete_infrastructure_team(uri, )
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->delete_infrastructure_team: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uri** | **str**| Team URI | 
 
 
 ### Return type
@@ -540,58 +432,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_infrastructure_team**
-> InfrastructureTeamDTO get_infrastructure_team(uri, authorization, accept_language=accept_language)
-
-Get a team
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-uri = 'http://example.com/' # str | Team URI
-
-
-try:
-    # Get a team
-    api_response = api_instance.get_infrastructure_team(uri, )
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->get_infrastructure_team: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uri** | **str**| Team URI | 
-
-
-### Return type
-
-[**InfrastructureTeamDTO**](InfrastructureTeamDTO.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **search_infrastructure_facilities**
 > list[InfrastructureFacilityNamedDTO] search_infrastructure_facilities(authorization, pattern=pattern, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -791,58 +631,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**InfrastructureFacilityUpdateDTO**](InfrastructureFacilityUpdateDTO.md)| Facility description | [optional] 
-
-
-### Return type
-
-[**ObjectUriResponse**](ObjectUriResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update_infrastructure_team**
-> ObjectUriResponse update_infrastructure_team(authorization, body=body, accept_language=accept_language)
-
-Update a team
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.OrganisationsApi(pythonClient)
-body = opensilexClientToolsPython.InfrastructureTeamDTO() # InfrastructureTeamDTO | Team description (optional)
-
-
-try:
-    # Update a team
-    api_response = api_instance.update_infrastructure_team(body=body, )
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganisationsApi->update_infrastructure_team: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**InfrastructureTeamDTO**](InfrastructureTeamDTO.md)| Team description | [optional] 
 
 
 ### Return type

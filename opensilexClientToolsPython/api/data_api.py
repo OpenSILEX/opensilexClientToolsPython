@@ -2177,7 +2177,7 @@ class DataApi(object):
     def post_data_file(self, description, file, **kwargs):  # noqa: E501
         """Add a data file  # noqa: E501
 
-        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"targets\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
+        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"target\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_data_file(description, file, async_req=True)
@@ -2202,7 +2202,7 @@ class DataApi(object):
     def post_data_file_with_http_info(self, description, file, **kwargs):  # noqa: E501
         """Add a data file  # noqa: E501
 
-        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"timezone\":\"Europe/Paris\", \"targets\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
+        {\"rdf_type\":\"http://www.opensilex.org/vocabulary/oeso#Image\", \"date\":\"2020-08-21T00:00:00+01:00\", \"target\":\"http://plot01\", \"provenance\": { \"uri\":\"http://opensilex.dev/provenance/1598001689415\" }, \"metadata\":{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}}  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.post_data_file_with_http_info(description, file, async_req=True)

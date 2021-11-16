@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **entity** | [**EntityGetDTO**](EntityGetDTO.md) |  | [optional] 
+**entity_of_interest** | [**NamedResourceDTO**](NamedResourceDTO.md) |  | [optional] 
 **characteristic** | [**CharacteristicGetDTO**](CharacteristicGetDTO.md) |  | [optional] 
 **method** | [**MethodGetDTO**](MethodGetDTO.md) |  | [optional] 
 **unit** | [**UnitGetDTO**](UnitGetDTO.md) |  | [optional] 

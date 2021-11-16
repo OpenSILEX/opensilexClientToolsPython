@@ -34,6 +34,7 @@ class VariableGetDTO(object):
         'uri': 'str',
         'name': 'str',
         'entity': 'EntityGetDTO',
+        'entity_of_interest': 'NamedResourceDTO',
         'characteristic': 'CharacteristicGetDTO',
         'method': 'MethodGetDTO',
         'unit': 'UnitGetDTO'
@@ -43,17 +44,19 @@ class VariableGetDTO(object):
         'uri': 'uri',
         'name': 'name',
         'entity': 'entity',
+        'entity_of_interest': 'entity_of_interest',
         'characteristic': 'characteristic',
         'method': 'method',
         'unit': 'unit'
     }
 
-    def __init__(self, uri=None, name=None, entity=None, characteristic=None, method=None, unit=None):  # noqa: E501
+    def __init__(self, uri=None, name=None, entity=None, entity_of_interest=None, characteristic=None, method=None, unit=None):  # noqa: E501
         """VariableGetDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
         self._name = None
         self._entity = None
+        self._entity_of_interest = None
         self._characteristic = None
         self._method = None
         self._unit = None
@@ -65,6 +68,8 @@ class VariableGetDTO(object):
             self.name = name
         if entity is not None:
             self.entity = entity
+        if entity_of_interest is not None:
+            self.entity_of_interest = entity_of_interest
         if characteristic is not None:
             self.characteristic = characteristic
         if method is not None:
@@ -134,6 +139,27 @@ class VariableGetDTO(object):
         """
 
         self._entity = entity
+
+    @property
+    def entity_of_interest(self):
+        """Gets the entity_of_interest of this VariableGetDTO.  # noqa: E501
+
+
+        :return: The entity_of_interest of this VariableGetDTO.  # noqa: E501
+        :rtype: NamedResourceDTO
+        """
+        return self._entity_of_interest
+
+    @entity_of_interest.setter
+    def entity_of_interest(self, entity_of_interest):
+        """Sets the entity_of_interest of this VariableGetDTO.
+
+
+        :param entity_of_interest: The entity_of_interest of this VariableGetDTO.  # noqa: E501
+        :type: NamedResourceDTO
+        """
+
+        self._entity_of_interest = entity_of_interest
 
     @property
     def characteristic(self):

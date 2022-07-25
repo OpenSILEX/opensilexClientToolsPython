@@ -32,7 +32,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
-target = 'http://www.opensilex.org/demo/2018/o18000076' # str | Target URI (optional)
+target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI (optional)
 
 
 try:
@@ -136,7 +136,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
-uri = 'http://www.opensilex.org/annotations/12590c87-1c34-426b-a231-beb7acb33415' # str | Annotation URI
+uri = '\"http://www.opensilex.org/annotations/12590c87-1c34-426b-a231-beb7acb33415\"' # str | Annotation URI
 
 
 try:
@@ -188,7 +188,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
-uri = 'http://www.opensilex.org/annotations/12590c87-1c34-426b-a231-beb7acb33415' # str | Event URI
+uri = '\"http://www.opensilex.org/annotations/12590c87-1c34-426b-a231-beb7acb33415\"' # str | Event URI
 
 
 try:
@@ -240,11 +240,11 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
-description = 'The pest attack' # str | Description (regex) (optional)
-target = 'http://www.opensilex.org/demo/2018/o18000076' # str | Target URI (optional)
-motivation = 'http://www.w3.org/ns/oa#describing' # str | Motivation URI (optional)
-author = 'http://opensilex.dev/users#Admin.OpenSilex' # str | Author URI (optional)
-order_by = ['author=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+description = '\"The pest attack\"' # str | Description (regex) (optional)
+target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI (optional)
+motivation = '\"http://www.w3.org/ns/oa#describing\"' # str | Motivation URI (optional)
+author = '\"http://opensilex.dev/users#Admin.OpenSilex\"' # str | Author URI (optional)
+order_by = ['\"author=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -304,8 +304,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
-name = 'describing' # str | Motivation name regex pattern (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"describing\"' # str | Motivation name regex pattern (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

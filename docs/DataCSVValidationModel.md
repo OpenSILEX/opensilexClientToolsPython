@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **invalid_data_type_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **invalid_experiment_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **invalid_device_errors** | **dict(str, list[CSVCell])** |  | [optional] 
+**device_choice_ambiguity_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **duplicated_data_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **duplicated_object_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **duplicated_experiment_errors** | **dict(str, list[CSVCell])** |  | [optional] 

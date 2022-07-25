@@ -187,8 +187,8 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AreaApi(pythonClient)
 body = opensilexClientToolsPython.GeoJsonObject() # GeoJsonObject | geometry GeoJSON
-start = '2019-09-08T12:00:00+01:00' # str | Start date : match temporal area after the given start date (optional)
-end = '2021-09-08T12:00:00+01:00' # str | End date : match temporal area before the given end date (optional)
+start = '\"2019-09-08T12:00:00+01:00\"' # str | Start date : match temporal area after the given start date (optional)
+end = '\"2021-09-08T12:00:00+01:00\"' # str | End date : match temporal area before the given end date (optional)
 
 
 try:

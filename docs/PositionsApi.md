@@ -27,8 +27,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.PositionsApi(pythonClient)
-uri = 'http://opensilex.dev/plant/plant5841' # str | Object URI
-time = '2019-09-08T12:00:00+01:00' # str | Time : match position at the given time (optional)
+uri = '\"http://opensilex.dev/plant/plant5841\"' # str | Object URI
+time = '\"2019-09-08T12:00:00+01:00\"' # str | Time : match position at the given time (optional)
 
 
 try:
@@ -81,9 +81,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.PositionsApi(pythonClient)
-target = 'http://www.opensilex.org/demo/2018/o18000076' # str | Target URI
-start_date_time = '2019-09-08T12:00:00+01:00' # str | Start date : match position affected after the given start date (optional)
-end_date_time = '2021-09-08T12:00:00+01:00' # str | End date : match position affected before the given end date (optional)
+target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI
+start_date_time = '\"2019-09-08T12:00:00+01:00\"' # str | Start date : match position affected after the given start date (optional)
+end_date_time = '\"2021-09-08T12:00:00+01:00\"' # str | End date : match position affected before the given end date (optional)
 order_by = ['order_by_example'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 56 # int | Page number (optional)
 page_size = 56 # int | Page size (optional)

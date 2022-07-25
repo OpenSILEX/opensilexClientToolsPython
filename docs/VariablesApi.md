@@ -21,11 +21,16 @@ Method | HTTP request | Description
 [**delete_variables_group**](VariablesApi.md#delete_variables_group) | **DELETE** /core/variables_group/{uri} | Delete a variables group
 [**details_export_variable_by_ur_is**](VariablesApi.md#details_export_variable_by_ur_is) | **POST** /core/variables/export_details_by_uris | export detailed variable by list of uris
 [**get_characteristic**](VariablesApi.md#get_characteristic) | **GET** /core/characteristics/{uri} | Get a characteristic
+[**get_characteristics_by_ur_is**](VariablesApi.md#get_characteristics_by_ur_is) | **GET** /core/characteristics/by_uris | Get detailed characteristics by uris
 [**get_datatypes**](VariablesApi.md#get_datatypes) | **GET** /core/variables/datatypes | Get variables datatypes
+[**get_entities_by_ur_is**](VariablesApi.md#get_entities_by_ur_is) | **GET** /core/entities/by_uris | Get detailed entities by uris
 [**get_entity**](VariablesApi.md#get_entity) | **GET** /core/entities/{uri} | Get an entity
+[**get_interest_entities_by_ur_is**](VariablesApi.md#get_interest_entities_by_ur_is) | **GET** /core/entities_of_interest/by_uris | Get detailed entities of interest by uris
 [**get_interest_entity**](VariablesApi.md#get_interest_entity) | **GET** /core/entities_of_interest/{uri} | Get an entity of interest
 [**get_method**](VariablesApi.md#get_method) | **GET** /core/methods/{uri} | Get a method
+[**get_methods_by_ur_is**](VariablesApi.md#get_methods_by_ur_is) | **GET** /core/methods/by_uris | Get detailed methods by uris
 [**get_unit**](VariablesApi.md#get_unit) | **GET** /core/units/{uri} | Get an unit
+[**get_units_by_ur_is**](VariablesApi.md#get_units_by_ur_is) | **GET** /core/units/by_uris | Get detailed units by uris
 [**get_variable**](VariablesApi.md#get_variable) | **GET** /core/variables/{uri} | Get a variable
 [**get_variables_by_ur_is**](VariablesApi.md#get_variables_by_ur_is) | **GET** /core/variables/by_uris | Get detailed variables by uris
 [**get_variables_group**](VariablesApi.md#get_variables_group) | **GET** /core/variables_group/{uri} | Get a variables group
@@ -35,7 +40,7 @@ Method | HTTP request | Description
 [**search_interest_entity**](VariablesApi.md#search_interest_entity) | **GET** /core/entities_of_interest | Search entities of interest by name
 [**search_methods**](VariablesApi.md#search_methods) | **GET** /core/methods | Search methods by name
 [**search_units**](VariablesApi.md#search_units) | **GET** /core/units | Search units by name
-[**search_variables**](VariablesApi.md#search_variables) | **GET** /core/variables | Search variables by name, long name, entity, characteristic, method or unit name
+[**search_variables**](VariablesApi.md#search_variables) | **GET** /core/variables | Search variables
 [**search_variables_details**](VariablesApi.md#search_variables_details) | **GET** /core/variables/details | Search detailed variables by name, long name, entity, characteristic, method or unit name
 [**search_variables_groups**](VariablesApi.md#search_variables_groups) | **GET** /core/variables_group | Search variables groups
 [**update_characteristic**](VariablesApi.md#update_characteristic) | **PUT** /core/characteristics | Update a characteristic
@@ -481,7 +486,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/characteristic/Height' # str | Characteristic URI
+uri = '\"http://opensilex.dev/set/variables/characteristic/Height\"' # str | Characteristic URI
 
 
 try:
@@ -533,7 +538,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/entity/Plant' # str | Entity URI
+uri = '\"http://opensilex.dev/set/variables/entity/Plant\"' # str | Entity URI
 
 
 try:
@@ -585,7 +590,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/entity_of_interest/Plot' # str | Entity of interest URI
+uri = '\"http://opensilex.dev/set/variables/entity_of_interest/Plot\"' # str | Entity of interest URI
 
 
 try:
@@ -637,7 +642,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/method/ImageAnalysis' # str | Method URI
+uri = '\"http://opensilex.dev/set/variables/method/ImageAnalysis\"' # str | Method URI
 
 
 try:
@@ -689,7 +694,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/unit/Centimeter' # str | Unit URI
+uri = '\"http://opensilex.dev/set/variables/unit/Centimeter\"' # str | Unit URI
 
 
 try:
@@ -741,7 +746,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/Plant_Height' # str | Variable URI
+uri = '\"http://opensilex.dev/set/variables/Plant_Height\"' # str | Variable URI
 
 
 try:
@@ -896,7 +901,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/characteristic/Height' # str | Characteristic URI
+uri = '\"http://opensilex.dev/set/variables/characteristic/Height\"' # str | Characteristic URI
 
 
 try:
@@ -917,6 +922,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**CharacteristicDetailsDTO**](CharacteristicDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_characteristics_by_ur_is**
+> list[CharacteristicDetailsDTO] get_characteristics_by_ur_is(uris, authorization, accept_language=accept_language)
+
+Get detailed characteristics by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+uris = ['uris_example'] # list[str] | Characteristics URIs
+
+
+try:
+    # Get detailed characteristics by uris
+    api_response = api_instance.get_characteristics_by_ur_is(uris, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->get_characteristics_by_ur_is: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Characteristics URIs | 
+
+
+### Return type
+
+[**list[CharacteristicDetailsDTO]**](CharacteristicDetailsDTO.md)
 
 ### Authorization
 
@@ -979,6 +1036,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_entities_by_ur_is**
+> list[EntityDetailsDTO] get_entities_by_ur_is(uris, authorization, accept_language=accept_language)
+
+Get detailed entities by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+uris = ['uris_example'] # list[str] | Entities URIs
+
+
+try:
+    # Get detailed entities by uris
+    api_response = api_instance.get_entities_by_ur_is(uris, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->get_entities_by_ur_is: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Entities URIs | 
+
+
+### Return type
+
+[**list[EntityDetailsDTO]**](EntityDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_entity**
 > EntityDetailsDTO get_entity(uri, authorization, accept_language=accept_language)
 
@@ -998,7 +1107,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/entity/Plant' # str | Entity URI
+uri = '\"http://opensilex.dev/set/variables/entity/Plant\"' # str | Entity URI
 
 
 try:
@@ -1031,6 +1140,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_interest_entities_by_ur_is**
+> list[InterestEntityDetailsDTO] get_interest_entities_by_ur_is(uris, authorization, accept_language=accept_language)
+
+Get detailed entities of interest by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+uris = ['uris_example'] # list[str] | Entities of interest URIs
+
+
+try:
+    # Get detailed entities of interest by uris
+    api_response = api_instance.get_interest_entities_by_ur_is(uris, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->get_interest_entities_by_ur_is: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Entities of interest URIs | 
+
+
+### Return type
+
+[**list[InterestEntityDetailsDTO]**](InterestEntityDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_interest_entity**
 > InterestEntityDetailsDTO get_interest_entity(uri, authorization, accept_language=accept_language)
 
@@ -1050,7 +1211,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/entity_of_interest/Plot' # str | Entity of interest URI
+uri = '\"http://opensilex.dev/set/variables/entity_of_interest/Plot\"' # str | Entity of interest URI
 
 
 try:
@@ -1102,7 +1263,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/method/ImageAnalysis' # str | Method URI
+uri = '\"http://opensilex.dev/set/variables/method/ImageAnalysis\"' # str | Method URI
 
 
 try:
@@ -1135,6 +1296,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_methods_by_ur_is**
+> list[MethodDetailsDTO] get_methods_by_ur_is(uris, authorization, accept_language=accept_language)
+
+Get detailed methods by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+uris = ['uris_example'] # list[str] | Methods URIs
+
+
+try:
+    # Get detailed methods by uris
+    api_response = api_instance.get_methods_by_ur_is(uris, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->get_methods_by_ur_is: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Methods URIs | 
+
+
+### Return type
+
+[**list[MethodDetailsDTO]**](MethodDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_unit**
 > UnitDetailsDTO get_unit(uri, authorization, accept_language=accept_language)
 
@@ -1154,7 +1367,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/unit/Centimeter' # str | Unit URI
+uri = '\"http://opensilex.dev/set/variables/unit/Centimeter\"' # str | Unit URI
 
 
 try:
@@ -1187,6 +1400,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_units_by_ur_is**
+> list[UnitDetailsDTO] get_units_by_ur_is(uris, authorization, accept_language=accept_language)
+
+Get detailed units by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+uris = ['uris_example'] # list[str] | Units URIs
+
+
+try:
+    # Get detailed units by uris
+    api_response = api_instance.get_units_by_ur_is(uris, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->get_units_by_ur_is: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Units URIs | 
+
+
+### Return type
+
+[**list[UnitDetailsDTO]**](UnitDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_variable**
 > VariableDetailsDTO get_variable(uri, authorization, accept_language=accept_language)
 
@@ -1206,7 +1471,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = 'http://opensilex.dev/set/variables/Plant_Height' # str | Variable URI
+uri = '\"http://opensilex.dev/set/variables/Plant_Height\"' # str | Variable URI
 
 
 try:
@@ -1414,8 +1679,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = 'Height' # str | Name (regex) (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"Height\"' # str | Name (regex) (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1472,8 +1737,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = 'plant' # str | Name (regex) (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"plant\"' # str | Name (regex) (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1530,8 +1795,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = 'plot' # str | Name (regex) (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"plot\"' # str | Name (regex) (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1588,8 +1853,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = 'ImageAnalysis' # str | Name (regex) (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"ImageAnalysis\"' # str | Name (regex) (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1646,8 +1911,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = 'Centimeter' # str | Name (regex) (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"Centimeter\"' # str | Name (regex) (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1686,9 +1951,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_variables**
-> list[VariableGetDTO] search_variables(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[VariableGetDTO] search_variables(authorization, name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
-Search variables by name, long name, entity, characteristic, method or unit name
+Search variables
 
 The following fields could be used for sorting :    _entity_name/entityName : the name of the variable entity   _characteristic_name/characteristicName : the name of the variable characteristic   _method_name/methodName : the name of the variable method   _unit_name/unitName : the name of the variable unit  
 
@@ -1704,15 +1969,21 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = 'plant_height' # str | Name regex pattern (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"plant_height\"' # str | Name regex pattern (optional)
+entity = 'entity_example' # str | Entity filter (optional)
+entity_of_interest = 'entity_of_interest_example' # str | Entity of interest filter (optional)
+characteristic = 'characteristic_example' # str | Characteristic filter (optional)
+method = 'method_example' # str | Method filter (optional)
+unit = 'unit_example' # str | Unit filter (optional)
+group_of_variables = 'group_of_variables_example' # str | Group filter (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
 
 try:
-    # Search variables by name, long name, entity, characteristic, method or unit name
-    api_response = api_instance.search_variables(name=name, order_by=order_by, page=page, page_size=page_size, )
+    # Search variables
+    api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_variables: %s\n" % e)
@@ -1723,6 +1994,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Name regex pattern | [optional] 
+ **entity** | **str**| Entity filter | [optional] 
+ **entity_of_interest** | **str**| Entity of interest filter | [optional] 
+ **characteristic** | **str**| Characteristic filter | [optional] 
+ **method** | **str**| Method filter | [optional] 
+ **unit** | **str**| Unit filter | [optional] 
+ **group_of_variables** | **str**| Group filter | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
@@ -1762,8 +2039,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = 'plant_height' # str | Name regex pattern (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = '\"plant_height\"' # str | Name regex pattern (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1822,7 +2099,7 @@ pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
 variable_uri = 'variable_uri_example' # str | Variable URI (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

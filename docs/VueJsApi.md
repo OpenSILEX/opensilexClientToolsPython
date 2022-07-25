@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**get_theme_config**](VueJsApi.md#get_theme_config) | **GET** /vuejs/theme/{moduleId}/{themeId}/config | Return the front Vue JS theme configuration
 [**get_theme_css**](VueJsApi.md#get_theme_css) | **GET** /vuejs/theme/{moduleId}/{themeId}/style.css | Return the theme css file
 [**get_theme_resource**](VueJsApi.md#get_theme_resource) | **GET** /vuejs/theme/{moduleId}/{themeId}/resource | Return the theme requested resource
+[**get_user_config**](VueJsApi.md#get_user_config) | **GET** /vuejs/user_config | Return the user-specific configuration
 
 
 # **get_config**
@@ -81,7 +82,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module = 'opensilex' # str | Module identifier
+module = '\"opensilex\"' # str | Module identifier
 
 
 try:
@@ -133,7 +134,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module = 'opensilex' # str | Module identifier
+module = '\"opensilex\"' # str | Module identifier
 
 
 try:
@@ -185,8 +186,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = 'opensilex-front' # str | Module identifier
-theme_id = 'phis' # str | Theme identifier
+module_id = '\"opensilex-front\"' # str | Module identifier
+theme_id = '\"phis\"' # str | Theme identifier
 
 
 try:
@@ -239,8 +240,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = 'opensilex-front' # str | Module identifier
-theme_id = 'phis' # str | Theme identifier
+module_id = '\"opensilex-front\"' # str | Module identifier
+theme_id = '\"phis\"' # str | Theme identifier
 
 
 try:
@@ -293,9 +294,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = 'opensilex-front' # str | Module identifier
-theme_id = 'phis' # str | Theme identifier
-file_path = 'images/opensilex.png' # str | Resource path (optional)
+module_id = '\"opensilex-front\"' # str | Module identifier
+theme_id = '\"phis\"' # str | Theme identifier
+file_path = '\"images/opensilex.png\"' # str | Resource path (optional)
 
 
 try:
@@ -327,6 +328,56 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_config**
+> UserFrontConfigDTO get_user_config(accept_language=accept_language)
+
+Return the user-specific configuration
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
+
+
+try:
+    # Return the user-specific configuration
+    api_response = api_instance.get_user_config()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VueJsApi->get_user_config: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**UserFrontConfigDTO**](UserFrontConfigDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

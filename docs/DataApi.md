@@ -15,11 +15,15 @@ Method | HTTP request | Description
 [**get_data_file**](DataApi.md#get_data_file) | **GET** /core/datafiles/{uri} | Get a data file
 [**get_data_file_description**](DataApi.md#get_data_file_description) | **GET** /core/datafiles/{uri}/description | Get a data file description
 [**get_data_file_descriptions_by_search**](DataApi.md#get_data_file_descriptions_by_search) | **GET** /core/datafiles | Search data files
-[**get_datafiles_provenances**](DataApi.md#get_datafiles_provenances) | **GET** /core/datafiles/provenances | Get provenances linked to datafiles
+[**get_data_file_descriptions_by_targets**](DataApi.md#get_data_file_descriptions_by_targets) | **POST** /core/datafiles/by_targets | Search data files for a large list of targets 
+[**get_data_list_by_targets**](DataApi.md#get_data_list_by_targets) | **POST** /core/data/by_targets | Search data for a large list of targets
+[**get_datafiles_provenances**](DataApi.md#get_datafiles_provenances) | **GET** /core/datafiles/provenances | Search provenances linked to datafiles
+[**get_datafiles_provenances_by_targets**](DataApi.md#get_datafiles_provenances_by_targets) | **POST** /core/datafiles/provenances/by_targets | Search provenances linked to datafiles for a large list of targets
 [**get_pictures_thumbnails**](DataApi.md#get_pictures_thumbnails) | **GET** /core/datafiles/{uri}/thumbnail | Get a picture thumbnail
 [**get_provenance**](DataApi.md#get_provenance) | **GET** /core/provenances/{uri} | Get a provenance
 [**get_provenances_by_ur_is**](DataApi.md#get_provenances_by_ur_is) | **GET** /core/provenances/by_uris | Get a list of provenances by their URIs
-[**get_used_provenances**](DataApi.md#get_used_provenances) | **GET** /core/data/provenances | Get provenances linked to data
+[**get_used_provenances**](DataApi.md#get_used_provenances) | **GET** /core/data/provenances | Search provenances linked to data
+[**get_used_provenances_by_targets**](DataApi.md#get_used_provenances_by_targets) | **POST** /core/data/provenances/by_targets | Search provenances linked to data for a large list of targets
 [**get_used_variables**](DataApi.md#get_used_variables) | **GET** /core/data/variables | Get variables linked to data
 [**import_csv_data**](DataApi.md#import_csv_data) | **POST** /core/data/import | Import a CSV file for the given provenanceURI
 [**post_data_file**](DataApi.md#post_data_file) | **POST** /core/datafiles | Add a data file
@@ -103,17 +107,17 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
-end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
-timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiment uris (optional)
-targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by target uris (optional)
-variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
-devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by target uris (optional)
+variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
-provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
-metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
+metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
 
 
 try:
@@ -227,7 +231,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-uri = 'http://opensilex.dev/id/data/1598857852858' # str | Data URI
+uri = '\"http://opensilex.dev/id/data/1598857852858\"' # str | Data URI
 
 
 try:
@@ -279,10 +283,10 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiment = 'http://opensilex/set/experiments/ZA17' # str | Search by experiment uri (optional)
-target = 'http://opensilex.dev/opensilex/2020/o20000345' # str | Search by target uri (optional)
-variable = 'http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6' # str | Search by variable uri (optional)
-provenance = 'http://opensilex.dev/provenance/1598001689415' # str | Search by provenance uri (optional)
+experiment = '\"http://opensilex/set/experiments/ZA17\"' # str | Search by experiment uri (optional)
+target = '\"http://opensilex.dev/opensilex/2020/o20000345\"' # str | Search by target uri (optional)
+variable = '\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"' # str | Search by variable uri (optional)
+provenance = '\"http://opensilex.dev/provenance/1598001689415\"' # str | Search by provenance uri (optional)
 
 
 try:
@@ -337,7 +341,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-uri = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
+uri = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 
 
 try:
@@ -389,20 +393,20 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
-end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
-timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiment uris (optional)
-targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets (optional)
-variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables (optional)
-devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets (optional)
+variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
-provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
-metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
+metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
 mode = 'wide' # str | Format wide or long (optional) (default to wide)
 with_raw_data = false # bool | Export also raw_data (optional) (default to false)
-order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -626,15 +630,15 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
-start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
-end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
-timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiments (optional)
-targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris list (optional)
-devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
-provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uris list (optional)
-metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
-order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiments (optional)
+targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris list (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uris list (optional)
+metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -680,10 +684,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_datafiles_provenances**
-> list[ProvenanceGetDTO] get_datafiles_provenances(authorization, experiments=experiments, targets=targets, devices=devices, accept_language=accept_language)
+# **get_data_file_descriptions_by_targets**
+> list[DataFileGetDTO] get_data_file_descriptions_by_targets(authorization, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, accept_language=accept_language)
 
-Get provenances linked to datafiles
+Search data files for a large list of targets 
 
 
 
@@ -699,13 +703,165 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiment uris (optional)
-targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
-devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
+rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiments (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uris list (optional)
+metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Search by targets uris list (optional)
 
 
 try:
-    # Get provenances linked to datafiles
+    # Search data files for a large list of targets 
+    api_response = api_instance.get_data_file_descriptions_by_targets(rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataApi->get_data_file_descriptions_by_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rdf_type** | **str**| Search by rdf type uri | [optional] 
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
+ **timezone** | **str**| Precise the timezone corresponding to the given dates | [optional] 
+ **experiments** | [**list[str]**](str.md)| Search by experiments | [optional] 
+ **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
+ **provenances** | [**list[str]**](str.md)| Search by provenance uris list | [optional] 
+ **metadata** | **str**| Search by metadata | [optional] 
+ **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+ **body** | **list[str]**| Search by targets uris list | [optional] 
+
+
+### Return type
+
+[**list[DataFileGetDTO]**](DataFileGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_data_list_by_targets**
+> list[DataGetDTO] get_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, accept_language=accept_language)
+
+Search data for a large list of targets
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+min_confidence = 0.5 # float | Search by minimal confidence index (optional)
+max_confidence = 1.0 # float | Search by maximal confidence index (optional)
+provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
+metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris (optional)
+
+
+try:
+    # Search data for a large list of targets
+    api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataApi->get_data_list_by_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
+ **timezone** | **str**| Precise the timezone corresponding to the given dates | [optional] 
+ **experiments** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
+ **variables** | [**list[str]**](str.md)| Search by variables uris | [optional] 
+ **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
+ **min_confidence** | **float**| Search by minimal confidence index | [optional] 
+ **max_confidence** | **float**| Search by maximal confidence index | [optional] 
+ **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
+ **metadata** | **str**| Search by metadata | [optional] 
+ **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+ **body** | **list[str]**| Targets uris | [optional] 
+
+
+### Return type
+
+[**list[DataGetDTO]**](DataGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_datafiles_provenances**
+> list[ProvenanceGetDTO] get_datafiles_provenances(authorization, experiments=experiments, targets=targets, devices=devices, accept_language=accept_language)
+
+Search provenances linked to datafiles
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+
+
+try:
+    # Search provenances linked to datafiles
     api_response = api_instance.get_datafiles_provenances(experiments=experiments, targets=targets, devices=devices, )
     pprint(api_response)
 except ApiException as e:
@@ -719,6 +875,62 @@ Name | Type | Description  | Notes
  **experiments** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
  **targets** | [**list[str]**](str.md)| Search by targets uris | [optional] 
  **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
+
+
+### Return type
+
+[**list[ProvenanceGetDTO]**](ProvenanceGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_datafiles_provenances_by_targets**
+> list[ProvenanceGetDTO] get_datafiles_provenances_by_targets(authorization, experiments=experiments, devices=devices, body=body, accept_language=accept_language)
+
+Search provenances linked to datafiles for a large list of targets
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Search by targets uris (optional)
+
+
+try:
+    # Search provenances linked to datafiles for a large list of targets
+    api_response = api_instance.get_datafiles_provenances_by_targets(experiments=experiments, devices=devices, body=body, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataApi->get_datafiles_provenances_by_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **experiments** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
+ **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
+ **body** | **list[str]**| Search by targets uris | [optional] 
 
 
 ### Return type
@@ -898,7 +1110,7 @@ No authorization required
 # **get_used_provenances**
 > list[ProvenanceGetDTO] get_used_provenances(authorization, experiments=experiments, targets=targets, variables=variables, devices=devices, accept_language=accept_language)
 
-Get provenances linked to data
+Search provenances linked to data
 
 
 
@@ -914,14 +1126,14 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiment uris (optional)
-targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
-variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
-devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
+variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
 
 
 try:
-    # Get provenances linked to data
+    # Search provenances linked to data
     api_response = api_instance.get_used_provenances(experiments=experiments, targets=targets, variables=variables, devices=devices, )
     pprint(api_response)
 except ApiException as e:
@@ -936,6 +1148,64 @@ Name | Type | Description  | Notes
  **targets** | [**list[str]**](str.md)| Search by targets uris | [optional] 
  **variables** | [**list[str]**](str.md)| Search by variables uris | [optional] 
  **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
+
+
+### Return type
+
+[**list[ProvenanceGetDTO]**](ProvenanceGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_used_provenances_by_targets**
+> list[ProvenanceGetDTO] get_used_provenances_by_targets(authorization, experiments=experiments, variables=variables, devices=devices, body=body, accept_language=accept_language)
+
+Search provenances linked to data for a large list of targets
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris (optional)
+
+
+try:
+    # Search provenances linked to data for a large list of targets
+    api_response = api_instance.get_used_provenances_by_targets(experiments=experiments, variables=variables, devices=devices, body=body, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataApi->get_used_provenances_by_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **experiments** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
+ **variables** | [**list[str]**](str.md)| Search by variables uris | [optional] 
+ **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
+ **body** | **list[str]**| Targets uris | [optional] 
 
 
 ### Return type
@@ -972,9 +1242,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiment uris (optional)
-targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
-provenances = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by provenance uris (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
+provenances = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by provenance uris (optional)
 
 
 try:
@@ -1028,7 +1298,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
+provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 file = '/path/to/file.txt' # file | File
 
 
@@ -1188,18 +1458,18 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
-end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
-timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['http://opensilex/set/experiments/ZA17'] # list[str] | Search by experiment uris (optional)
-targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
-variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
-devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['\"http://opensilex/set/experiments/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
+variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
-provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
-metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
-order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
+metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1272,7 +1542,7 @@ activity = 'activity_example' # str | Search by activity URI (optional)
 activity_type = 'activity_type_example' # str | Search by activity type (optional)
 agent = 'agent_example' # str | Search by agent URI (optional)
 agent_type = 'agent_type_example' # str | Search by agent type (optional)
-order_by = ['date=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['\"date=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1492,7 +1762,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
+provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 file = '/path/to/file.txt' # file | File
 
 

@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**export_germplasm**](GermplasmApi.md#export_germplasm) | **GET** /core/germplasm/export | export germplasm
 [**export_germplasm_by_ur_is**](GermplasmApi.md#export_germplasm_by_ur_is) | **POST** /core/germplasm/export_by_uris | export germplasm by list of uris
 [**get_germplasm**](GermplasmApi.md#get_germplasm) | **GET** /core/germplasm/{uri} | Get a germplasm
+[**get_germplasm_attributes**](GermplasmApi.md#get_germplasm_attributes) | **GET** /core/germplasm/attributes | Get attributes of all germplasm
 [**get_germplasm_experiments**](GermplasmApi.md#get_germplasm_experiments) | **GET** /core/germplasm/{uri}/experiments | Get experiments where a germplasm has been used
 [**get_germplasms_by_uri**](GermplasmApi.md#get_germplasms_by_uri) | **GET** /core/germplasm/by_uris | Get a list of germplasms by their URIs
 [**search_germplasm**](GermplasmApi.md#search_germplasm) | **GET** /core/germplasm | Search germplasm
@@ -88,7 +89,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = 'http://example.com/' # str | Germplasm URI
+uri = '\"http://example.com/\"' # str | Germplasm URI
 
 
 try:
@@ -139,18 +140,18 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = 'http://opensilex/set/experiments/ZA17' # str | Regex pattern for filtering list by uri (optional)
-rdf_type = 'http://www.opensilex.org/vocabulary/oeso#Variety' # str | Search by type (optional)
+uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Regex pattern for filtering list by uri (optional)
+rdf_type = '\"http://www.opensilex.org/vocabulary/oeso#Variety\"' # str | Search by type (optional)
 name = '.*' # str | Regex pattern for filtering list by name and synonyms (optional) (default to .*)
 code = '.*' # str | Regex pattern for filtering list by code (optional) (default to .*)
 production_year = 2020 # int | Search by productionYear (optional)
-species = 'http://www.phenome-fppn.fr/id/species/zeamays' # str | Search by species (optional)
+species = '\"http://www.phenome-fppn.fr/id/species/zeamays\"' # str | Search by species (optional)
 variety = 'variety_example' # str | Search by variety (optional)
 accession = 'accession_example' # str | Search by accession (optional)
-institute = 'INRA' # str | Search by institute (optional)
+institute = '\"INRA\"' # str | Search by institute (optional)
 experiment = 'experiment_example' # str | Search by experiment (optional)
-metadata = '{ \"water_stress\" : \"resistant\", \"yield\" : \"moderate\"}' # str | Search by metadata (optional)
-order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+metadata = '\"{ \\\"water_stress\\\" : \\\"resistant\\\",\\n\\\"yield\\\" : \\\"moderate\\\"}\"' # str | Search by metadata (optional)
+order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 
 
 try:
@@ -263,7 +264,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = 'http://www.phenome-fppn.fr/id/species/zeamays' # str | germplasm URI
+uri = '\"http://www.phenome-fppn.fr/id/species/zeamays\"' # str | germplasm URI
 
 
 try:
@@ -296,6 +297,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_germplasm_attributes**
+> list[ExperimentGetListDTO] get_germplasm_attributes(authorization, accept_language=accept_language)
+
+Get attributes of all germplasm
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
+
+
+try:
+    # Get attributes of all germplasm
+    api_response = api_instance.get_germplasm_attributes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GermplasmApi->get_germplasm_attributes: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**list[ExperimentGetListDTO]**](ExperimentGetListDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_germplasm_experiments**
 > list[ExperimentGetListDTO] get_germplasm_experiments(uri, authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -315,9 +366,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = 'dev-germplasm:g01' # str | germplasm URI
+uri = '\"dev-germplasm:g01\"' # str | germplasm URI
 name = '.*' # str | Regex pattern for filtering experiments by name (optional) (default to .*)
-order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -427,18 +478,18 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = 'http://opensilex/set/experiments/ZA17' # str | Regex pattern for filtering list by uri (optional)
-rdf_type = 'http://www.opensilex.org/vocabulary/oeso#Variety' # str | Search by type (optional)
+uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Regex pattern for filtering list by uri (optional)
+rdf_type = '\"http://www.opensilex.org/vocabulary/oeso#Variety\"' # str | Search by type (optional)
 name = '.*' # str | Regex pattern for filtering list by name and synonyms (optional) (default to .*)
 code = '.*' # str | Regex pattern for filtering list by code (optional) (default to .*)
 production_year = 2020 # int | Search by production year (optional)
-species = 'http://www.phenome-fppn.fr/id/species/zeamays' # str | Search by species (optional)
+species = '\"http://www.phenome-fppn.fr/id/species/zeamays\"' # str | Search by species (optional)
 variety = 'variety_example' # str | Search by variety (optional)
 accession = 'accession_example' # str | Search by accession (optional)
-institute = 'INRA' # str | Search by institute (optional)
+institute = '\"INRA\"' # str | Search by institute (optional)
 experiment = 'experiment_example' # str | Search by experiment (optional)
-metadata = '{ \"water_stress\" : \"resistant\", \"yield\" : \"moderate\"}' # str | Search by metadata (optional)
-order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+metadata = '\"{ \\\"water_stress\\\" : \\\"resistant\\\",\\n\\\"yield\\\" : \\\"moderate\\\"}\"' # str | Search by metadata (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

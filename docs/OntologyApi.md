@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**get_sub_classes_of**](OntologyApi.md#get_sub_classes_of) | **GET** /ontology/subclasses_of | Search sub-classes tree of an RDF class
 [**get_uri_label**](OntologyApi.md#get_uri_label) | **GET** /ontology/uri_label | Return associated rdfs:label of an uri if exists
 [**get_uri_labels_list**](OntologyApi.md#get_uri_labels_list) | **GET** /ontology/uris_labels | Return associated rdfs:label of uris if they exist
+[**rename_uri**](OntologyApi.md#rename_uri) | **PUT** /ontology/{uri}/rename | Rename all occurrences of the given URI
 [**search_sub_classes_of**](OntologyApi.md#search_sub_classes_of) | **GET** /ontology/subclasses_of/search | Search sub-classes tree of an RDF class
 [**update_class_property_restriction**](OntologyApi.md#update_class_property_restriction) | **PUT** /ontology/rdf_type_property_restriction | Update a rdf type property restriction
 [**update_property**](OntologyApi.md#update_property) | **PUT** /ontology/property | Update a RDF property
@@ -769,6 +770,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **rename_uri**
+> rename_uri(uri, new_uri, authorization, accept_language=accept_language)
+
+Rename all occurrences of the given URI
+
+**This method should not be used unless you are fully understanding what you are doing, as it may have side-effects for external ontologies. Please note that occurrences of the URI will NOT be changed in the NoSQL database (MongoDB).**
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+uri = 'uri_example' # str | The URI to rename
+new_uri = 'new_uri_example' # str | The new URI
+
+
+try:
+    # Rename all occurrences of the given URI
+    api_instance.rename_uri(uri, new_uri, )
+except ApiException as e:
+    print("Exception when calling OntologyApi->rename_uri: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| The URI to rename | 
+ **new_uri** | **str**| The new URI | 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_sub_classes_of**
 > list[ResourceTreeDTO] search_sub_classes_of(authorization, parent_type=parent_type, name=name, ignore_root_classes=ignore_root_classes, accept_language=accept_language)
 
@@ -789,7 +843,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 parent_type = 'parent_type_example' # str | Parent RDF class URI (optional)
-name = 'plant_height' # str | Name regex pattern (optional)
+name = '\"plant_height\"' # str | Name regex pattern (optional)
 ignore_root_classes = false # bool | Flag to determine if only sub-classes must be include in result (optional) (default to false)
 
 

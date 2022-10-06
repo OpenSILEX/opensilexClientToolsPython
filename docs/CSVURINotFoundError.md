@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **col_index** | **int** |  | [optional] 
 **header** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
+**msg** | **str** |  | [optional] 
 **rdf_type** | **str** |  | [optional] 
 **object_uri** | **str** |  | [optional] 
 

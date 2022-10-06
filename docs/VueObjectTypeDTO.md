@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **input_component** | **str** |  | [optional] 
 **input_components_by_property** | **dict(str, str)** |  | [optional] 
 **view_component** | **str** |  | [optional] 
-**rdf_type** | [**RDFTypeDTO**](RDFTypeDTO.md) |  | [optional] 
+**rdf_type** | [**RDFTypeTranslatedDTO**](RDFTypeTranslatedDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,8 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_germplasm**](GermplasmApi.md#create_germplasm) | **POST** /core/germplasm | Add a germplasm
 [**delete_germplasm**](GermplasmApi.md#delete_germplasm) | **DELETE** /core/germplasm/{uri} | Delete a germplasm
-[**export_germplasm**](GermplasmApi.md#export_germplasm) | **GET** /core/germplasm/export | export germplasm
-[**export_germplasm_by_ur_is**](GermplasmApi.md#export_germplasm_by_ur_is) | **POST** /core/germplasm/export_by_uris | export germplasm by list of uris
+[**export_germplasm**](GermplasmApi.md#export_germplasm) | **POST** /core/germplasm/export | export germplasm
 [**get_germplasm**](GermplasmApi.md#get_germplasm) | **GET** /core/germplasm/{uri} | Get a germplasm
 [**get_germplasm_attributes**](GermplasmApi.md#get_germplasm_attributes) | **GET** /core/germplasm/attributes | Get attributes of all germplasm
 [**get_germplasm_experiments**](GermplasmApi.md#get_germplasm_experiments) | **GET** /core/germplasm/{uri}/experiments | Get experiments where a germplasm has been used
@@ -122,7 +121,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_germplasm**
-> export_germplasm(authorization, uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, institute=institute, experiment=experiment, metadata=metadata, order_by=order_by, accept_language=accept_language)
+> export_germplasm(authorization, body=body, accept_language=accept_language)
 
 export germplasm
 
@@ -140,23 +139,12 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Regex pattern for filtering list by uri (optional)
-rdf_type = '\"http://www.opensilex.org/vocabulary/oeso#Variety\"' # str | Search by type (optional)
-name = '.*' # str | Regex pattern for filtering list by name and synonyms (optional) (default to .*)
-code = '.*' # str | Regex pattern for filtering list by code (optional) (default to .*)
-production_year = 2020 # int | Search by productionYear (optional)
-species = '\"http://www.phenome-fppn.fr/id/species/zeamays\"' # str | Search by species (optional)
-variety = 'variety_example' # str | Search by variety (optional)
-accession = 'accession_example' # str | Search by accession (optional)
-institute = '\"INRA\"' # str | Search by institute (optional)
-experiment = 'experiment_example' # str | Search by experiment (optional)
-metadata = '\"{ \\\"water_stress\\\" : \\\"resistant\\\",\\n\\\"yield\\\" : \\\"moderate\\\"}\"' # str | Search by metadata (optional)
-order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+body = opensilexClientToolsPython.GermplasmSearchFilter() # GermplasmSearchFilter | CSV export configuration (optional)
 
 
 try:
     # export germplasm
-    api_instance.export_germplasm(uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, institute=institute, experiment=experiment, metadata=metadata, order_by=order_by, )
+    api_instance.export_germplasm(body=body, )
 except ApiException as e:
     print("Exception when calling GermplasmApi->export_germplasm: %s\n" % e)
 ```
@@ -165,69 +153,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uri** | **str**| Regex pattern for filtering list by uri | [optional] 
- **rdf_type** | **str**| Search by type | [optional] 
- **name** | **str**| Regex pattern for filtering list by name and synonyms | [optional] [default to .*]
- **code** | **str**| Regex pattern for filtering list by code | [optional] [default to .*]
- **production_year** | **int**| Search by productionYear | [optional] 
- **species** | **str**| Search by species | [optional] 
- **variety** | **str**| Search by variety | [optional] 
- **accession** | **str**| Search by accession | [optional] 
- **institute** | **str**| Search by institute | [optional] 
- **experiment** | **str**| Search by experiment | [optional] 
- **metadata** | **str**| Search by metadata | [optional] 
- **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **export_germplasm_by_ur_is**
-> export_germplasm_by_ur_is(authorization, body=body, accept_language=accept_language)
-
-export germplasm by list of uris
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of germplasm URI (optional)
-
-
-try:
-    # export germplasm by list of uris
-    api_instance.export_germplasm_by_ur_is(body=body, )
-except ApiException as e:
-    print("Exception when calling GermplasmApi->export_germplasm_by_ur_is: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**URIsListPostDTO**](URIsListPostDTO.md)| List of germplasm URI | [optional] 
+ **body** | [**GermplasmSearchFilter**](GermplasmSearchFilter.md)| CSV export configuration | [optional] 
 
 
 ### Return type

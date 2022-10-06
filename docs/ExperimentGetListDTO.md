@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**start_date** | **date** |  | [optional] 
-**end_date** | **date** |  | [optional] 
+**start_date** | **str** |  | [optional] 
+**end_date** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **objective** | **str** |  | [optional] 
 **species** | **list[str]** |  | [optional] 

@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_rdf_type**](VueJsOntologyExtensionApi.md#create_rdf_type) | **POST** /vuejs/owl_extension/rdf_type | Create a custom class
-[**delete_rdf_type**](VueJsOntologyExtensionApi.md#delete_rdf_type) | **DELETE** /vuejs/owl_extension/rdf_type | Delete a RDF type
+[**delete_rdf_type**](VueJsOntologyExtensionApi.md#delete_rdf_type) | **DELETE** /vuejs/owl_extension/rdf_type/{uri} | Delete a RDF type
 [**get_data_types1**](VueJsOntologyExtensionApi.md#get_data_types1) | **GET** /vuejs/owl_extension/data_types | Return literal datatypes definition
 [**get_object_types**](VueJsOntologyExtensionApi.md#get_object_types) | **GET** /vuejs/owl_extension/object_types | Return object types definition
 [**get_rdf_type1**](VueJsOntologyExtensionApi.md#get_rdf_type1) | **GET** /vuejs/owl_extension/rdf_type | Return rdf type model definition with properties
@@ -68,7 +68,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_rdf_type**
-> RDFPropertyDTO delete_rdf_type(authorization, rdf_type=rdf_type, accept_language=accept_language)
+> ObjectUriResponse delete_rdf_type(uri, authorization, accept_language=accept_language)
 
 Delete a RDF type
 
@@ -86,12 +86,12 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsOntologyExtensionApi(pythonClient)
-rdf_type = 'rdf_type_example' # str | RDF type (optional)
+uri = 'uri_example' # str | RDF type
 
 
 try:
     # Delete a RDF type
-    api_response = api_instance.delete_rdf_type(rdf_type=rdf_type, )
+    api_response = api_instance.delete_rdf_type(uri, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->delete_rdf_type: %s\n" % e)
@@ -101,12 +101,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rdf_type** | **str**| RDF type | [optional] 
+ **uri** | **str**| RDF type | 
 
 
 ### Return type
 
-[**RDFPropertyDTO**](RDFPropertyDTO.md)
+[**ObjectUriResponse**](ObjectUriResponse.md)
 
 ### Authorization
 

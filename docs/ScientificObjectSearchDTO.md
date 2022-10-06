@@ -12,11 +12,11 @@ Name | Type | Description | Notes
 **germplasm** | **str** |  | [optional] 
 **factor_levels** | **list[str]** |  | [optional] 
 **facility** | **str** |  | [optional] 
-**existence_date** | **date** |  | [optional] 
-**creation_date** | **date** |  | [optional] 
+**existence_date** | **str** |  | [optional] 
+**creation_date** | **str** |  | [optional] 
 **order_by** | [**list[OrderBy]**](OrderBy.md) |  | [optional] 
 **page** | **int** |  | [optional] 
-**page_sze** | **int** |  | [optional] 
+**page_size** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

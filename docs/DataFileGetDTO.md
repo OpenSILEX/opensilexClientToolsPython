@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **provenance** | [**DataProvenanceModel**](DataProvenanceModel.md) |  | 
 **metadata** | **dict(str, object)** | key-value system to store additional information that can be used to query data | [optional] 
 **archive** | **str** | archive file URI if file is inside | [optional] 
+**filename** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

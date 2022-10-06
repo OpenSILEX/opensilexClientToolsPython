@@ -14,7 +14,7 @@ from opensilexClientToolsPython.api.events_api import EventsApi
 from opensilexClientToolsPython.api.experiments_api import ExperimentsApi
 from opensilexClientToolsPython.api.factors_api import FactorsApi
 from opensilexClientToolsPython.api.germplasm_api import GermplasmApi
-from opensilexClientToolsPython.api.mobile_api import MobileApi
+from opensilexClientToolsPython.api.metrics_api import MetricsApi
 from opensilexClientToolsPython.api.ontology_api import OntologyApi
 from opensilexClientToolsPython.api.organizations_api import OrganizationsApi
 from opensilexClientToolsPython.api.positions_api import PositionsApi

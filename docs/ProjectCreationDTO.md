@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | 
 **shortname** | **str** |  | [optional] 
-**start_date** | **date** |  | 
-**end_date** | **date** |  | [optional] 
+**start_date** | **str** |  | 
+**end_date** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **objective** | **str** |  | [optional] 
 **financial_funding** | **str** |  | [optional] 

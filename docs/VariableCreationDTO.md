@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **trait_name** | **str** |  | [optional] 
 **method** | **str** |  | 
 **unit** | **str** |  | 
-**species** | **str** |  | [optional] 
+**species** | **list[str]** |  | [optional] 
 **datatype** | **str** |  | 
 **time_interval** | **str** |  | [optional] 
 **sampling_interval** | **str** |  | [optional] 

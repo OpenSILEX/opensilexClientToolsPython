@@ -987,7 +987,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_datatypes**
-> list[VariableDatatypeDTO] get_datatypes(authorization, accept_language=accept_language)
+> list[VariableDatatypeDTO] get_datatypes()
 
 Get variables datatypes
 
@@ -1016,9 +1016,7 @@ except ApiException as e:
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -1682,7 +1680,7 @@ api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = '\"Height\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
-page_size = 20 # int | Page size (optional) (default to 20)
+page_size = 20 # int | Page size (optional)
 
 
 try:
@@ -1700,7 +1698,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Name (regex) | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
- **page_size** | **int**| Page size | [optional] [default to 20]
+ **page_size** | **int**| Page size | [optional] 
 
 
 ### Return type
@@ -1740,7 +1738,7 @@ api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = '\"plant\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
-page_size = 20 # int | Page size (optional) (default to 20)
+page_size = 20 # int | Page size (optional)
 
 
 try:
@@ -1758,7 +1756,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Name (regex) | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
- **page_size** | **int**| Page size | [optional] [default to 20]
+ **page_size** | **int**| Page size | [optional] 
 
 
 ### Return type
@@ -1798,7 +1796,7 @@ api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = '\"plot\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
-page_size = 20 # int | Page size (optional) (default to 20)
+page_size = 20 # int | Page size (optional)
 
 
 try:
@@ -1816,7 +1814,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Name (regex) | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
- **page_size** | **int**| Page size | [optional] [default to 20]
+ **page_size** | **int**| Page size | [optional] 
 
 
 ### Return type
@@ -1856,7 +1854,7 @@ api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = '\"ImageAnalysis\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
-page_size = 20 # int | Page size (optional) (default to 20)
+page_size = 20 # int | Page size (optional)
 
 
 try:
@@ -1874,7 +1872,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Name (regex) | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
- **page_size** | **int**| Page size | [optional] [default to 20]
+ **page_size** | **int**| Page size | [optional] 
 
 
 ### Return type
@@ -1914,7 +1912,7 @@ api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = '\"Centimeter\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
-page_size = 20 # int | Page size (optional) (default to 20)
+page_size = 20 # int | Page size (optional)
 
 
 try:
@@ -1932,7 +1930,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Name (regex) | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
- **page_size** | **int**| Page size | [optional] [default to 20]
+ **page_size** | **int**| Page size | [optional] 
 
 
 ### Return type
@@ -1951,7 +1949,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_variables**
-> list[VariableGetDTO] search_variables(authorization, name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[VariableGetDTO] search_variables(authorization, name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search variables
 
@@ -1976,6 +1974,13 @@ characteristic = 'characteristic_example' # str | Characteristic filter (optiona
 method = 'method_example' # str | Method filter (optional)
 unit = 'unit_example' # str | Unit filter (optional)
 group_of_variables = 'group_of_variables_example' # str | Group filter (optional)
+data_type = 'data_type_example' # str | Data type filter (optional)
+time_interval = 'time_interval_example' # str | Time interval filter (optional)
+species = ['species_example'] # list[str] | Species filter (optional)
+with_associated_data = false # bool | Set this param to true to get associated data (optional) (default to false)
+experiments = ['experiments_example'] # list[str] | Experiment filter (optional)
+scientific_objects = ['scientific_objects_example'] # list[str] | Scientific object filter (optional)
+devices = ['devices_example'] # list[str] | Device filter (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -1983,7 +1988,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search variables
-    api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_variables: %s\n" % e)
@@ -2000,6 +2005,13 @@ Name | Type | Description  | Notes
  **method** | **str**| Method filter | [optional] 
  **unit** | **str**| Unit filter | [optional] 
  **group_of_variables** | **str**| Group filter | [optional] 
+ **data_type** | **str**| Data type filter | [optional] 
+ **time_interval** | **str**| Time interval filter | [optional] 
+ **species** | [**list[str]**](str.md)| Species filter | [optional] 
+ **with_associated_data** | **bool**| Set this param to true to get associated data | [optional] [default to false]
+ **experiments** | [**list[str]**](str.md)| Experiment filter | [optional] 
+ **scientific_objects** | [**list[str]**](str.md)| Scientific object filter | [optional] 
+ **devices** | [**list[str]**](str.md)| Device filter | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]

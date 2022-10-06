@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **invalid_value_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **already_existing_uri_errors** | [**dict(str, CSVCell)**](CSVCell.md) |  | [optional] 
 **duplicate_uri_errors** | [**dict(str, CSVDuplicateURIError)**](CSVDuplicateURIError.md) |  | [optional] 
+**nb_object_imported** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

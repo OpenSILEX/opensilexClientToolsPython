@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**search_experiment_provenances**](ExperimentsApi.md#search_experiment_provenances) | **GET** /core/experiments/{uri}/provenances | Get provenances involved in an experiment
 [**search_experiments**](ExperimentsApi.md#search_experiments) | **GET** /core/experiments | Search experiments
 [**update_experiment**](ExperimentsApi.md#update_experiment) | **PUT** /core/experiments | Update an experiment
-[**validate_csv1**](ExperimentsApi.md#validate_csv1) | **POST** /core/experiments/{uri}/data/import_validation | Import a CSV file for the given experiment URI and scientific object type.
+[**validate_csv2**](ExperimentsApi.md#validate_csv2) | **POST** /core/experiments/{uri}/data/import_validation | Import a CSV file for the given experiment URI and scientific object type.
 
 
 # **create_experiment**
@@ -92,7 +92,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
 
 try:
@@ -144,7 +144,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
 timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
@@ -221,7 +221,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
 
 try:
@@ -273,7 +273,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
 
 try:
@@ -325,7 +325,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
 
 try:
@@ -377,7 +377,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
 
 try:
@@ -481,7 +481,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 scientific_objects = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by objects uris (optional)
 
 
@@ -535,7 +535,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 file = '/path/to/file.txt' # file | Data file
 
@@ -591,7 +591,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
 timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
@@ -667,7 +667,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
 description = 'description_example' # str | Search by description (optional)
 activity = 'activity_example' # str | Search by activity URI (optional)
@@ -840,8 +840,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **validate_csv1**
-> DataCSVValidationDTO validate_csv1(uri, provenance, file, authorization, accept_language=accept_language)
+# **validate_csv2**
+> DataCSVValidationDTO validate_csv2(uri, provenance, file, authorization, accept_language=accept_language)
 
 Import a CSV file for the given experiment URI and scientific object type.
 
@@ -859,17 +859,17 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI
+uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 file = '/path/to/file.txt' # file | Data file
 
 
 try:
     # Import a CSV file for the given experiment URI and scientific object type.
-    api_response = api_instance.validate_csv1(uri, provenance, file, )
+    api_response = api_instance.validate_csv2(uri, provenance, file, )
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ExperimentsApi->validate_csv1: %s\n" % e)
+    print("Exception when calling ExperimentsApi->validate_csv2: %s\n" % e)
 ```
 
 ### Parameters

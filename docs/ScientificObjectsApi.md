@@ -15,11 +15,11 @@ Method | HTTP request | Description
 [**get_scientific_objects_children**](ScientificObjectsApi.md#get_scientific_objects_children) | **GET** /core/scientific_objects/children | Get list of scientific object children
 [**get_scientific_objects_list_by_uris**](ScientificObjectsApi.md#get_scientific_objects_list_by_uris) | **POST** /core/scientific_objects/by_uris | Get scientific objet list of a given experiment URI
 [**get_used_types**](ScientificObjectsApi.md#get_used_types) | **GET** /core/scientific_objects/used_types | get used scientific object types
-[**import_csv**](ScientificObjectsApi.md#import_csv) | **POST** /core/scientific_objects/import | Import a CSV file for the given experiment URI and scientific object type.
+[**import_csv1**](ScientificObjectsApi.md#import_csv1) | **POST** /core/scientific_objects/import | Import a CSV file for the given experiment URI and scientific object type.
 [**search_scientific_objects**](ScientificObjectsApi.md#search_scientific_objects) | **GET** /core/scientific_objects | Search list of scientific objects
 [**search_scientific_objects_with_geometry_list_by_uris**](ScientificObjectsApi.md#search_scientific_objects_with_geometry_list_by_uris) | **GET** /core/scientific_objects/geometry | Get scientific objet list with geometry of a given experiment URI
 [**update_scientific_object**](ScientificObjectsApi.md#update_scientific_object) | **PUT** /core/scientific_objects | Update a scientific object for the given experiment
-[**validate_csv2**](ScientificObjectsApi.md#validate_csv2) | **POST** /core/scientific_objects/import_validation | Validate a CSV file for the given experiment URI and scientific object type.
+[**validate_csv3**](ScientificObjectsApi.md#validate_csv3) | **POST** /core/scientific_objects/import_validation | Validate a CSV file for the given experiment URI and scientific object type.
 
 
 # **create_scientific_object**
@@ -94,7 +94,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 uri = '\"http://opensilex.org/id/Plot 12\"' # str | scientific object URI
-experiment = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI (optional)
+experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
 
 
 try:
@@ -461,7 +461,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 parent = '\"http://opensilex.org/id/Plot 12\"' # str | Parent object URI (optional)
-experiment = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI (optional)
+experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
 rdf_types = ['\"vocabulary:Plant\"'] # list[str] | RDF type filter (optional)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 factor_levels = ['\"vocabulary:IrrigationStress\"'] # list[str] | Factor levels URI (optional)
@@ -528,7 +528,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI (optional)
+experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
 body = [opensilexClientToolsPython.list[str]()] # list[str] | Scientific object uris (optional)
 
 
@@ -582,7 +582,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI (optional)
+experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
 
 
 try:
@@ -615,8 +615,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **import_csv**
-> CSVValidationDTO import_csv(description, file, authorization, accept_language=accept_language)
+# **import_csv1**
+> CSVValidationDTO import_csv1(description, file, authorization, accept_language=accept_language)
 
 Import a CSV file for the given experiment URI and scientific object type.
 
@@ -640,10 +640,10 @@ file = '/path/to/file.txt' # file | Data file
 
 try:
     # Import a CSV file for the given experiment URI and scientific object type.
-    api_response = api_instance.import_csv(description, file, )
+    api_response = api_instance.import_csv1(description, file, )
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ScientificObjectsApi->import_csv: %s\n" % e)
+    print("Exception when calling ScientificObjectsApi->import_csv1: %s\n" % e)
 ```
 
 ### Parameters
@@ -688,15 +688,15 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://opensilex/set/experiments/ZA17\"' # str | Experiment URI (optional)
+experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
 rdf_types = ['\"vocabulary:Plant\"'] # list[str] | RDF type filter (optional)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 parent = '\"http://opensilex.org/id/Plot 12\"' # str | Parent URI (optional)
 germplasm = '\"http://aims.fao.org/aos/agrovoc/c_1066\"' # str | Germplasm URI (optional)
 factor_levels = ['\"vocabulary:IrrigationStress\"'] # list[str] | Factor levels URI (optional)
 facility = '\"diaphen:serre-2\"' # str | Facility (optional)
-existence_date = '2013-10-20' # date | Date to filter object existence (optional)
-creation_date = '2013-10-20' # date | Date to filter object creation (optional)
+existence_date = '2013-10-20' # str | Date to filter object existence (optional)
+creation_date = '2013-10-20' # str | Date to filter object creation (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -721,8 +721,8 @@ Name | Type | Description  | Notes
  **germplasm** | **str**| Germplasm URI | [optional] 
  **factor_levels** | [**list[str]**](str.md)| Factor levels URI | [optional] 
  **facility** | **str**| Facility | [optional] 
- **existence_date** | **date**| Date to filter object existence | [optional] 
- **creation_date** | **date**| Date to filter object creation | [optional] 
+ **existence_date** | **str**| Date to filter object existence | [optional] 
+ **creation_date** | **str**| Date to filter object creation | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
@@ -851,8 +851,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **validate_csv2**
-> CSVValidationDTO validate_csv2(description, file, authorization, accept_language=accept_language)
+# **validate_csv3**
+> CSVValidationDTO validate_csv3(description, file, authorization, accept_language=accept_language)
 
 Validate a CSV file for the given experiment URI and scientific object type.
 
@@ -876,10 +876,10 @@ file = '/path/to/file.txt' # file | Data file
 
 try:
     # Validate a CSV file for the given experiment URI and scientific object type.
-    api_response = api_instance.validate_csv2(description, file, )
+    api_response = api_instance.validate_csv3(description, file, )
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ScientificObjectsApi->validate_csv2: %s\n" % e)
+    print("Exception when calling ScientificObjectsApi->validate_csv3: %s\n" % e)
 ```
 
 ### Parameters

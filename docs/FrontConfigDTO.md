@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **open_id_connection_title** | **str** |  | [optional] 
 **activate_reset_password** | **bool** |  | [optional] 
 **geocoding_service** | **str** | Geocoding service | [optional] 
+**version_label** | **str** | Version label to use in the header | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

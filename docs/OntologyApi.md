@@ -11,8 +11,10 @@ Method | HTTP request | Description
 [**delete_property**](OntologyApi.md#delete_property) | **DELETE** /ontology/property | Delete a property
 [**get_classes**](OntologyApi.md#get_classes) | **GET** /ontology/rdf_types | Return classes models definitions with properties for a list of rdf types
 [**get_data_properties**](OntologyApi.md#get_data_properties) | **GET** /ontology/data_properties | Search data properties tree
+[**get_linkable_properties**](OntologyApi.md#get_linkable_properties) | **GET** /ontology/linkable_properties | Search properties linkable to a domain
+[**get_name_space**](OntologyApi.md#get_name_space) | **GET** /ontology/name_space | Return namespaces
 [**get_object_properties**](OntologyApi.md#get_object_properties) | **GET** /ontology/object_properties | Search object properties tree
-[**get_properties**](OntologyApi.md#get_properties) | **GET** /ontology/properties | Search properties tree
+[**get_properties**](OntologyApi.md#get_properties) | **GET** /ontology/properties/{domain} | Search properties tree
 [**get_property**](OntologyApi.md#get_property) | **GET** /ontology/property | Return property model definition detail
 [**get_rdf_type**](OntologyApi.md#get_rdf_type) | **GET** /ontology/rdf_type | Return class model definition with properties
 [**get_sub_classes_of**](OntologyApi.md#get_sub_classes_of) | **GET** /ontology/subclasses_of | Search sub-classes tree of an RDF class
@@ -237,7 +239,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_property**
-> ObjectUriResponse delete_property(authorization, property_uri=property_uri, property_type=property_type, accept_language=accept_language)
+> ObjectUriResponse delete_property(authorization, uri=uri, rdf_type=rdf_type, accept_language=accept_language)
 
 Delete a property
 
@@ -255,13 +257,13 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
-property_uri = 'property_uri_example' # str | Property URI (optional)
-property_type = 'property_type_example' # str | Property type (optional)
+uri = 'uri_example' # str | Property URI (optional)
+rdf_type = 'rdf_type_example' # str | Property type (optional)
 
 
 try:
     # Delete a property
-    api_response = api_instance.delete_property(property_uri=property_uri, property_type=property_type, )
+    api_response = api_instance.delete_property(uri=uri, rdf_type=rdf_type, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OntologyApi->delete_property: %s\n" % e)
@@ -271,8 +273,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **property_uri** | **str**| Property URI | [optional] 
- **property_type** | **str**| Property type | [optional] 
+ **uri** | **str**| Property URI | [optional] 
+ **rdf_type** | **str**| Property type | [optional] 
 
 
 ### Return type
@@ -345,7 +347,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_properties**
-> list[ResourceTreeDTO] get_data_properties(authorization, domain=domain, accept_language=accept_language)
+> list[ResourceTreeDTO] get_data_properties(authorization, domain=domain, name=name, accept_language=accept_language)
 
 Search data properties tree
 
@@ -364,11 +366,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI (optional)
+name = '\"plant_height\"' # str | Name regex pattern (optional)
 
 
 try:
     # Search data properties tree
-    api_response = api_instance.get_data_properties(domain=domain, )
+    api_response = api_instance.get_data_properties(domain=domain, name=name, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OntologyApi->get_data_properties: %s\n" % e)
@@ -379,6 +382,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain** | **str**| Domain URI | [optional] 
+ **name** | **str**| Name regex pattern | [optional] 
 
 
 ### Return type
@@ -396,8 +400,110 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_linkable_properties**
+> list[ResourceTreeDTO] get_linkable_properties(domain, authorization, parent=parent, accept_language=accept_language)
+
+Search properties linkable to a domain
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+domain = 'domain_example' # str | Domain URI
+parent = 'parent_example' # str | Domain parent URI (optional)
+
+
+try:
+    # Search properties linkable to a domain
+    api_response = api_instance.get_linkable_properties(domain, parent=parent, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OntologyApi->get_linkable_properties: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | **str**| Domain URI | 
+ **parent** | **str**| Domain parent URI | [optional] 
+
+
+### Return type
+
+[**list[ResourceTreeDTO]**](ResourceTreeDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_name_space**
+> str get_name_space()
+
+Return namespaces
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+
+
+try:
+    # Return namespaces
+    api_response = api_instance.get_name_space()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OntologyApi->get_name_space: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_object_properties**
-> list[ResourceTreeDTO] get_object_properties(authorization, domain=domain, accept_language=accept_language)
+> list[ResourceTreeDTO] get_object_properties(authorization, domain=domain, name=name, accept_language=accept_language)
 
 Search object properties tree
 
@@ -416,11 +522,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI (optional)
+name = '\"plant_height\"' # str | Name regex pattern (optional)
 
 
 try:
     # Search object properties tree
-    api_response = api_instance.get_object_properties(domain=domain, )
+    api_response = api_instance.get_object_properties(domain=domain, name=name, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OntologyApi->get_object_properties: %s\n" % e)
@@ -431,6 +538,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **domain** | **str**| Domain URI | [optional] 
+ **name** | **str**| Name regex pattern | [optional] 
 
 
 ### Return type
@@ -449,7 +557,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_properties**
-> list[ResourceTreeDTO] get_properties(authorization, domain=domain, accept_language=accept_language)
+> list[ResourceTreeDTO] get_properties(domain, authorization, name=name, include_sub_classes=include_sub_classes, accept_language=accept_language)
 
 Search properties tree
 
@@ -467,12 +575,14 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
-domain = 'domain_example' # str | Domain URI (optional)
+domain = 'domain_example' # str | Domain URI
+name = '\"plant_height\"' # str | Name regex pattern (optional)
+include_sub_classes = true # bool | Return all properties from sub-classes (optional) (default to true)
 
 
 try:
     # Search properties tree
-    api_response = api_instance.get_properties(domain=domain, )
+    api_response = api_instance.get_properties(domain, name=name, include_sub_classes=include_sub_classes, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OntologyApi->get_properties: %s\n" % e)
@@ -482,7 +592,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **domain** | **str**| Domain URI | [optional] 
+ **domain** | **str**| Domain URI | 
+ **name** | **str**| Name regex pattern | [optional] 
+ **include_sub_classes** | **bool**| Return all properties from sub-classes | [optional] [default to true]
 
 
 ### Return type
@@ -501,7 +613,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_property**
-> RDFPropertyDTO get_property(authorization, uri=uri, rdf_type=rdf_type, domain_rdf_type=domain_rdf_type, accept_language=accept_language)
+> RDFPropertyGetDTO get_property(authorization, uri=uri, rdf_type=rdf_type, domain_rdf_type=domain_rdf_type, accept_language=accept_language)
 
 Return property model definition detail
 
@@ -543,7 +655,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RDFPropertyDTO**](RDFPropertyDTO.md)
+[**RDFPropertyGetDTO**](RDFPropertyGetDTO.md)
 
 ### Authorization
 
@@ -717,7 +829,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_uri_labels_list**
-> str get_uri_labels_list(uri, authorization, context=context, accept_language=accept_language)
+> list[NamedResourceDTO] get_uri_labels_list(uri, authorization, context=context, accept_language=accept_language)
 
 Return associated rdfs:label of uris if they exist
 
@@ -757,7 +869,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**str**
+[**list[NamedResourceDTO]**](NamedResourceDTO.md)
 
 ### Authorization
 
@@ -824,7 +936,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_sub_classes_of**
-> list[ResourceTreeDTO] search_sub_classes_of(authorization, parent_type=parent_type, name=name, ignore_root_classes=ignore_root_classes, accept_language=accept_language)
+> list[ResourceTreeDTO] search_sub_classes_of(parent_type, authorization, name=name, ignore_root_classes=ignore_root_classes, accept_language=accept_language)
 
 Search sub-classes tree of an RDF class
 
@@ -842,14 +954,14 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
-parent_type = 'parent_type_example' # str | Parent RDF class URI (optional)
+parent_type = 'parent_type_example' # str | Parent RDF class URI
 name = '\"plant_height\"' # str | Name regex pattern (optional)
 ignore_root_classes = false # bool | Flag to determine if only sub-classes must be include in result (optional) (default to false)
 
 
 try:
     # Search sub-classes tree of an RDF class
-    api_response = api_instance.search_sub_classes_of(parent_type=parent_type, name=name, ignore_root_classes=ignore_root_classes, )
+    api_response = api_instance.search_sub_classes_of(parent_type, name=name, ignore_root_classes=ignore_root_classes, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OntologyApi->search_sub_classes_of: %s\n" % e)
@@ -859,7 +971,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parent_type** | **str**| Parent RDF class URI | [optional] 
+ **parent_type** | **str**| Parent RDF class URI | 
  **name** | **str**| Name regex pattern | [optional] 
  **ignore_root_classes** | **bool**| Flag to determine if only sub-classes must be include in result | [optional] [default to false]
 

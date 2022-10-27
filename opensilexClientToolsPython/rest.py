@@ -231,6 +231,8 @@ class RESTClientObject(object):
                     raise ApiDuplicateException(http_resp=r)
                 elif "URI already exists: " in r.data:
                     raise ApiURIExistsException(http_resp=r)
+                else:
+                    raise ApiException(http_resp=r)
             else:
                 raise ApiException(http_resp=r)
 

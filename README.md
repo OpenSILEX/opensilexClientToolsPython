@@ -65,6 +65,13 @@ try:
     # Count annotations
     api_response = anotation_api_instance.count_annotations(target=target)
     pprint(api_response)
+except ApiException as e:
+    print("Api Exception when calling AnnotationsApi->count_annotations: %s\n" % e)
+    # Other more specific exceptions inherit from this general class :
+    #   - ApiDuplicateException for duplicated data on POST
+    #   - ApiURIExistsException for URI already exists on POST
+    #   - ApiURINotFoundException for URI not found on GET
+    # These can be found in rest.py
 except Exception as e:
     print("Exception when calling AnnotationsApi->count_annotations: %s\n" % e)
 ```

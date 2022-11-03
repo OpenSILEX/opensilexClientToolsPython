@@ -231,6 +231,8 @@ class RESTClientObject(object):
                     raise ApiDuplicateException(http_resp=r)
                 elif "URI already exists: " in r.data:
                     raise ApiURIExistsException(http_resp=r)
+                elif "URI not found : " in r.data:
+                    raise ApiURINotFoundException(http_resp=r)
                 else:
                     raise ApiException(http_resp=r)
             else:
@@ -343,6 +345,13 @@ class ApiDuplicateException(ApiException):
 
 class ApiURIExistsException(ApiException):
     """API exception class for URI already exists"""
+
+    def __init__(self, status=None, reason=None, http_resp=None):
+        super().__init__(status, reason, http_resp)
+
+
+class ApiURINotFoundException(ApiException):
+    """API exception class for URI not found"""
 
     def __init__(self, status=None, reason=None, http_resp=None):
         super().__init__(status, reason, http_resp)

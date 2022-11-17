@@ -53,7 +53,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 body = [opensilexClientToolsPython.DataCreationDTO()] # list[DataCreationDTO] | Data description (optional)
 
@@ -105,7 +105,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
@@ -177,7 +177,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 body = opensilexClientToolsPython.ProvenanceCreationDTO() # ProvenanceCreationDTO | Provenance description (optional)
 
@@ -229,7 +229,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = '\"http://opensilex.dev/id/data/1598857852858\"' # str | Data URI
 
@@ -281,7 +281,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Search by experiment uri (optional)
 target = '\"http://opensilex.dev/opensilex/2020/o20000345\"' # str | Search by target uri (optional)
@@ -339,7 +339,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 
@@ -391,7 +391,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
@@ -472,7 +472,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = 'uri_example' # str | Data URI
 
@@ -524,7 +524,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = 'uri_example' # str | Search by fileUri
 
@@ -575,7 +575,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = 'uri_example' # str | Search by fileUri
 
@@ -627,7 +627,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
@@ -701,7 +701,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
@@ -775,7 +775,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
@@ -853,7 +853,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
 targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
@@ -909,7 +909,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
 devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
@@ -965,7 +965,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = 'uri_example' # str | Search by fileUri
 scaled_width = 640 # int | Thumbnail width (optional) (default to 640)
@@ -1020,7 +1020,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = 'uri_example' # str | Provenance URI
 
@@ -1072,7 +1072,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uris = ['uris_example'] # list[str] | Provenances URIs
 
@@ -1124,7 +1124,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
 targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
@@ -1182,7 +1182,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
 variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
@@ -1240,7 +1240,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
 targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
@@ -1298,7 +1298,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 file = '/path/to/file.txt' # file | File
@@ -1354,7 +1354,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 description = 'description_example' # str | File description with metadata
 file = '/path/to/file.txt' # file | Data file
@@ -1408,7 +1408,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 body = [opensilexClientToolsPython.DataFilePathCreationDTO()] # list[DataFilePathCreationDTO] | Metadata of the file
 
@@ -1460,7 +1460,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
@@ -1538,7 +1538,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
 description = 'description_example' # str | Search by description (optional)
@@ -1606,7 +1606,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 body = opensilexClientToolsPython.DataUpdateDTO() # DataUpdateDTO | Data description (optional)
 
@@ -1658,7 +1658,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 uri = 'uri_example' # str | Data URI
 body = opensilexClientToolsPython.DataConfidenceDTO() # DataConfidenceDTO | Data description (optional)
@@ -1712,7 +1712,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 body = opensilexClientToolsPython.ProvenanceUpdateDTO() # ProvenanceUpdateDTO | Provenance description (optional)
 
@@ -1764,7 +1764,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
 file = '/path/to/file.txt' # file | File

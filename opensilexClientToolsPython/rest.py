@@ -18,6 +18,7 @@ import json
 import logging
 import re
 import ssl
+import pprint
 
 import certifi
 # python 2 and python 3 compatibility library
@@ -52,7 +53,7 @@ class RESTResponse(io.IOBase):
 
 class RESTClientObject(object):
 
-    def __init__(self, configuration, pools_size=4, maxsize=None):
+    def __init__(self, configuration, pools_size=4, maxsize=None, verbose=False):
         # urllib3.PoolManager will pass all kw parameters to connectionpool
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/poolmanager.py#L75  # noqa: E501
         # https://github.com/shazow/urllib3/blob/f9409436f83aeb79fbaf090181cd81b784f1b8ce/urllib3/connectionpool.py#L680  # noqa: E501
@@ -104,6 +105,8 @@ class RESTClientObject(object):
                 key_file=configuration.key_file,
                 **addition_pool_args
             )
+        
+        self.verbose = verbose
 
     def request(self, method, url, query_params=None, headers=None,
                 body=None, post_params=None, _preload_content=True,
@@ -155,6 +158,23 @@ class RESTClientObject(object):
             if method in ['POST', 'PUT', 'PATCH', 'OPTIONS', 'DELETE']:
                 if query_params:
                     url += '?' + urlencode(query_params)
+                if self.verbose:
+                    print("=======================REQUEST=======================")
+                    print("    METHOD :", method)
+                    print("    URL :", url)
+                    print("    HEADERS :", headers)
+                    print("    BODY :", body)
+                    if headers['Content-Type'] == 'multipart/form-data':
+                        print("    POST_PARAMS :", str({
+                            post_params[0][0]:post_params[0][1],
+                            post_params[1][0]:(post_params[1][1][0], post_params[1][1][2])
+                        }))
+                    else:
+                        print("    POST_PARAMS :", post_params)
+                    
+                    print("    QUERY_PARAMS :", query_params)
+                    print("    PRELOAD_CONTENT :", _preload_content)
+                    print("    REQUEST_TIMEOUT :", _request_timeout)
                 if re.search('json', headers['Content-Type'], re.IGNORECASE):
                     request_body = None
                     if body is not None:
@@ -202,6 +222,9 @@ class RESTClientObject(object):
                              arguments. Please check that your arguments match
                              declared content type."""
                     raise ApiException(status=0, reason=msg)
+                if self.verbose:
+                    print("    RESPONSE RECEIVED")
+                    print("=====================================================")
             # For `GET`, `HEAD`
             else:
                 r = self.pool_manager.request(method, url,

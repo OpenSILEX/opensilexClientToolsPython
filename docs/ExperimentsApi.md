@@ -38,7 +38,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 body = opensilexClientToolsPython.ExperimentCreationDTO() # ExperimentCreationDTO | Experiment description (optional)
 
@@ -90,7 +90,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
@@ -142,7 +142,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
@@ -219,7 +219,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
@@ -271,7 +271,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
@@ -323,7 +323,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
@@ -375,7 +375,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 
@@ -427,7 +427,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uris = ['uris_example'] # list[str] | Experiments URIs
 
@@ -479,7 +479,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 scientific_objects = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by objects uris (optional)
@@ -533,7 +533,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
@@ -589,7 +589,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
@@ -665,7 +665,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
@@ -735,7 +735,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 name = '\"ZA17\"' # str | Regex pattern for filtering by name (optional)
 year = 2017 # int | Search by year (optional)
@@ -805,7 +805,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 body = opensilexClientToolsPython.ExperimentCreationDTO() # ExperimentCreationDTO | Experiment description (optional)
 
@@ -857,7 +857,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
 uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
 provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI

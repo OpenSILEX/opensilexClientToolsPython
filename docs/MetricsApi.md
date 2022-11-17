@@ -26,7 +26,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.MetricsApi(pythonClient)
 uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Metrics URI
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
@@ -86,7 +86,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.MetricsApi(pythonClient)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
@@ -144,7 +144,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.MetricsApi(pythonClient)
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)

@@ -49,7 +49,7 @@ import opensilexClientToolsPython
 from pprint import pprint
 
 # usage of a created instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient = opensilexClientToolsPython.ApiClient() # TO have more detail on the execution of the requests you can pass verbose=True
 # Don't forget to change the host to your instance and use a password 
 # and identifier from an account that exists on said instance
 pythonClient.connect_to_opensilex_ws(

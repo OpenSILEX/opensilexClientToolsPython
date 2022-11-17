@@ -30,7 +30,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI (optional)
 
@@ -82,7 +82,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 body = opensilexClientToolsPython.AnnotationCreationDTO() # AnnotationCreationDTO |  (optional)
 
@@ -134,7 +134,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 uri = '\"http://www.opensilex.org/annotations/12590c87-1c34-426b-a231-beb7acb33415\"' # str | Annotation URI
 
@@ -186,7 +186,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 uri = '\"http://www.opensilex.org/annotations/12590c87-1c34-426b-a231-beb7acb33415\"' # str | Event URI
 
@@ -238,7 +238,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 description = '\"The pest attack\"' # str | Description (regex) (optional)
 target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI (optional)
@@ -302,7 +302,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 name = '\"describing\"' # str | Motivation name regex pattern (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -360,7 +360,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.AnnotationsApi(pythonClient)
 body = opensilexClientToolsPython.AnnotationUpdateDTO() # AnnotationUpdateDTO | Annotation description (optional)
 

@@ -62,14 +62,14 @@ class ApiClient(object):
     }
 
     def __init__(self, configuration=None, header_name=None, header_value=None,
-                 cookie=None):
+                 cookie=None, verbose=False):
         if configuration is None:
             configuration = Configuration()
         self.configuration = configuration
 
         # Use the pool property to lazily initialize the ThreadPool.
         self._pool = None
-        self.rest_client = rest.RESTClientObject(configuration)
+        self.rest_client = rest.RESTClientObject(configuration, verbose=verbose)
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value

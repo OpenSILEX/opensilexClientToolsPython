@@ -25,7 +25,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.PositionsApi(pythonClient)
 uri = '\"http://opensilex.dev/plant/plant5841\"' # str | Object URI
 time = '\"2019-09-08T12:00:00+01:00\"' # str | Time : match position at the given time (optional)
@@ -79,7 +79,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.PositionsApi(pythonClient)
 target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI
 start_date_time = '\"2019-09-08T12:00:00+01:00\"' # str | Start date : match position affected after the given start date (optional)

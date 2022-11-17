@@ -39,7 +39,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://example.com/\"' # str | Device URI
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
@@ -109,7 +109,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.DeviceCreationDTO() # DeviceCreationDTO | Device description (optional)
 check_only = false # bool | Checking only (optional) (default to false)
@@ -163,7 +163,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"' # str | Device URI
 
@@ -215,7 +215,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 rdf_type = '\"vocabulary:SensingDevice\"' # str | RDF type filter (optional)
 include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
@@ -282,7 +282,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of device URI (optional)
 
@@ -333,7 +333,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"' # str | device URI
 
@@ -385,7 +385,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Device URIs
 
@@ -437,7 +437,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://example.com/\"' # str | Device URI
 
@@ -489,7 +489,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://example.com/\"' # str | Device URI
 
@@ -541,7 +541,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"' # str | Device URI
 
@@ -593,7 +593,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 file = '/path/to/file.txt' # file | Device file
 
@@ -645,7 +645,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://example.com/\"' # str | Device URI
 start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
@@ -721,7 +721,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 uri = '\"http://example.com/\"' # str | Device URI
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
@@ -795,7 +795,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 rdf_type = '\"vocabulary:SensingDevice\"' # str | RDF type filter (optional)
 include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
@@ -871,7 +871,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = opensilexClientToolsPython.DeviceCreationDTO() # DeviceCreationDTO | Device description
 
@@ -923,7 +923,7 @@ from pprint import pprint
 
 # create an instance of the API class
 pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_phis_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 file = '/path/to/file.txt' # file | Device file
 

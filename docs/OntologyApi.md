@@ -239,7 +239,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_property**
-> ObjectUriResponse delete_property(authorization, uri=uri, rdf_type=rdf_type, accept_language=accept_language)
+> ObjectUriResponse delete_property(uri, rdf_type, authorization, accept_language=accept_language)
 
 Delete a property
 
@@ -257,13 +257,13 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
-uri = 'uri_example' # str | Property URI (optional)
-rdf_type = 'rdf_type_example' # str | Property type (optional)
+uri = 'uri_example' # str | Property URI
+rdf_type = 'rdf_type_example' # str | Property type
 
 
 try:
     # Delete a property
-    api_response = api_instance.delete_property(uri=uri, rdf_type=rdf_type, )
+    api_response = api_instance.delete_property(uri, rdf_type, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OntologyApi->delete_property: %s\n" % e)
@@ -273,8 +273,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uri** | **str**| Property URI | [optional] 
- **rdf_type** | **str**| Property type | [optional] 
+ **uri** | **str**| Property URI | 
+ **rdf_type** | **str**| Property type | 
 
 
 ### Return type

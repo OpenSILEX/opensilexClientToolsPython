@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **rdf_type_name** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **address** | [**SiteAddressDTO**](SiteAddressDTO.md) |  | [optional] 
-**organizations** | [**list[NamedResourceDTOInfrastructureModel]**](NamedResourceDTOInfrastructureModel.md) |  | [optional] 
-**facilities** | [**list[NamedResourceDTOInfrastructureFacilityModel]**](NamedResourceDTOInfrastructureFacilityModel.md) |  | [optional] 
+**organizations** | [**list[NamedResourceDTOOrganizationModel]**](NamedResourceDTOOrganizationModel.md) |  | [optional] 
+**facilities** | [**list[NamedResourceDTOFacilityModel]**](NamedResourceDTOFacilityModel.md) |  | [optional] 
 **groups** | [**list[NamedResourceDTOGroupModel]**](NamedResourceDTOGroupModel.md) |  | [optional] 
 **geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
 

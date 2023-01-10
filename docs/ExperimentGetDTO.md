@@ -11,13 +11,14 @@ Name | Type | Description | Notes
 **objective** | **str** |  | [optional] 
 **species** | **list[str]** |  | [optional] 
 **factors** | **list[str]** |  | [optional] 
-**organisations** | [**list[NamedResourceDTOInfrastructureModel]**](NamedResourceDTOInfrastructureModel.md) |  | [optional] 
-**facilities** | [**list[NamedResourceDTOInfrastructureFacilityModel]**](NamedResourceDTOInfrastructureFacilityModel.md) |  | [optional] 
+**organisations** | [**list[NamedResourceDTOOrganizationModel]**](NamedResourceDTOOrganizationModel.md) |  | [optional] 
+**facilities** | [**list[NamedResourceDTOFacilityModel]**](NamedResourceDTOFacilityModel.md) |  | [optional] 
 **projects** | [**list[NamedResourceDTOProjectModel]**](NamedResourceDTOProjectModel.md) |  | [optional] 
 **scientific_supervisors** | **list[str]** |  | [optional] 
 **technical_supervisors** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
+**record_author** | **str** | Experiment creator URI | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

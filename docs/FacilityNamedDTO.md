@@ -1,4 +1,4 @@
-# InfrastructureFacilityNamedDTO
+# FacilityNamedDTO
 
 ## Properties
 Name | Type | Description | Notes

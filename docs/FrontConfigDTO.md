@@ -15,8 +15,11 @@ Name | Type | Description | Notes
 **theme_name** | **str** | Theme module name | [optional] 
 **open_id_authentication_uri** | **str** | OpenID Authorization URI | [optional] 
 **open_id_connection_title** | **str** |  | [optional] 
+**saml_proxy_login_uri** | **str** |  | [optional] 
+**saml_connection_title** | **str** |  | [optional] 
 **activate_reset_password** | **bool** |  | [optional] 
 **geocoding_service** | **str** | Geocoding service | [optional] 
+**menu_exclusions** | **list[str]** | Menu exclusions | [optional] 
 **version_label** | **str** | Version label to use in the header | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

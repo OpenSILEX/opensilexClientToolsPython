@@ -203,7 +203,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_available_facilities**
-> list[InfrastructureFacilityGetDTO] get_available_facilities(uri, authorization, accept_language=accept_language)
+> list[FacilityGetDTO] get_available_facilities(uri, authorization, accept_language=accept_language)
 
 Get facilities available for an experiment
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[InfrastructureFacilityGetDTO]**](InfrastructureFacilityGetDTO.md)
+[**list[FacilityGetDTO]**](FacilityGetDTO.md)
 
 ### Authorization
 
@@ -719,7 +719,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_experiments**
-> list[ExperimentGetListDTO] search_experiments(authorization, name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[ExperimentGetListDTO] search_experiments(authorization, name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, facilities=facilities, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search experiments
 
@@ -744,6 +744,7 @@ species = ['\"http://www.phenome-fppn.fr/id/species/zeamays\"'] # list[str] | Se
 factors = ['\"http://purl.obolibrary.org/obo/CHEBI_25555\"'] # list[str] | Search by studied effect (optional)
 projects = ['\"http://www.phenome-fppn.fr/projects/ZA17\\nhttp://www.phenome-fppn.fr/id/projects/ZA18\"'] # list[str] | Search by related project uri (optional)
 is_public = true # bool | Search private(false) or public experiments(true) (optional)
+facilities = ['facilities_example'] # list[str] | Search by involved facilities (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -751,7 +752,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search experiments
-    api_response = api_instance.search_experiments(name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_experiments(name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, facilities=facilities, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExperimentsApi->search_experiments: %s\n" % e)
@@ -768,6 +769,7 @@ Name | Type | Description  | Notes
  **factors** | [**list[str]**](str.md)| Search by studied effect | [optional] 
  **projects** | [**list[str]**](str.md)| Search by related project uri | [optional] 
  **is_public** | **bool**| Search private(false) or public experiments(true) | [optional] 
+ **facilities** | [**list[str]**](str.md)| Search by involved facilities | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]

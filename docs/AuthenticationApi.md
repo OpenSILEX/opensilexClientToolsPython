@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**authenticate**](AuthenticationApi.md#authenticate) | **POST** /security/authenticate | Authenticate a user and return an access token
 [**authenticate_open_id**](AuthenticationApi.md#authenticate_open_id) | **GET** /security/openid | Authenticate a user and return an access token
+[**authenticate_saml**](AuthenticationApi.md#authenticate_saml) | **GET** /security/saml | Authenticate a user and return an access token from SAML response
 [**forgot_password**](AuthenticationApi.md#forgot_password) | **POST** /security/forgot-password | Send an e-mail confirmation
 [**get_credentials_groups**](AuthenticationApi.md#get_credentials_groups) | **GET** /security/credentials | Get list of existing credentials indexed by Swagger @API concepts in the application
 [**logout**](AuthenticationApi.md#logout) | **DELETE** /security/logout | Logout by discarding a user token
@@ -114,6 +115,53 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **authenticate_saml**
+> authenticate_saml()
+
+Authenticate a user and return an access token from SAML response
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.AuthenticationApi(pythonClient)
+
+
+try:
+    # Authenticate a user and return an access token from SAML response
+    api_instance.authenticate_saml()
+except ApiException as e:
+    print("Exception when calling AuthenticationApi->authenticate_saml: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

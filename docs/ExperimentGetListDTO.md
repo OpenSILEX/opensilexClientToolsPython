@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **objective** | **str** |  | [optional] 
 **species** | **list[str]** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
+**facilities** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

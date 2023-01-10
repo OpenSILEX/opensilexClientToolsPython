@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_device_by_uris**](DevicesApi.md#get_device_by_uris) | **GET** /core/devices/by_uris | Get devices by uris
 [**get_device_data_files_provenances**](DevicesApi.md#get_device_data_files_provenances) | **GET** /core/devices/{uri}/datafiles/provenances | Get provenances of datafiles linked to this device
 [**get_device_data_provenances**](DevicesApi.md#get_device_data_provenances) | **GET** /core/devices/{uri}/data/provenances | Get provenances of data that have been measured on this device
+[**get_device_facility**](DevicesApi.md#get_device_facility) | **GET** /core/devices/{uri}/facility | Get device facility
 [**get_device_variables**](DevicesApi.md#get_device_variables) | **GET** /core/devices/{uri}/variables | Get variables linked to the device
 [**import_csv**](DevicesApi.md#import_csv) | **POST** /core/devices/import | Import a CSV file with one device per line
 [**search_device_data**](DevicesApi.md#search_device_data) | **GET** /core/devices/{uri}/data | Search device data
@@ -524,6 +525,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_device_facility**
+> FacilityGetDTO get_device_facility(uri, authorization, accept_language=accept_language)
+
+Get device facility
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
+uri = '\"http://example.com/\"' # str | Device URI
+
+
+try:
+    # Get device facility
+    api_response = api_instance.get_device_facility(uri, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DevicesApi->get_device_facility: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Device URI | 
+
+
+### Return type
+
+[**FacilityGetDTO**](FacilityGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_device_variables**
 > list[NamedResourceDTO] get_device_variables(uri, authorization, accept_language=accept_language)
 
@@ -577,7 +630,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **import_csv**
-> CSVValidationDTO import_csv(file, authorization, accept_language=accept_language)
+> CSVValidationDTO import_csv(description, file, authorization, accept_language=accept_language)
 
 Import a CSV file with one device per line
 
@@ -595,12 +648,13 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
+description = opensilexClientToolsPython.Object() # Object | CSV import settings
 file = '/path/to/file.txt' # file | Device file
 
 
 try:
     # Import a CSV file with one device per line
-    api_response = api_instance.import_csv(file, )
+    api_response = api_instance.import_csv(description, file, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DevicesApi->import_csv: %s\n" % e)
@@ -610,6 +664,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **description** | [**Object**](.md)| CSV import settings | 
  **file** | **file**| Device file | 
 
 
@@ -779,7 +834,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_devices**
-> list[DeviceGetDTO] search_devices(authorization, rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, variable=variable, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[DeviceGetDTO] search_devices(authorization, rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, variable=variable, year=year, existence_date=existence_date, facility=facility, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search devices
 
@@ -803,6 +858,7 @@ name = '.*' # str | Regex pattern for filtering by name (optional) (default to .
 variable = '\"test:set/variables#air_temperature_thermocouple_degree-celsius\"' # str | Variable (optional)
 year = 2017 # int | Search by year (optional)
 existence_date = '2013-10-20' # str | Date to filter device existence (optional)
+facility = '\"http://example.com\"' # str | Search by facility (optional)
 brand = '\".*\"' # str | Regex pattern for filtering by brand (optional)
 model = '\".*\"' # str | Regex pattern for filtering by model (optional)
 serial_number = '\".*\"' # str | Regex pattern for filtering by serial number (optional)
@@ -814,7 +870,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search devices
-    api_response = api_instance.search_devices(rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, variable=variable, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_devices(rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, variable=variable, year=year, existence_date=existence_date, facility=facility, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DevicesApi->search_devices: %s\n" % e)
@@ -830,6 +886,7 @@ Name | Type | Description  | Notes
  **variable** | **str**| Variable | [optional] 
  **year** | **int**| Search by year | [optional] 
  **existence_date** | **str**| Date to filter device existence | [optional] 
+ **facility** | **str**| Search by facility | [optional] 
  **brand** | **str**| Regex pattern for filtering by brand | [optional] 
  **model** | **str**| Regex pattern for filtering by model | [optional] 
  **serial_number** | **str**| Regex pattern for filtering by serial number | [optional] 
@@ -907,7 +964,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_csv1**
-> CSVValidationDTO validate_csv1(file, authorization, accept_language=accept_language)
+> CSVValidationDTO validate_csv1(description, file, authorization, accept_language=accept_language)
 
 Validate the import of a CSV file with one device per line
 
@@ -925,12 +982,13 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
+description = opensilexClientToolsPython.Object() # Object | CSV import settings
 file = '/path/to/file.txt' # file | Device file
 
 
 try:
     # Validate the import of a CSV file with one device per line
-    api_response = api_instance.validate_csv1(file, )
+    api_response = api_instance.validate_csv1(description, file, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DevicesApi->validate_csv1: %s\n" % e)
@@ -940,6 +998,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **description** | [**Object**](.md)| CSV import settings | 
  **file** | **file**| Device file | 
 
 

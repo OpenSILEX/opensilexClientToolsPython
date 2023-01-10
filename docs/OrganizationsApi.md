@@ -43,7 +43,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-body = opensilexClientToolsPython.InfrastructureCreationDTO() # InfrastructureCreationDTO | Organisation description (optional)
+body = opensilexClientToolsPython.OrganizationCreationDTO() # OrganizationCreationDTO | Organisation description (optional)
 
 
 try:
@@ -58,7 +58,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InfrastructureCreationDTO**](InfrastructureCreationDTO.md)| Organisation description | [optional] 
+ **body** | [**OrganizationCreationDTO**](OrganizationCreationDTO.md)| Organisation description | [optional] 
 
 
 ### Return type
@@ -95,7 +95,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-body = opensilexClientToolsPython.InfrastructureFacilityCreationDTO() # InfrastructureFacilityCreationDTO | Facility description (optional)
+body = opensilexClientToolsPython.FacilityCreationDTO() # FacilityCreationDTO | Facility description (optional)
 
 
 try:
@@ -110,7 +110,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InfrastructureFacilityCreationDTO**](InfrastructureFacilityCreationDTO.md)| Facility description | [optional] 
+ **body** | [**FacilityCreationDTO**](FacilityCreationDTO.md)| Facility description | [optional] 
 
 
 ### Return type
@@ -387,7 +387,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_facilities_by_uri**
-> list[InfrastructureFacilityNamedDTO] get_facilities_by_uri(uris, authorization, accept_language=accept_language)
+> list[FacilityNamedDTO] get_facilities_by_uri(uris, authorization, accept_language=accept_language)
 
 Get facilities by their URIs
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[InfrastructureFacilityNamedDTO]**](InfrastructureFacilityNamedDTO.md)
+[**list[FacilityNamedDTO]**](FacilityNamedDTO.md)
 
 ### Authorization
 
@@ -439,7 +439,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_infrastructure**
-> InfrastructureGetDTO get_infrastructure(uri, authorization, accept_language=accept_language)
+> OrganizationGetDTO get_infrastructure(uri, authorization, accept_language=accept_language)
 
 Get an organisation 
 
@@ -477,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InfrastructureGetDTO**](InfrastructureGetDTO.md)
+[**OrganizationGetDTO**](OrganizationGetDTO.md)
 
 ### Authorization
 
@@ -491,7 +491,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_infrastructure_facility**
-> InfrastructureFacilityGetDTO get_infrastructure_facility(uri, authorization, accept_language=accept_language)
+> FacilityGetDTO get_infrastructure_facility(uri, authorization, accept_language=accept_language)
 
 Get a facility
 
@@ -529,7 +529,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InfrastructureFacilityGetDTO**](InfrastructureFacilityGetDTO.md)
+[**FacilityGetDTO**](FacilityGetDTO.md)
 
 ### Authorization
 
@@ -647,7 +647,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_infrastructure_facilities**
-> list[InfrastructureFacilityNamedDTO] search_infrastructure_facilities(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[FacilityNamedDTO] search_infrastructure_facilities(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search facilities
 
@@ -693,7 +693,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[InfrastructureFacilityNamedDTO]**](InfrastructureFacilityNamedDTO.md)
+[**list[FacilityNamedDTO]**](FacilityNamedDTO.md)
 
 ### Authorization
 
@@ -839,7 +839,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-body = opensilexClientToolsPython.InfrastructureUpdateDTO() # InfrastructureUpdateDTO | Organisation description (optional)
+body = opensilexClientToolsPython.OrganizationUpdateDTO() # OrganizationUpdateDTO | Organisation description (optional)
 
 
 try:
@@ -854,7 +854,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InfrastructureUpdateDTO**](InfrastructureUpdateDTO.md)| Organisation description | [optional] 
+ **body** | [**OrganizationUpdateDTO**](OrganizationUpdateDTO.md)| Organisation description | [optional] 
 
 
 ### Return type
@@ -891,7 +891,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-body = opensilexClientToolsPython.InfrastructureFacilityUpdateDTO() # InfrastructureFacilityUpdateDTO | Facility description (optional)
+body = opensilexClientToolsPython.FacilityUpdateDTO() # FacilityUpdateDTO | Facility description (optional)
 
 
 try:
@@ -906,7 +906,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**InfrastructureFacilityUpdateDTO**](InfrastructureFacilityUpdateDTO.md)| Facility description | [optional] 
+ **body** | [**FacilityUpdateDTO**](FacilityUpdateDTO.md)| Facility description | [optional] 
 
 
 ### Return type

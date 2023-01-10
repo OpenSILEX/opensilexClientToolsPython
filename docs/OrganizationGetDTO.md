@@ -1,4 +1,4 @@
-# InfrastructureGetDTO
+# OrganizationGetDTO
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **rdf_type** | **str** |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**parents** | [**list[NamedResourceDTOInfrastructureModel]**](NamedResourceDTOInfrastructureModel.md) |  | [optional] 
-**children** | [**list[NamedResourceDTOInfrastructureModel]**](NamedResourceDTOInfrastructureModel.md) |  | [optional] 
+**parents** | [**list[NamedResourceDTOOrganizationModel]**](NamedResourceDTOOrganizationModel.md) |  | [optional] 
+**children** | [**list[NamedResourceDTOOrganizationModel]**](NamedResourceDTOOrganizationModel.md) |  | [optional] 
 **groups** | [**list[NamedResourceDTOGroupModel]**](NamedResourceDTOGroupModel.md) |  | [optional] 
-**facilities** | [**list[NamedResourceDTOInfrastructureFacilityModel]**](NamedResourceDTOInfrastructureFacilityModel.md) |  | [optional] 
+**facilities** | [**list[NamedResourceDTOFacilityModel]**](NamedResourceDTOFacilityModel.md) |  | [optional] 
 **sites** | [**list[NamedResourceDTOSiteModel]**](NamedResourceDTOSiteModel.md) |  | [optional] 
 **experiments** | [**list[NamedResourceDTOExperimentModel]**](NamedResourceDTOExperimentModel.md) |  | [optional] 
 

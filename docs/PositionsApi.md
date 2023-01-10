@@ -5,6 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_position**](PositionsApi.md#get_position) | **GET** /core/positions/{uri} | Get the position of an object
+[**search_geospatialized_position**](PositionsApi.md#search_geospatialized_position) | **POST** /core/positions/geospatializedPosition | Search the last position of a target during an experiment
 [**search_position_history**](PositionsApi.md#search_position_history) | **GET** /core/positions/history | Search history of position of an object
 
 
@@ -50,6 +51,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PositionGetDTO**](PositionGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_geospatialized_position**
+> list[PositionGetDTO] search_geospatialized_position(body, authorization, base_type=base_type, start_date_time=start_date_time, end_date_time=end_date_time, accept_language=accept_language)
+
+Search the last position of a target during an experiment
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.PositionsApi(pythonClient)
+body = opensilexClientToolsPython.GeoJsonObject() # GeoJsonObject | geometry GeoJSON
+base_type = 'base_type_example' # str | target RDF Type URI (optional)
+start_date_time = '\"2019-09-08T12:00:00+01:00\"' # str | Start date : match position affected after the given start date (optional)
+end_date_time = '\"2021-09-08T12:00:00+01:00\"' # str | End date : match position affected before the given end date (optional)
+
+
+try:
+    # Search the last position of a target during an experiment
+    api_response = api_instance.search_geospatialized_position(body, base_type=base_type, start_date_time=start_date_time, end_date_time=end_date_time, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PositionsApi->search_geospatialized_position: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GeoJsonObject**](GeoJsonObject.md)| geometry GeoJSON | 
+ **base_type** | **str**| target RDF Type URI | [optional] 
+ **start_date_time** | **str**| Start date : match position affected after the given start date | [optional] 
+ **end_date_time** | **str**| End date : match position affected before the given end date | [optional] 
+
+
+### Return type
+
+[**list[PositionGetDTO]**](PositionGetDTO.md)
 
 ### Authorization
 

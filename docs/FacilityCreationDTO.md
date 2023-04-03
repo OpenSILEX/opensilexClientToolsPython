@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **rdf_type** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
 **organizations** | **list[str]** |  | [optional] 
+**sites** | **list[str]** |  | [optional] 
 **address** | [**FacilityAddressDTO**](FacilityAddressDTO.md) |  | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 

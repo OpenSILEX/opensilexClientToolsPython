@@ -17,9 +17,11 @@ Method | HTTP request | Description
 [**get_properties**](OntologyApi.md#get_properties) | **GET** /ontology/properties/{domain} | Search properties tree
 [**get_property**](OntologyApi.md#get_property) | **GET** /ontology/property | Return property model definition detail
 [**get_rdf_type**](OntologyApi.md#get_rdf_type) | **GET** /ontology/rdf_type | Return class model definition with properties
+[**get_shared_resource_instances**](OntologyApi.md#get_shared_resource_instances) | **GET** /ontology/shared_resource_instances | Return the list of shared resource instances
 [**get_sub_classes_of**](OntologyApi.md#get_sub_classes_of) | **GET** /ontology/subclasses_of | Search sub-classes tree of an RDF class
 [**get_uri_label**](OntologyApi.md#get_uri_label) | **GET** /ontology/uri_label | Return associated rdfs:label of an uri if exists
 [**get_uri_labels_list**](OntologyApi.md#get_uri_labels_list) | **GET** /ontology/uris_labels | Return associated rdfs:label of uris if they exist
+[**get_uri_types**](OntologyApi.md#get_uri_types) | **GET** /ontology/uri_types | Return all rdf types of an uri
 [**rename_uri**](OntologyApi.md#rename_uri) | **PUT** /ontology/{uri}/rename | Rename all occurrences of the given URI
 [**search_sub_classes_of**](OntologyApi.md#search_sub_classes_of) | **GET** /ontology/subclasses_of/search | Search sub-classes tree of an RDF class
 [**update_class_property_restriction**](OntologyApi.md#update_class_property_restriction) | **PUT** /ontology/rdf_type_property_restriction | Update a rdf type property restriction
@@ -722,6 +724,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_shared_resource_instances**
+> list[SharedResourceInstanceDTO] get_shared_resource_instances(authorization, accept_language=accept_language)
+
+Return the list of shared resource instances
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+
+
+try:
+    # Return the list of shared resource instances
+    api_response = api_instance.get_shared_resource_instances()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OntologyApi->get_shared_resource_instances: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**list[SharedResourceInstanceDTO]**](SharedResourceInstanceDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_sub_classes_of**
 > list[ResourceTreeDTO] get_sub_classes_of(authorization, parent_type=parent_type, ignore_root_classes=ignore_root_classes, accept_language=accept_language)
 
@@ -870,6 +922,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[NamedResourceDTO]**](NamedResourceDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_uri_types**
+> URITypesDTO get_uri_types(uri, authorization, accept_language=accept_language)
+
+Return all rdf types of an uri
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+uri = ['uri_example'] # list[str] | URIs to get types from
+
+
+try:
+    # Return all rdf types of an uri
+    api_response = api_instance.get_uri_types(uri, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OntologyApi->get_uri_types: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | [**list[str]**](str.md)| URIs to get types from | 
+
+
+### Return type
+
+[**URITypesDTO**](URITypesDTO.md)
 
 ### Authorization
 

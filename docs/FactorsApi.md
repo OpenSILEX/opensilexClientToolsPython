@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**count_factors**](FactorsApi.md#count_factors) | **GET** /core/experiments/factors/count | Count factors
 [**create_factor**](FactorsApi.md#create_factor) | **POST** /core/experiments/factors | Create a factor
 [**delete_factor**](FactorsApi.md#delete_factor) | **DELETE** /core/experiments/factors/{uri} | Delete a factor
 [**delete_factor_level**](FactorsApi.md#delete_factor_level) | **DELETE** /core/experiments/factors/levels/{uri} | Delete a factor level
@@ -18,6 +19,58 @@ Method | HTTP request | Description
 [**search_factors**](FactorsApi.md#search_factors) | **GET** /core/experiments/factors | Search factors
 [**update_factor**](FactorsApi.md#update_factor) | **PUT** /core/experiments/factors | Update a factor
 
+
+# **count_factors**
+> int count_factors(authorization, experiment=experiment, accept_language=accept_language)
+
+Count factors
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
+experiment = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Experiment URI (optional)
+
+
+try:
+    # Count factors
+    api_response = api_instance.count_factors(experiment=experiment, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FactorsApi->count_factors: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **experiment** | **str**| Experiment URI | [optional] 
+
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_factor**
 > create_factor(authorization, body=body, accept_language=accept_language)

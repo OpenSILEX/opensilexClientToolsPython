@@ -5,6 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**classic_export_variable_by_ur_is**](VariablesApi.md#classic_export_variable_by_ur_is) | **POST** /core/variables/export_classic_by_uris | export variable by list of uris
+[**copy_from_shared_resource_instance**](VariablesApi.md#copy_from_shared_resource_instance) | **POST** /core/variables/copy_from_shared_resource_instance | Copy the selected variables from the shared resource instance
 [**create_characteristic**](VariablesApi.md#create_characteristic) | **POST** /core/characteristics | Add a characteristic
 [**create_entity**](VariablesApi.md#create_entity) | **POST** /core/entities | Add an entity
 [**create_interest_entity**](VariablesApi.md#create_interest_entity) | **POST** /core/entities_of_interest | Add an entity of interest
@@ -100,6 +101,58 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **copy_from_shared_resource_instance**
+> VariableCopyResponseDTO copy_from_shared_resource_instance(body, authorization, accept_language=accept_language)
+
+Copy the selected variables from the shared resource instance
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.CopyResourceDTO() # CopyResourceDTO | List of variable URI to copy
+
+
+try:
+    # Copy the selected variables from the shared resource instance
+    api_response = api_instance.copy_from_shared_resource_instance(body, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling VariablesApi->copy_from_shared_resource_instance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CopyResourceDTO**](CopyResourceDTO.md)| List of variable URI to copy | 
+
+
+### Return type
+
+[**VariableCopyResponseDTO**](VariableCopyResponseDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -935,7 +988,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_characteristics_by_ur_is**
-> list[CharacteristicDetailsDTO] get_characteristics_by_ur_is(uris, authorization, accept_language=accept_language)
+> list[CharacteristicDetailsDTO] get_characteristics_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed characteristics by uris
 
@@ -954,11 +1007,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Characteristics URIs
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Get detailed characteristics by uris
-    api_response = api_instance.get_characteristics_by_ur_is(uris, )
+    api_response = api_instance.get_characteristics_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->get_characteristics_by_ur_is: %s\n" % e)
@@ -969,6 +1023,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uris** | [**list[str]**](str.md)| Characteristics URIs | 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1035,7 +1090,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_entities_by_ur_is**
-> list[EntityDetailsDTO] get_entities_by_ur_is(uris, authorization, accept_language=accept_language)
+> list[EntityDetailsDTO] get_entities_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed entities by uris
 
@@ -1054,11 +1109,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Entities URIs
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Get detailed entities by uris
-    api_response = api_instance.get_entities_by_ur_is(uris, )
+    api_response = api_instance.get_entities_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->get_entities_by_ur_is: %s\n" % e)
@@ -1069,6 +1125,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uris** | [**list[str]**](str.md)| Entities URIs | 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1139,7 +1196,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_interest_entities_by_ur_is**
-> list[InterestEntityDetailsDTO] get_interest_entities_by_ur_is(uris, authorization, accept_language=accept_language)
+> list[InterestEntityDetailsDTO] get_interest_entities_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed entities of interest by uris
 
@@ -1158,11 +1215,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Entities of interest URIs
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Get detailed entities of interest by uris
-    api_response = api_instance.get_interest_entities_by_ur_is(uris, )
+    api_response = api_instance.get_interest_entities_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->get_interest_entities_by_ur_is: %s\n" % e)
@@ -1173,6 +1231,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uris** | [**list[str]**](str.md)| Entities of interest URIs | 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1295,7 +1354,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_methods_by_ur_is**
-> list[MethodDetailsDTO] get_methods_by_ur_is(uris, authorization, accept_language=accept_language)
+> list[MethodDetailsDTO] get_methods_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed methods by uris
 
@@ -1314,11 +1373,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Methods URIs
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Get detailed methods by uris
-    api_response = api_instance.get_methods_by_ur_is(uris, )
+    api_response = api_instance.get_methods_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->get_methods_by_ur_is: %s\n" % e)
@@ -1329,6 +1389,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uris** | [**list[str]**](str.md)| Methods URIs | 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1399,7 +1460,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_units_by_ur_is**
-> list[UnitDetailsDTO] get_units_by_ur_is(uris, authorization, accept_language=accept_language)
+> list[UnitDetailsDTO] get_units_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed units by uris
 
@@ -1418,11 +1479,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Units URIs
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Get detailed units by uris
-    api_response = api_instance.get_units_by_ur_is(uris, )
+    api_response = api_instance.get_units_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->get_units_by_ur_is: %s\n" % e)
@@ -1433,6 +1495,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uris** | [**list[str]**](str.md)| Units URIs | 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1451,7 +1514,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_variable**
-> VariableDetailsDTO get_variable(uri, authorization, accept_language=accept_language)
+> VariableDetailsDTO get_variable(uri, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get a variable
 
@@ -1470,11 +1533,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uri = '\"http://opensilex.dev/set/variables/Plant_Height\"' # str | Variable URI
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Get a variable
-    api_response = api_instance.get_variable(uri, )
+    api_response = api_instance.get_variable(uri, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->get_variable: %s\n" % e)
@@ -1485,6 +1549,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | **str**| Variable URI | 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1607,7 +1672,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_variables_group_by_ur_is**
-> list[VariablesGroupGetDTO] get_variables_group_by_ur_is(uris, authorization, accept_language=accept_language)
+> list[VariablesGroupGetDTO] get_variables_group_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get variables groups by their URIs
 
@@ -1626,11 +1691,12 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 uris = ['uris_example'] # list[str] | Variables group URIs
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Get variables groups by their URIs
-    api_response = api_instance.get_variables_group_by_ur_is(uris, )
+    api_response = api_instance.get_variables_group_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->get_variables_group_by_ur_is: %s\n" % e)
@@ -1641,6 +1707,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uris** | [**list[str]**](str.md)| Variables group URIs | 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1659,7 +1726,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_characteristics**
-> list[CharacteristicGetDTO] search_characteristics(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[CharacteristicGetDTO] search_characteristics(authorization, name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search characteristics by name
 
@@ -1681,11 +1748,12 @@ name = '\"Height\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Search characteristics by name
-    api_response = api_instance.search_characteristics(name=name, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_characteristics(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_characteristics: %s\n" % e)
@@ -1699,6 +1767,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1717,7 +1786,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_entities**
-> list[EntityGetDTO] search_entities(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[EntityGetDTO] search_entities(authorization, name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search entities by name
 
@@ -1739,11 +1808,12 @@ name = '\"plant\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Search entities by name
-    api_response = api_instance.search_entities(name=name, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_entities(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_entities: %s\n" % e)
@@ -1757,6 +1827,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1775,7 +1846,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_interest_entity**
-> list[InterestEntityGetDTO] search_interest_entity(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[InterestEntityGetDTO] search_interest_entity(authorization, name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search entities of interest by name
 
@@ -1797,11 +1868,12 @@ name = '\"plot\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Search entities of interest by name
-    api_response = api_instance.search_interest_entity(name=name, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_interest_entity(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_interest_entity: %s\n" % e)
@@ -1815,6 +1887,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1833,7 +1906,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_methods**
-> list[MethodGetDTO] search_methods(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[MethodGetDTO] search_methods(authorization, name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search methods by name
 
@@ -1855,11 +1928,12 @@ name = '\"ImageAnalysis\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Search methods by name
-    api_response = api_instance.search_methods(name=name, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_methods(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_methods: %s\n" % e)
@@ -1873,6 +1947,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1891,7 +1966,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_units**
-> list[UnitGetDTO] search_units(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[UnitGetDTO] search_units(authorization, name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search units by name
 
@@ -1913,11 +1988,12 @@ name = '\"Centimeter\"' # str | Name (regex) (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Search units by name
-    api_response = api_instance.search_units(name=name, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_units(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_units: %s\n" % e)
@@ -1931,6 +2007,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] 
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -1949,7 +2026,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_variables**
-> list[VariableGetDTO] search_variables(authorization, name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[VariableGetDTO] search_variables(authorization, name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search variables
 
@@ -1984,11 +2061,12 @@ devices = ['devices_example'] # list[str] | Device filter (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Search variables
-    api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_variables: %s\n" % e)
@@ -2015,6 +2093,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type
@@ -2091,7 +2170,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_variables_groups**
-> list[VariablesGroupGetDTO] search_variables_groups(authorization, name=name, variable_uri=variable_uri, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[VariablesGroupGetDTO] search_variables_groups(authorization, name=name, variable_uri=variable_uri, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search variables groups
 
@@ -2114,11 +2193,12 @@ variable_uri = 'variable_uri_example' # str | Variable URI (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
 try:
     # Search variables groups
-    api_response = api_instance.search_variables_groups(name=name, variable_uri=variable_uri, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_variables_groups(name=name, variable_uri=variable_uri, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_variables_groups: %s\n" % e)
@@ -2133,6 +2213,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+ **shared_resource_instance** | **str**| Shared resource instance | [optional] 
 
 
 ### Return type

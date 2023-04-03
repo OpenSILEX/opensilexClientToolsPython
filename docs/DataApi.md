@@ -6,11 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_list_data**](DataApi.md#add_list_data) | **POST** /core/data | Add data
 [**count_data**](DataApi.md#count_data) | **GET** /core/data/count | Count data
+[**count_datafiles**](DataApi.md#count_datafiles) | **GET** /core/datafiles/count | Count datafiles
 [**create_provenance**](DataApi.md#create_provenance) | **POST** /core/provenances | Add a provenance
 [**delete_data**](DataApi.md#delete_data) | **DELETE** /core/data/{uri} | Delete data
 [**delete_data_on_search**](DataApi.md#delete_data_on_search) | **DELETE** /core/data | Delete data on criteria
 [**delete_provenance**](DataApi.md#delete_provenance) | **DELETE** /core/provenances/{uri} | Delete a provenance that doesn&#39;t describe data
-[**export_data**](DataApi.md#export_data) | **GET** /core/data/export | Export data
+[**export_data**](DataApi.md#export_data) | **POST** /core/data/export | Export data
+[**export_data1**](DataApi.md#export_data1) | **GET** /core/data/export | Export data
 [**get_data**](DataApi.md#get_data) | **GET** /core/data/{uri} | Get data
 [**get_data_file**](DataApi.md#get_data_file) | **GET** /core/datafiles/{uri} | Get a data file
 [**get_data_file_description**](DataApi.md#get_data_file_description) | **GET** /core/datafiles/{uri}/description | Get a data file description
@@ -143,6 +145,60 @@ Name | Type | Description  | Notes
  **max_confidence** | **float**| Search by maximal confidence index | [optional] 
  **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **count_datafiles**
+> int count_datafiles(authorization, target=target, device=device, accept_language=accept_language)
+
+Count datafiles
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+target = ['\"http://www.opensilex.org/demo/2018/o18000076\"'] # list[str] | Target URI (optional)
+device = ['\"http://www.opensilex.org/demo/2018/o18000076\"'] # list[str] | Device URI (optional)
+
+
+try:
+    # Count datafiles
+    api_response = api_instance.count_datafiles(target=target, device=device, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataApi->count_datafiles: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target** | [**list[str]**](str.md)| Target URI | [optional] 
+ **device** | [**list[str]**](str.md)| Device URI | [optional] 
 
 
 ### Return type
@@ -375,7 +431,58 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_data**
-> export_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> export_data(authorization, body=body, accept_language=accept_language)
+
+Export data
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
+
+
+try:
+    # Export data
+    api_instance.export_data(body=body, )
+except ApiException as e:
+    print("Exception when calling DataApi->export_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_data1**
+> export_data1(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Export data
 
@@ -413,9 +520,9 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Export data
-    api_instance.export_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
+    api_instance.export_data1(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
 except ApiException as e:
-    print("Exception when calling DataApi->export_data: %s\n" % e)
+    print("Exception when calling DataApi->export_data1: %s\n" % e)
 ```
 
 ### Parameters

@@ -21,6 +21,9 @@ Name | Type | Description | Notes
 **geocoding_service** | **str** | Geocoding service | [optional] 
 **menu_exclusions** | **list[str]** | Menu exclusions | [optional] 
 **version_label** | **str** | Version label to use in the header | [optional] 
+**application_name** | **str** | Name of the application to display | [optional] 
+**connect_as_guest** | **bool** | Ability to be logged as guest | [optional] 
+**dashboard** | [**DashboardConfigDTO**](DashboardConfigDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **already_existing_uri_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **duplicate_uri_errors** | **dict(str, list[CSVDuplicateURIError])** |  | [optional] 
 **invalid_row_size_errors** | **dict(str, list[CSVCell])** |  | [optional] 
+**invalid_date_errors** | **dict(str, list[CSVCell])** |  | [optional] 
 **nb_object_imported** | **int** |  | [optional] 
 **validation_token** | **str** |  | [optional] 
 **csv_header** | [**CsvHeader**](CsvHeader.md) |  | [optional] 

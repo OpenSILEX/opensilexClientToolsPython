@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_germplasm**](GermplasmApi.md#delete_germplasm) | **DELETE** /core/germplasm/{uri} | Delete a germplasm
 [**export_germplasm**](GermplasmApi.md#export_germplasm) | **POST** /core/germplasm/export | export germplasm
 [**get_germplasm**](GermplasmApi.md#get_germplasm) | **GET** /core/germplasm/{uri} | Get a germplasm
+[**get_germplasm_attribute_values**](GermplasmApi.md#get_germplasm_attribute_values) | **GET** /core/germplasm/attributes/{attribute} | Get attribute values of all germplasm for a given attribute
 [**get_germplasm_attributes**](GermplasmApi.md#get_germplasm_attributes) | **GET** /core/germplasm/attributes | Get attributes of all germplasm
 [**get_germplasm_experiments**](GermplasmApi.md#get_germplasm_experiments) | **GET** /core/germplasm/{uri}/experiments | Get experiments where a germplasm has been used
 [**get_germplasms_by_uri**](GermplasmApi.md#get_germplasms_by_uri) | **GET** /core/germplasm/by_uris | Get a list of germplasms by their URIs
@@ -223,8 +224,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_germplasm_attribute_values**
+> list[str] get_germplasm_attribute_values(attribute, authorization, attribute_value=attribute_value, page=page, page_size=page_size, accept_language=accept_language)
+
+Get attribute values of all germplasm for a given attribute
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
+attribute = 'attribute_example' # str | 
+attribute_value = '\".*\"' # str | Regex pattern for filtering attribute value (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+
+
+try:
+    # Get attribute values of all germplasm for a given attribute
+    api_response = api_instance.get_germplasm_attribute_values(attribute, attribute_value=attribute_value, page=page, page_size=page_size, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GermplasmApi->get_germplasm_attribute_values: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **attribute** | **str**|  | 
+ **attribute_value** | **str**| Regex pattern for filtering attribute value | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+**list[str]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_germplasm_attributes**
-> list[ExperimentGetListDTO] get_germplasm_attributes(authorization, accept_language=accept_language)
+> list[str] get_germplasm_attributes(authorization, accept_language=accept_language)
 
 Get attributes of all germplasm
 
@@ -260,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ExperimentGetListDTO]**](ExperimentGetListDTO.md)
+**list[str]**
 
 ### Authorization
 
@@ -274,7 +333,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_germplasm_experiments**
-> list[ExperimentGetListDTO] get_germplasm_experiments(uri, authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[ExperimentGetListDTO] get_germplasm_experiments(uri, authorization, attribute_value=attribute_value, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Get experiments where a germplasm has been used
 
@@ -293,7 +352,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uri = '\"dev-germplasm:g01\"' # str | germplasm URI
-name = '.*' # str | Regex pattern for filtering experiments by name (optional) (default to .*)
+attribute_value = '.*' # str | Regex pattern for filtering experiments by name (optional) (default to .*)
 order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -301,7 +360,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Get experiments where a germplasm has been used
-    api_response = api_instance.get_germplasm_experiments(uri, name=name, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.get_germplasm_experiments(uri, attribute_value=attribute_value, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_experiments: %s\n" % e)
@@ -312,7 +371,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | **str**| germplasm URI | 
- **name** | **str**| Regex pattern for filtering experiments by name | [optional] [default to .*]
+ **attribute_value** | **str**| Regex pattern for filtering experiments by name | [optional] [default to .*]
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]

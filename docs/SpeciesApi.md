@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_all_species**
-> list[SpeciesDTO] get_all_species(accept_language=accept_language)
+> list[SpeciesDTO] get_all_species(shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 get species (no pagination)
 
@@ -26,11 +26,12 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SpeciesApi(pythonClient)
+shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance URI (optional)
 
 
 try:
     # get species (no pagination)
-    api_response = api_instance.get_all_species()
+    api_response = api_instance.get_all_species(shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeciesApi->get_all_species: %s\n" % e)
@@ -40,6 +41,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **shared_resource_instance** | **str**| Shared resource instance URI | [optional] 
 
 
 ### Return type

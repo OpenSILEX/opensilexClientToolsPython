@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**count_documents**](DocumentsApi.md#count_documents) | **GET** /core/documents/count | Count documents
 [**create_document**](DocumentsApi.md#create_document) | **POST** /core/documents | Add a document
 [**delete_document**](DocumentsApi.md#delete_document) | **DELETE** /core/documents/{uri} | Delete a document
 [**get_document_file**](DocumentsApi.md#get_document_file) | **GET** /core/documents/{uri} | Get document
@@ -11,6 +12,58 @@ Method | HTTP request | Description
 [**search_documents**](DocumentsApi.md#search_documents) | **GET** /core/documents | Search documents
 [**update_document**](DocumentsApi.md#update_document) | **PUT** /core/documents | Update document&#39;s description
 
+
+# **count_documents**
+> int count_documents(authorization, target=target, accept_language=accept_language)
+
+Count documents
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
+target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI (optional)
+
+
+try:
+    # Count documents
+    api_response = api_instance.count_documents(target=target, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DocumentsApi->count_documents: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **target** | **str**| Target URI | [optional] 
+
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_document**
 > ObjectUriResponse create_document(description, authorization, file=file, accept_language=accept_language)

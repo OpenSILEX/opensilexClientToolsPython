@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **email** | **str** | User email | [optional] 
 **language** | **str** | User language | [optional] 
 **admin** | **bool** | User admin flag | [optional] 
+**favorites** | **list[str]** | Favorites URI | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 
 # **create_facility**
-> ObjectUriResponse create_facility(authorization, body=body, accept_language=accept_language)
+> str create_facility(authorization, body=body, accept_language=accept_language)
 
 Create a facility
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -77,7 +77,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_infrastructure**
-> ObjectUriResponse create_infrastructure(authorization, body=body, accept_language=accept_language)
+> str create_infrastructure(authorization, body=body, accept_language=accept_language)
 
 Create an organisation
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -129,7 +129,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_site**
-> ObjectUriResponse create_site(authorization, body=body, accept_language=accept_language)
+> str create_site(authorization, body=body, accept_language=accept_language)
 
 Create a site
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -181,7 +181,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_facility**
-> ObjectUriResponse delete_facility(uri, authorization, accept_language=accept_language)
+> str delete_facility(uri, authorization, accept_language=accept_language)
 
 Delete a facility
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -233,7 +233,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_infrastructure**
-> ObjectUriResponse delete_infrastructure(uri, authorization, accept_language=accept_language)
+> str delete_infrastructure(uri, authorization, accept_language=accept_language)
 
 Delete an organisation
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -285,7 +285,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_site**
-> ObjectUriResponse delete_site(uri, authorization, accept_language=accept_language)
+> str delete_site(uri, authorization, accept_language=accept_language)
 
 Delete a site
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -821,7 +821,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_facility**
-> ObjectUriResponse update_facility(authorization, body=body, accept_language=accept_language)
+> str update_facility(authorization, body=body, accept_language=accept_language)
 
 Update a facility
 
@@ -859,7 +859,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -873,7 +873,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_infrastructure**
-> ObjectUriResponse update_infrastructure(authorization, body=body, accept_language=accept_language)
+> str update_infrastructure(authorization, body=body, accept_language=accept_language)
 
 Update an organisation
 
@@ -911,7 +911,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -925,7 +925,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_site**
-> ObjectUriResponse update_site(authorization, body=body, accept_language=accept_language)
+> str update_site(authorization, body=body, accept_language=accept_language)
 
 Update a site
 
@@ -963,7 +963,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

@@ -11,8 +11,8 @@ Method | HTTP request | Description
 [**delete_data**](DataApi.md#delete_data) | **DELETE** /core/data/{uri} | Delete data
 [**delete_data_on_search**](DataApi.md#delete_data_on_search) | **DELETE** /core/data | Delete data on criteria
 [**delete_provenance**](DataApi.md#delete_provenance) | **DELETE** /core/provenances/{uri} | Delete a provenance that doesn&#39;t describe data
-[**export_data**](DataApi.md#export_data) | **POST** /core/data/export | Export data
-[**export_data1**](DataApi.md#export_data1) | **GET** /core/data/export | Export data
+[**export_data**](DataApi.md#export_data) | **GET** /core/data/export | Export data
+[**export_data1**](DataApi.md#export_data1) | **POST** /core/data/export | Export data
 [**get_data**](DataApi.md#get_data) | **GET** /core/data/{uri} | Get data
 [**get_data_file**](DataApi.md#get_data_file) | **GET** /core/datafiles/{uri} | Get a data file
 [**get_data_file_description**](DataApi.md#get_data_file_description) | **GET** /core/datafiles/{uri}/description | Get a data file description
@@ -39,7 +39,7 @@ Method | HTTP request | Description
 
 
 # **add_list_data**
-> ObjectUriResponse add_list_data(authorization, body=body, accept_language=accept_language)
+> str add_list_data(authorization, body=body, accept_language=accept_language)
 
 Add data
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -217,7 +217,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_provenance**
-> ObjectUriResponse create_provenance(authorization, body=body, accept_language=accept_language)
+> str create_provenance(authorization, body=body, accept_language=accept_language)
 
 Add a provenance
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -269,7 +269,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_data**
-> ObjectUriResponse delete_data(uri, authorization, accept_language=accept_language)
+> str delete_data(uri, authorization, accept_language=accept_language)
 
 Delete data
 
@@ -307,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -321,7 +321,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_data_on_search**
-> ObjectUriResponse delete_data_on_search(authorization, experiment=experiment, target=target, variable=variable, provenance=provenance, accept_language=accept_language)
+> str delete_data_on_search(authorization, experiment=experiment, target=target, variable=variable, provenance=provenance, accept_language=accept_language)
 
 Delete data on criteria
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -379,7 +379,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_provenance**
-> ObjectUriResponse delete_provenance(uri, authorization, accept_language=accept_language)
+> str delete_provenance(uri, authorization, accept_language=accept_language)
 
 Delete a provenance that doesn't describe data
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -431,58 +431,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_data**
-> export_data(authorization, body=body, accept_language=accept_language)
-
-Export data
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
-
-
-try:
-    # Export data
-    api_instance.export_data(body=body, )
-except ApiException as e:
-    print("Exception when calling DataApi->export_data: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **export_data1**
-> export_data1(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> export_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Export data
 
@@ -520,9 +469,9 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Export data
-    api_instance.export_data1(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
+    api_instance.export_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
 except ApiException as e:
-    print("Exception when calling DataApi->export_data1: %s\n" % e)
+    print("Exception when calling DataApi->export_data: %s\n" % e)
 ```
 
 ### Parameters
@@ -545,6 +494,57 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_data1**
+> export_data1(authorization, body=body, accept_language=accept_language)
+
+Export data
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
+
+
+try:
+    # Export data
+    api_instance.export_data1(body=body, )
+except ApiException as e:
+    print("Exception when calling DataApi->export_data1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
 
 
 ### Return type
@@ -1445,7 +1445,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_data_file**
-> ObjectUriResponse post_data_file(description, file, authorization, accept_language=accept_language)
+> str post_data_file(description, file, authorization, accept_language=accept_language)
 
 Add a data file
 
@@ -1485,7 +1485,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -1499,7 +1499,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **post_data_file_paths**
-> ObjectUriResponse post_data_file_paths(body, authorization, accept_language=accept_language)
+> str post_data_file_paths(body, authorization, accept_language=accept_language)
 
 Describe datafiles and give their relative paths in the configured storage system. In the case of already stored datafiles.
 
@@ -1537,7 +1537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -1697,7 +1697,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update**
-> ObjectUriResponse update(authorization, body=body, accept_language=accept_language)
+> str update(authorization, body=body, accept_language=accept_language)
 
 Update data
 
@@ -1735,7 +1735,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -1749,7 +1749,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_confidence**
-> ObjectUriResponse update_confidence(uri, authorization, body=body, accept_language=accept_language)
+> str update_confidence(uri, authorization, body=body, accept_language=accept_language)
 
 Update confidence index
 
@@ -1789,7 +1789,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -1803,7 +1803,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_provenance**
-> ObjectUriResponse update_provenance(authorization, body=body, accept_language=accept_language)
+> str update_provenance(authorization, body=body, accept_language=accept_language)
 
 Update a provenance
 
@@ -1841,7 +1841,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

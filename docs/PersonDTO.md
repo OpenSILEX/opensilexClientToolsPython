@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **first_name** | **str** | Person first name | [optional] 
 **last_name** | **str** | Person last name | [optional] 
 **email** | **str** | email | [optional] 
+**account** | **str** | Uri of the account if this person has one | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

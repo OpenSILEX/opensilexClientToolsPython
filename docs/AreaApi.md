@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_area**
-> ObjectUriResponse create_area(authorization, body=body, accept_language=accept_language)
+> str create_area(authorization, body=body, accept_language=accept_language)
 
 Add an area
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_area**
-> ObjectUriResponse delete_area(uri, authorization, accept_language=accept_language)
+> str delete_area(uri, authorization, accept_language=accept_language)
 
 Delete an area
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -224,7 +224,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_area**
-> ObjectUriResponse update_area(body, authorization, accept_language=accept_language)
+> str update_area(body, authorization, accept_language=accept_language)
 
 Update an area
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

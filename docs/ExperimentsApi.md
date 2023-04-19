@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **create_experiment**
-> ObjectUriResponse create_experiment(authorization, body=body, accept_language=accept_language)
+> str create_experiment(authorization, body=body, accept_language=accept_language)
 
 Add an experiment
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -74,7 +74,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_experiment**
-> ObjectUriResponse delete_experiment(uri, authorization, accept_language=accept_language)
+> str delete_experiment(uri, authorization, accept_language=accept_language)
 
 Delete an experiment
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -791,7 +791,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_experiment**
-> ObjectUriResponse update_experiment(authorization, body=body, accept_language=accept_language)
+> str update_experiment(authorization, body=body, accept_language=accept_language)
 
 Update an experiment
 
@@ -829,7 +829,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

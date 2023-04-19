@@ -157,7 +157,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_characteristic**
-> ObjectUriResponse create_characteristic(authorization, body=body, accept_language=accept_language)
+> str create_characteristic(authorization, body=body, accept_language=accept_language)
 
 Add a characteristic
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -209,7 +209,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_entity**
-> ObjectUriResponse create_entity(authorization, body=body, accept_language=accept_language)
+> str create_entity(authorization, body=body, accept_language=accept_language)
 
 Add an entity
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -261,7 +261,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_interest_entity**
-> ObjectUriResponse create_interest_entity(authorization, body=body, accept_language=accept_language)
+> str create_interest_entity(authorization, body=body, accept_language=accept_language)
 
 Add an entity of interest
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -313,7 +313,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_method**
-> ObjectUriResponse create_method(authorization, body=body, accept_language=accept_language)
+> str create_method(authorization, body=body, accept_language=accept_language)
 
 Add a method
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -365,7 +365,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_unit**
-> ObjectUriResponse create_unit(authorization, body=body, accept_language=accept_language)
+> str create_unit(authorization, body=body, accept_language=accept_language)
 
 Add an unit
 
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -417,7 +417,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_variable**
-> ObjectUriResponse create_variable(authorization, body=body, accept_language=accept_language)
+> str create_variable(authorization, body=body, accept_language=accept_language)
 
 Add a variable
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -469,7 +469,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_variables_group**
-> ObjectUriResponse create_variables_group(authorization, body=body, accept_language=accept_language)
+> str create_variables_group(authorization, body=body, accept_language=accept_language)
 
 Add a variables group
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -521,7 +521,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_characteristic**
-> ObjectUriResponse delete_characteristic(uri, authorization, accept_language=accept_language)
+> str delete_characteristic(uri, authorization, accept_language=accept_language)
 
 Delete a characteristic
 
@@ -559,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -573,7 +573,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_entity**
-> ObjectUriResponse delete_entity(uri, authorization, accept_language=accept_language)
+> str delete_entity(uri, authorization, accept_language=accept_language)
 
 Delete an entity
 
@@ -611,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -625,7 +625,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_interest_entity**
-> ObjectUriResponse delete_interest_entity(uri, authorization, accept_language=accept_language)
+> str delete_interest_entity(uri, authorization, accept_language=accept_language)
 
 Delete an entity of interest
 
@@ -663,7 +663,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -677,7 +677,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_method**
-> ObjectUriResponse delete_method(uri, authorization, accept_language=accept_language)
+> str delete_method(uri, authorization, accept_language=accept_language)
 
 Delete a method
 
@@ -715,7 +715,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -729,7 +729,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_unit**
-> ObjectUriResponse delete_unit(uri, authorization, accept_language=accept_language)
+> str delete_unit(uri, authorization, accept_language=accept_language)
 
 Delete an unit
 
@@ -767,7 +767,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -781,7 +781,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_variable**
-> ObjectUriResponse delete_variable(uri, authorization, accept_language=accept_language)
+> str delete_variable(uri, authorization, accept_language=accept_language)
 
 Delete a variable
 
@@ -819,7 +819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -833,7 +833,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_variables_group**
-> ObjectUriResponse delete_variables_group(uri, authorization, accept_language=accept_language)
+> str delete_variables_group(uri, authorization, accept_language=accept_language)
 
 Delete a variables group
 
@@ -871,7 +871,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -2232,7 +2232,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_characteristic**
-> ObjectUriResponse update_characteristic(authorization, body=body, accept_language=accept_language)
+> str update_characteristic(authorization, body=body, accept_language=accept_language)
 
 Update a characteristic
 
@@ -2270,7 +2270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -2284,7 +2284,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_entity**
-> ObjectUriResponse update_entity(authorization, body=body, accept_language=accept_language)
+> str update_entity(authorization, body=body, accept_language=accept_language)
 
 Update an entity
 
@@ -2322,7 +2322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -2336,7 +2336,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_interest_entity**
-> ObjectUriResponse update_interest_entity(authorization, body=body, accept_language=accept_language)
+> str update_interest_entity(authorization, body=body, accept_language=accept_language)
 
 Update an entity of interest
 
@@ -2374,7 +2374,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -2388,7 +2388,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_method**
-> ObjectUriResponse update_method(authorization, body=body, accept_language=accept_language)
+> str update_method(authorization, body=body, accept_language=accept_language)
 
 Update a method
 
@@ -2426,7 +2426,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -2440,7 +2440,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_unit**
-> ObjectUriResponse update_unit(authorization, body=body, accept_language=accept_language)
+> str update_unit(authorization, body=body, accept_language=accept_language)
 
 Update an unit
 
@@ -2478,7 +2478,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -2492,7 +2492,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_variable**
-> ObjectUriResponse update_variable(authorization, body=body, accept_language=accept_language)
+> str update_variable(authorization, body=body, accept_language=accept_language)
 
 Update a variable
 
@@ -2530,7 +2530,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -2544,7 +2544,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_variables_group**
-> ObjectUriResponse update_variables_group(authorization, body=body, accept_language=accept_language)
+> str update_variables_group(authorization, body=body, accept_language=accept_language)
 
 Update a variables group
 
@@ -2582,7 +2582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

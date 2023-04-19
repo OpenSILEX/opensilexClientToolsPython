@@ -124,7 +124,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_factor**
-> ObjectUriResponse delete_factor(uri, authorization, accept_language=accept_language)
+> str delete_factor(uri, authorization, accept_language=accept_language)
 
 Delete a factor
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -176,7 +176,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_factor_level**
-> ObjectUriResponse delete_factor_level(uri, authorization, accept_language=accept_language)
+> str delete_factor_level(uri, authorization, accept_language=accept_language)
 
 Delete a factor level
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -716,7 +716,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_factor**
-> ObjectUriResponse update_factor(authorization, body=body, accept_language=accept_language)
+> str update_factor(authorization, body=body, accept_language=accept_language)
 
 Update a factor
 
@@ -754,7 +754,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

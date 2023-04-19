@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **create_rdf_type**
-> ObjectUriResponse create_rdf_type(authorization, body=body, accept_language=accept_language)
+> str create_rdf_type(authorization, body=body, accept_language=accept_language)
 
 Create a custom class
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -68,7 +68,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_rdf_type**
-> ObjectUriResponse delete_rdf_type(uri, authorization, accept_language=accept_language)
+> str delete_rdf_type(uri, authorization, accept_language=accept_language)
 
 Delete a RDF type
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -372,7 +372,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **set_rdf_type_properties_order**
-> ObjectUriResponse set_rdf_type_properties_order(rdf_type, authorization, body=body, accept_language=accept_language)
+> str set_rdf_type_properties_order(rdf_type, authorization, body=body, accept_language=accept_language)
 
 Define properties order
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -426,7 +426,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_rdf_type**
-> ObjectUriResponse update_rdf_type(authorization, body=body, accept_language=accept_language)
+> str update_rdf_type(authorization, body=body, accept_language=accept_language)
 
 Update a custom class
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

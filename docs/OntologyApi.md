@@ -29,7 +29,7 @@ Method | HTTP request | Description
 
 
 # **add_class_property_restriction**
-> ObjectUriResponse add_class_property_restriction(authorization, body=body, accept_language=accept_language)
+> str add_class_property_restriction(authorization, body=body, accept_language=accept_language)
 
 Add a rdf type property restriction
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -135,7 +135,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_property**
-> ObjectUriResponse create_property(authorization, body=body, accept_language=accept_language)
+> str create_property(authorization, body=body, accept_language=accept_language)
 
 Create a RDF property
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -187,7 +187,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_class_property_restriction**
-> ObjectUriResponse delete_class_property_restriction(rdf_type, property_uri, authorization, accept_language=accept_language)
+> str delete_class_property_restriction(rdf_type, property_uri, authorization, accept_language=accept_language)
 
 Delete a rdf type property restriction
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -241,7 +241,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_property**
-> ObjectUriResponse delete_property(uri, rdf_type, authorization, accept_language=accept_language)
+> str delete_property(uri, rdf_type, authorization, accept_language=accept_language)
 
 Delete a property
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -1096,7 +1096,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_class_property_restriction**
-> ObjectUriResponse update_class_property_restriction(authorization, body=body, accept_language=accept_language)
+> str update_class_property_restriction(authorization, body=body, accept_language=accept_language)
 
 Update a rdf type property restriction
 
@@ -1134,7 +1134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -1148,7 +1148,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_property**
-> ObjectUriResponse update_property(authorization, body=body, accept_language=accept_language)
+> str update_property(authorization, body=body, accept_language=accept_language)
 
 Update a RDF property
 
@@ -1186,7 +1186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

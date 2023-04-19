@@ -66,7 +66,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_document**
-> ObjectUriResponse create_document(description, authorization, file=file, accept_language=accept_language)
+> str create_document(description, authorization, file=file, accept_language=accept_language)
 
 Add a document
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -120,7 +120,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_document**
-> ObjectUriResponse delete_document(uri, authorization, accept_language=accept_language)
+> str delete_document(uri, authorization, accept_language=accept_language)
 
 Delete a document
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -347,7 +347,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_document**
-> ObjectUriResponse update_document(description, authorization, accept_language=accept_language)
+> str update_document(description, authorization, accept_language=accept_language)
 
 Update document's description
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

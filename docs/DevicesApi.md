@@ -94,7 +94,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_device**
-> ObjectUriResponse create_device(authorization, body=body, check_only=check_only, accept_language=accept_language)
+> str create_device(authorization, body=body, check_only=check_only, accept_language=accept_language)
 
 Create a device
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -148,7 +148,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_device**
-> ObjectUriResponse delete_device(uri, authorization, accept_language=accept_language)
+> str delete_device(uri, authorization, accept_language=accept_language)
 
 Delete a device
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -912,7 +912,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_device**
-> ObjectUriResponse update_device(body, authorization, accept_language=accept_language)
+> str update_device(body, authorization, accept_language=accept_language)
 
 Update a device
 
@@ -950,7 +950,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** | User URI | [optional] 
-**person_holder_uri** | **str** | URI of the Person who will hold this account | 
+**account_holder** | **str** | URI of the Person who will hold this account | 
 **email** | **str** | User email | [optional] 
 **language** | **str** | User language | [optional] 
 **password** | **str** | User password | 

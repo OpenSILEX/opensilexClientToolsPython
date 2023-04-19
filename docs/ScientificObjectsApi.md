@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **create_scientific_object**
-> ObjectUriResponse create_scientific_object(body, authorization, accept_language=accept_language)
+> str create_scientific_object(body, authorization, accept_language=accept_language)
 
 Create a scientific object for the given experiment
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -75,7 +75,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_scientific_object**
-> ObjectUriResponse delete_scientific_object(uri, authorization, experiment=experiment, accept_language=accept_language)
+> str delete_scientific_object(uri, authorization, experiment=experiment, accept_language=accept_language)
 
 Delete a scientific object
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -800,7 +800,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_scientific_object**
-> ObjectUriResponse update_scientific_object(body, authorization, accept_language=accept_language)
+> str update_scientific_object(body, authorization, accept_language=accept_language)
 
 Update a scientific object for the given experiment
 
@@ -838,7 +838,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

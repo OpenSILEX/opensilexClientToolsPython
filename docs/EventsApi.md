@@ -74,7 +74,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_events**
-> ObjectUriResponse create_events(authorization, body=body, accept_language=accept_language)
+> str create_events(authorization, body=body, accept_language=accept_language)
 
 Create a list of event
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -126,7 +126,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_moves**
-> ObjectUriResponse create_moves(authorization, body=body, accept_language=accept_language)
+> str create_moves(authorization, body=body, accept_language=accept_language)
 
 Create a list of move event
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -178,7 +178,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_event**
-> ObjectUriResponse delete_event(uri, authorization, accept_language=accept_language)
+> str delete_event(uri, authorization, accept_language=accept_language)
 
 Delete an event
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -230,7 +230,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_move_event**
-> ObjectUriResponse delete_move_event(uri, authorization, accept_language=accept_language)
+> str delete_move_event(uri, authorization, accept_language=accept_language)
 
 Delete a move event
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -608,7 +608,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_event**
-> ObjectUriResponse update_event(authorization, body=body, accept_language=accept_language)
+> str update_event(authorization, body=body, accept_language=accept_language)
 
 Update an event
 
@@ -646,7 +646,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -660,7 +660,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_move_event**
-> ObjectUriResponse update_move_event(authorization, body=body, accept_language=accept_language)
+> str update_move_event(authorization, body=body, accept_language=accept_language)
 
 Update a move event
 
@@ -698,7 +698,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

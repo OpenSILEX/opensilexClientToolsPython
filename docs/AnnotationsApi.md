@@ -66,7 +66,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_annotation**
-> ObjectUriResponse create_annotation(authorization, body=body, accept_language=accept_language)
+> str create_annotation(authorization, body=body, accept_language=accept_language)
 
 Create an annotation
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -118,7 +118,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_annotation**
-> ObjectUriResponse delete_annotation(uri, authorization, accept_language=accept_language)
+> str delete_annotation(uri, authorization, accept_language=accept_language)
 
 Delete an annotation
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -344,7 +344,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_annotation**
-> ObjectUriResponse update_annotation(authorization, body=body, accept_language=accept_language)
+> str update_annotation(authorization, body=body, accept_language=accept_language)
 
 Update an annotation
 
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

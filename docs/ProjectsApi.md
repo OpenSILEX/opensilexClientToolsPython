@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_project**
-> ObjectUriResponse create_project(authorization, body=body, accept_language=accept_language)
+> str create_project(authorization, body=body, accept_language=accept_language)
 
 Add a project
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -65,7 +65,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_project**
-> ObjectUriResponse delete_project(uri, authorization, accept_language=accept_language)
+> str delete_project(uri, authorization, accept_language=accept_language)
 
 Delete a project
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 
@@ -285,7 +285,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_project**
-> ObjectUriResponse update_project(authorization, body=body, accept_language=accept_language)
+> str update_project(authorization, body=body, accept_language=accept_language)
 
 Update a project
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ObjectUriResponse**](ObjectUriResponse.md)
+**str**
 
 ### Authorization
 

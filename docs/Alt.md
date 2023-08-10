@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **default** | [**RDFNode**](RDFNode.md) |  | [optional] 
 **default_language** | **str** |  | [optional] 
-**default_literal** | [**Literal**](Literal.md) |  | [optional] 
 **default_boolean** | **bool** |  | [optional] 
 **default_byte** | **str** |  | [optional] 
 **default_short** | **int** |  | [optional] 
@@ -19,6 +18,7 @@ Name | Type | Description | Notes
 **default_bag** | [**Bag**](Bag.md) |  | [optional] 
 **default_seq** | [**Seq**](Seq.md) |  | [optional] 
 **default_resource** | [**Resource**](Resource.md) |  | [optional] 
+**default_literal** | [**Literal**](Literal.md) |  | [optional] 
 **alt** | **bool** |  | [optional] 
 **seq** | **bool** |  | [optional] 
 **bag** | **bool** |  | [optional] 
@@ -28,11 +28,11 @@ Name | Type | Description | Notes
 **uri** | **str** |  | [optional] 
 **local_name** | **str** |  | [optional] 
 **resource** | **bool** |  | [optional] 
-**model** | [**Model**](Model.md) |  | [optional] 
-**literal** | **bool** |  | [optional] 
 **anon** | **bool** |  | [optional] 
 **uriresource** | **bool** |  | [optional] 
 **stmt_resource** | **bool** |  | [optional] 
+**model** | [**Model**](Model.md) |  | [optional] 
+**literal** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

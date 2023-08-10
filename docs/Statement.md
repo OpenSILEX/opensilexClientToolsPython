@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**string** | **str** |  | [optional] 
 **object** | [**RDFNode**](RDFNode.md) |  | [optional] 
 **boolean** | **bool** |  | [optional] 
 **byte** | **str** |  | [optional] 
@@ -15,15 +14,16 @@ Name | Type | Description | Notes
 **double** | **float** |  | [optional] 
 **resource** | [**Resource**](Resource.md) |  | [optional] 
 **language** | **str** |  | [optional] 
-**subject** | [**Resource**](Resource.md) |  | [optional] 
-**list** | [**RDFList**](RDFList.md) |  | [optional] 
-**model** | [**Model**](Model.md) |  | [optional] 
+**string** | **str** |  | [optional] 
 **predicate** | [**ModelProperty**](ModelProperty.md) |  | [optional] 
 **bag** | [**Bag**](Bag.md) |  | [optional] 
 **alt** | [**Alt**](Alt.md) |  | [optional] 
 **seq** | [**Seq**](Seq.md) |  | [optional] 
 **reified** | **bool** |  | [optional] 
 **literal** | [**Literal**](Literal.md) |  | [optional] 
+**list** | [**RDFList**](RDFList.md) |  | [optional] 
+**model** | [**Model**](Model.md) |  | [optional] 
+**subject** | [**Resource**](Resource.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

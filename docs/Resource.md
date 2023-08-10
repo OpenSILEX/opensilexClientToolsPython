@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | [**AnonId**](AnonId.md) |  | [optional] 
-**stmt_term** | [**Statement**](Statement.md) |  | [optional] 
 **name_space** | **str** |  | [optional] 
+**stmt_term** | [**Statement**](Statement.md) |  | [optional] 
 **uri** | **str** |  | [optional] 
 **local_name** | **str** |  | [optional] 
 **resource** | **bool** |  | [optional] 

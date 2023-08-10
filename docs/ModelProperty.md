@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name_space** | **str** |  | [optional] 
 **_property** | **bool** |  | [optional] 
 **ordinal** | **int** |  | [optional] 
-**name_space** | **str** |  | [optional] 
 **local_name** | **str** |  | [optional] 
 **id** | [**AnonId**](AnonId.md) |  | [optional] 
 **stmt_term** | [**Statement**](Statement.md) |  | [optional] 

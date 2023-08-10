@@ -20,11 +20,11 @@ from __future__ import absolute_import
 
 
 from opensilexClientToolsPython.models import RDFNode
+from opensilexClientToolsPython.models import Literal
 from opensilexClientToolsPython.models import Alt
 from opensilexClientToolsPython.models import Bag
 from opensilexClientToolsPython.models import Seq
 from opensilexClientToolsPython.models import Resource
-from opensilexClientToolsPython.models import Literal
 from opensilexClientToolsPython.models import AnonId
 from opensilexClientToolsPython.models import Statement
 from opensilexClientToolsPython.models import Model
@@ -211,9 +211,9 @@ from opensilexClientToolsPython.models import UserGetDTO
 from opensilexClientToolsPython.models import OrderBy
 
 
-from opensilexClientToolsPython.models import TransactionHandler
-from opensilexClientToolsPython.models import GraphEventManager
 from opensilexClientToolsPython.models import PrefixMapping
+from opensilexClientToolsPython.models import GraphEventManager
+from opensilexClientToolsPython.models import TransactionHandler
 from opensilexClientToolsPython.models import Capabilities
 
 
@@ -418,11 +418,11 @@ from opensilexClientToolsPython.models import SiteAddressDTO
 
 from opensilexClientToolsPython.models import RDFNode
 from opensilexClientToolsPython.models import Resource
+from opensilexClientToolsPython.models import Literal
 from opensilexClientToolsPython.models import ModelProperty
 from opensilexClientToolsPython.models import Bag
 from opensilexClientToolsPython.models import Alt
 from opensilexClientToolsPython.models import Seq
-from opensilexClientToolsPython.models import Literal
 from opensilexClientToolsPython.models import RDFList
 from opensilexClientToolsPython.models import Model
 from opensilexClientToolsPython.models import Resource

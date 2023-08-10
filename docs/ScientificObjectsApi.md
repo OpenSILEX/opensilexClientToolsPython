@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**create_scientific_object**](ScientificObjectsApi.md#create_scientific_object) | **POST** /core/scientific_objects | Create a scientific object for the given experiment
 [**delete_scientific_object**](ScientificObjectsApi.md#delete_scientific_object) | **DELETE** /core/scientific_objects/{uri} | Delete a scientific object
 [**export_csv**](ScientificObjectsApi.md#export_csv) | **POST** /core/scientific_objects/export | Export a given list of scientific object URIs to csv data file
+[**export_shp**](ScientificObjectsApi.md#export_shp) | **POST** /core/scientific_objects/export_shp | Export a given list of scientific object URIs to shapefile
 [**get_scientific_object_data_files_provenances**](ScientificObjectsApi.md#get_scientific_object_data_files_provenances) | **GET** /core/scientific_objects/{uri}/datafiles/provenances | Get provenances of datafiles linked to this scientific object
 [**get_scientific_object_data_provenances**](ScientificObjectsApi.md#get_scientific_object_data_provenances) | **GET** /core/scientific_objects/{uri}/data/provenances | Get provenances of data that have been measured on this scientific object
 [**get_scientific_object_detail**](ScientificObjectsApi.md#get_scientific_object_detail) | **GET** /core/scientific_objects/{uri} | Get scientific object detail
@@ -147,7 +148,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-body = opensilexClientToolsPython.ScientificObjectSearchDTO() # ScientificObjectSearchDTO | CSV export configuration (optional)
+body = opensilexClientToolsPython.ScientificObjectExportDTO() # ScientificObjectExportDTO | CSV export configuration (optional)
 
 
 try:
@@ -161,7 +162,64 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ScientificObjectSearchDTO**](ScientificObjectSearchDTO.md)| CSV export configuration | [optional] 
+ **body** | [**ScientificObjectExportDTO**](ScientificObjectExportDTO.md)| CSV export configuration | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_shp**
+> export_shp(authorization, body=body, experiment=experiment, selected_props=selected_props, page_size=page_size, accept_language=accept_language)
+
+Export a given list of scientific object URIs to shapefile
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
+body = [opensilexClientToolsPython.GeometryDTO()] # list[GeometryDTO] | Scientific objects (optional)
+experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
+selected_props = ['\"test\"'] # list[str] | properties selected (optional)
+page_size = 10000 # int | Page size limited to 10,000 objects (optional)
+
+
+try:
+    # Export a given list of scientific object URIs to shapefile
+    api_instance.export_shp(body=body, experiment=experiment, selected_props=selected_props, page_size=page_size, )
+except ApiException as e:
+    print("Exception when calling ScientificObjectsApi->export_shp: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[GeometryDTO]**](GeometryDTO.md)| Scientific objects | [optional] 
+ **experiment** | **str**| Experiment URI | [optional] 
+ **selected_props** | [**list[str]**](str.md)| properties selected | [optional] 
+ **page_size** | **int**| Page size limited to 10,000 objects | [optional] 
 
 
 ### Return type

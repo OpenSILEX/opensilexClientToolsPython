@@ -2026,7 +2026,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_variables**
-> list[VariableGetDTO] search_variables(authorization, name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
+> list[VariableGetDTO] search_variables(authorization, name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, not_included_in_group_of_variables=not_included_in_group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Search variables
 
@@ -2050,7 +2050,8 @@ entity_of_interest = 'entity_of_interest_example' # str | Entity of interest fil
 characteristic = 'characteristic_example' # str | Characteristic filter (optional)
 method = 'method_example' # str | Method filter (optional)
 unit = 'unit_example' # str | Unit filter (optional)
-group_of_variables = 'group_of_variables_example' # str | Group filter (optional)
+group_of_variables = 'group_of_variables_example' # str | Included in group filter (optional)
+not_included_in_group_of_variables = 'not_included_in_group_of_variables_example' # str | Not included in group filter (optional)
 data_type = 'data_type_example' # str | Data type filter (optional)
 time_interval = 'time_interval_example' # str | Time interval filter (optional)
 species = ['species_example'] # list[str] | Species filter (optional)
@@ -2066,7 +2067,7 @@ shared_resource_instance = 'shared_resource_instance_example' # str | Shared res
 
 try:
     # Search variables
-    api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
+    api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, not_included_in_group_of_variables=not_included_in_group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VariablesApi->search_variables: %s\n" % e)
@@ -2082,7 +2083,8 @@ Name | Type | Description  | Notes
  **characteristic** | **str**| Characteristic filter | [optional] 
  **method** | **str**| Method filter | [optional] 
  **unit** | **str**| Unit filter | [optional] 
- **group_of_variables** | **str**| Group filter | [optional] 
+ **group_of_variables** | **str**| Included in group filter | [optional] 
+ **not_included_in_group_of_variables** | **str**| Not included in group filter | [optional] 
  **data_type** | **str**| Data type filter | [optional] 
  **time_interval** | **str**| Time interval filter | [optional] 
  **species** | [**list[str]**](str.md)| Species filter | [optional] 

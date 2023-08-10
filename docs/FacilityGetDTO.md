@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **organizations** | [**list[NamedResourceDTOOrganizationModel]**](NamedResourceDTOOrganizationModel.md) |  | 
 **sites** | [**list[NamedResourceDTOSiteModel]**](NamedResourceDTOSiteModel.md) |  | [optional] 
 **address** | [**FacilityAddressDTO**](FacilityAddressDTO.md) |  | [optional] 
+**variable_groups** | [**list[NamedResourceDTOVariablesGroupModel]**](NamedResourceDTOVariablesGroupModel.md) |  | [optional] 
 **geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 

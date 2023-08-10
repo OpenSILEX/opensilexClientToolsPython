@@ -761,7 +761,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_sites**
-> list[SiteGetDTO] search_sites(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[SiteGetListDTO] search_sites(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search all sites
 
@@ -807,7 +807,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[SiteGetDTO]**](SiteGetDTO.md)
+[**list[SiteGetListDTO]**](SiteGetListDTO.md)
 
 ### Authorization
 

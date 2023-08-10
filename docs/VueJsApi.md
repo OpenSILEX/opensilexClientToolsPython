@@ -276,7 +276,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_theme_resource**
-> file get_theme_resource(module_id, theme_id, file_path=file_path)
+> file get_theme_resource(module_id, theme_id, file_path=file_path, accepted_extensions=accepted_extensions)
 
 Return the theme requested resource
 
@@ -297,11 +297,12 @@ api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
 module_id = '\"opensilex-front\"' # str | Module identifier
 theme_id = '\"phis\"' # str | Theme identifier
 file_path = '\"images/opensilex.png\"' # str | Resource path (optional)
+accepted_extensions = ['\"png\"'] # list[str] | List of supported file extensions (optional)
 
 
 try:
     # Return the theme requested resource
-    api_response = api_instance.get_theme_resource(module_id, theme_id, file_path=file_path)
+    api_response = api_instance.get_theme_resource(module_id, theme_id, file_path=file_path, accepted_extensions=accepted_extensions)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling VueJsApi->get_theme_resource: %s\n" % e)
@@ -314,6 +315,7 @@ Name | Type | Description  | Notes
  **module_id** | **str**| Module identifier | 
  **theme_id** | **str**| Theme identifier | 
  **file_path** | **str**| Resource path | [optional] 
+ **accepted_extensions** | [**list[str]**](str.md)| List of supported file extensions | [optional] 
 
 
 ### Return type

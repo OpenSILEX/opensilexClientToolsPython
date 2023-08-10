@@ -11,14 +11,15 @@ Method | HTTP request | Description
 [**delete_data**](DataApi.md#delete_data) | **DELETE** /core/data/{uri} | Delete data
 [**delete_data_on_search**](DataApi.md#delete_data_on_search) | **DELETE** /core/data | Delete data on criteria
 [**delete_provenance**](DataApi.md#delete_provenance) | **DELETE** /core/provenances/{uri} | Delete a provenance that doesn&#39;t describe data
-[**export_data**](DataApi.md#export_data) | **GET** /core/data/export | Export data
-[**export_data1**](DataApi.md#export_data1) | **POST** /core/data/export | Export data
+[**export_data**](DataApi.md#export_data) | **POST** /core/data/export | Export data
+[**export_data1**](DataApi.md#export_data1) | **GET** /core/data/export | Export data
 [**get_data**](DataApi.md#get_data) | **GET** /core/data/{uri} | Get data
 [**get_data_file**](DataApi.md#get_data_file) | **GET** /core/datafiles/{uri} | Get a data file
 [**get_data_file_description**](DataApi.md#get_data_file_description) | **GET** /core/datafiles/{uri}/description | Get a data file description
 [**get_data_file_descriptions_by_search**](DataApi.md#get_data_file_descriptions_by_search) | **GET** /core/datafiles | Search data files
 [**get_data_file_descriptions_by_targets**](DataApi.md#get_data_file_descriptions_by_targets) | **POST** /core/datafiles/by_targets | Search data files for a large list of targets 
 [**get_data_list_by_targets**](DataApi.md#get_data_list_by_targets) | **POST** /core/data/by_targets | Search data for a large list of targets
+[**get_data_series_by_facility**](DataApi.md#get_data_series_by_facility) | **GET** /core/data/data_serie/facility | Get all data series associated with a facility
 [**get_datafiles_provenances**](DataApi.md#get_datafiles_provenances) | **GET** /core/datafiles/provenances | Search provenances linked to datafiles
 [**get_datafiles_provenances_by_targets**](DataApi.md#get_datafiles_provenances_by_targets) | **POST** /core/datafiles/provenances/by_targets | Search provenances linked to datafiles for a large list of targets
 [**get_pictures_thumbnails**](DataApi.md#get_pictures_thumbnails) | **GET** /core/datafiles/{uri}/thumbnail | Get a picture thumbnail
@@ -91,7 +92,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_data**
-> int count_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, accept_language=accept_language)
+> int count_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, accept_language=accept_language)
 
 Count data
 
@@ -120,11 +121,12 @@ min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
 provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
 
 
 try:
     # Count data
-    api_response = api_instance.count_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, )
+    api_response = api_instance.count_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataApi->count_data: %s\n" % e)
@@ -145,6 +147,7 @@ Name | Type | Description  | Notes
  **max_confidence** | **float**| Search by maximal confidence index | [optional] 
  **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+ **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
 
 
 ### Return type
@@ -431,7 +434,58 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_data**
-> export_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> export_data(authorization, body=body, accept_language=accept_language)
+
+Export data
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
+
+
+try:
+    # Export data
+    api_instance.export_data(body=body, )
+except ApiException as e:
+    print("Exception when calling DataApi->export_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_data1**
+> export_data1(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Export data
 
@@ -460,6 +514,7 @@ min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
 provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
 mode = 'wide' # str | Format wide or long (optional) (default to wide)
 with_raw_data = false # bool | Export also raw_data (optional) (default to false)
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
@@ -469,9 +524,9 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Export data
-    api_instance.export_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
+    api_instance.export_data1(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
 except ApiException as e:
-    print("Exception when calling DataApi->export_data: %s\n" % e)
+    print("Exception when calling DataApi->export_data1: %s\n" % e)
 ```
 
 ### Parameters
@@ -489,62 +544,12 @@ Name | Type | Description  | Notes
  **max_confidence** | **float**| Search by maximal confidence index | [optional] 
  **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+ **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
  **mode** | **str**| Format wide or long | [optional] [default to wide]
  **with_raw_data** | **bool**| Export also raw_data | [optional] [default to false]
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **export_data1**
-> export_data1(authorization, body=body, accept_language=accept_language)
-
-Export data
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
-
-
-try:
-    # Export data
-    api_instance.export_data1(body=body, )
-except ApiException as e:
-    print("Exception when calling DataApi->export_data1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
 
 
 ### Return type
@@ -792,7 +797,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_file_descriptions_by_targets**
-> list[DataFileGetDTO] get_data_file_descriptions_by_targets(authorization, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, accept_language=accept_language)
+> list[DataFileGetDTO] get_data_file_descriptions_by_targets(authorization, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, targets=targets, accept_language=accept_language)
 
 Search data files for a large list of targets 
 
@@ -821,12 +826,12 @@ metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
-body = [opensilexClientToolsPython.list[str]()] # list[str] | Search by targets uris list (optional)
+targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
 
 
 try:
     # Search data files for a large list of targets 
-    api_response = api_instance.get_data_file_descriptions_by_targets(rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, )
+    api_response = api_instance.get_data_file_descriptions_by_targets(rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, targets=targets, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataApi->get_data_file_descriptions_by_targets: %s\n" % e)
@@ -847,7 +852,7 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
- **body** | **list[str]**| Search by targets uris list | [optional] 
+ **targets** | **list[str]**| Targets uris, can be an empty array but can&#39;t be null | [optional] 
 
 
 ### Return type
@@ -866,7 +871,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_list_by_targets**
-> list[DataGetDTO] get_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, accept_language=accept_language)
+> list[DataGetDTO] get_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, order_by=order_by, page=page, page_size=page_size, targets=targets, accept_language=accept_language)
 
 Search data for a large list of targets
 
@@ -894,15 +899,17 @@ min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
 provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
+operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
-body = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris (optional)
+targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
 
 
 try:
     # Search data for a large list of targets
-    api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, body=body, )
+    api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, order_by=order_by, page=page, page_size=page_size, targets=targets, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataApi->get_data_list_by_targets: %s\n" % e)
@@ -922,15 +929,77 @@ Name | Type | Description  | Notes
  **max_confidence** | **float**| Search by maximal confidence index | [optional] 
  **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+ **group_of_germplasm** | **str**| Group filter | [optional] 
+ **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
- **body** | **list[str]**| Targets uris | [optional] 
+ **targets** | **list[str]**| Targets uris, can be an empty array but can&#39;t be null | [optional] 
 
 
 ### Return type
 
 [**list[DataGetDTO]**](DataGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_data_series_by_facility**
+> DataVariableSeriesGetDTO get_data_series_by_facility(variable, target, authorization, start_date=start_date, end_date=end_date, calculated_only=calculated_only, accept_language=accept_language)
+
+Get all data series associated with a facility
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+variable = '\"http://example.com/\"' # str | variable URI
+target = '\"http://example.com/\"' # str | target URI
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+calculated_only = false # bool | Retreive calculated series only (optional)
+
+
+try:
+    # Get all data series associated with a facility
+    api_response = api_instance.get_data_series_by_facility(variable, target, start_date=start_date, end_date=end_date, calculated_only=calculated_only, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DataApi->get_data_series_by_facility: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **variable** | **str**| variable URI | 
+ **target** | **str**| target URI | 
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
+ **calculated_only** | **bool**| Retreive calculated series only | [optional] 
+
+
+### Return type
+
+[**DataVariableSeriesGetDTO**](DataVariableSeriesGetDTO.md)
 
 ### Authorization
 
@@ -1551,7 +1620,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_data_list**
-> list[DataGetDTO] search_data_list(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[DataGetDTO] search_data_list(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search data
 
@@ -1580,6 +1649,7 @@ min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
 provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -1587,7 +1657,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search data
-    api_response = api_instance.search_data_list(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_data_list(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DataApi->search_data_list: %s\n" % e)
@@ -1608,6 +1678,7 @@ Name | Type | Description  | Notes
  **max_confidence** | **float**| Search by maximal confidence index | [optional] 
  **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+ **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]

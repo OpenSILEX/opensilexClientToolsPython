@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **broad_match** | **list[str]** |  | [optional] 
 **narrow_match** | **list[str]** |  | [optional] 
 **from_shared_resource_instance** | [**SharedResourceInstanceDTO**](SharedResourceInstanceDTO.md) |  | [optional] 
-**last_update_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **difference_count** | **int** |  | [optional] 
+**difference_count** | **int** |  | [optional] 
 **uri** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 

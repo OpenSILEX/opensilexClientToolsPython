@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **experiment** | **str** | Search by experiment | [optional] 
 **metadata** | **str** | Search by metadata | [optional] 
 **uris** | **list[str]** | List of germplasm URI | [optional] 
+**group** | **str** |  | [optional] 
 **order_by** | [**list[OrderBy]**](OrderBy.md) | List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
 **page_size** | **int** | Page size | [optional] 
 **rdf_type** | **str** | Search by type | [optional] 

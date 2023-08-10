@@ -126,7 +126,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_experiment_data_list**
-> export_experiment_data_list(uri, authorization, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, mode=mode, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> export_experiment_data_list(uri, authorization, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, operators=operators, mode=mode, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 export experiment data
 
@@ -154,6 +154,7 @@ min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
 provenance = '\"http://opensilex.dev/provenance/1598001689415\"' # str | Search by provenance uri (optional)
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
 mode = 'wide' # str | Format wide or long (optional) (default to wide)
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
@@ -162,7 +163,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # export experiment data
-    api_instance.export_experiment_data_list(uri, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, mode=mode, order_by=order_by, page=page, page_size=page_size, )
+    api_instance.export_experiment_data_list(uri, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, operators=operators, mode=mode, order_by=order_by, page=page, page_size=page_size, )
 except ApiException as e:
     print("Exception when calling ExperimentsApi->export_experiment_data_list: %s\n" % e)
 ```
@@ -181,6 +182,7 @@ Name | Type | Description  | Notes
  **max_confidence** | **float**| Search by maximal confidence index | [optional] 
  **provenance** | **str**| Search by provenance uri | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+ **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
  **mode** | **str**| Format wide or long | [optional] [default to wide]
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
@@ -573,7 +575,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_experiment_data_list**
-> list[DataGetDTO] search_experiment_data_list(uri, authorization, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[DataGetDTO] search_experiment_data_list(uri, authorization, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search data
 
@@ -601,6 +603,7 @@ min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
 provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uri (optional)
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -608,7 +611,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search data
-    api_response = api_instance.search_experiment_data_list(uri, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_experiment_data_list(uri, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExperimentsApi->search_experiment_data_list: %s\n" % e)
@@ -628,6 +631,7 @@ Name | Type | Description  | Notes
  **max_confidence** | **float**| Search by maximal confidence index | [optional] 
  **provenances** | [**list[str]**](str.md)| Search by provenance uri | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+ **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]

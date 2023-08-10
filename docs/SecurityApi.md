@@ -5,21 +5,20 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_favorite**](SecurityApi.md#add_favorite) | **POST** /security/users/favorites | Add a favorite
+[**create_account**](SecurityApi.md#create_account) | **POST** /security/accounts | Add an account
 [**create_group**](SecurityApi.md#create_group) | **POST** /security/groups | Add a group
 [**create_person**](SecurityApi.md#create_person) | **POST** /security/persons | Add a person
 [**create_profile**](SecurityApi.md#create_profile) | **POST** /security/profiles | Add a profile
 [**create_user**](SecurityApi.md#create_user) | **POST** /security/users | Add a user
-[**create_user_with_existent_person**](SecurityApi.md#create_user_with_existent_person) | **POST** /security/users/person_already_exists | Add a user from an existing person
 [**delete_favorite**](SecurityApi.md#delete_favorite) | **DELETE** /security/users/favorites/{uriFavorite} | Delete a favorite
 [**delete_group**](SecurityApi.md#delete_group) | **DELETE** /security/groups/{uri} | Delete a group
-[**delete_person**](SecurityApi.md#delete_person) | **DELETE** /security/persons/{uri} | Delete a person
 [**delete_profile**](SecurityApi.md#delete_profile) | **DELETE** /security/profiles/{uri} | Delete a profile
-[**delete_user**](SecurityApi.md#delete_user) | **DELETE** /security/users/{uri} | Delete a user
 [**get_all_profiles**](SecurityApi.md#get_all_profiles) | **GET** /security/profiles/all | Get all profiles
 [**get_favorites**](SecurityApi.md#get_favorites) | **GET** /security/users/favorites | Get list of favorites for a user
 [**get_group**](SecurityApi.md#get_group) | **GET** /security/groups/{uri} | Get a group
 [**get_groups_by_uri**](SecurityApi.md#get_groups_by_uri) | **GET** /security/groups/by_uris | Get groups by their URIs
 [**get_person**](SecurityApi.md#get_person) | **GET** /security/persons/{uri} | Get a Person
+[**get_persons_by_uri**](SecurityApi.md#get_persons_by_uri) | **GET** /security/persons/by_uris | Get persons by their URIs
 [**get_profile**](SecurityApi.md#get_profile) | **GET** /security/profiles/{uri} | Get a profile
 [**get_user**](SecurityApi.md#get_user) | **GET** /security/users/{uri} | Get a user
 [**get_user_groups**](SecurityApi.md#get_user_groups) | **GET** /security/users/{uri}/groups | Get groups of a user
@@ -68,6 +67,57 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**FavoriteCreationDTO**](FavoriteCreationDTO.md)| Favorite object URI | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create_account**
+> create_account(authorization, body=body, accept_language=accept_language)
+
+Add an account
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+body = opensilexClientToolsPython.AccountCreationDTO() # AccountCreationDTO | Account description (optional)
+
+
+try:
+    # Add an account
+    api_instance.create_account(body=body, )
+except ApiException as e:
+    print("Exception when calling SecurityApi->create_account: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AccountCreationDTO**](AccountCreationDTO.md)| Account description | [optional] 
 
 
 ### Return type
@@ -289,57 +339,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_user_with_existent_person**
-> create_user_with_existent_person(authorization, body=body, accept_language=accept_language)
-
-Add a user from an existing person
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-body = opensilexClientToolsPython.UserCreationWithExistantPersonDTO() # UserCreationWithExistantPersonDTO | User description (optional)
-
-
-try:
-    # Add a user from an existing person
-    api_instance.create_user_with_existent_person(body=body, )
-except ApiException as e:
-    print("Exception when calling SecurityApi->create_user_with_existent_person: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**UserCreationWithExistantPersonDTO**](UserCreationWithExistantPersonDTO.md)| User description | [optional] 
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **delete_favorite**
 > delete_favorite(uri_favorite, authorization, accept_language=accept_language)
 
@@ -442,57 +441,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_person**
-> delete_person(uri, authorization, accept_language=accept_language)
-
-Delete a person
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://opensilex.dev/person#harold.haddock.mistea\"' # str | Person URI
-
-
-try:
-    # Delete a person
-    api_instance.delete_person(uri, )
-except ApiException as e:
-    print("Exception when calling SecurityApi->delete_person: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uri** | **str**| Person URI | 
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **delete_profile**
 > delete_profile(uri, authorization, accept_language=accept_language)
 
@@ -527,57 +475,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | **str**| Profile URI | 
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete_user**
-> delete_user(uri, authorization, accept_language=accept_language)
-
-Delete a user
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://opensilex.dev/users#jean.michel.inrae\"' # str | User URI
-
-
-try:
-    # Delete a user
-    api_instance.delete_user(uri, )
-except ApiException as e:
-    print("Exception when calling SecurityApi->delete_user: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uri** | **str**| User URI | 
 
 
 ### Return type
@@ -843,6 +740,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PersonDTO**](PersonDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_persons_by_uri**
+> list[PersonDTO] get_persons_by_uri(uris, authorization, accept_language=accept_language)
+
+Get persons by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+uris = ['uris_example'] # list[str] | Persons URIs
+
+
+try:
+    # Get persons by their URIs
+    api_response = api_instance.get_persons_by_uri(uris, )
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SecurityApi->get_persons_by_uri: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Persons URIs | 
+
+
+### Return type
+
+[**list[PersonDTO]**](PersonDTO.md)
 
 ### Authorization
 
@@ -1122,7 +1071,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_persons**
-> list[PersonDTO] search_persons(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[PersonDTO] search_persons(authorization, name=name, only_without_account=only_without_account, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search persons
 
@@ -1141,6 +1090,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name or email (optional) (default to .*)
+only_without_account = false # bool | set 'true' if you want to select only persons without account (optional) (default to false)
 order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -1148,7 +1098,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search persons
-    api_response = api_instance.search_persons(name=name, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_persons(name=name, only_without_account=only_without_account, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SecurityApi->search_persons: %s\n" % e)
@@ -1159,6 +1109,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| Regex pattern for filtering list by name or email | [optional] [default to .*]
+ **only_without_account** | **bool**| set &#39;true&#39; if you want to select only persons without account | [optional] [default to false]
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **brand** | **str** |  | [optional] 
 **constructor_model** | **str** |  | [optional] 
 **serial_number** | **str** |  | [optional] 
-**person_in_charge** | **str** |  | [optional] 
+**person_in_charge** | **str** | Person in charge | [optional] 
 **start_up** | **str** |  | [optional] 
 **removal** | **str** |  | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 

@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **organizations** | **list[str]** |  | [optional] 
 **sites** | **list[str]** |  | [optional] 
 **address** | [**FacilityAddressDTO**](FacilityAddressDTO.md) |  | [optional] 
+**variable_groups** | **list[str]** |  | [optional] 
+**geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
 

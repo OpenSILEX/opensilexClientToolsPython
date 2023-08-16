@@ -47,7 +47,7 @@ try:
     # Add an experiment
     api_response = api_instance.create_experiment(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->create_experiment: %s\n" % e)
 ```
 
@@ -99,7 +99,7 @@ try:
     # Delete an experiment
     api_response = api_instance.delete_experiment(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->delete_experiment: %s\n" % e)
 ```
 
@@ -164,7 +164,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 try:
     # export experiment data
     api_instance.export_experiment_data_list(uri, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, operators=operators, mode=mode, order_by=order_by, page=page, page_size=page_size, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->export_experiment_data_list: %s\n" % e)
 ```
 
@@ -230,7 +230,7 @@ try:
     # Get facilities available for an experiment
     api_response = api_instance.get_available_facilities(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->get_available_facilities: %s\n" % e)
 ```
 
@@ -282,7 +282,7 @@ try:
     # Get factors with their levels associated to an experiment
     api_response = api_instance.get_available_factors(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->get_available_factors: %s\n" % e)
 ```
 
@@ -334,7 +334,7 @@ try:
     # Get species present in an experiment
     api_response = api_instance.get_available_species(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->get_available_species: %s\n" % e)
 ```
 
@@ -386,7 +386,7 @@ try:
     # Get an experiment
     api_response = api_instance.get_experiment(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->get_experiment: %s\n" % e)
 ```
 
@@ -438,7 +438,7 @@ try:
     # Get experiments URIs
     api_response = api_instance.get_experiments_by_ur_is(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->get_experiments_by_ur_is: %s\n" % e)
 ```
 
@@ -491,7 +491,7 @@ try:
     # Get variables involved in an experiment
     api_response = api_instance.get_used_variables1(uri, scientific_objects=scientific_objects, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->get_used_variables1: %s\n" % e)
 ```
 
@@ -546,7 +546,7 @@ try:
     # Import a CSV file for the given experiment URI and scientific object type.
     api_response = api_instance.import_csv_data1(uri, provenance, file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->import_csv_data1: %s\n" % e)
 ```
 
@@ -613,7 +613,7 @@ try:
     # Search data
     api_response = api_instance.search_experiment_data_list(uri, start_date=start_date, end_date=end_date, timezone=timezone, scientific_objects=scientific_objects, variables=variables, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->search_experiment_data_list: %s\n" % e)
 ```
 
@@ -687,7 +687,7 @@ try:
     # Get provenances involved in an experiment
     api_response = api_instance.search_experiment_provenances(uri, name=name, description=description, activity=activity, activity_type=activity_type, agent=agent, agent_type=agent_type, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->search_experiment_provenances: %s\n" % e)
 ```
 
@@ -758,7 +758,7 @@ try:
     # Search experiments
     api_response = api_instance.search_experiments(name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, facilities=facilities, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->search_experiments: %s\n" % e)
 ```
 
@@ -820,7 +820,7 @@ try:
     # Update an experiment
     api_response = api_instance.update_experiment(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->update_experiment: %s\n" % e)
 ```
 
@@ -874,7 +874,7 @@ try:
     # Import a CSV file for the given experiment URI and scientific object type.
     api_response = api_instance.validate_csv2(uri, provenance, file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->validate_csv2: %s\n" % e)
 ```
 

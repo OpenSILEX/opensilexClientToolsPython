@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **password** | **str** | Account password | 
 **admin** | **bool** | Account admin flag | 
 **enable** | **bool** | User is enable | [optional] 
-**holder_of_the_account_uri** | **str** | URI of the Person linked to this account | [optional] 
 **favorites** | **list[str]** | Favorites URI | [optional] 
+**linked_person** | **str** | URI of the Person linked to this account | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

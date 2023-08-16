@@ -33,7 +33,7 @@ try:
     # get species (no pagination)
     api_response = api_instance.get_all_species(shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling SpeciesApi->get_all_species: %s\n" % e)
 ```
 

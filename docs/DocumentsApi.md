@@ -39,7 +39,7 @@ try:
     # Count documents
     api_response = api_instance.count_documents(target=target, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DocumentsApi->count_documents: %s\n" % e)
 ```
 
@@ -92,7 +92,7 @@ try:
     # Add a document
     api_response = api_instance.create_document(description, file=file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DocumentsApi->create_document: %s\n" % e)
 ```
 
@@ -145,7 +145,7 @@ try:
     # Delete a document
     api_response = api_instance.delete_document(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DocumentsApi->delete_document: %s\n" % e)
 ```
 
@@ -196,7 +196,7 @@ uri = '\"http://opensilex.dev/set/documents/ZA17\"' # str | Document URI
 try:
     # Get document
     api_instance.get_document_file(uri, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DocumentsApi->get_document_file: %s\n" % e)
 ```
 
@@ -248,7 +248,7 @@ try:
     # Get document's description
     api_response = api_instance.get_document_metadata(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DocumentsApi->get_document_metadata: %s\n" % e)
 ```
 
@@ -310,7 +310,7 @@ try:
     # Search documents
     api_response = api_instance.search_documents(rdf_type=rdf_type, title=title, _date=_date, targets=targets, authors=authors, keyword=keyword, multiple=multiple, deprecated=deprecated, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DocumentsApi->search_documents: %s\n" % e)
 ```
 
@@ -372,7 +372,7 @@ try:
     # Update document's description
     api_response = api_instance.update_document(description, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DocumentsApi->update_document: %s\n" % e)
 ```
 

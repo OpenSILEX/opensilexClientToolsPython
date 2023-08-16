@@ -168,7 +168,7 @@ class OrganizationsApi(object):
             collection_formats=collection_formats)
 
         
-    def create_infrastructure(
+    def create_organization(
         self,
         body : 'OrganizationCreationDTO' = None,
         **kwargs
@@ -178,7 +178,7 @@ class OrganizationsApi(object):
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_infrastructure(async_req=True)
+        >>> thread = api.create_organization(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -213,18 +213,18 @@ class OrganizationsApi(object):
 
 
         if kwargs.get('async_req'):
-            return self.create_infrastructure_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            return self.create_organization_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_infrastructure_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            (data) = self.create_organization_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
             return data
 
-    def create_infrastructure_with_http_info(self, **kwargs):  # noqa: E501
+    def create_organization_with_http_info(self, **kwargs):  # noqa: E501
         """Create an organisation  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.create_infrastructure_with_http_info(async_req=True)
+        >>> thread = api.create_organization_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -247,7 +247,7 @@ class OrganizationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method create_infrastructure" % key
+                    " to method create_organization" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -559,7 +559,7 @@ class OrganizationsApi(object):
             collection_formats=collection_formats)
 
         
-    def delete_infrastructure(
+    def delete_organization(
         self,
         uri : 'str',
         **kwargs
@@ -569,7 +569,7 @@ class OrganizationsApi(object):
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_infrastructure(uri, async_req=True)
+        >>> thread = api.delete_organization(uri, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -601,18 +601,18 @@ class OrganizationsApi(object):
 
 
         if kwargs.get('async_req'):
-            return self.delete_infrastructure_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+            return self.delete_organization_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_infrastructure_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+            (data) = self.delete_organization_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
             return data
 
-    def delete_infrastructure_with_http_info(self, uri, **kwargs):  # noqa: E501
+    def delete_organization_with_http_info(self, uri, **kwargs):  # noqa: E501
         """Delete an organisation  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.delete_infrastructure_with_http_info(uri, async_req=True)
+        >>> thread = api.delete_organization_with_http_info(uri, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -635,14 +635,14 @@ class OrganizationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method delete_infrastructure" % key
+                    " to method delete_organization" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'uri' is set
         if ('uri' not in params or
                 params['uri'] is None):
-            raise ValueError("Missing the required parameter `uri` when calling `delete_infrastructure`")  # noqa: E501
+            raise ValueError("Missing the required parameter `uri` when calling `delete_organization`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1204,7 +1204,7 @@ class OrganizationsApi(object):
             collection_formats=collection_formats)
 
         
-    def get_infrastructure(
+    def get_organization(
         self,
         uri : 'str',
         **kwargs
@@ -1214,7 +1214,7 @@ class OrganizationsApi(object):
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_infrastructure(uri, async_req=True)
+        >>> thread = api.get_organization(uri, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1246,18 +1246,18 @@ class OrganizationsApi(object):
 
 
         if kwargs.get('async_req'):
-            return self.get_infrastructure_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+            return self.get_organization_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_infrastructure_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+            (data) = self.get_organization_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
             return data
 
-    def get_infrastructure_with_http_info(self, uri, **kwargs):  # noqa: E501
+    def get_organization_with_http_info(self, uri, **kwargs):  # noqa: E501
         """Get an organisation   # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_infrastructure_with_http_info(uri, async_req=True)
+        >>> thread = api.get_organization_with_http_info(uri, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1280,14 +1280,14 @@ class OrganizationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_infrastructure" % key
+                    " to method get_organization" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'uri' is set
         if ('uri' not in params or
                 params['uri'] is None):
-            raise ValueError("Missing the required parameter `uri` when calling `get_infrastructure`")  # noqa: E501
+            raise ValueError("Missing the required parameter `uri` when calling `get_organization`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1812,7 +1812,7 @@ class OrganizationsApi(object):
             collection_formats=collection_formats)
 
         
-    def search_infrastructures(
+    def search_organizations(
         self,
         pattern : 'str' = None,
         organisation_uris : 'List[str]' = None,
@@ -1823,7 +1823,7 @@ class OrganizationsApi(object):
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_infrastructures(async_req=True)
+        >>> thread = api.search_organizations(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1876,18 +1876,18 @@ class OrganizationsApi(object):
 
 
         if kwargs.get('async_req'):
-            return self.search_infrastructures_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            return self.search_organizations_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_infrastructures_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            (data) = self.search_organizations_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
             return data
 
-    def search_infrastructures_with_http_info(self, **kwargs):  # noqa: E501
+    def search_organizations_with_http_info(self, **kwargs):  # noqa: E501
         """Search organisations  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.search_infrastructures_with_http_info(async_req=True)
+        >>> thread = api.search_organizations_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1911,7 +1911,7 @@ class OrganizationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method search_infrastructures" % key
+                    " to method search_organizations" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -2303,7 +2303,7 @@ class OrganizationsApi(object):
             collection_formats=collection_formats)
 
         
-    def update_infrastructure(
+    def update_organization(
         self,
         body : 'OrganizationUpdateDTO' = None,
         **kwargs
@@ -2313,7 +2313,7 @@ class OrganizationsApi(object):
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_infrastructure(async_req=True)
+        >>> thread = api.update_organization(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2348,18 +2348,18 @@ class OrganizationsApi(object):
 
 
         if kwargs.get('async_req'):
-            return self.update_infrastructure_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            return self.update_organization_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_infrastructure_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            (data) = self.update_organization_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
             return data
 
-    def update_infrastructure_with_http_info(self, **kwargs):  # noqa: E501
+    def update_organization_with_http_info(self, **kwargs):  # noqa: E501
         """Update an organisation  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.update_infrastructure_with_http_info(async_req=True)
+        >>> thread = api.update_organization_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -2382,7 +2382,7 @@ class OrganizationsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method update_infrastructure" % key
+                    " to method update_organization" % key
                 )
             params[key] = val
         del params['kwargs']

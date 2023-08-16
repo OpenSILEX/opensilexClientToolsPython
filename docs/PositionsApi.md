@@ -36,7 +36,7 @@ try:
     # Count moves
     api_response = api_instance.count_moves(target=target, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling PositionsApi->count_moves: %s\n" % e)
 ```
 
@@ -89,7 +89,7 @@ try:
     # Get the position of an object
     api_response = api_instance.get_position(uri, time=time, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling PositionsApi->get_position: %s\n" % e)
 ```
 
@@ -147,7 +147,7 @@ try:
     # Search the last geospatialized position of a target for an experiment
     api_response = api_instance.search_geospatialized_position(body, base_type=base_type, start_date_time=start_date_time, end_date_time=end_date_time, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling PositionsApi->search_geospatialized_position: %s\n" % e)
 ```
 
@@ -209,7 +209,7 @@ try:
     # Search history of position of an object
     api_response = api_instance.search_position_history(target, start_date_time=start_date_time, end_date_time=end_date_time, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling PositionsApi->search_position_history: %s\n" % e)
 ```
 

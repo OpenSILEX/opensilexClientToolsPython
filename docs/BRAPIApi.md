@@ -44,7 +44,7 @@ try:
     # Check the available BrAPI calls
     api_response = api_instance.get_calls(page=page, page_size=page_size, data_type=data_type)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_calls: %s\n" % e)
 ```
 
@@ -103,7 +103,7 @@ try:
     # Submit a search request for germplasm
     api_response = api_instance.get_germplasm_by_search(germplasm_db_id=germplasm_db_id, germplasm_pui=germplasm_pui, germplasm_name=germplasm_name, common_crop_name=common_crop_name, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_germplasm_by_search: %s\n" % e)
 ```
 
@@ -163,7 +163,7 @@ try:
     # List all the observation units measured in the study.
     api_response = api_instance.get_observation_units(study_db_id, observation_level=observation_level, page_size=page_size, page=page, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_observation_units: %s\n" % e)
 ```
 
@@ -220,7 +220,7 @@ try:
     # List all the observation variables measured in the study.
     api_response = api_instance.get_observation_variables(study_db_id, page_size=page_size, page=page, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_observation_variables: %s\n" % e)
 ```
 
@@ -277,7 +277,7 @@ try:
     # Get the observations associated to a specific study
     api_response = api_instance.get_observations(study_db_id, observation_variable_db_ids=observation_variable_db_ids, page_size=page_size, page=page, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_observations: %s\n" % e)
 ```
 
@@ -337,7 +337,7 @@ try:
     # Retrieve studies information
     api_response = api_instance.get_studies(study_db_id=study_db_id, active=active, sort_by=sort_by, sort_order=sort_order, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_studies: %s\n" % e)
 ```
 
@@ -399,7 +399,7 @@ try:
     # Retrieve studies information
     api_response = api_instance.get_studies_search(study_db_id=study_db_id, active=active, sort_by=sort_by, sort_order=sort_order, page_size=page_size, page=page, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_studies_search: %s\n" % e)
 ```
 
@@ -456,7 +456,7 @@ try:
     # Retrieve study details
     api_response = api_instance.get_study_details(study_db_id, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_study_details: %s\n" % e)
 ```
 
@@ -508,7 +508,7 @@ try:
     # Retrieve variable details by id
     api_response = api_instance.get_variable_details(observation_variable_db_id, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_variable_details: %s\n" % e)
 ```
 
@@ -562,7 +562,7 @@ try:
     # Call to retrieve a list of observationVariables available in the system
     api_response = api_instance.get_variables_list(observation_variable_db_id=observation_variable_db_id, page_size=page_size, page=page, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling BRAPIApi->get_variables_list: %s\n" % e)
 ```
 

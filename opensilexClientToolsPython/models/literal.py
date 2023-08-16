@@ -44,16 +44,16 @@ class Literal(object):
         'value': 'object',
         'language': 'str',
         'string': 'str',
-        'datatype': 'RDFDatatype',
-        'datatype_uri': 'str',
         'lexical_form': 'str',
         'well_formed_xml': 'bool',
+        'datatype': 'RDFDatatype',
+        'datatype_uri': 'str',
         'resource': 'bool',
+        'model': 'Model',
+        'literal': 'bool',
         'anon': 'bool',
         'uriresource': 'bool',
-        'stmt_resource': 'bool',
-        'model': 'Model',
-        'literal': 'bool'
+        'stmt_resource': 'bool'
     }
 
     attribute_map = {
@@ -68,16 +68,16 @@ class Literal(object):
         'value': 'value',
         'language': 'language',
         'string': 'string',
-        'datatype': 'datatype',
-        'datatype_uri': 'datatypeURI',
         'lexical_form': 'lexicalForm',
         'well_formed_xml': 'wellFormedXML',
+        'datatype': 'datatype',
+        'datatype_uri': 'datatypeURI',
         'resource': 'resource',
+        'model': 'model',
+        'literal': 'literal',
         'anon': 'anon',
         'uriresource': 'uriresource',
-        'stmt_resource': 'stmtResource',
-        'model': 'model',
-        'literal': 'literal'
+        'stmt_resource': 'stmtResource'
     }
     def __init__(self,
         boolean : 'bool' = None,
@@ -91,16 +91,16 @@ class Literal(object):
         value : 'object' = None,
         language : 'str' = None,
         string : 'str' = None,
-        datatype : 'RDFDatatype' = None,
-        datatype_uri : 'str' = None,
         lexical_form : 'str' = None,
         well_formed_xml : 'bool' = None,
+        datatype : 'RDFDatatype' = None,
+        datatype_uri : 'str' = None,
         resource : 'bool' = None,
+        model : 'Model' = None,
+        literal : 'bool' = None,
         anon : 'bool' = None,
         uriresource : 'bool' = None,
-        stmt_resource : 'bool' = None,
-        model : 'Model' = None,
-        literal : 'bool' = None):  # noqa: E501
+        stmt_resource : 'bool' = None):  # noqa: E501
         """Literal - a model defined in Swagger"""  # noqa: E501
 
         self._boolean = None
@@ -114,16 +114,16 @@ class Literal(object):
         self._value = None
         self._language = None
         self._string = None
-        self._datatype = None
-        self._datatype_uri = None
         self._lexical_form = None
         self._well_formed_xml = None
+        self._datatype = None
+        self._datatype_uri = None
         self._resource = None
+        self._model = None
+        self._literal = None
         self._anon = None
         self._uriresource = None
         self._stmt_resource = None
-        self._model = None
-        self._literal = None
         self.discriminator = None
 
         if boolean is not None:
@@ -148,26 +148,26 @@ class Literal(object):
             self.language = language
         if string is not None:
             self.string = string
-        if datatype is not None:
-            self.datatype = datatype
-        if datatype_uri is not None:
-            self.datatype_uri = datatype_uri
         if lexical_form is not None:
             self.lexical_form = lexical_form
         if well_formed_xml is not None:
             self.well_formed_xml = well_formed_xml
+        if datatype is not None:
+            self.datatype = datatype
+        if datatype_uri is not None:
+            self.datatype_uri = datatype_uri
         if resource is not None:
             self.resource = resource
+        if model is not None:
+            self.model = model
+        if literal is not None:
+            self.literal = literal
         if anon is not None:
             self.anon = anon
         if uriresource is not None:
             self.uriresource = uriresource
         if stmt_resource is not None:
             self.stmt_resource = stmt_resource
-        if model is not None:
-            self.model = model
-        if literal is not None:
-            self.literal = literal
 
     @property
     def boolean(self):
@@ -403,48 +403,6 @@ class Literal(object):
         self._string = string
 
     @property
-    def datatype(self):
-        """Gets the datatype of this Literal.  # noqa: E501
-
-
-        :return: The datatype of this Literal.  # noqa: E501
-        :rtype: RDFDatatype
-        """
-        return self._datatype
-
-    @datatype.setter
-    def datatype(self, datatype):
-        """Sets the datatype of this Literal.
-
-
-        :param datatype: The datatype of this Literal.  # noqa: E501
-        :type: RDFDatatype
-        """
-
-        self._datatype = datatype
-
-    @property
-    def datatype_uri(self):
-        """Gets the datatype_uri of this Literal.  # noqa: E501
-
-
-        :return: The datatype_uri of this Literal.  # noqa: E501
-        :rtype: str
-        """
-        return self._datatype_uri
-
-    @datatype_uri.setter
-    def datatype_uri(self, datatype_uri):
-        """Sets the datatype_uri of this Literal.
-
-
-        :param datatype_uri: The datatype_uri of this Literal.  # noqa: E501
-        :type: str
-        """
-
-        self._datatype_uri = datatype_uri
-
-    @property
     def lexical_form(self):
         """Gets the lexical_form of this Literal.  # noqa: E501
 
@@ -487,6 +445,48 @@ class Literal(object):
         self._well_formed_xml = well_formed_xml
 
     @property
+    def datatype(self):
+        """Gets the datatype of this Literal.  # noqa: E501
+
+
+        :return: The datatype of this Literal.  # noqa: E501
+        :rtype: RDFDatatype
+        """
+        return self._datatype
+
+    @datatype.setter
+    def datatype(self, datatype):
+        """Sets the datatype of this Literal.
+
+
+        :param datatype: The datatype of this Literal.  # noqa: E501
+        :type: RDFDatatype
+        """
+
+        self._datatype = datatype
+
+    @property
+    def datatype_uri(self):
+        """Gets the datatype_uri of this Literal.  # noqa: E501
+
+
+        :return: The datatype_uri of this Literal.  # noqa: E501
+        :rtype: str
+        """
+        return self._datatype_uri
+
+    @datatype_uri.setter
+    def datatype_uri(self, datatype_uri):
+        """Sets the datatype_uri of this Literal.
+
+
+        :param datatype_uri: The datatype_uri of this Literal.  # noqa: E501
+        :type: str
+        """
+
+        self._datatype_uri = datatype_uri
+
+    @property
     def resource(self):
         """Gets the resource of this Literal.  # noqa: E501
 
@@ -506,6 +506,48 @@ class Literal(object):
         """
 
         self._resource = resource
+
+    @property
+    def model(self):
+        """Gets the model of this Literal.  # noqa: E501
+
+
+        :return: The model of this Literal.  # noqa: E501
+        :rtype: Model
+        """
+        return self._model
+
+    @model.setter
+    def model(self, model):
+        """Sets the model of this Literal.
+
+
+        :param model: The model of this Literal.  # noqa: E501
+        :type: Model
+        """
+
+        self._model = model
+
+    @property
+    def literal(self):
+        """Gets the literal of this Literal.  # noqa: E501
+
+
+        :return: The literal of this Literal.  # noqa: E501
+        :rtype: bool
+        """
+        return self._literal
+
+    @literal.setter
+    def literal(self, literal):
+        """Sets the literal of this Literal.
+
+
+        :param literal: The literal of this Literal.  # noqa: E501
+        :type: bool
+        """
+
+        self._literal = literal
 
     @property
     def anon(self):
@@ -569,48 +611,6 @@ class Literal(object):
         """
 
         self._stmt_resource = stmt_resource
-
-    @property
-    def model(self):
-        """Gets the model of this Literal.  # noqa: E501
-
-
-        :return: The model of this Literal.  # noqa: E501
-        :rtype: Model
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this Literal.
-
-
-        :param model: The model of this Literal.  # noqa: E501
-        :type: Model
-        """
-
-        self._model = model
-
-    @property
-    def literal(self):
-        """Gets the literal of this Literal.  # noqa: E501
-
-
-        :return: The literal of this Literal.  # noqa: E501
-        :rtype: bool
-        """
-        return self._literal
-
-    @literal.setter
-    def literal(self, literal):
-        """Sets the literal of this Literal.
-
-
-        :param literal: The literal of this Literal.  # noqa: E501
-        :type: bool
-        """
-
-        self._literal = literal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

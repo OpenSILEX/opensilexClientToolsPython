@@ -58,11 +58,11 @@ class Alt(object):
         'uri': 'str',
         'local_name': 'str',
         'resource': 'bool',
+        'model': 'Model',
+        'literal': 'bool',
         'anon': 'bool',
         'uriresource': 'bool',
-        'stmt_resource': 'bool',
-        'model': 'Model',
-        'literal': 'bool'
+        'stmt_resource': 'bool'
     }
 
     attribute_map = {
@@ -91,11 +91,11 @@ class Alt(object):
         'uri': 'uri',
         'local_name': 'localName',
         'resource': 'resource',
+        'model': 'model',
+        'literal': 'literal',
         'anon': 'anon',
         'uriresource': 'uriresource',
-        'stmt_resource': 'stmtResource',
-        'model': 'model',
-        'literal': 'literal'
+        'stmt_resource': 'stmtResource'
     }
     def __init__(self,
         default : 'RDFNode' = None,
@@ -123,11 +123,11 @@ class Alt(object):
         uri : 'str' = None,
         local_name : 'str' = None,
         resource : 'bool' = None,
+        model : 'Model' = None,
+        literal : 'bool' = None,
         anon : 'bool' = None,
         uriresource : 'bool' = None,
-        stmt_resource : 'bool' = None,
-        model : 'Model' = None,
-        literal : 'bool' = None):  # noqa: E501
+        stmt_resource : 'bool' = None):  # noqa: E501
         """Alt - a model defined in Swagger"""  # noqa: E501
 
         self._default = None
@@ -155,11 +155,11 @@ class Alt(object):
         self._uri = None
         self._local_name = None
         self._resource = None
+        self._model = None
+        self._literal = None
         self._anon = None
         self._uriresource = None
         self._stmt_resource = None
-        self._model = None
-        self._literal = None
         self.discriminator = None
 
         if default is not None:
@@ -212,16 +212,16 @@ class Alt(object):
             self.local_name = local_name
         if resource is not None:
             self.resource = resource
+        if model is not None:
+            self.model = model
+        if literal is not None:
+            self.literal = literal
         if anon is not None:
             self.anon = anon
         if uriresource is not None:
             self.uriresource = uriresource
         if stmt_resource is not None:
             self.stmt_resource = stmt_resource
-        if model is not None:
-            self.model = model
-        if literal is not None:
-            self.literal = literal
 
     @property
     def default(self):
@@ -751,6 +751,48 @@ class Alt(object):
         self._resource = resource
 
     @property
+    def model(self):
+        """Gets the model of this Alt.  # noqa: E501
+
+
+        :return: The model of this Alt.  # noqa: E501
+        :rtype: Model
+        """
+        return self._model
+
+    @model.setter
+    def model(self, model):
+        """Sets the model of this Alt.
+
+
+        :param model: The model of this Alt.  # noqa: E501
+        :type: Model
+        """
+
+        self._model = model
+
+    @property
+    def literal(self):
+        """Gets the literal of this Alt.  # noqa: E501
+
+
+        :return: The literal of this Alt.  # noqa: E501
+        :rtype: bool
+        """
+        return self._literal
+
+    @literal.setter
+    def literal(self, literal):
+        """Sets the literal of this Alt.
+
+
+        :param literal: The literal of this Alt.  # noqa: E501
+        :type: bool
+        """
+
+        self._literal = literal
+
+    @property
     def anon(self):
         """Gets the anon of this Alt.  # noqa: E501
 
@@ -812,48 +854,6 @@ class Alt(object):
         """
 
         self._stmt_resource = stmt_resource
-
-    @property
-    def model(self):
-        """Gets the model of this Alt.  # noqa: E501
-
-
-        :return: The model of this Alt.  # noqa: E501
-        :rtype: Model
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this Alt.
-
-
-        :param model: The model of this Alt.  # noqa: E501
-        :type: Model
-        """
-
-        self._model = model
-
-    @property
-    def literal(self):
-        """Gets the literal of this Alt.  # noqa: E501
-
-
-        :return: The literal of this Alt.  # noqa: E501
-        :rtype: bool
-        """
-        return self._literal
-
-    @literal.setter
-    def literal(self, literal):
-        """Sets the literal of this Alt.
-
-
-        :param literal: The literal of this Alt.  # noqa: E501
-        :type: bool
-        """
-
-        self._literal = literal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

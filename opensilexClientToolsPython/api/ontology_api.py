@@ -2314,6 +2314,7 @@ class OntologyApi(object):
         self,
         uri : 'List[str]',
         context : 'str' = None,
+        search_default : 'bool' = None,
         **kwargs
     ):  # noqa: E501
         """Return associated rdfs:label of uris if they exist  # noqa: E501
@@ -2328,6 +2329,7 @@ class OntologyApi(object):
         :param list[str] uri: URIs to get label from (required)
         :param str authorization: Authentication token (required)
         :param str context: Context URI
+        :param bool search_default: Look for all contexts if not present in specified context
         :param str accept_language: Request accepted language
         :return: list[NamedResourceDTO]
                  If the method is called asynchronously,
@@ -2368,6 +2370,17 @@ class OntologyApi(object):
             except ValueError as e:
                 raise ValueError("Invalid value for parameter `context`. This parameter couldn't be cast to type `str` \n{0}".format(e))
                  
+        if search_default:
+            try:
+                try:
+                    # standard type no list
+                    search_default = bool(search_default)
+                except:
+                    # standard type no list
+                    search_default = bool(**search_default.to_dict())
+            except ValueError as e:
+                raise ValueError("Invalid value for parameter `search_default`. This parameter couldn't be cast to type `bool` \n{0}".format(e))
+                 
 
 
         if kwargs.get('async_req'):
@@ -2389,13 +2402,14 @@ class OntologyApi(object):
         :param list[str] uri: URIs to get label from (required)
         :param str authorization: Authentication token (required)
         :param str context: Context URI
+        :param bool search_default: Look for all contexts if not present in specified context
         :param str accept_language: Request accepted language
         :return: list[NamedResourceDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['uri', 'context', ]  # noqa: E501
+        all_params = ['uri', 'context', 'search_default', ]  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2425,6 +2439,8 @@ class OntologyApi(object):
             collection_formats['uri'] = 'multi'  # noqa: E501
         if 'context' in params:
             query_params.append(('context', params['context']))  # noqa: E501
+        if 'search_default' in params:
+            query_params.append(('searchDefault', params['search_default']))  # noqa: E501
 
         header_params = {}
         #if 'authorization' in params:
@@ -2481,7 +2497,7 @@ class OntologyApi(object):
         :param list[str] uri: URIs to get types from (required)
         :param str authorization: Authentication token (required)
         :param str accept_language: Request accepted language
-        :return: URITypesDTO
+        :return: list[URITypesDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2530,7 +2546,7 @@ class OntologyApi(object):
         :param list[str] uri: URIs to get types from (required)
         :param str authorization: Authentication token (required)
         :param str accept_language: Request accepted language
-        :return: URITypesDTO
+        :return: list[URITypesDTO]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2593,7 +2609,7 @@ class OntologyApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='URITypesDTO',  # noqa: E501
+            response_type='list[URITypesDTO]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

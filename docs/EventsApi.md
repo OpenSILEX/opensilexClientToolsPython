@@ -47,7 +47,7 @@ try:
     # Count events
     api_response = api_instance.count_events(targets, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->count_events: %s\n" % e)
 ```
 
@@ -99,7 +99,7 @@ try:
     # Create a list of event
     api_response = api_instance.create_events(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->create_events: %s\n" % e)
 ```
 
@@ -151,7 +151,7 @@ try:
     # Create a list of move event
     api_response = api_instance.create_moves(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->create_moves: %s\n" % e)
 ```
 
@@ -203,7 +203,7 @@ try:
     # Delete an event
     api_response = api_instance.delete_event(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->delete_event: %s\n" % e)
 ```
 
@@ -255,7 +255,7 @@ try:
     # Delete a move event
     api_response = api_instance.delete_move_event(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->delete_move_event: %s\n" % e)
 ```
 
@@ -307,7 +307,7 @@ try:
     # Get an event
     api_response = api_instance.get_event(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->get_event: %s\n" % e)
 ```
 
@@ -359,7 +359,7 @@ try:
     # Get an event with all it's properties
     api_response = api_instance.get_event_details(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->get_event_details: %s\n" % e)
 ```
 
@@ -411,7 +411,7 @@ try:
     # Get a move with all it's properties
     api_response = api_instance.get_move_event(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->get_move_event: %s\n" % e)
 ```
 
@@ -463,7 +463,7 @@ try:
     # Import a CSV file with one move and one target per line
     api_response = api_instance.import_event_csv(file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->import_event_csv: %s\n" % e)
 ```
 
@@ -515,7 +515,7 @@ try:
     # Import a CSV file with one move and one target per line
     api_response = api_instance.import_move_csv(file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->import_move_csv: %s\n" % e)
 ```
 
@@ -574,7 +574,7 @@ try:
     # Search events
     api_response = api_instance.search_events(rdf_type=rdf_type, start=start, end=end, target=target, description=description, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->search_events: %s\n" % e)
 ```
 
@@ -633,7 +633,7 @@ try:
     # Update an event
     api_response = api_instance.update_event(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->update_event: %s\n" % e)
 ```
 
@@ -685,7 +685,7 @@ try:
     # Update a move event
     api_response = api_instance.update_move_event(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->update_move_event: %s\n" % e)
 ```
 
@@ -737,7 +737,7 @@ try:
     # Check a CSV file with one move and one target per line
     api_response = api_instance.validate_event_csv(file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->validate_event_csv: %s\n" % e)
 ```
 
@@ -789,7 +789,7 @@ try:
     # Check a CSV file with one move and one target per line
     api_response = api_instance.validate_move_csv(file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->validate_move_csv: %s\n" % e)
 ```
 

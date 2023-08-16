@@ -65,7 +65,7 @@ try:
     # Count annotations
     api_response = anotation_api_instance.count_annotations(target=target)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Api Exception when calling AnnotationsApi->count_annotations: %s\n" % e)
     # Other more specific exceptions inherit from this general class :
     #   - ApiDuplicateException for duplicated data on POST
@@ -258,22 +258,22 @@ Class | Method | HTTP request | Description
 *OntologyApi* | [**update_class_property_restriction**](docs/OntologyApi.md#update_class_property_restriction) | **PUT** /ontology/rdf_type_property_restriction | Update a rdf type property restriction
 *OntologyApi* | [**update_property**](docs/OntologyApi.md#update_property) | **PUT** /ontology/property | Update a RDF property
 *OrganizationsApi* | [**create_facility**](docs/OrganizationsApi.md#create_facility) | **POST** /core/facilities | Create a facility
-*OrganizationsApi* | [**create_infrastructure**](docs/OrganizationsApi.md#create_infrastructure) | **POST** /core/organisations | Create an organisation
+*OrganizationsApi* | [**create_organization**](docs/OrganizationsApi.md#create_organization) | **POST** /core/organisations | Create an organisation
 *OrganizationsApi* | [**create_site**](docs/OrganizationsApi.md#create_site) | **POST** /core/sites | Create a site
 *OrganizationsApi* | [**delete_facility**](docs/OrganizationsApi.md#delete_facility) | **DELETE** /core/facilities/{uri} | Delete a facility
-*OrganizationsApi* | [**delete_infrastructure**](docs/OrganizationsApi.md#delete_infrastructure) | **DELETE** /core/organisations/{uri} | Delete an organisation
+*OrganizationsApi* | [**delete_organization**](docs/OrganizationsApi.md#delete_organization) | **DELETE** /core/organisations/{uri} | Delete an organisation
 *OrganizationsApi* | [**delete_site**](docs/OrganizationsApi.md#delete_site) | **DELETE** /core/sites/{uri} | Delete a site
 *OrganizationsApi* | [**get_all_facilities**](docs/OrganizationsApi.md#get_all_facilities) | **GET** /core/facilities/all_facilities | Get all facilities
 *OrganizationsApi* | [**get_facilities_by_uri**](docs/OrganizationsApi.md#get_facilities_by_uri) | **GET** /core/facilities/by_uris | Get facilities by their URIs
 *OrganizationsApi* | [**get_facility**](docs/OrganizationsApi.md#get_facility) | **GET** /core/facilities/{uri} | Get a facility
-*OrganizationsApi* | [**get_infrastructure**](docs/OrganizationsApi.md#get_infrastructure) | **GET** /core/organisations/{uri} | Get an organisation 
+*OrganizationsApi* | [**get_organization**](docs/OrganizationsApi.md#get_organization) | **GET** /core/organisations/{uri} | Get an organisation 
 *OrganizationsApi* | [**get_site**](docs/OrganizationsApi.md#get_site) | **GET** /core/sites/{uri} | Get a site
 *OrganizationsApi* | [**get_sites_by_uri**](docs/OrganizationsApi.md#get_sites_by_uri) | **GET** /core/sites/by_uris | Get a list of sites
 *OrganizationsApi* | [**search_facilities**](docs/OrganizationsApi.md#search_facilities) | **GET** /core/facilities | Search facilities
-*OrganizationsApi* | [**search_infrastructures**](docs/OrganizationsApi.md#search_infrastructures) | **GET** /core/organisations | Search organisations
+*OrganizationsApi* | [**search_organizations**](docs/OrganizationsApi.md#search_organizations) | **GET** /core/organisations | Search organisations
 *OrganizationsApi* | [**search_sites**](docs/OrganizationsApi.md#search_sites) | **GET** /core/sites | Search all sites
 *OrganizationsApi* | [**update_facility**](docs/OrganizationsApi.md#update_facility) | **PUT** /core/facilities | Update a facility
-*OrganizationsApi* | [**update_infrastructure**](docs/OrganizationsApi.md#update_infrastructure) | **PUT** /core/organisations | Update an organisation
+*OrganizationsApi* | [**update_organization**](docs/OrganizationsApi.md#update_organization) | **PUT** /core/organisations | Update an organisation
 *OrganizationsApi* | [**update_site**](docs/OrganizationsApi.md#update_site) | **PUT** /core/sites | Update a site
 *PositionsApi* | [**count_moves**](docs/PositionsApi.md#count_moves) | **GET** /core/positions/count | Count moves
 *PositionsApi* | [**get_position**](docs/PositionsApi.md#get_position) | **GET** /core/positions/{uri} | Get the position of an object
@@ -285,6 +285,7 @@ Class | Method | HTTP request | Description
 *ProjectsApi* | [**get_projects_by_uri**](docs/ProjectsApi.md#get_projects_by_uri) | **GET** /core/projects/by_uris | Get projects by their URIs
 *ProjectsApi* | [**search_projects**](docs/ProjectsApi.md#search_projects) | **GET** /core/projects | Search projects
 *ProjectsApi* | [**update_project**](docs/ProjectsApi.md#update_project) | **PUT** /core/projects | Update a project
+*ScientificObjectsApi* | [**count_scientific_objects**](docs/ScientificObjectsApi.md#count_scientific_objects) | **GET** /core/scientific_objects/count | Count scientific objects
 *ScientificObjectsApi* | [**create_scientific_object**](docs/ScientificObjectsApi.md#create_scientific_object) | **POST** /core/scientific_objects | Create a scientific object for the given experiment
 *ScientificObjectsApi* | [**delete_scientific_object**](docs/ScientificObjectsApi.md#delete_scientific_object) | **DELETE** /core/scientific_objects/{uri} | Delete a scientific object
 *ScientificObjectsApi* | [**export_csv**](docs/ScientificObjectsApi.md#export_csv) | **POST** /core/scientific_objects/export | Export a given list of scientific object URIs to csv data file
@@ -302,29 +303,37 @@ Class | Method | HTTP request | Description
 *ScientificObjectsApi* | [**search_scientific_objects_with_geometry_list_by_uris**](docs/ScientificObjectsApi.md#search_scientific_objects_with_geometry_list_by_uris) | **GET** /core/scientific_objects/geometry | Get scientific objet list with geometry of a given experiment URI
 *ScientificObjectsApi* | [**update_scientific_object**](docs/ScientificObjectsApi.md#update_scientific_object) | **PUT** /core/scientific_objects | Update a scientific object for the given experiment
 *ScientificObjectsApi* | [**validate_csv3**](docs/ScientificObjectsApi.md#validate_csv3) | **POST** /core/scientific_objects/import_validation | Validate a CSV file for the given experiment URI and scientific object type.
-*SecurityApi* | [**add_favorite**](docs/SecurityApi.md#add_favorite) | **POST** /security/users/favorites | Add a favorite
+*SecurityApi* | [**add_favorite**](docs/SecurityApi.md#add_favorite) | **POST** /security/accounts/favorites | Add a favorite
+*SecurityApi* | [**add_favorite1**](docs/SecurityApi.md#add_favorite1) | **POST** /security/users/favorites | Add a favorite
 *SecurityApi* | [**create_account**](docs/SecurityApi.md#create_account) | **POST** /security/accounts | Add an account
 *SecurityApi* | [**create_group**](docs/SecurityApi.md#create_group) | **POST** /security/groups | Add a group
 *SecurityApi* | [**create_person**](docs/SecurityApi.md#create_person) | **POST** /security/persons | Add a person
 *SecurityApi* | [**create_profile**](docs/SecurityApi.md#create_profile) | **POST** /security/profiles | Add a profile
 *SecurityApi* | [**create_user**](docs/SecurityApi.md#create_user) | **POST** /security/users | Add a user
-*SecurityApi* | [**delete_favorite**](docs/SecurityApi.md#delete_favorite) | **DELETE** /security/users/favorites/{uriFavorite} | Delete a favorite
+*SecurityApi* | [**delete_favorite**](docs/SecurityApi.md#delete_favorite) | **DELETE** /security/accounts/favorites/{uriFavorite} | Delete a favorite
+*SecurityApi* | [**delete_favorite1**](docs/SecurityApi.md#delete_favorite1) | **DELETE** /security/users/favorites/{uriFavorite} | Delete a favorite
 *SecurityApi* | [**delete_group**](docs/SecurityApi.md#delete_group) | **DELETE** /security/groups/{uri} | Delete a group
 *SecurityApi* | [**delete_profile**](docs/SecurityApi.md#delete_profile) | **DELETE** /security/profiles/{uri} | Delete a profile
+*SecurityApi* | [**get_account**](docs/SecurityApi.md#get_account) | **GET** /security/accounts/{uri} | Get an account
+*SecurityApi* | [**get_accounts_by_uri**](docs/SecurityApi.md#get_accounts_by_uri) | **GET** /security/accounts/by_uris | Get accounts by their URIs
 *SecurityApi* | [**get_all_profiles**](docs/SecurityApi.md#get_all_profiles) | **GET** /security/profiles/all | Get all profiles
-*SecurityApi* | [**get_favorites**](docs/SecurityApi.md#get_favorites) | **GET** /security/users/favorites | Get list of favorites for a user
+*SecurityApi* | [**get_favorites**](docs/SecurityApi.md#get_favorites) | **GET** /security/accounts/favorites | Get list of favorites for a user
+*SecurityApi* | [**get_favorites1**](docs/SecurityApi.md#get_favorites1) | **GET** /security/users/favorites | Get list of favorites for a user
 *SecurityApi* | [**get_group**](docs/SecurityApi.md#get_group) | **GET** /security/groups/{uri} | Get a group
 *SecurityApi* | [**get_groups_by_uri**](docs/SecurityApi.md#get_groups_by_uri) | **GET** /security/groups/by_uris | Get groups by their URIs
 *SecurityApi* | [**get_person**](docs/SecurityApi.md#get_person) | **GET** /security/persons/{uri} | Get a Person
 *SecurityApi* | [**get_persons_by_uri**](docs/SecurityApi.md#get_persons_by_uri) | **GET** /security/persons/by_uris | Get persons by their URIs
 *SecurityApi* | [**get_profile**](docs/SecurityApi.md#get_profile) | **GET** /security/profiles/{uri} | Get a profile
 *SecurityApi* | [**get_user**](docs/SecurityApi.md#get_user) | **GET** /security/users/{uri} | Get a user
-*SecurityApi* | [**get_user_groups**](docs/SecurityApi.md#get_user_groups) | **GET** /security/users/{uri}/groups | Get groups of a user
+*SecurityApi* | [**get_user_groups**](docs/SecurityApi.md#get_user_groups) | **GET** /security/accounts/{uri}/groups | Get groups of a user
+*SecurityApi* | [**get_user_groups1**](docs/SecurityApi.md#get_user_groups1) | **GET** /security/users/{uri}/groups | Get groups of a user
 *SecurityApi* | [**get_users_by_uri**](docs/SecurityApi.md#get_users_by_uri) | **GET** /security/users/by_uris | Get users by their URIs
+*SecurityApi* | [**search_accounts**](docs/SecurityApi.md#search_accounts) | **GET** /security/accounts | Search accounts
 *SecurityApi* | [**search_groups**](docs/SecurityApi.md#search_groups) | **GET** /security/groups | Search groups
 *SecurityApi* | [**search_persons**](docs/SecurityApi.md#search_persons) | **GET** /security/persons | Search persons
 *SecurityApi* | [**search_profiles**](docs/SecurityApi.md#search_profiles) | **GET** /security/profiles | Search profiles
 *SecurityApi* | [**search_users**](docs/SecurityApi.md#search_users) | **GET** /security/users | Search users
+*SecurityApi* | [**update_account**](docs/SecurityApi.md#update_account) | **PUT** /security/accounts | Update an account
 *SecurityApi* | [**update_group**](docs/SecurityApi.md#update_group) | **PUT** /security/groups | Update a group
 *SecurityApi* | [**update_person**](docs/SecurityApi.md#update_person) | **PUT** /security/persons | Update a person
 *SecurityApi* | [**update_profile**](docs/SecurityApi.md#update_profile) | **PUT** /security/profiles | Update a profile
@@ -399,6 +408,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccountCreationDTO](docs/AccountCreationDTO.md)
+ - [AccountGetDTO](docs/AccountGetDTO.md)
+ - [AccountUpdateDTO](docs/AccountUpdateDTO.md)
  - [ActivityCreationDTO](docs/ActivityCreationDTO.md)
  - [ActivityGetDTO](docs/ActivityGetDTO.md)
  - [AgentModel](docs/AgentModel.md)

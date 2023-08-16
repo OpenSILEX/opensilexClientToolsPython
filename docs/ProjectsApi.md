@@ -38,7 +38,7 @@ try:
     # Add a project
     api_response = api_instance.create_project(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ProjectsApi->create_project: %s\n" % e)
 ```
 
@@ -90,7 +90,7 @@ try:
     # Delete a project
     api_response = api_instance.delete_project(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ProjectsApi->delete_project: %s\n" % e)
 ```
 
@@ -142,7 +142,7 @@ try:
     # Get a project
     api_response = api_instance.get_project(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ProjectsApi->get_project: %s\n" % e)
 ```
 
@@ -194,7 +194,7 @@ try:
     # Get projects by their URIs
     api_response = api_instance.get_projects_by_uri(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ProjectsApi->get_projects_by_uri: %s\n" % e)
 ```
 
@@ -252,7 +252,7 @@ try:
     # Search projects
     api_response = api_instance.search_projects(name=name, year=year, keyword=keyword, financial_funding=financial_funding, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ProjectsApi->search_projects: %s\n" % e)
 ```
 
@@ -310,7 +310,7 @@ try:
     # Update a project
     api_response = api_instance.update_project(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ProjectsApi->update_project: %s\n" % e)
 ```
 

@@ -18,6 +18,10 @@ from __future__ import absolute_import
 
 from opensilexClientToolsPython.models.account_creation_dto import AccountCreationDTO
 
+from opensilexClientToolsPython.models.account_get_dto import AccountGetDTO
+
+from opensilexClientToolsPython.models.account_update_dto import AccountUpdateDTO
+
 from opensilexClientToolsPython.models.activity_creation_dto import ActivityCreationDTO
 
 from opensilexClientToolsPython.models.activity_get_dto import ActivityGetDTO
@@ -527,6 +531,8 @@ from opensilexClientToolsPython.models.vue_rdf_type_property_dto import VueRDFTy
 
 
 # import the rest of the models into model package 
+
+
 
 
 

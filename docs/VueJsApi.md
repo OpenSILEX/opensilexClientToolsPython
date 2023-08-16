@@ -38,7 +38,7 @@ try:
     # Return the current configuration
     api_response = api_instance.get_config()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsApi->get_config: %s\n" % e)
 ```
 
@@ -89,7 +89,7 @@ try:
     # Return the front Vue JS extension file to include
     api_response = api_instance.get_extension(module)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsApi->get_extension: %s\n" % e)
 ```
 
@@ -141,7 +141,7 @@ try:
     # Return the front Vue JS extension css file to include
     api_response = api_instance.get_extension_style(module)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsApi->get_extension_style: %s\n" % e)
 ```
 
@@ -194,7 +194,7 @@ try:
     # Return the front Vue JS theme configuration
     api_response = api_instance.get_theme_config(module_id, theme_id)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsApi->get_theme_config: %s\n" % e)
 ```
 
@@ -248,7 +248,7 @@ try:
     # Return the theme css file
     api_response = api_instance.get_theme_css(module_id, theme_id)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsApi->get_theme_css: %s\n" % e)
 ```
 
@@ -304,7 +304,7 @@ try:
     # Return the theme requested resource
     api_response = api_instance.get_theme_resource(module_id, theme_id, file_path=file_path, accepted_extensions=accepted_extensions)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsApi->get_theme_resource: %s\n" % e)
 ```
 
@@ -358,7 +358,7 @@ try:
     # Return the user-specific configuration
     api_response = api_instance.get_user_config()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsApi->get_user_config: %s\n" % e)
 ```
 

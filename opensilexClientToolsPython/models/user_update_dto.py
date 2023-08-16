@@ -40,9 +40,9 @@ class UserUpdateDTO(object):
         'admin': 'bool',
         'last_name': 'str',
         'email': 'str',
-        'holder_of_the_account_uri': 'str',
         'enable': 'bool',
-        'favorites': 'list[str]'
+        'favorites': 'list[str]',
+        'linked_person': 'str'
     }
 
     attribute_map = {
@@ -53,9 +53,9 @@ class UserUpdateDTO(object):
         'admin': 'admin',
         'last_name': 'last_name',
         'email': 'email',
-        'holder_of_the_account_uri': 'holderOfTheAccountURI',
         'enable': 'enable',
-        'favorites': 'favorites'
+        'favorites': 'favorites',
+        'linked_person': 'linked_person'
     }
     def __init__(self,
         uri : 'str',
@@ -65,9 +65,9 @@ class UserUpdateDTO(object):
         last_name : 'str',
         email : 'str',
         password : 'str' = None,
-        holder_of_the_account_uri : 'str' = None,
         enable : 'bool' = None,
-        favorites : 'List[str]' = None):  # noqa: E501
+        favorites : 'List[str]' = None,
+        linked_person : 'str' = None):  # noqa: E501
         """UserUpdateDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -77,9 +77,9 @@ class UserUpdateDTO(object):
         self._admin = None
         self._last_name = None
         self._email = None
-        self._holder_of_the_account_uri = None
         self._enable = None
         self._favorites = None
+        self._linked_person = None
         self.discriminator = None
 
         self.uri = uri
@@ -90,12 +90,12 @@ class UserUpdateDTO(object):
         self.admin = admin
         self.last_name = last_name
         self.email = email
-        if holder_of_the_account_uri is not None:
-            self.holder_of_the_account_uri = holder_of_the_account_uri
         if enable is not None:
             self.enable = enable
         if favorites is not None:
             self.favorites = favorites
+        if linked_person is not None:
+            self.linked_person = linked_person
 
     @property
     def uri(self):
@@ -271,29 +271,6 @@ class UserUpdateDTO(object):
         self._email = email
 
     @property
-    def holder_of_the_account_uri(self):
-        """Gets the holder_of_the_account_uri of this UserUpdateDTO.  # noqa: E501
-
-        URI of the Person linked to this account  # noqa: E501
-
-        :return: The holder_of_the_account_uri of this UserUpdateDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._holder_of_the_account_uri
-
-    @holder_of_the_account_uri.setter
-    def holder_of_the_account_uri(self, holder_of_the_account_uri):
-        """Sets the holder_of_the_account_uri of this UserUpdateDTO.
-
-        URI of the Person linked to this account  # noqa: E501
-
-        :param holder_of_the_account_uri: The holder_of_the_account_uri of this UserUpdateDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._holder_of_the_account_uri = holder_of_the_account_uri
-
-    @property
     def enable(self):
         """Gets the enable of this UserUpdateDTO.  # noqa: E501
 
@@ -336,6 +313,29 @@ class UserUpdateDTO(object):
         """
 
         self._favorites = favorites
+
+    @property
+    def linked_person(self):
+        """Gets the linked_person of this UserUpdateDTO.  # noqa: E501
+
+        URI of the Person linked to this account  # noqa: E501
+
+        :return: The linked_person of this UserUpdateDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._linked_person
+
+    @linked_person.setter
+    def linked_person(self, linked_person):
+        """Sets the linked_person of this UserUpdateDTO.
+
+        URI of the Person linked to this account  # noqa: E501
+
+        :param linked_person: The linked_person of this UserUpdateDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._linked_person = linked_person
 
     def to_dict(self):
         """Returns the model properties as a dict"""

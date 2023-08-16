@@ -152,6 +152,136 @@ class SecurityApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
+            '/security/accounts/favorites', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
+    def add_favorite1(
+        self,
+        body : 'FavoriteCreationDTO' = None,
+        **kwargs
+    ):  # noqa: E501
+        """Add a favorite  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_favorite1(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param FavoriteCreationDTO body: Favorite object URI
+        :param str accept_language: Request accepted language
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in [] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        if body:
+            try:
+                try:
+                    # standard type no list
+                    body = FavoriteCreationDTO(body)
+                except:
+                    # standard type no list
+                    body = FavoriteCreationDTO(**body.to_dict())
+            except ValueError as e:
+                raise ValueError("Invalid value for parameter `body`. This parameter couldn't be cast to type `FavoriteCreationDTO` \n{0}".format(e))
+                 
+
+
+        if kwargs.get('async_req'):
+            return self.add_favorite1_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.add_favorite1_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def add_favorite1_with_http_info(self, **kwargs):  # noqa: E501
+        """Add a favorite  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.add_favorite1_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param FavoriteCreationDTO body: Favorite object URI
+        :param str accept_language: Request accepted language
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method add_favorite1" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
             '/security/users/favorites', 'POST',
             path_params,
             query_params,
@@ -933,6 +1063,137 @@ class SecurityApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
+            '/security/accounts/favorites/{uriFavorite}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
+    def delete_favorite1(
+        self,
+        uri_favorite : 'str',
+        **kwargs
+    ):  # noqa: E501
+        """Delete a favorite  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_favorite1(uri_favorite, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri_favorite: Favorite URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in ["uri_favorite", ] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        try:
+            try:
+                uri_favorite = str(uri_favorite)
+            except:
+                uri_favorite = str(**uri_favorite.to_dict())
+        except ValueError as e:
+            raise ValueError("Invalid value for parameter `uri_favorite`. This parameter couldn't be cast to type `str` \n{0}".format(e))
+             
+
+
+        if kwargs.get('async_req'):
+            return self.delete_favorite1_with_http_info(uri_favorite, **passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.delete_favorite1_with_http_info(uri_favorite, **passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def delete_favorite1_with_http_info(self, uri_favorite, **kwargs):  # noqa: E501
+        """Delete a favorite  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_favorite1_with_http_info(uri_favorite, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri_favorite: Favorite URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uri_favorite', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_favorite1" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uri_favorite' is set
+        if ('uri_favorite' not in params or
+                params['uri_favorite'] is None):
+            raise ValueError("Missing the required parameter `uri_favorite` when calling `delete_favorite1`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'uri_favorite' in params:
+            path_params['uriFavorite'] = params['uri_favorite']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
             '/security/users/favorites/{uriFavorite}', 'DELETE',
             path_params,
             query_params,
@@ -1211,6 +1472,275 @@ class SecurityApi(object):
             collection_formats=collection_formats)
 
         
+    def get_account(
+        self,
+        uri : 'str',
+        **kwargs
+    ):  # noqa: E501
+        """Get an account  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_account(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Account URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: AccountGetDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in ["uri", ] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        try:
+            try:
+                uri = str(uri)
+            except:
+                uri = str(**uri.to_dict())
+        except ValueError as e:
+            raise ValueError("Invalid value for parameter `uri`. This parameter couldn't be cast to type `str` \n{0}".format(e))
+             
+
+
+        if kwargs.get('async_req'):
+            return self.get_account_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_account_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def get_account_with_http_info(self, uri, **kwargs):  # noqa: E501
+        """Get an account  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_account_with_http_info(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: Account URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: AccountGetDTO
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uri', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_account" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uri' is set
+        if ('uri' not in params or
+                params['uri'] is None):
+            raise ValueError("Missing the required parameter `uri` when calling `get_account`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'uri' in params:
+            path_params['uri'] = params['uri']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/security/accounts/{uri}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='AccountGetDTO',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
+    def get_accounts_by_uri(
+        self,
+        uris : 'List[str]',
+        **kwargs
+    ):  # noqa: E501
+        """Get accounts by their URIs  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_accounts_by_uri(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Accounts URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[AccountGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in ["uris", ] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        try:
+            try:
+                uris = [
+                    str(x)
+                    for x in uris
+                ]
+            except:
+                uris = [
+                    str(**x.to_dict())
+                    for x in uris
+                ]
+        except ValueError as e:
+            raise ValueError("Invalid value for parameter `uris`. This parameter couldn't be cast to type `List[str]` \n{0}".format(e))
+             
+
+
+        if kwargs.get('async_req'):
+            return self.get_accounts_by_uri_with_http_info(uris, **passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_accounts_by_uri_with_http_info(uris, **passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def get_accounts_by_uri_with_http_info(self, uris, **kwargs):  # noqa: E501
+        """Get accounts by their URIs  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_accounts_by_uri_with_http_info(uris, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] uris: Accounts URIs (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[AccountGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uris', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_accounts_by_uri" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uris' is set
+        if ('uris' not in params or
+                params['uris'] is None):
+            raise ValueError("Missing the required parameter `uris` when calling `get_accounts_by_uri`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'uris' in params:
+            query_params.append(('uris', params['uris']))  # noqa: E501
+            collection_formats['uris'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/security/accounts/by_uris', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[AccountGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
     def get_all_profiles(
         self,
         order_by : 'List[str]' = None,
@@ -1438,6 +1968,144 @@ class SecurityApi(object):
         if ('types' not in params or
                 params['types'] is None):
             raise ValueError("Missing the required parameter `types` when calling `get_favorites`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'types' in params:
+            query_params.append(('types', params['types']))  # noqa: E501
+            collection_formats['types'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/security/accounts/favorites', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[FavoriteGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
+    def get_favorites1(
+        self,
+        types : 'List[str]',
+        **kwargs
+    ):  # noqa: E501
+        """Get list of favorites for a user  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_favorites1(types, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] types: Types (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[FavoriteGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in ["types", ] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        try:
+            try:
+                types = [
+                    str(x)
+                    for x in types
+                ]
+            except:
+                types = [
+                    str(**x.to_dict())
+                    for x in types
+                ]
+        except ValueError as e:
+            raise ValueError("Invalid value for parameter `types`. This parameter couldn't be cast to type `List[str]` \n{0}".format(e))
+             
+
+
+        if kwargs.get('async_req'):
+            return self.get_favorites1_with_http_info(types, **passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_favorites1_with_http_info(types, **passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def get_favorites1_with_http_info(self, types, **kwargs):  # noqa: E501
+        """Get list of favorites for a user  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_favorites1_with_http_info(types, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param list[str] types: Types (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[FavoriteGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['types', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_favorites1" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'types' is set
+        if ('types' not in params or
+                params['types'] is None):
+            raise ValueError("Missing the required parameter `types` when calling `get_favorites1`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2401,6 +3069,137 @@ class SecurityApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
+            '/security/accounts/{uri}/groups', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[NamedResourceDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
+    def get_user_groups1(
+        self,
+        uri : 'str',
+        **kwargs
+    ):  # noqa: E501
+        """Get groups of a user  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_user_groups1(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: User URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[NamedResourceDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in ["uri", ] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        try:
+            try:
+                uri = str(uri)
+            except:
+                uri = str(**uri.to_dict())
+        except ValueError as e:
+            raise ValueError("Invalid value for parameter `uri`. This parameter couldn't be cast to type `str` \n{0}".format(e))
+             
+
+
+        if kwargs.get('async_req'):
+            return self.get_user_groups1_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_user_groups1_with_http_info(uri, **passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def get_user_groups1_with_http_info(self, uri, **kwargs):  # noqa: E501
+        """Get groups of a user  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_user_groups1_with_http_info(uri, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str uri: User URI (required)
+        :param str authorization: Authentication token (required)
+        :param str accept_language: Request accepted language
+        :return: list[NamedResourceDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uri', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_groups1" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'uri' is set
+        if ('uri' not in params or
+                params['uri'] is None):
+            raise ValueError("Missing the required parameter `uri` when calling `get_user_groups1`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'uri' in params:
+            path_params['uri'] = params['uri']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
             '/security/users/{uri}/groups', 'GET',
             path_params,
             query_params,
@@ -2547,6 +3346,195 @@ class SecurityApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[UserGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
+    def search_accounts(
+        self,
+        name : 'str' = None,
+        order_by : 'List[str]' = None,
+        page : 'int' = None,
+        page_size : 'int' = None,
+        **kwargs
+    ):  # noqa: E501
+        """Search accounts  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.search_accounts(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str name: Regex pattern for filtering list by name or email
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: list[AccountGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in [] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        if name:
+            try:
+                try:
+                    # standard type no list
+                    name = str(name)
+                except:
+                    # standard type no list
+                    name = str(**name.to_dict())
+            except ValueError as e:
+                raise ValueError("Invalid value for parameter `name`. This parameter couldn't be cast to type `str` \n{0}".format(e))
+                 
+        if order_by:
+            try:
+                try:
+                    # standard type list
+                    order_by = [
+                        str(x)
+                        for x in order_by
+                    ]
+                except:
+                    # standard type list
+                    order_by = [
+                        str(**x.to_dict())
+                        for x in order_by
+                    ]
+            except ValueError as e:
+                raise ValueError("Invalid value for parameter `order_by`. This parameter couldn't be cast to type `List[str]` \n{0}".format(e))
+                 
+        if page:
+            try:
+                try:
+                    # standard type no list
+                    page = int(page)
+                except:
+                    # standard type no list
+                    page = int(**page.to_dict())
+            except ValueError as e:
+                raise ValueError("Invalid value for parameter `page`. This parameter couldn't be cast to type `int` \n{0}".format(e))
+                 
+        if page_size:
+            try:
+                try:
+                    # standard type no list
+                    page_size = int(page_size)
+                except:
+                    # standard type no list
+                    page_size = int(**page_size.to_dict())
+            except ValueError as e:
+                raise ValueError("Invalid value for parameter `page_size`. This parameter couldn't be cast to type `int` \n{0}".format(e))
+                 
+
+
+        if kwargs.get('async_req'):
+            return self.search_accounts_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.search_accounts_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def search_accounts_with_http_info(self, **kwargs):  # noqa: E501
+        """Search accounts  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.search_accounts_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param str name: Regex pattern for filtering list by name or email
+        :param list[str] order_by: List of fields to sort as an array of fieldName=asc|desc
+        :param int page: Page number
+        :param int page_size: Page size
+        :param str accept_language: Request accepted language
+        :return: list[AccountGetDTO]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'order_by', 'page', 'page_size', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method search_accounts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        if 'page' in params and params['page'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page` when calling `search_accounts`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'page_size' in params and params['page_size'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `page_size` when calling `search_accounts`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+            collection_formats['order_by'] = 'multi'  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/security/accounts', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[AccountGetDTO]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3319,6 +4307,136 @@ class SecurityApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[UserGetDTO]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+        
+    def update_account(
+        self,
+        body : 'AccountUpdateDTO' = None,
+        **kwargs
+    ):  # noqa: E501
+        """Update an account  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_account(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param AccountUpdateDTO body: Account description
+        :param str accept_language: Request accepted language
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        frame = inspect.currentframe()
+        keys, _, _, values = inspect.getargvalues(frame)
+        passed_arguments = {}
+        for key in keys:
+            if key != 'self' and key not in [] and values[key] != None:
+                passed_arguments[key] = values[key]
+        kwargs['_return_http_data_only'] = True
+
+        
+        
+        if body:
+            try:
+                try:
+                    # standard type no list
+                    body = AccountUpdateDTO(body)
+                except:
+                    # standard type no list
+                    body = AccountUpdateDTO(**body.to_dict())
+            except ValueError as e:
+                raise ValueError("Invalid value for parameter `body`. This parameter couldn't be cast to type `AccountUpdateDTO` \n{0}".format(e))
+                 
+
+
+        if kwargs.get('async_req'):
+            return self.update_account_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+        else:
+            (data) = self.update_account_with_http_info(**passed_arguments, **kwargs)  # noqa: E501
+            return data
+
+    def update_account_with_http_info(self, **kwargs):  # noqa: E501
+        """Update an account  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.update_account_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str authorization: Authentication token (required)
+        :param AccountUpdateDTO body: Account description
+        :param str accept_language: Request accepted language
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', ]  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method update_account" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        #if 'authorization' in params:
+        #    header_params['Authorization'] = params['authorization']  # noqa: E501
+        #if 'accept_language' in params:
+        #    header_params['Accept-Language'] = params['accept_language']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/security/accounts', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='str',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

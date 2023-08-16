@@ -41,7 +41,7 @@ try:
     # Create a custom class
     api_response = api_instance.create_rdf_type(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->create_rdf_type: %s\n" % e)
 ```
 
@@ -93,7 +93,7 @@ try:
     # Delete a RDF type
     api_response = api_instance.delete_rdf_type(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->delete_rdf_type: %s\n" % e)
 ```
 
@@ -144,7 +144,7 @@ try:
     # Return literal datatypes definition
     api_response = api_instance.get_data_types1()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->get_data_types1: %s\n" % e)
 ```
 
@@ -192,7 +192,7 @@ try:
     # Return object types definition
     api_response = api_instance.get_object_types()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->get_object_types: %s\n" % e)
 ```
 
@@ -242,7 +242,7 @@ try:
     # Return rdf type model definition with properties
     api_response = api_instance.get_rdf_type1(rdf_type, parent_type=parent_type, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->get_rdf_type1: %s\n" % e)
 ```
 
@@ -296,7 +296,7 @@ try:
     # Return class model properties definitions
     api_response = api_instance.get_rdf_type_properties(rdf_type, parent_type, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->get_rdf_type_properties: %s\n" % e)
 ```
 
@@ -348,7 +348,7 @@ try:
     # Return RDF types parameters for Vue.js application
     api_response = api_instance.get_rdf_types_parameters()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->get_rdf_types_parameters: %s\n" % e)
 ```
 
@@ -398,7 +398,7 @@ try:
     # Define properties order
     api_response = api_instance.set_rdf_type_properties_order(rdf_type, body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->set_rdf_type_properties_order: %s\n" % e)
 ```
 
@@ -451,7 +451,7 @@ try:
     # Update a custom class
     api_response = api_instance.update_rdf_type(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VueJsOntologyExtensionApi->update_rdf_type: %s\n" % e)
 ```
 

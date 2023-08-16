@@ -5,22 +5,22 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_facility**](OrganizationsApi.md#create_facility) | **POST** /core/facilities | Create a facility
-[**create_infrastructure**](OrganizationsApi.md#create_infrastructure) | **POST** /core/organisations | Create an organisation
+[**create_organization**](OrganizationsApi.md#create_organization) | **POST** /core/organisations | Create an organisation
 [**create_site**](OrganizationsApi.md#create_site) | **POST** /core/sites | Create a site
 [**delete_facility**](OrganizationsApi.md#delete_facility) | **DELETE** /core/facilities/{uri} | Delete a facility
-[**delete_infrastructure**](OrganizationsApi.md#delete_infrastructure) | **DELETE** /core/organisations/{uri} | Delete an organisation
+[**delete_organization**](OrganizationsApi.md#delete_organization) | **DELETE** /core/organisations/{uri} | Delete an organisation
 [**delete_site**](OrganizationsApi.md#delete_site) | **DELETE** /core/sites/{uri} | Delete a site
 [**get_all_facilities**](OrganizationsApi.md#get_all_facilities) | **GET** /core/facilities/all_facilities | Get all facilities
 [**get_facilities_by_uri**](OrganizationsApi.md#get_facilities_by_uri) | **GET** /core/facilities/by_uris | Get facilities by their URIs
 [**get_facility**](OrganizationsApi.md#get_facility) | **GET** /core/facilities/{uri} | Get a facility
-[**get_infrastructure**](OrganizationsApi.md#get_infrastructure) | **GET** /core/organisations/{uri} | Get an organisation 
+[**get_organization**](OrganizationsApi.md#get_organization) | **GET** /core/organisations/{uri} | Get an organisation 
 [**get_site**](OrganizationsApi.md#get_site) | **GET** /core/sites/{uri} | Get a site
 [**get_sites_by_uri**](OrganizationsApi.md#get_sites_by_uri) | **GET** /core/sites/by_uris | Get a list of sites
 [**search_facilities**](OrganizationsApi.md#search_facilities) | **GET** /core/facilities | Search facilities
-[**search_infrastructures**](OrganizationsApi.md#search_infrastructures) | **GET** /core/organisations | Search organisations
+[**search_organizations**](OrganizationsApi.md#search_organizations) | **GET** /core/organisations | Search organisations
 [**search_sites**](OrganizationsApi.md#search_sites) | **GET** /core/sites | Search all sites
 [**update_facility**](OrganizationsApi.md#update_facility) | **PUT** /core/facilities | Update a facility
-[**update_infrastructure**](OrganizationsApi.md#update_infrastructure) | **PUT** /core/organisations | Update an organisation
+[**update_organization**](OrganizationsApi.md#update_organization) | **PUT** /core/organisations | Update an organisation
 [**update_site**](OrganizationsApi.md#update_site) | **PUT** /core/sites | Update a site
 
 
@@ -50,7 +50,7 @@ try:
     # Create a facility
     api_response = api_instance.create_facility(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->create_facility: %s\n" % e)
 ```
 
@@ -76,8 +76,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **create_infrastructure**
-> str create_infrastructure(authorization, body=body, accept_language=accept_language)
+# **create_organization**
+> str create_organization(authorization, body=body, accept_language=accept_language)
 
 Create an organisation
 
@@ -100,10 +100,10 @@ body = opensilexClientToolsPython.OrganizationCreationDTO() # OrganizationCreati
 
 try:
     # Create an organisation
-    api_response = api_instance.create_infrastructure(body=body, )
+    api_response = api_instance.create_organization(body=body, )
     pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganizationsApi->create_infrastructure: %s\n" % e)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->create_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -154,7 +154,7 @@ try:
     # Create a site
     api_response = api_instance.create_site(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->create_site: %s\n" % e)
 ```
 
@@ -206,7 +206,7 @@ try:
     # Delete a facility
     api_response = api_instance.delete_facility(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->delete_facility: %s\n" % e)
 ```
 
@@ -232,8 +232,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_infrastructure**
-> str delete_infrastructure(uri, authorization, accept_language=accept_language)
+# **delete_organization**
+> str delete_organization(uri, authorization, accept_language=accept_language)
 
 Delete an organisation
 
@@ -256,10 +256,10 @@ uri = '\"http://example.com/\"' # str | Organisation URI
 
 try:
     # Delete an organisation
-    api_response = api_instance.delete_infrastructure(uri, )
+    api_response = api_instance.delete_organization(uri, )
     pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganizationsApi->delete_infrastructure: %s\n" % e)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->delete_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -310,7 +310,7 @@ try:
     # Delete a site
     api_response = api_instance.delete_site(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->delete_site: %s\n" % e)
 ```
 
@@ -361,7 +361,7 @@ try:
     # Get all facilities
     api_response = api_instance.get_all_facilities()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->get_all_facilities: %s\n" % e)
 ```
 
@@ -412,7 +412,7 @@ try:
     # Get facilities by their URIs
     api_response = api_instance.get_facilities_by_uri(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->get_facilities_by_uri: %s\n" % e)
 ```
 
@@ -464,7 +464,7 @@ try:
     # Get a facility
     api_response = api_instance.get_facility(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->get_facility: %s\n" % e)
 ```
 
@@ -490,8 +490,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_infrastructure**
-> OrganizationGetDTO get_infrastructure(uri, authorization, accept_language=accept_language)
+# **get_organization**
+> OrganizationGetDTO get_organization(uri, authorization, accept_language=accept_language)
 
 Get an organisation 
 
@@ -514,10 +514,10 @@ uri = '\"http://opensilex.dev/organisation/phenoarch\"' # str | Organisation URI
 
 try:
     # Get an organisation 
-    api_response = api_instance.get_infrastructure(uri, )
+    api_response = api_instance.get_organization(uri, )
     pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganizationsApi->get_infrastructure: %s\n" % e)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->get_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -568,7 +568,7 @@ try:
     # Get a site
     api_response = api_instance.get_site(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->get_site: %s\n" % e)
 ```
 
@@ -620,7 +620,7 @@ try:
     # Get a list of sites
     api_response = api_instance.get_sites_by_uri(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->get_sites_by_uri: %s\n" % e)
 ```
 
@@ -676,7 +676,7 @@ try:
     # Search facilities
     api_response = api_instance.search_facilities(pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->search_facilities: %s\n" % e)
 ```
 
@@ -706,8 +706,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **search_infrastructures**
-> list[ResourceDagDTO] search_infrastructures(authorization, pattern=pattern, organisation_uris=organisation_uris, accept_language=accept_language)
+# **search_organizations**
+> list[ResourceDagDTO] search_organizations(authorization, pattern=pattern, organisation_uris=organisation_uris, accept_language=accept_language)
 
 Search organisations
 
@@ -731,10 +731,10 @@ organisation_uris = ['organisation_uris_example'] # list[str] |  organisation UR
 
 try:
     # Search organisations
-    api_response = api_instance.search_infrastructures(pattern=pattern, organisation_uris=organisation_uris, )
+    api_response = api_instance.search_organizations(pattern=pattern, organisation_uris=organisation_uris, )
     pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganizationsApi->search_infrastructures: %s\n" % e)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->search_organizations: %s\n" % e)
 ```
 
 ### Parameters
@@ -790,7 +790,7 @@ try:
     # Search all sites
     api_response = api_instance.search_sites(pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->search_sites: %s\n" % e)
 ```
 
@@ -846,7 +846,7 @@ try:
     # Update a facility
     api_response = api_instance.update_facility(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->update_facility: %s\n" % e)
 ```
 
@@ -872,8 +872,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_infrastructure**
-> str update_infrastructure(authorization, body=body, accept_language=accept_language)
+# **update_organization**
+> str update_organization(authorization, body=body, accept_language=accept_language)
 
 Update an organisation
 
@@ -896,10 +896,10 @@ body = opensilexClientToolsPython.OrganizationUpdateDTO() # OrganizationUpdateDT
 
 try:
     # Update an organisation
-    api_response = api_instance.update_infrastructure(body=body, )
+    api_response = api_instance.update_organization(body=body, )
     pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OrganizationsApi->update_infrastructure: %s\n" % e)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->update_organization: %s\n" % e)
 ```
 
 ### Parameters
@@ -950,7 +950,7 @@ try:
     # Update a site
     api_response = api_instance.update_site(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->update_site: %s\n" % e)
 ```
 

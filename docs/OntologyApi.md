@@ -54,7 +54,7 @@ try:
     # Add a rdf type property restriction
     api_response = api_instance.add_class_property_restriction(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->add_class_property_restriction: %s\n" % e)
 ```
 
@@ -107,7 +107,7 @@ try:
     # Check the given rdf-types on the given uris
     api_response = api_instance.check_ur_is_types(rdf_types, body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->check_ur_is_types: %s\n" % e)
 ```
 
@@ -160,7 +160,7 @@ try:
     # Create a RDF property
     api_response = api_instance.create_property(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->create_property: %s\n" % e)
 ```
 
@@ -213,7 +213,7 @@ try:
     # Delete a rdf type property restriction
     api_response = api_instance.delete_class_property_restriction(rdf_type, property_uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->delete_class_property_restriction: %s\n" % e)
 ```
 
@@ -267,7 +267,7 @@ try:
     # Delete a property
     api_response = api_instance.delete_property(uri, rdf_type, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->delete_property: %s\n" % e)
 ```
 
@@ -321,7 +321,7 @@ try:
     # Return classes models definitions with properties for a list of rdf types
     api_response = api_instance.get_classes(rdf_type, parent_type=parent_type, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_classes: %s\n" % e)
 ```
 
@@ -375,7 +375,7 @@ try:
     # Search data properties tree
     api_response = api_instance.get_data_properties(domain=domain, name=name, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_data_properties: %s\n" % e)
 ```
 
@@ -429,7 +429,7 @@ try:
     # Search properties linkable to a domain
     api_response = api_instance.get_linkable_properties(domain, parent=parent, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_linkable_properties: %s\n" % e)
 ```
 
@@ -481,7 +481,7 @@ try:
     # Return namespaces
     api_response = api_instance.get_name_space()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_name_space: %s\n" % e)
 ```
 
@@ -531,7 +531,7 @@ try:
     # Search object properties tree
     api_response = api_instance.get_object_properties(domain=domain, name=name, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_object_properties: %s\n" % e)
 ```
 
@@ -586,7 +586,7 @@ try:
     # Search properties tree
     api_response = api_instance.get_properties(domain, name=name, include_sub_classes=include_sub_classes, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_properties: %s\n" % e)
 ```
 
@@ -642,7 +642,7 @@ try:
     # Return property model definition detail
     api_response = api_instance.get_property(uri=uri, rdf_type=rdf_type, domain_rdf_type=domain_rdf_type, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_property: %s\n" % e)
 ```
 
@@ -697,7 +697,7 @@ try:
     # Return class model definition with properties
     api_response = api_instance.get_rdf_type(rdf_type, parent_type=parent_type, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_rdf_type: %s\n" % e)
 ```
 
@@ -749,7 +749,7 @@ try:
     # Return the list of shared resource instances
     api_response = api_instance.get_shared_resource_instances()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_shared_resource_instances: %s\n" % e)
 ```
 
@@ -801,7 +801,7 @@ try:
     # Search sub-classes tree of an RDF class
     api_response = api_instance.get_sub_classes_of(parent_type=parent_type, ignore_root_classes=ignore_root_classes, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_sub_classes_of: %s\n" % e)
 ```
 
@@ -854,7 +854,7 @@ try:
     # Return associated rdfs:label of an uri if exists
     api_response = api_instance.get_uri_label(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_uri_label: %s\n" % e)
 ```
 
@@ -881,7 +881,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_uri_labels_list**
-> list[NamedResourceDTO] get_uri_labels_list(uri, authorization, context=context, accept_language=accept_language)
+> list[NamedResourceDTO] get_uri_labels_list(uri, authorization, context=context, search_default=search_default, accept_language=accept_language)
 
 Return associated rdfs:label of uris if they exist
 
@@ -901,13 +901,14 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 uri = ['uri_example'] # list[str] | URIs to get label from
 context = 'context_example' # str | Context URI (optional)
+search_default = true # bool | Look for all contexts if not present in specified context (optional)
 
 
 try:
     # Return associated rdfs:label of uris if they exist
-    api_response = api_instance.get_uri_labels_list(uri, context=context, )
+    api_response = api_instance.get_uri_labels_list(uri, context=context, search_default=search_default, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_uri_labels_list: %s\n" % e)
 ```
 
@@ -917,6 +918,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | [**list[str]**](str.md)| URIs to get label from | 
  **context** | **str**| Context URI | [optional] 
+ **search_default** | **bool**| Look for all contexts if not present in specified context | [optional] 
 
 
 ### Return type
@@ -935,7 +937,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_uri_types**
-> URITypesDTO get_uri_types(uri, authorization, accept_language=accept_language)
+> list[URITypesDTO] get_uri_types(uri, authorization, accept_language=accept_language)
 
 Return all rdf types of an uri
 
@@ -960,7 +962,7 @@ try:
     # Return all rdf types of an uri
     api_response = api_instance.get_uri_types(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_uri_types: %s\n" % e)
 ```
 
@@ -973,7 +975,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**URITypesDTO**](URITypesDTO.md)
+[**list[URITypesDTO]**](URITypesDTO.md)
 
 ### Authorization
 
@@ -1012,7 +1014,7 @@ new_uri = 'new_uri_example' # str | The new URI
 try:
     # Rename all occurrences of the given URI
     api_instance.rename_uri(uri, new_uri, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->rename_uri: %s\n" % e)
 ```
 
@@ -1067,7 +1069,7 @@ try:
     # Search sub-classes tree of an RDF class
     api_response = api_instance.search_sub_classes_of(parent_type, name=name, ignore_root_classes=ignore_root_classes, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->search_sub_classes_of: %s\n" % e)
 ```
 
@@ -1121,7 +1123,7 @@ try:
     # Update a rdf type property restriction
     api_response = api_instance.update_class_property_restriction(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->update_class_property_restriction: %s\n" % e)
 ```
 
@@ -1173,7 +1175,7 @@ try:
     # Update a RDF property
     api_response = api_instance.update_property(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->update_property: %s\n" % e)
 ```
 

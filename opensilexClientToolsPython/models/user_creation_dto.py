@@ -41,8 +41,8 @@ class UserCreationDTO(object):
         'password': 'str',
         'admin': 'bool',
         'enable': 'bool',
-        'holder_of_the_account_uri': 'str',
-        'favorites': 'list[str]'
+        'favorites': 'list[str]',
+        'linked_person': 'str'
     }
 
     attribute_map = {
@@ -54,8 +54,8 @@ class UserCreationDTO(object):
         'password': 'password',
         'admin': 'admin',
         'enable': 'enable',
-        'holder_of_the_account_uri': 'holderOfTheAccountURI',
-        'favorites': 'favorites'
+        'favorites': 'favorites',
+        'linked_person': 'linked_person'
     }
     def __init__(self,
         first_name : 'str',
@@ -66,8 +66,8 @@ class UserCreationDTO(object):
         admin : 'bool',
         uri : 'str' = None,
         enable : 'bool' = None,
-        holder_of_the_account_uri : 'str' = None,
-        favorites : 'List[str]' = None):  # noqa: E501
+        favorites : 'List[str]' = None,
+        linked_person : 'str' = None):  # noqa: E501
         """UserCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -78,8 +78,8 @@ class UserCreationDTO(object):
         self._password = None
         self._admin = None
         self._enable = None
-        self._holder_of_the_account_uri = None
         self._favorites = None
+        self._linked_person = None
         self.discriminator = None
 
         if uri is not None:
@@ -92,10 +92,10 @@ class UserCreationDTO(object):
         self.admin = admin
         if enable is not None:
             self.enable = enable
-        if holder_of_the_account_uri is not None:
-            self.holder_of_the_account_uri = holder_of_the_account_uri
         if favorites is not None:
             self.favorites = favorites
+        if linked_person is not None:
+            self.linked_person = linked_person
 
     @property
     def uri(self):
@@ -294,29 +294,6 @@ class UserCreationDTO(object):
         self._enable = enable
 
     @property
-    def holder_of_the_account_uri(self):
-        """Gets the holder_of_the_account_uri of this UserCreationDTO.  # noqa: E501
-
-        URI of the Person linked to this account  # noqa: E501
-
-        :return: The holder_of_the_account_uri of this UserCreationDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._holder_of_the_account_uri
-
-    @holder_of_the_account_uri.setter
-    def holder_of_the_account_uri(self, holder_of_the_account_uri):
-        """Sets the holder_of_the_account_uri of this UserCreationDTO.
-
-        URI of the Person linked to this account  # noqa: E501
-
-        :param holder_of_the_account_uri: The holder_of_the_account_uri of this UserCreationDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._holder_of_the_account_uri = holder_of_the_account_uri
-
-    @property
     def favorites(self):
         """Gets the favorites of this UserCreationDTO.  # noqa: E501
 
@@ -338,6 +315,29 @@ class UserCreationDTO(object):
         """
 
         self._favorites = favorites
+
+    @property
+    def linked_person(self):
+        """Gets the linked_person of this UserCreationDTO.  # noqa: E501
+
+        URI of the Person linked to this account  # noqa: E501
+
+        :return: The linked_person of this UserCreationDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._linked_person
+
+    @linked_person.setter
+    def linked_person(self, linked_person):
+        """Sets the linked_person of this UserCreationDTO.
+
+        URI of the Person linked to this account  # noqa: E501
+
+        :param linked_person: The linked_person of this UserCreationDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._linked_person = linked_person
 
     def to_dict(self):
         """Returns the model properties as a dict"""

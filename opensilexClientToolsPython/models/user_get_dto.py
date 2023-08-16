@@ -39,8 +39,8 @@ class UserGetDTO(object):
         'admin': 'bool',
         'first_name': 'str',
         'last_name': 'str',
+        'linked_person': 'str',
         'enable': 'bool',
-        'holder_of_the_account_uri': 'str',
         'favorites': 'list[str]'
     }
 
@@ -51,8 +51,8 @@ class UserGetDTO(object):
         'admin': 'admin',
         'first_name': 'first_name',
         'last_name': 'last_name',
+        'linked_person': 'linked_person',
         'enable': 'enable',
-        'holder_of_the_account_uri': 'holderOfTheAccountURI',
         'favorites': 'favorites'
     }
     def __init__(self,
@@ -62,8 +62,8 @@ class UserGetDTO(object):
         admin : 'bool' = None,
         first_name : 'str' = None,
         last_name : 'str' = None,
+        linked_person : 'str' = None,
         enable : 'bool' = None,
-        holder_of_the_account_uri : 'str' = None,
         favorites : 'List[str]' = None):  # noqa: E501
         """UserGetDTO - a model defined in Swagger"""  # noqa: E501
 
@@ -73,8 +73,8 @@ class UserGetDTO(object):
         self._admin = None
         self._first_name = None
         self._last_name = None
+        self._linked_person = None
         self._enable = None
-        self._holder_of_the_account_uri = None
         self._favorites = None
         self.discriminator = None
 
@@ -90,10 +90,10 @@ class UserGetDTO(object):
             self.first_name = first_name
         if last_name is not None:
             self.last_name = last_name
+        if linked_person is not None:
+            self.linked_person = linked_person
         if enable is not None:
             self.enable = enable
-        if holder_of_the_account_uri is not None:
-            self.holder_of_the_account_uri = holder_of_the_account_uri
         if favorites is not None:
             self.favorites = favorites
 
@@ -236,6 +236,29 @@ class UserGetDTO(object):
         self._last_name = last_name
 
     @property
+    def linked_person(self):
+        """Gets the linked_person of this UserGetDTO.  # noqa: E501
+
+        URI of the Person linked to this account  # noqa: E501
+
+        :return: The linked_person of this UserGetDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._linked_person
+
+    @linked_person.setter
+    def linked_person(self, linked_person):
+        """Sets the linked_person of this UserGetDTO.
+
+        URI of the Person linked to this account  # noqa: E501
+
+        :param linked_person: The linked_person of this UserGetDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._linked_person = linked_person
+
+    @property
     def enable(self):
         """Gets the enable of this UserGetDTO.  # noqa: E501
 
@@ -257,29 +280,6 @@ class UserGetDTO(object):
         """
 
         self._enable = enable
-
-    @property
-    def holder_of_the_account_uri(self):
-        """Gets the holder_of_the_account_uri of this UserGetDTO.  # noqa: E501
-
-        URI of the Person linked to this account  # noqa: E501
-
-        :return: The holder_of_the_account_uri of this UserGetDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._holder_of_the_account_uri
-
-    @holder_of_the_account_uri.setter
-    def holder_of_the_account_uri(self, holder_of_the_account_uri):
-        """Sets the holder_of_the_account_uri of this UserGetDTO.
-
-        URI of the Person linked to this account  # noqa: E501
-
-        :param holder_of_the_account_uri: The holder_of_the_account_uri of this UserGetDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._holder_of_the_account_uri = holder_of_the_account_uri
 
     @property
     def favorites(self):

@@ -45,15 +45,15 @@ class Statement(object):
         'resource': 'Resource',
         'language': 'str',
         'string': 'str',
+        'list': 'RDFList',
+        'model': 'Model',
+        'subject': 'Resource',
         'literal': 'Literal',
         'predicate': 'ModelProperty',
         'bag': 'Bag',
         'alt': 'Alt',
         'seq': 'Seq',
-        'reified': 'bool',
-        'list': 'RDFList',
-        'model': 'Model',
-        'subject': 'Resource'
+        'reified': 'bool'
     }
 
     attribute_map = {
@@ -69,15 +69,15 @@ class Statement(object):
         'resource': 'resource',
         'language': 'language',
         'string': 'string',
+        'list': 'list',
+        'model': 'model',
+        'subject': 'subject',
         'literal': 'literal',
         'predicate': 'predicate',
         'bag': 'bag',
         'alt': 'alt',
         'seq': 'seq',
-        'reified': 'reified',
-        'list': 'list',
-        'model': 'model',
-        'subject': 'subject'
+        'reified': 'reified'
     }
     def __init__(self,
         object : 'RDFNode' = None,
@@ -92,15 +92,15 @@ class Statement(object):
         resource : 'Resource' = None,
         language : 'str' = None,
         string : 'str' = None,
+        list : 'RDFList' = None,
+        model : 'Model' = None,
+        subject : 'Resource' = None,
         literal : 'Literal' = None,
         predicate : 'ModelProperty' = None,
         bag : 'Bag' = None,
         alt : 'Alt' = None,
         seq : 'Seq' = None,
-        reified : 'bool' = None,
-        list : 'RDFList' = None,
-        model : 'Model' = None,
-        subject : 'Resource' = None):  # noqa: E501
+        reified : 'bool' = None):  # noqa: E501
         """Statement - a model defined in Swagger"""  # noqa: E501
 
         self._object = None
@@ -115,15 +115,15 @@ class Statement(object):
         self._resource = None
         self._language = None
         self._string = None
+        self._list = None
+        self._model = None
+        self._subject = None
         self._literal = None
         self._predicate = None
         self._bag = None
         self._alt = None
         self._seq = None
         self._reified = None
-        self._list = None
-        self._model = None
-        self._subject = None
         self.discriminator = None
 
         if object is not None:
@@ -150,6 +150,12 @@ class Statement(object):
             self.language = language
         if string is not None:
             self.string = string
+        if list is not None:
+            self.list = list
+        if model is not None:
+            self.model = model
+        if subject is not None:
+            self.subject = subject
         if literal is not None:
             self.literal = literal
         if predicate is not None:
@@ -162,12 +168,6 @@ class Statement(object):
             self.seq = seq
         if reified is not None:
             self.reified = reified
-        if list is not None:
-            self.list = list
-        if model is not None:
-            self.model = model
-        if subject is not None:
-            self.subject = subject
 
     @property
     def object(self):
@@ -424,6 +424,69 @@ class Statement(object):
         self._string = string
 
     @property
+    def list(self):
+        """Gets the list of this Statement.  # noqa: E501
+
+
+        :return: The list of this Statement.  # noqa: E501
+        :rtype: RDFList
+        """
+        return self._list
+
+    @list.setter
+    def list(self, list):
+        """Sets the list of this Statement.
+
+
+        :param list: The list of this Statement.  # noqa: E501
+        :type: RDFList
+        """
+
+        self._list = list
+
+    @property
+    def model(self):
+        """Gets the model of this Statement.  # noqa: E501
+
+
+        :return: The model of this Statement.  # noqa: E501
+        :rtype: Model
+        """
+        return self._model
+
+    @model.setter
+    def model(self, model):
+        """Sets the model of this Statement.
+
+
+        :param model: The model of this Statement.  # noqa: E501
+        :type: Model
+        """
+
+        self._model = model
+
+    @property
+    def subject(self):
+        """Gets the subject of this Statement.  # noqa: E501
+
+
+        :return: The subject of this Statement.  # noqa: E501
+        :rtype: Resource
+        """
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject):
+        """Sets the subject of this Statement.
+
+
+        :param subject: The subject of this Statement.  # noqa: E501
+        :type: Resource
+        """
+
+        self._subject = subject
+
+    @property
     def literal(self):
         """Gets the literal of this Statement.  # noqa: E501
 
@@ -549,69 +612,6 @@ class Statement(object):
 
         self._reified = reified
 
-    @property
-    def list(self):
-        """Gets the list of this Statement.  # noqa: E501
-
-
-        :return: The list of this Statement.  # noqa: E501
-        :rtype: RDFList
-        """
-        return self._list
-
-    @list.setter
-    def list(self, list):
-        """Sets the list of this Statement.
-
-
-        :param list: The list of this Statement.  # noqa: E501
-        :type: RDFList
-        """
-
-        self._list = list
-
-    @property
-    def model(self):
-        """Gets the model of this Statement.  # noqa: E501
-
-
-        :return: The model of this Statement.  # noqa: E501
-        :rtype: Model
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this Statement.
-
-
-        :param model: The model of this Statement.  # noqa: E501
-        :type: Model
-        """
-
-        self._model = model
-
-    @property
-    def subject(self):
-        """Gets the subject of this Statement.  # noqa: E501
-
-
-        :return: The subject of this Statement.  # noqa: E501
-        :rtype: Resource
-        """
-        return self._subject
-
-    @subject.setter
-    def subject(self, subject):
-        """Sets the subject of this Statement.
-
-
-        :param subject: The subject of this Statement.  # noqa: E501
-        :type: Resource
-        """
-
-        self._subject = subject
-
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -661,13 +661,13 @@ class Statement(object):
 
 from opensilexClientToolsPython.models.rdf_node import RDFNode
 from opensilexClientToolsPython.models.resource import Resource
+from opensilexClientToolsPython.models.rdf_list import RDFList
+from opensilexClientToolsPython.models.model import Model
+from opensilexClientToolsPython.models.resource import Resource
 from opensilexClientToolsPython.models.literal import Literal
 from opensilexClientToolsPython.models.model_property import ModelProperty
 from opensilexClientToolsPython.models.bag import Bag
 from opensilexClientToolsPython.models.alt import Alt
 from opensilexClientToolsPython.models.seq import Seq
-from opensilexClientToolsPython.models.rdf_list import RDFList
-from opensilexClientToolsPython.models.model import Model
-from opensilexClientToolsPython.models.resource import Resource
 
 

@@ -51,7 +51,7 @@ try:
     # Add a germplasm
     api_response = api_instance.create_germplasm(body=body, check_only=check_only, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->create_germplasm: %s\n" % e)
 ```
 
@@ -104,7 +104,7 @@ try:
     # Add a germplasm group
     api_response = api_instance.create_germplasm_group(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->create_germplasm_group: %s\n" % e)
 ```
 
@@ -155,7 +155,7 @@ uri = '\"http://example.com/\"' # str | Germplasm URI
 try:
     # Delete a germplasm
     api_instance.delete_germplasm(uri, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->delete_germplasm: %s\n" % e)
 ```
 
@@ -207,7 +207,7 @@ try:
     # Delete a germplasm group
     api_response = api_instance.delete_germplasm_group(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->delete_germplasm_group: %s\n" % e)
 ```
 
@@ -258,7 +258,7 @@ body = opensilexClientToolsPython.GermplasmSearchFilter() # GermplasmSearchFilte
 try:
     # export germplasm
     api_instance.export_germplasm(body=body, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->export_germplasm: %s\n" % e)
 ```
 
@@ -310,7 +310,7 @@ try:
     # Get a germplasm
     api_response = api_instance.get_germplasm(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm: %s\n" % e)
 ```
 
@@ -365,7 +365,7 @@ try:
     # Get attribute values of all germplasm for a given attribute
     api_response = api_instance.get_germplasm_attribute_values(attribute, attribute_value=attribute_value, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_attribute_values: %s\n" % e)
 ```
 
@@ -419,7 +419,7 @@ try:
     # Get attributes of all germplasm
     api_response = api_instance.get_germplasm_attributes()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_attributes: %s\n" % e)
 ```
 
@@ -474,7 +474,7 @@ try:
     # Get experiments where a germplasm has been used
     api_response = api_instance.get_germplasm_experiments(uri, attribute_value=attribute_value, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_experiments: %s\n" % e)
 ```
 
@@ -530,7 +530,7 @@ try:
     # Get a germplasm group
     api_response = api_instance.get_germplasm_group(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_group: %s\n" % e)
 ```
 
@@ -582,7 +582,7 @@ try:
     # Get germplasm groups by their URIs
     api_response = api_instance.get_germplasm_group_by_ur_is(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_group_by_ur_is: %s\n" % e)
 ```
 
@@ -637,7 +637,7 @@ try:
     # Get a germplasm group's germplasm, paginated
     api_response = api_instance.get_germplasm_group_content(uri, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_group_content: %s\n" % e)
 ```
 
@@ -692,7 +692,7 @@ try:
     # Get a germplasm group with nested germplasm details
     api_response = api_instance.get_germplasm_group_with_germplasms(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasm_group_with_germplasms: %s\n" % e)
 ```
 
@@ -744,7 +744,7 @@ try:
     # Get a list of germplasms by their URIs
     api_response = api_instance.get_germplasms_by_uri(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->get_germplasms_by_uri: %s\n" % e)
 ```
 
@@ -810,7 +810,7 @@ try:
     # Search germplasm
     api_response = api_instance.search_germplasm(uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->search_germplasm: %s\n" % e)
 ```
 
@@ -880,7 +880,7 @@ try:
     # Search germplasm groups
     api_response = api_instance.search_germplasm_groups(name=name, germplasm=germplasm, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->search_germplasm_groups: %s\n" % e)
 ```
 
@@ -936,7 +936,7 @@ try:
     # Update a germplasm
     api_response = api_instance.update_germplasm(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->update_germplasm: %s\n" % e)
 ```
 
@@ -988,7 +988,7 @@ try:
     # Update a germplasm group
     api_response = api_instance.update_germplasm_group(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->update_germplasm_group: %s\n" % e)
 ```
 

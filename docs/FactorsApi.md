@@ -46,7 +46,7 @@ try:
     # Count factors
     api_response = api_instance.count_factors(experiment=experiment, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->count_factors: %s\n" % e)
 ```
 
@@ -97,7 +97,7 @@ body = opensilexClientToolsPython.FactorCreationDTO() # FactorCreationDTO | Fact
 try:
     # Create a factor
     api_instance.create_factor(body=body, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->create_factor: %s\n" % e)
 ```
 
@@ -149,7 +149,7 @@ try:
     # Delete a factor
     api_response = api_instance.delete_factor(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->delete_factor: %s\n" % e)
 ```
 
@@ -201,7 +201,7 @@ try:
     # Delete a factor level
     api_response = api_instance.delete_factor_level(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->delete_factor_level: %s\n" % e)
 ```
 
@@ -253,7 +253,7 @@ try:
     # Get factor associated experiments
     api_response = api_instance.get_factor_associated_experiments(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->get_factor_associated_experiments: %s\n" % e)
 ```
 
@@ -305,7 +305,7 @@ try:
     # Get a factor
     api_response = api_instance.get_factor_by_uri(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->get_factor_by_uri: %s\n" % e)
 ```
 
@@ -357,7 +357,7 @@ try:
     # Get a factor level
     api_response = api_instance.get_factor_level(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->get_factor_level: %s\n" % e)
 ```
 
@@ -409,7 +409,7 @@ try:
     # Get a factor level
     api_response = api_instance.get_factor_level_detail(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->get_factor_level_detail: %s\n" % e)
 ```
 
@@ -461,7 +461,7 @@ try:
     # Get factor levels
     api_response = api_instance.get_factor_levels(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->get_factor_levels: %s\n" % e)
 ```
 
@@ -513,7 +513,7 @@ try:
     # Get a list of factors by their URIs
     api_response = api_instance.get_factors_by_ur_is(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->get_factors_by_ur_is: %s\n" % e)
 ```
 
@@ -566,7 +566,7 @@ try:
     # Search categories
     api_response = api_instance.search_categories(name=name, order_by=order_by, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->search_categories: %s\n" % e)
 ```
 
@@ -622,7 +622,7 @@ try:
     # Search factors levels
     api_response = api_instance.search_factor_levels(name=name, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->search_factor_levels: %s\n" % e)
 ```
 
@@ -683,7 +683,7 @@ try:
     # Search factors
     api_response = api_instance.search_factors(name=name, description=description, category=category, experiment=experiment, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->search_factors: %s\n" % e)
 ```
 
@@ -741,7 +741,7 @@ try:
     # Update a factor
     api_response = api_instance.update_factor(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling FactorsApi->update_factor: %s\n" % e)
 ```
 

@@ -34,8 +34,8 @@ class Model(object):
     """
     swagger_types = {
         'empty': 'bool',
-        'closed': 'bool',
         'lock': 'Lock',
+        'closed': 'bool',
         'graph': 'Graph',
         'reader': 'RDFReaderI',
         'writer': 'RDFWriterI',
@@ -44,8 +44,8 @@ class Model(object):
 
     attribute_map = {
         'empty': 'empty',
-        'closed': 'closed',
         'lock': 'lock',
+        'closed': 'closed',
         'graph': 'graph',
         'reader': 'reader',
         'writer': 'writer',
@@ -53,8 +53,8 @@ class Model(object):
     }
     def __init__(self,
         empty : 'bool' = None,
-        closed : 'bool' = None,
         lock : 'Lock' = None,
+        closed : 'bool' = None,
         graph : 'Graph' = None,
         reader : 'RDFReaderI' = None,
         writer : 'RDFWriterI' = None,
@@ -62,8 +62,8 @@ class Model(object):
         """Model - a model defined in Swagger"""  # noqa: E501
 
         self._empty = None
-        self._closed = None
         self._lock = None
+        self._closed = None
         self._graph = None
         self._reader = None
         self._writer = None
@@ -72,10 +72,10 @@ class Model(object):
 
         if empty is not None:
             self.empty = empty
-        if closed is not None:
-            self.closed = closed
         if lock is not None:
             self.lock = lock
+        if closed is not None:
+            self.closed = closed
         if graph is not None:
             self.graph = graph
         if reader is not None:
@@ -107,27 +107,6 @@ class Model(object):
         self._empty = empty
 
     @property
-    def closed(self):
-        """Gets the closed of this Model.  # noqa: E501
-
-
-        :return: The closed of this Model.  # noqa: E501
-        :rtype: bool
-        """
-        return self._closed
-
-    @closed.setter
-    def closed(self, closed):
-        """Sets the closed of this Model.
-
-
-        :param closed: The closed of this Model.  # noqa: E501
-        :type: bool
-        """
-
-        self._closed = closed
-
-    @property
     def lock(self):
         """Gets the lock of this Model.  # noqa: E501
 
@@ -147,6 +126,27 @@ class Model(object):
         """
 
         self._lock = lock
+
+    @property
+    def closed(self):
+        """Gets the closed of this Model.  # noqa: E501
+
+
+        :return: The closed of this Model.  # noqa: E501
+        :rtype: bool
+        """
+        return self._closed
+
+    @closed.setter
+    def closed(self, closed):
+        """Sets the closed of this Model.
+
+
+        :param closed: The closed of this Model.  # noqa: E501
+        :type: bool
+        """
+
+        self._closed = closed
 
     @property
     def graph(self):

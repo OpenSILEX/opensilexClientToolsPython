@@ -39,7 +39,7 @@ try:
     # Count annotations
     api_response = api_instance.count_annotations(target=target, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AnnotationsApi->count_annotations: %s\n" % e)
 ```
 
@@ -91,7 +91,7 @@ try:
     # Create an annotation
     api_response = api_instance.create_annotation(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AnnotationsApi->create_annotation: %s\n" % e)
 ```
 
@@ -143,7 +143,7 @@ try:
     # Delete an annotation
     api_response = api_instance.delete_annotation(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AnnotationsApi->delete_annotation: %s\n" % e)
 ```
 
@@ -195,7 +195,7 @@ try:
     # Get an annotation
     api_response = api_instance.get_annotation(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AnnotationsApi->get_annotation: %s\n" % e)
 ```
 
@@ -253,7 +253,7 @@ try:
     # Search annotations
     api_response = api_instance.search_annotations(description=description, target=target, motivation=motivation, author=author, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AnnotationsApi->search_annotations: %s\n" % e)
 ```
 
@@ -314,7 +314,7 @@ try:
     # Search motivations
     api_response = api_instance.search_motivations(name=name, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AnnotationsApi->search_motivations: %s\n" % e)
 ```
 
@@ -369,7 +369,7 @@ try:
     # Update an annotation
     api_response = api_instance.update_annotation(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AnnotationsApi->update_annotation: %s\n" % e)
 ```
 

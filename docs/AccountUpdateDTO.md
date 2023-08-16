@@ -1,9 +1,9 @@
-# AccountCreationDTO
+# AccountUpdateDTO
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uri** | **str** | Account URI | [optional] 
+**uri** | **str** | Account URI | 
 **email** | **str** | Account email | [optional] 
 **admin** | **bool** | Account admin flag | [optional] 
 **language** | **str** | Account language | [optional] 

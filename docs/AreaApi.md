@@ -37,7 +37,7 @@ try:
     # Add an area
     api_response = api_instance.create_area(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AreaApi->create_area: %s\n" % e)
 ```
 
@@ -89,7 +89,7 @@ try:
     # Delete an area
     api_response = api_instance.delete_area(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AreaApi->delete_area: %s\n" % e)
 ```
 
@@ -141,7 +141,7 @@ try:
     # Get an area
     api_response = api_instance.get_by_uri(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AreaApi->get_by_uri: %s\n" % e)
 ```
 
@@ -195,7 +195,7 @@ try:
     # Get area whose geometry corresponds to the Intersections
     api_response = api_instance.search_intersects(body, start=start, end=end, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AreaApi->search_intersects: %s\n" % e)
 ```
 
@@ -249,7 +249,7 @@ try:
     # Update an area
     api_response = api_instance.update_area(body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AreaApi->update_area: %s\n" % e)
 ```
 

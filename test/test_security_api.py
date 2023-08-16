@@ -36,6 +36,13 @@ class TestSecurityApi(unittest.TestCase):
         """
         pass
 
+    def test_add_favorite1(self):
+        """Test case for add_favorite1
+
+        Add a favorite  # noqa: E501
+        """
+        pass
+
     def test_create_account(self):
         """Test case for create_account
 
@@ -78,6 +85,13 @@ class TestSecurityApi(unittest.TestCase):
         """
         pass
 
+    def test_delete_favorite1(self):
+        """Test case for delete_favorite1
+
+        Delete a favorite  # noqa: E501
+        """
+        pass
+
     def test_delete_group(self):
         """Test case for delete_group
 
@@ -92,6 +106,20 @@ class TestSecurityApi(unittest.TestCase):
         """
         pass
 
+    def test_get_account(self):
+        """Test case for get_account
+
+        Get an account  # noqa: E501
+        """
+        pass
+
+    def test_get_accounts_by_uri(self):
+        """Test case for get_accounts_by_uri
+
+        Get accounts by their URIs  # noqa: E501
+        """
+        pass
+
     def test_get_all_profiles(self):
         """Test case for get_all_profiles
 
@@ -101,6 +129,13 @@ class TestSecurityApi(unittest.TestCase):
 
     def test_get_favorites(self):
         """Test case for get_favorites
+
+        Get list of favorites for a user  # noqa: E501
+        """
+        pass
+
+    def test_get_favorites1(self):
+        """Test case for get_favorites1
 
         Get list of favorites for a user  # noqa: E501
         """
@@ -155,10 +190,24 @@ class TestSecurityApi(unittest.TestCase):
         """
         pass
 
+    def test_get_user_groups1(self):
+        """Test case for get_user_groups1
+
+        Get groups of a user  # noqa: E501
+        """
+        pass
+
     def test_get_users_by_uri(self):
         """Test case for get_users_by_uri
 
         Get users by their URIs  # noqa: E501
+        """
+        pass
+
+    def test_search_accounts(self):
+        """Test case for search_accounts
+
+        Search accounts  # noqa: E501
         """
         pass
 
@@ -187,6 +236,13 @@ class TestSecurityApi(unittest.TestCase):
         """Test case for search_users
 
         Search users  # noqa: E501
+        """
+        pass
+
+    def test_update_account(self):
+        """Test case for update_account
+
+        Update an account  # noqa: E501
         """
         pass
 

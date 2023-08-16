@@ -40,7 +40,7 @@ try:
     # Authenticate a user and return an access token
     api_response = api_instance.authenticate(body=body)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->authenticate: %s\n" % e)
 ```
 
@@ -92,7 +92,7 @@ try:
     # Authenticate a user and return an access token
     api_response = api_instance.authenticate_open_id(code=code)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->authenticate_open_id: %s\n" % e)
 ```
 
@@ -142,7 +142,7 @@ api_instance = opensilexClientToolsPython.AuthenticationApi(pythonClient)
 try:
     # Authenticate a user and return an access token from SAML response
     api_instance.authenticate_saml()
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->authenticate_saml: %s\n" % e)
 ```
 
@@ -190,7 +190,7 @@ identifier = 'identifier_example' # str | User e-mail or uri
 try:
     # Send an e-mail confirmation
     api_instance.forgot_password(identifier)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->forgot_password: %s\n" % e)
 ```
 
@@ -241,7 +241,7 @@ try:
     # Get list of existing credentials indexed by Swagger @API concepts in the application
     api_response = api_instance.get_credentials_groups()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->get_credentials_groups: %s\n" % e)
 ```
 
@@ -288,7 +288,7 @@ api_instance = opensilexClientToolsPython.AuthenticationApi(pythonClient)
 try:
     # Logout by discarding a user token
     api_instance.logout()
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->logout: %s\n" % e)
 ```
 
@@ -341,7 +341,7 @@ try:
     # Update user password
     api_response = api_instance.renew_password(renew_token, check_only=check_only, password=password)
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->renew_password: %s\n" % e)
 ```
 
@@ -394,7 +394,7 @@ try:
     # Send back a new token if the provided one is still valid
     api_response = api_instance.renew_token()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling AuthenticationApi->renew_token: %s\n" % e)
 ```
 

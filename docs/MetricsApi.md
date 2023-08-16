@@ -40,7 +40,7 @@ try:
     # Get an experiment summary history
     api_response = api_instance.get_experiment_summary_history(uri, start_date=start_date, end_date=end_date, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling MetricsApi->get_experiment_summary_history: %s\n" % e)
 ```
 
@@ -99,7 +99,7 @@ try:
     # Get running experiments metrics
     api_response = api_instance.get_running_experiments_summary(start_date=start_date, end_date=end_date, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling MetricsApi->get_running_experiments_summary: %s\n" % e)
 ```
 
@@ -157,7 +157,7 @@ try:
     # Get system metrics
     api_response = api_instance.get_system_metrics(start_date=start_date, end_date=end_date, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling MetricsApi->get_system_metrics: %s\n" % e)
 ```
 
@@ -214,7 +214,7 @@ try:
     # Get system metrics summary
     api_response = api_instance.get_system_metrics_summary(period=period, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling MetricsApi->get_system_metrics_summary: %s\n" % e)
 ```
 

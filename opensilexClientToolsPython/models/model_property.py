@@ -41,11 +41,11 @@ class ModelProperty(object):
         'stmt_term': 'Statement',
         'uri': 'str',
         'resource': 'bool',
+        'model': 'Model',
+        'literal': 'bool',
         'anon': 'bool',
         'uriresource': 'bool',
-        'stmt_resource': 'bool',
-        'model': 'Model',
-        'literal': 'bool'
+        'stmt_resource': 'bool'
     }
 
     attribute_map = {
@@ -57,11 +57,11 @@ class ModelProperty(object):
         'stmt_term': 'stmtTerm',
         'uri': 'uri',
         'resource': 'resource',
+        'model': 'model',
+        'literal': 'literal',
         'anon': 'anon',
         'uriresource': 'uriresource',
-        'stmt_resource': 'stmtResource',
-        'model': 'model',
-        'literal': 'literal'
+        'stmt_resource': 'stmtResource'
     }
     def __init__(self,
         name_space : 'str' = None,
@@ -72,11 +72,11 @@ class ModelProperty(object):
         stmt_term : 'Statement' = None,
         uri : 'str' = None,
         resource : 'bool' = None,
+        model : 'Model' = None,
+        literal : 'bool' = None,
         anon : 'bool' = None,
         uriresource : 'bool' = None,
-        stmt_resource : 'bool' = None,
-        model : 'Model' = None,
-        literal : 'bool' = None):  # noqa: E501
+        stmt_resource : 'bool' = None):  # noqa: E501
         """ModelProperty - a model defined in Swagger"""  # noqa: E501
 
         self._name_space = None
@@ -87,11 +87,11 @@ class ModelProperty(object):
         self._stmt_term = None
         self._uri = None
         self._resource = None
+        self._model = None
+        self._literal = None
         self._anon = None
         self._uriresource = None
         self._stmt_resource = None
-        self._model = None
-        self._literal = None
         self.discriminator = None
 
         if name_space is not None:
@@ -110,16 +110,16 @@ class ModelProperty(object):
             self.uri = uri
         if resource is not None:
             self.resource = resource
+        if model is not None:
+            self.model = model
+        if literal is not None:
+            self.literal = literal
         if anon is not None:
             self.anon = anon
         if uriresource is not None:
             self.uriresource = uriresource
         if stmt_resource is not None:
             self.stmt_resource = stmt_resource
-        if model is not None:
-            self.model = model
-        if literal is not None:
-            self.literal = literal
 
     @property
     def name_space(self):
@@ -290,6 +290,48 @@ class ModelProperty(object):
         self._resource = resource
 
     @property
+    def model(self):
+        """Gets the model of this ModelProperty.  # noqa: E501
+
+
+        :return: The model of this ModelProperty.  # noqa: E501
+        :rtype: Model
+        """
+        return self._model
+
+    @model.setter
+    def model(self, model):
+        """Sets the model of this ModelProperty.
+
+
+        :param model: The model of this ModelProperty.  # noqa: E501
+        :type: Model
+        """
+
+        self._model = model
+
+    @property
+    def literal(self):
+        """Gets the literal of this ModelProperty.  # noqa: E501
+
+
+        :return: The literal of this ModelProperty.  # noqa: E501
+        :rtype: bool
+        """
+        return self._literal
+
+    @literal.setter
+    def literal(self, literal):
+        """Sets the literal of this ModelProperty.
+
+
+        :param literal: The literal of this ModelProperty.  # noqa: E501
+        :type: bool
+        """
+
+        self._literal = literal
+
+    @property
     def anon(self):
         """Gets the anon of this ModelProperty.  # noqa: E501
 
@@ -351,48 +393,6 @@ class ModelProperty(object):
         """
 
         self._stmt_resource = stmt_resource
-
-    @property
-    def model(self):
-        """Gets the model of this ModelProperty.  # noqa: E501
-
-
-        :return: The model of this ModelProperty.  # noqa: E501
-        :rtype: Model
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this ModelProperty.
-
-
-        :param model: The model of this ModelProperty.  # noqa: E501
-        :type: Model
-        """
-
-        self._model = model
-
-    @property
-    def literal(self):
-        """Gets the literal of this ModelProperty.  # noqa: E501
-
-
-        :return: The literal of this ModelProperty.  # noqa: E501
-        :rtype: bool
-        """
-        return self._literal
-
-    @literal.setter
-    def literal(self, literal):
-        """Sets the literal of this ModelProperty.
-
-
-        :param literal: The literal of this ModelProperty.  # noqa: E501
-        :type: bool
-        """
-
-        self._literal = literal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

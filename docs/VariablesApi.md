@@ -78,7 +78,7 @@ body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of 
 try:
     # export variable by list of uris
     api_instance.classic_export_variable_by_ur_is(body=body, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->classic_export_variable_by_ur_is: %s\n" % e)
 ```
 
@@ -130,7 +130,7 @@ try:
     # Copy the selected variables from the shared resource instance
     api_response = api_instance.copy_from_shared_resource_instance(body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->copy_from_shared_resource_instance: %s\n" % e)
 ```
 
@@ -182,7 +182,7 @@ try:
     # Add a characteristic
     api_response = api_instance.create_characteristic(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->create_characteristic: %s\n" % e)
 ```
 
@@ -234,7 +234,7 @@ try:
     # Add an entity
     api_response = api_instance.create_entity(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->create_entity: %s\n" % e)
 ```
 
@@ -286,7 +286,7 @@ try:
     # Add an entity of interest
     api_response = api_instance.create_interest_entity(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->create_interest_entity: %s\n" % e)
 ```
 
@@ -338,7 +338,7 @@ try:
     # Add a method
     api_response = api_instance.create_method(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->create_method: %s\n" % e)
 ```
 
@@ -390,7 +390,7 @@ try:
     # Add an unit
     api_response = api_instance.create_unit(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->create_unit: %s\n" % e)
 ```
 
@@ -442,7 +442,7 @@ try:
     # Add a variable
     api_response = api_instance.create_variable(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->create_variable: %s\n" % e)
 ```
 
@@ -494,7 +494,7 @@ try:
     # Add a variables group
     api_response = api_instance.create_variables_group(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->create_variables_group: %s\n" % e)
 ```
 
@@ -546,7 +546,7 @@ try:
     # Delete a characteristic
     api_response = api_instance.delete_characteristic(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->delete_characteristic: %s\n" % e)
 ```
 
@@ -598,7 +598,7 @@ try:
     # Delete an entity
     api_response = api_instance.delete_entity(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->delete_entity: %s\n" % e)
 ```
 
@@ -650,7 +650,7 @@ try:
     # Delete an entity of interest
     api_response = api_instance.delete_interest_entity(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->delete_interest_entity: %s\n" % e)
 ```
 
@@ -702,7 +702,7 @@ try:
     # Delete a method
     api_response = api_instance.delete_method(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->delete_method: %s\n" % e)
 ```
 
@@ -754,7 +754,7 @@ try:
     # Delete an unit
     api_response = api_instance.delete_unit(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->delete_unit: %s\n" % e)
 ```
 
@@ -806,7 +806,7 @@ try:
     # Delete a variable
     api_response = api_instance.delete_variable(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->delete_variable: %s\n" % e)
 ```
 
@@ -858,7 +858,7 @@ try:
     # Delete a variables group
     api_response = api_instance.delete_variables_group(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->delete_variables_group: %s\n" % e)
 ```
 
@@ -909,7 +909,7 @@ body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of 
 try:
     # export detailed variable by list of uris
     api_instance.details_export_variable_by_ur_is(body=body, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->details_export_variable_by_ur_is: %s\n" % e)
 ```
 
@@ -961,7 +961,7 @@ try:
     # Get a characteristic
     api_response = api_instance.get_characteristic(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_characteristic: %s\n" % e)
 ```
 
@@ -1014,7 +1014,7 @@ try:
     # Get detailed characteristics by uris
     api_response = api_instance.get_characteristics_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_characteristics_by_ur_is: %s\n" % e)
 ```
 
@@ -1066,7 +1066,7 @@ try:
     # Get variables datatypes
     api_response = api_instance.get_datatypes()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_datatypes: %s\n" % e)
 ```
 
@@ -1116,7 +1116,7 @@ try:
     # Get detailed entities by uris
     api_response = api_instance.get_entities_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_entities_by_ur_is: %s\n" % e)
 ```
 
@@ -1169,7 +1169,7 @@ try:
     # Get an entity
     api_response = api_instance.get_entity(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_entity: %s\n" % e)
 ```
 
@@ -1222,7 +1222,7 @@ try:
     # Get detailed entities of interest by uris
     api_response = api_instance.get_interest_entities_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_interest_entities_by_ur_is: %s\n" % e)
 ```
 
@@ -1275,7 +1275,7 @@ try:
     # Get an entity of interest
     api_response = api_instance.get_interest_entity(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_interest_entity: %s\n" % e)
 ```
 
@@ -1327,7 +1327,7 @@ try:
     # Get a method
     api_response = api_instance.get_method(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_method: %s\n" % e)
 ```
 
@@ -1380,7 +1380,7 @@ try:
     # Get detailed methods by uris
     api_response = api_instance.get_methods_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_methods_by_ur_is: %s\n" % e)
 ```
 
@@ -1433,7 +1433,7 @@ try:
     # Get an unit
     api_response = api_instance.get_unit(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_unit: %s\n" % e)
 ```
 
@@ -1486,7 +1486,7 @@ try:
     # Get detailed units by uris
     api_response = api_instance.get_units_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_units_by_ur_is: %s\n" % e)
 ```
 
@@ -1540,7 +1540,7 @@ try:
     # Get a variable
     api_response = api_instance.get_variable(uri, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_variable: %s\n" % e)
 ```
 
@@ -1593,7 +1593,7 @@ try:
     # Get detailed variables by uris
     api_response = api_instance.get_variables_by_ur_is(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_variables_by_ur_is: %s\n" % e)
 ```
 
@@ -1645,7 +1645,7 @@ try:
     # Get a variables group
     api_response = api_instance.get_variables_group(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_variables_group: %s\n" % e)
 ```
 
@@ -1698,7 +1698,7 @@ try:
     # Get variables groups by their URIs
     api_response = api_instance.get_variables_group_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->get_variables_group_by_ur_is: %s\n" % e)
 ```
 
@@ -1755,7 +1755,7 @@ try:
     # Search characteristics by name
     api_response = api_instance.search_characteristics(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_characteristics: %s\n" % e)
 ```
 
@@ -1815,7 +1815,7 @@ try:
     # Search entities by name
     api_response = api_instance.search_entities(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_entities: %s\n" % e)
 ```
 
@@ -1875,7 +1875,7 @@ try:
     # Search entities of interest by name
     api_response = api_instance.search_interest_entity(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_interest_entity: %s\n" % e)
 ```
 
@@ -1935,7 +1935,7 @@ try:
     # Search methods by name
     api_response = api_instance.search_methods(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_methods: %s\n" % e)
 ```
 
@@ -1995,7 +1995,7 @@ try:
     # Search units by name
     api_response = api_instance.search_units(name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_units: %s\n" % e)
 ```
 
@@ -2069,7 +2069,7 @@ try:
     # Search variables
     api_response = api_instance.search_variables(name=name, entity=entity, entity_of_interest=entity_of_interest, characteristic=characteristic, method=method, unit=unit, group_of_variables=group_of_variables, not_included_in_group_of_variables=not_included_in_group_of_variables, data_type=data_type, time_interval=time_interval, species=species, with_associated_data=with_associated_data, experiments=experiments, scientific_objects=scientific_objects, devices=devices, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_variables: %s\n" % e)
 ```
 
@@ -2142,7 +2142,7 @@ try:
     # Search detailed variables by name, long name, entity, characteristic, method or unit name
     api_response = api_instance.search_variables_details(name=name, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_variables_details: %s\n" % e)
 ```
 
@@ -2202,7 +2202,7 @@ try:
     # Search variables groups
     api_response = api_instance.search_variables_groups(name=name, variable_uri=variable_uri, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->search_variables_groups: %s\n" % e)
 ```
 
@@ -2259,7 +2259,7 @@ try:
     # Update a characteristic
     api_response = api_instance.update_characteristic(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->update_characteristic: %s\n" % e)
 ```
 
@@ -2311,7 +2311,7 @@ try:
     # Update an entity
     api_response = api_instance.update_entity(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->update_entity: %s\n" % e)
 ```
 
@@ -2363,7 +2363,7 @@ try:
     # Update an entity of interest
     api_response = api_instance.update_interest_entity(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->update_interest_entity: %s\n" % e)
 ```
 
@@ -2415,7 +2415,7 @@ try:
     # Update a method
     api_response = api_instance.update_method(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->update_method: %s\n" % e)
 ```
 
@@ -2467,7 +2467,7 @@ try:
     # Update an unit
     api_response = api_instance.update_unit(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->update_unit: %s\n" % e)
 ```
 
@@ -2519,7 +2519,7 @@ try:
     # Update a variable
     api_response = api_instance.update_variable(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->update_variable: %s\n" % e)
 ```
 
@@ -2571,7 +2571,7 @@ try:
     # Update a variables group
     api_response = api_instance.update_variables_group(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling VariablesApi->update_variables_group: %s\n" % e)
 ```
 

@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**count_scientific_objects**](ScientificObjectsApi.md#count_scientific_objects) | **GET** /core/scientific_objects/count | Count scientific objects
 [**create_scientific_object**](ScientificObjectsApi.md#create_scientific_object) | **POST** /core/scientific_objects | Create a scientific object for the given experiment
 [**delete_scientific_object**](ScientificObjectsApi.md#delete_scientific_object) | **DELETE** /core/scientific_objects/{uri} | Delete a scientific object
 [**export_csv**](ScientificObjectsApi.md#export_csv) | **POST** /core/scientific_objects/export | Export a given list of scientific object URIs to csv data file
@@ -22,6 +23,58 @@ Method | HTTP request | Description
 [**update_scientific_object**](ScientificObjectsApi.md#update_scientific_object) | **PUT** /core/scientific_objects | Update a scientific object for the given experiment
 [**validate_csv3**](ScientificObjectsApi.md#validate_csv3) | **POST** /core/scientific_objects/import_validation | Validate a CSV file for the given experiment URI and scientific object type.
 
+
+# **count_scientific_objects**
+> int count_scientific_objects(authorization, experiment=experiment, accept_language=accept_language)
+
+Count scientific objects
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
+experiment = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Experiment URI (optional)
+
+
+try:
+    # Count scientific objects
+    api_response = api_instance.count_scientific_objects(experiment=experiment, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling ScientificObjectsApi->count_scientific_objects: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **experiment** | **str**| Experiment URI | [optional] 
+
+
+### Return type
+
+**int**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_scientific_object**
 > str create_scientific_object(body, authorization, accept_language=accept_language)
@@ -49,7 +102,7 @@ try:
     # Create a scientific object for the given experiment
     api_response = api_instance.create_scientific_object(body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->create_scientific_object: %s\n" % e)
 ```
 
@@ -102,7 +155,7 @@ try:
     # Delete a scientific object
     api_response = api_instance.delete_scientific_object(uri, experiment=experiment, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->delete_scientific_object: %s\n" % e)
 ```
 
@@ -154,7 +207,7 @@ body = opensilexClientToolsPython.ScientificObjectExportDTO() # ScientificObject
 try:
     # Export a given list of scientific object URIs to csv data file
     api_instance.export_csv(body=body, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->export_csv: %s\n" % e)
 ```
 
@@ -208,7 +261,7 @@ page_size = 10000 # int | Page size limited to 10,000 objects (optional)
 try:
     # Export a given list of scientific object URIs to shapefile
     api_instance.export_shp(body=body, experiment=experiment, selected_props=selected_props, page_size=page_size, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->export_shp: %s\n" % e)
 ```
 
@@ -263,7 +316,7 @@ try:
     # Get provenances of datafiles linked to this scientific object
     api_response = api_instance.get_scientific_object_data_files_provenances(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_object_data_files_provenances: %s\n" % e)
 ```
 
@@ -315,7 +368,7 @@ try:
     # Get provenances of data that have been measured on this scientific object
     api_response = api_instance.get_scientific_object_data_provenances(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_object_data_provenances: %s\n" % e)
 ```
 
@@ -368,7 +421,7 @@ try:
     # Get scientific object detail
     api_response = api_instance.get_scientific_object_detail(uri, experiment=experiment, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_object_detail: %s\n" % e)
 ```
 
@@ -421,7 +474,7 @@ try:
     # Get scientific object detail for each experiments, a null value for experiment in response means a properties defined outside of any experiment (shared object).
     api_response = api_instance.get_scientific_object_detail_by_experiments(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_object_detail_by_experiments: %s\n" % e)
 ```
 
@@ -473,7 +526,7 @@ try:
     # Get variables measured on this scientific object
     api_response = api_instance.get_scientific_object_variables(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_object_variables: %s\n" % e)
 ```
 
@@ -533,7 +586,7 @@ try:
     # Get list of scientific object children
     api_response = api_instance.get_scientific_objects_children(parent=parent, experiment=experiment, rdf_types=rdf_types, name=name, factor_levels=factor_levels, facility=facility, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_objects_children: %s\n" % e)
 ```
 
@@ -594,7 +647,7 @@ try:
     # Get scientific objet list of a given experiment URI
     api_response = api_instance.get_scientific_objects_list_by_uris(experiment=experiment, body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_scientific_objects_list_by_uris: %s\n" % e)
 ```
 
@@ -647,7 +700,7 @@ try:
     # get used scientific object types
     api_response = api_instance.get_used_types(experiment=experiment, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->get_used_types: %s\n" % e)
 ```
 
@@ -700,7 +753,7 @@ try:
     # Import a CSV file for the given experiment URI and scientific object type.
     api_response = api_instance.import_csv1(description, file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->import_csv1: %s\n" % e)
 ```
 
@@ -764,7 +817,7 @@ try:
     # Search list of scientific objects
     api_response = api_instance.search_scientific_objects(experiment=experiment, rdf_types=rdf_types, name=name, parent=parent, germplasm=germplasm, factor_levels=factor_levels, facility=facility, existence_date=existence_date, creation_date=creation_date, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->search_scientific_objects: %s\n" % e)
 ```
 
@@ -829,7 +882,7 @@ try:
     # Get scientific objet list with geometry of a given experiment URI
     api_response = api_instance.search_scientific_objects_with_geometry_list_by_uris(experiment, start_date=start_date, end_date=end_date, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->search_scientific_objects_with_geometry_list_by_uris: %s\n" % e)
 ```
 
@@ -883,7 +936,7 @@ try:
     # Update a scientific object for the given experiment
     api_response = api_instance.update_scientific_object(body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->update_scientific_object: %s\n" % e)
 ```
 
@@ -936,7 +989,7 @@ try:
     # Validate a CSV file for the given experiment URI and scientific object type.
     api_response = api_instance.validate_csv3(description, file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->validate_csv3: %s\n" % e)
 ```
 

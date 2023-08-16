@@ -29,6 +29,13 @@ class TestScientificObjectsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_count_scientific_objects(self):
+        """Test case for count_scientific_objects
+
+        Count scientific objects  # noqa: E501
+        """
+        pass
+
     def test_create_scientific_object(self):
         """Test case for create_scientific_object
 

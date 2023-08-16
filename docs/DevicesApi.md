@@ -59,7 +59,7 @@ try:
     # Count device data
     api_response = api_instance.count_device_data(uri, start_date=start_date, end_date=end_date, timezone=timezone, experiment=experiment, variable=variable, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, operators=operators, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->count_device_data: %s\n" % e)
 ```
 
@@ -122,7 +122,7 @@ try:
     # Create a device
     api_response = api_instance.create_device(body=body, check_only=check_only, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->create_device: %s\n" % e)
 ```
 
@@ -175,7 +175,7 @@ try:
     # Delete a device
     api_response = api_instance.delete_device(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->delete_device: %s\n" % e)
 ```
 
@@ -234,7 +234,7 @@ metadata = '\"{ \\\"Group\\\" : \\\"weather station\\\",\\n\\\"Group2\\\" : \\\"
 try:
     # export devices
     api_instance.export_devices(rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, year=year, existence_date=existence_date, brand=brand, model=model, serial_number=serial_number, metadata=metadata, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->export_devices: %s\n" % e)
 ```
 
@@ -293,7 +293,7 @@ body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of 
 try:
     # export devices
     api_instance.export_list(body=body, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->export_list: %s\n" % e)
 ```
 
@@ -345,7 +345,7 @@ try:
     # Get device detail
     api_response = api_instance.get_device(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->get_device: %s\n" % e)
 ```
 
@@ -397,7 +397,7 @@ try:
     # Get devices by uris
     api_response = api_instance.get_device_by_uris(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->get_device_by_uris: %s\n" % e)
 ```
 
@@ -449,7 +449,7 @@ try:
     # Get provenances of datafiles linked to this device
     api_response = api_instance.get_device_data_files_provenances(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->get_device_data_files_provenances: %s\n" % e)
 ```
 
@@ -501,7 +501,7 @@ try:
     # Get provenances of data that have been measured on this device
     api_response = api_instance.get_device_data_provenances(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->get_device_data_provenances: %s\n" % e)
 ```
 
@@ -553,7 +553,7 @@ try:
     # Get variables linked to the device
     api_response = api_instance.get_device_variables(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->get_device_variables: %s\n" % e)
 ```
 
@@ -605,7 +605,7 @@ try:
     # Get devices by facility
     api_response = api_instance.get_devices_by_facility(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->get_devices_by_facility: %s\n" % e)
 ```
 
@@ -658,7 +658,7 @@ try:
     # Import a CSV file with one device per line
     api_response = api_instance.import_csv(description, file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->import_csv: %s\n" % e)
 ```
 
@@ -724,7 +724,7 @@ try:
     # Search device data
     api_response = api_instance.search_device_data(uri, start_date=start_date, end_date=end_date, timezone=timezone, experiment=experiment, variable=variable, min_confidence=min_confidence, max_confidence=max_confidence, provenance=provenance, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->search_device_data: %s\n" % e)
 ```
 
@@ -800,7 +800,7 @@ try:
     # Search device datafiles descriptions
     api_response = api_instance.search_device_datafiles(uri, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiment=experiment, scientific_objects=scientific_objects, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->search_device_datafiles: %s\n" % e)
 ```
 
@@ -876,7 +876,7 @@ try:
     # Search devices
     api_response = api_instance.search_devices(rdf_type=rdf_type, include_subtypes=include_subtypes, name=name, variable=variable, year=year, existence_date=existence_date, facility=facility, brand=brand, model=model, serial_number=serial_number, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->search_devices: %s\n" % e)
 ```
 
@@ -941,7 +941,7 @@ try:
     # Update a device
     api_response = api_instance.update_device(body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->update_device: %s\n" % e)
 ```
 
@@ -994,7 +994,7 @@ try:
     # Validate the import of a CSV file with one device per line
     api_response = api_instance.validate_csv1(description, file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DevicesApi->validate_csv1: %s\n" % e)
 ```
 

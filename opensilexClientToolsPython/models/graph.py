@@ -34,50 +34,50 @@ class Graph(object):
     """
     swagger_types = {
         'empty': 'bool',
-        'closed': 'bool',
         'prefix_mapping': 'PrefixMapping',
-        'event_manager': 'GraphEventManager',
         'transaction_handler': 'TransactionHandler',
-        'capabilities': 'Capabilities'
+        'event_manager': 'GraphEventManager',
+        'capabilities': 'Capabilities',
+        'closed': 'bool'
     }
 
     attribute_map = {
         'empty': 'empty',
-        'closed': 'closed',
         'prefix_mapping': 'prefixMapping',
-        'event_manager': 'eventManager',
         'transaction_handler': 'transactionHandler',
-        'capabilities': 'capabilities'
+        'event_manager': 'eventManager',
+        'capabilities': 'capabilities',
+        'closed': 'closed'
     }
     def __init__(self,
         empty : 'bool' = None,
-        closed : 'bool' = None,
         prefix_mapping : 'PrefixMapping' = None,
-        event_manager : 'GraphEventManager' = None,
         transaction_handler : 'TransactionHandler' = None,
-        capabilities : 'Capabilities' = None):  # noqa: E501
+        event_manager : 'GraphEventManager' = None,
+        capabilities : 'Capabilities' = None,
+        closed : 'bool' = None):  # noqa: E501
         """Graph - a model defined in Swagger"""  # noqa: E501
 
         self._empty = None
-        self._closed = None
         self._prefix_mapping = None
-        self._event_manager = None
         self._transaction_handler = None
+        self._event_manager = None
         self._capabilities = None
+        self._closed = None
         self.discriminator = None
 
         if empty is not None:
             self.empty = empty
-        if closed is not None:
-            self.closed = closed
         if prefix_mapping is not None:
             self.prefix_mapping = prefix_mapping
-        if event_manager is not None:
-            self.event_manager = event_manager
         if transaction_handler is not None:
             self.transaction_handler = transaction_handler
+        if event_manager is not None:
+            self.event_manager = event_manager
         if capabilities is not None:
             self.capabilities = capabilities
+        if closed is not None:
+            self.closed = closed
 
     @property
     def empty(self):
@@ -101,27 +101,6 @@ class Graph(object):
         self._empty = empty
 
     @property
-    def closed(self):
-        """Gets the closed of this Graph.  # noqa: E501
-
-
-        :return: The closed of this Graph.  # noqa: E501
-        :rtype: bool
-        """
-        return self._closed
-
-    @closed.setter
-    def closed(self, closed):
-        """Sets the closed of this Graph.
-
-
-        :param closed: The closed of this Graph.  # noqa: E501
-        :type: bool
-        """
-
-        self._closed = closed
-
-    @property
     def prefix_mapping(self):
         """Gets the prefix_mapping of this Graph.  # noqa: E501
 
@@ -141,27 +120,6 @@ class Graph(object):
         """
 
         self._prefix_mapping = prefix_mapping
-
-    @property
-    def event_manager(self):
-        """Gets the event_manager of this Graph.  # noqa: E501
-
-
-        :return: The event_manager of this Graph.  # noqa: E501
-        :rtype: GraphEventManager
-        """
-        return self._event_manager
-
-    @event_manager.setter
-    def event_manager(self, event_manager):
-        """Sets the event_manager of this Graph.
-
-
-        :param event_manager: The event_manager of this Graph.  # noqa: E501
-        :type: GraphEventManager
-        """
-
-        self._event_manager = event_manager
 
     @property
     def transaction_handler(self):
@@ -185,6 +143,27 @@ class Graph(object):
         self._transaction_handler = transaction_handler
 
     @property
+    def event_manager(self):
+        """Gets the event_manager of this Graph.  # noqa: E501
+
+
+        :return: The event_manager of this Graph.  # noqa: E501
+        :rtype: GraphEventManager
+        """
+        return self._event_manager
+
+    @event_manager.setter
+    def event_manager(self, event_manager):
+        """Sets the event_manager of this Graph.
+
+
+        :param event_manager: The event_manager of this Graph.  # noqa: E501
+        :type: GraphEventManager
+        """
+
+        self._event_manager = event_manager
+
+    @property
     def capabilities(self):
         """Gets the capabilities of this Graph.  # noqa: E501
 
@@ -204,6 +183,27 @@ class Graph(object):
         """
 
         self._capabilities = capabilities
+
+    @property
+    def closed(self):
+        """Gets the closed of this Graph.  # noqa: E501
+
+
+        :return: The closed of this Graph.  # noqa: E501
+        :rtype: bool
+        """
+        return self._closed
+
+    @closed.setter
+    def closed(self, closed):
+        """Sets the closed of this Graph.
+
+
+        :param closed: The closed of this Graph.  # noqa: E501
+        :type: bool
+        """
+
+        self._closed = closed
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -253,8 +253,8 @@ class Graph(object):
 
 
 from opensilexClientToolsPython.models.prefix_mapping import PrefixMapping
-from opensilexClientToolsPython.models.graph_event_manager import GraphEventManager
 from opensilexClientToolsPython.models.transaction_handler import TransactionHandler
+from opensilexClientToolsPython.models.graph_event_manager import GraphEventManager
 from opensilexClientToolsPython.models.capabilities import Capabilities
 
 

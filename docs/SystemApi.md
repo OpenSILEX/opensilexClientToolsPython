@@ -32,7 +32,7 @@ try:
     # get system information
     api_response = api_instance.get_version_info()
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling SystemApi->get_version_info: %s\n" % e)
 ```
 

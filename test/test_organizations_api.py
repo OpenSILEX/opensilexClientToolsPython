@@ -36,8 +36,8 @@ class TestOrganizationsApi(unittest.TestCase):
         """
         pass
 
-    def test_create_infrastructure(self):
-        """Test case for create_infrastructure
+    def test_create_organization(self):
+        """Test case for create_organization
 
         Create an organisation  # noqa: E501
         """
@@ -57,8 +57,8 @@ class TestOrganizationsApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_infrastructure(self):
-        """Test case for delete_infrastructure
+    def test_delete_organization(self):
+        """Test case for delete_organization
 
         Delete an organisation  # noqa: E501
         """
@@ -92,8 +92,8 @@ class TestOrganizationsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_infrastructure(self):
-        """Test case for get_infrastructure
+    def test_get_organization(self):
+        """Test case for get_organization
 
         Get an organisation   # noqa: E501
         """
@@ -120,8 +120,8 @@ class TestOrganizationsApi(unittest.TestCase):
         """
         pass
 
-    def test_search_infrastructures(self):
-        """Test case for search_infrastructures
+    def test_search_organizations(self):
+        """Test case for search_organizations
 
         Search organisations  # noqa: E501
         """
@@ -141,8 +141,8 @@ class TestOrganizationsApi(unittest.TestCase):
         """
         pass
 
-    def test_update_infrastructure(self):
-        """Test case for update_infrastructure
+    def test_update_organization(self):
+        """Test case for update_organization
 
         Update an organisation  # noqa: E501
         """

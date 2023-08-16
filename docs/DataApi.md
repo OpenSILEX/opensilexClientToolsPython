@@ -65,7 +65,7 @@ try:
     # Add data
     api_response = api_instance.add_list_data(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->add_list_data: %s\n" % e)
 ```
 
@@ -128,7 +128,7 @@ try:
     # Count data
     api_response = api_instance.count_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->count_data: %s\n" % e)
 ```
 
@@ -192,7 +192,7 @@ try:
     # Count datafiles
     api_response = api_instance.count_datafiles(target=target, device=device, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->count_datafiles: %s\n" % e)
 ```
 
@@ -245,7 +245,7 @@ try:
     # Add a provenance
     api_response = api_instance.create_provenance(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->create_provenance: %s\n" % e)
 ```
 
@@ -297,7 +297,7 @@ try:
     # Delete data
     api_response = api_instance.delete_data(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->delete_data: %s\n" % e)
 ```
 
@@ -352,7 +352,7 @@ try:
     # Delete data on criteria
     api_response = api_instance.delete_data_on_search(experiment=experiment, target=target, variable=variable, provenance=provenance, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->delete_data_on_search: %s\n" % e)
 ```
 
@@ -407,7 +407,7 @@ try:
     # Delete a provenance that doesn't describe data
     api_response = api_instance.delete_provenance(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->delete_provenance: %s\n" % e)
 ```
 
@@ -474,7 +474,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 try:
     # Export data
     api_instance.export_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->export_data: %s\n" % e)
 ```
 
@@ -541,7 +541,7 @@ body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export c
 try:
     # Export data
     api_instance.export_data1(body=body, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->export_data1: %s\n" % e)
 ```
 
@@ -593,7 +593,7 @@ try:
     # Get data
     api_response = api_instance.get_data(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data: %s\n" % e)
 ```
 
@@ -644,7 +644,7 @@ uri = 'uri_example' # str | Search by fileUri
 try:
     # Get a data file
     api_instance.get_data_file(uri, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_file: %s\n" % e)
 ```
 
@@ -696,7 +696,7 @@ try:
     # Get a data file description
     api_response = api_instance.get_data_file_description(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_file_description: %s\n" % e)
 ```
 
@@ -759,7 +759,7 @@ try:
     # Search data files
     api_response = api_instance.get_data_file_descriptions_by_search(rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_file_descriptions_by_search: %s\n" % e)
 ```
 
@@ -833,7 +833,7 @@ try:
     # Search data files for a large list of targets 
     api_response = api_instance.get_data_file_descriptions_by_targets(rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, targets=targets, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_file_descriptions_by_targets: %s\n" % e)
 ```
 
@@ -911,7 +911,7 @@ try:
     # Search data for a large list of targets
     api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, order_by=order_by, page=page, page_size=page_size, targets=targets, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_list_by_targets: %s\n" % e)
 ```
 
@@ -982,7 +982,7 @@ try:
     # Get all data series associated with a facility
     api_response = api_instance.get_data_series_by_facility(variable, target, start_date=start_date, end_date=end_date, calculated_only=calculated_only, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_series_by_facility: %s\n" % e)
 ```
 
@@ -1040,7 +1040,7 @@ try:
     # Search provenances linked to datafiles
     api_response = api_instance.get_datafiles_provenances(experiments=experiments, targets=targets, devices=devices, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_datafiles_provenances: %s\n" % e)
 ```
 
@@ -1096,7 +1096,7 @@ try:
     # Search provenances linked to datafiles for a large list of targets
     api_response = api_instance.get_datafiles_provenances_by_targets(experiments=experiments, devices=devices, body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_datafiles_provenances_by_targets: %s\n" % e)
 ```
 
@@ -1151,7 +1151,7 @@ scaled_height = 360 # int | Thumbnail height (optional) (default to 360)
 try:
     # Get a picture thumbnail
     api_instance.get_pictures_thumbnails(uri, scaled_width=scaled_width, scaled_height=scaled_height, )
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_pictures_thumbnails: %s\n" % e)
 ```
 
@@ -1205,7 +1205,7 @@ try:
     # Get a provenance
     api_response = api_instance.get_provenance(uri, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_provenance: %s\n" % e)
 ```
 
@@ -1257,7 +1257,7 @@ try:
     # Get a list of provenances by their URIs
     api_response = api_instance.get_provenances_by_ur_is(uris, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_provenances_by_ur_is: %s\n" % e)
 ```
 
@@ -1312,7 +1312,7 @@ try:
     # Search provenances linked to data
     api_response = api_instance.get_used_provenances(experiments=experiments, targets=targets, variables=variables, devices=devices, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_used_provenances: %s\n" % e)
 ```
 
@@ -1370,7 +1370,7 @@ try:
     # Search provenances linked to data for a large list of targets
     api_response = api_instance.get_used_provenances_by_targets(experiments=experiments, variables=variables, devices=devices, body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_used_provenances_by_targets: %s\n" % e)
 ```
 
@@ -1428,7 +1428,7 @@ try:
     # Get variables linked to data
     api_response = api_instance.get_used_variables(experiments=experiments, targets=targets, provenances=provenances, devices=devices, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_used_variables: %s\n" % e)
 ```
 
@@ -1485,7 +1485,7 @@ try:
     # Import a CSV file for the given provenanceURI
     api_response = api_instance.import_csv_data(provenance, file, experiment=experiment, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->import_csv_data: %s\n" % e)
 ```
 
@@ -1540,7 +1540,7 @@ try:
     # Add a data file
     api_response = api_instance.post_data_file(description, file, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->post_data_file: %s\n" % e)
 ```
 
@@ -1593,7 +1593,7 @@ try:
     # Describe datafiles and give their relative paths in the configured storage system. In the case of already stored datafiles.
     api_response = api_instance.post_data_file_paths(body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->post_data_file_paths: %s\n" % e)
 ```
 
@@ -1659,7 +1659,7 @@ try:
     # Search data
     api_response = api_instance.search_data_list(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->search_data_list: %s\n" % e)
 ```
 
@@ -1733,7 +1733,7 @@ try:
     # Get provenances
     api_response = api_instance.search_provenance(name=name, description=description, activity=activity, activity_type=activity_type, agent=agent, agent_type=agent_type, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->search_provenance: %s\n" % e)
 ```
 
@@ -1793,7 +1793,7 @@ try:
     # Update data
     api_response = api_instance.update(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->update: %s\n" % e)
 ```
 
@@ -1846,7 +1846,7 @@ try:
     # Update confidence index
     api_response = api_instance.update_confidence(uri, body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->update_confidence: %s\n" % e)
 ```
 
@@ -1899,7 +1899,7 @@ try:
     # Update a provenance
     api_response = api_instance.update_provenance(body=body, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->update_provenance: %s\n" % e)
 ```
 
@@ -1953,7 +1953,7 @@ try:
     # Import a CSV file for the given provenanceURI.
     api_response = api_instance.validate_csv(provenance, file, experiment=experiment, )
     pprint(api_response)
-except ApiException as e:
+except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->validate_csv: %s\n" % e)
 ```
 

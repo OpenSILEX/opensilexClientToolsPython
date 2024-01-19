@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** | Event URI | [optional] 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 **rdf_type** | **str** | Event type URI | [optional] 
 **rdf_type_name** | **str** | Event type name | [optional] 
 **start** | **str** | Beginning of the event | [optional] 
@@ -11,7 +12,8 @@ Name | Type | Description | Notes
 **is_instant** | **bool** | Indicate if the event is instant | [optional] 
 **description** | **str** | Description of the event | [optional] 
 **targets** | **list[str]** | URI(s) of items concerned by this event | [optional] 
-**author** | **str** | Event creator URI | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

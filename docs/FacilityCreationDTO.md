@@ -11,6 +11,9 @@ Name | Type | Description | Notes
 **address** | [**FacilityAddressDTO**](FacilityAddressDTO.md) |  | [optional] 
 **variable_groups** | **list[str]** |  | [optional] 
 **geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
 

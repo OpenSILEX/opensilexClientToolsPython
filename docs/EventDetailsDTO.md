@@ -11,8 +11,10 @@ Name | Type | Description | Notes
 **is_instant** | **bool** | Indicate if the event is instant | [optional] 
 **description** | **str** | Description of the event | [optional] 
 **targets** | **list[str]** | URI(s) of items concerned by this event | [optional] 
-**author** | **str** | Event creator URI | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

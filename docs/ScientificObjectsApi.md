@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**create_scientific_object**](ScientificObjectsApi.md#create_scientific_object) | **POST** /core/scientific_objects | Create a scientific object for the given experiment
 [**delete_scientific_object**](ScientificObjectsApi.md#delete_scientific_object) | **DELETE** /core/scientific_objects/{uri} | Delete a scientific object
 [**export_csv**](ScientificObjectsApi.md#export_csv) | **POST** /core/scientific_objects/export | Export a given list of scientific object URIs to csv data file
-[**export_shp**](ScientificObjectsApi.md#export_shp) | **POST** /core/scientific_objects/export_shp | Export a given list of scientific object URIs to shapefile
+[**export_geospatial2**](ScientificObjectsApi.md#export_geospatial2) | **POST** /core/scientific_objects/export_geospatial | Export a given list of scientific object URIs to shapefile or geojson
 [**get_scientific_object_data_files_provenances**](ScientificObjectsApi.md#get_scientific_object_data_files_provenances) | **GET** /core/scientific_objects/{uri}/datafiles/provenances | Get provenances of datafiles linked to this scientific object
 [**get_scientific_object_data_provenances**](ScientificObjectsApi.md#get_scientific_object_data_provenances) | **GET** /core/scientific_objects/{uri}/data/provenances | Get provenances of data that have been measured on this scientific object
 [**get_scientific_object_detail**](ScientificObjectsApi.md#get_scientific_object_detail) | **GET** /core/scientific_objects/{uri} | Get scientific object detail
@@ -233,10 +233,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **export_shp**
-> export_shp(authorization, body=body, experiment=experiment, selected_props=selected_props, page_size=page_size, accept_language=accept_language)
+# **export_geospatial2**
+> export_geospatial2(authorization, body=body, experiment=experiment, selected_props=selected_props, format=format, page_size=page_size, accept_language=accept_language)
 
-Export a given list of scientific object URIs to shapefile
+Export a given list of scientific object URIs to shapefile or geojson
 
 
 
@@ -255,14 +255,15 @@ api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 body = [opensilexClientToolsPython.GeometryDTO()] # list[GeometryDTO] | Scientific objects (optional)
 experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
 selected_props = ['\"test\"'] # list[str] | properties selected (optional)
+format = '\"shp\"' # str | export format (shp/geojson) (optional)
 page_size = 10000 # int | Page size limited to 10,000 objects (optional)
 
 
 try:
-    # Export a given list of scientific object URIs to shapefile
-    api_instance.export_shp(body=body, experiment=experiment, selected_props=selected_props, page_size=page_size, )
+    # Export a given list of scientific object URIs to shapefile or geojson
+    api_instance.export_geospatial2(body=body, experiment=experiment, selected_props=selected_props, format=format, page_size=page_size, )
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling ScientificObjectsApi->export_shp: %s\n" % e)
+    print("Exception when calling ScientificObjectsApi->export_geospatial2: %s\n" % e)
 ```
 
 ### Parameters
@@ -272,6 +273,7 @@ Name | Type | Description  | Notes
  **body** | [**list[GeometryDTO]**](GeometryDTO.md)| Scientific objects | [optional] 
  **experiment** | **str**| Experiment URI | [optional] 
  **selected_props** | [**list[str]**](str.md)| properties selected | [optional] 
+ **format** | **str**| export format (shp/geojson) | [optional] 
  **page_size** | **int**| Page size limited to 10,000 objects | [optional] 
 
 
@@ -781,7 +783,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_scientific_objects**
-> list[ScientificObjectNodeDTO] search_scientific_objects(authorization, experiment=experiment, rdf_types=rdf_types, name=name, parent=parent, germplasm=germplasm, factor_levels=factor_levels, facility=facility, existence_date=existence_date, creation_date=creation_date, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[ScientificObjectNodeDTO] search_scientific_objects(authorization, experiment=experiment, rdf_types=rdf_types, name=name, parent=parent, germplasms=germplasms, factor_levels=factor_levels, facility=facility, variables=variables, devices=devices, existence_date=existence_date, creation_date=creation_date, criteria_on_data=criteria_on_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search list of scientific objects
 
@@ -803,11 +805,14 @@ experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (o
 rdf_types = ['\"vocabulary:Plant\"'] # list[str] | RDF type filter (optional)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 parent = '\"http://opensilex.org/id/Plot 12\"' # str | Parent URI (optional)
-germplasm = '\"http://aims.fao.org/aos/agrovoc/c_1066\"' # str | Germplasm URI (optional)
+germplasms = ['\"http://aims.fao.org/aos/agrovoc/c_1066\"'] # list[str] | Germplasm URIs (optional)
 factor_levels = ['\"vocabulary:IrrigationStress\"'] # list[str] | Factor levels URI (optional)
 facility = '\"diaphen:serre-2\"' # str | Facility (optional)
+variables = ['variables_example'] # list[str] | Variables URI (optional)
+devices = ['devices_example'] # list[str] | Devices URI (optional)
 existence_date = '2013-10-20' # str | Date to filter object existence (optional)
 creation_date = '2013-10-20' # str | Date to filter object creation (optional)
+criteria_on_data = 'criteria_on_data_example' # str | A CriteriaDTO to be applied to data, retain objects that are targets in returned data (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -815,7 +820,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search list of scientific objects
-    api_response = api_instance.search_scientific_objects(experiment=experiment, rdf_types=rdf_types, name=name, parent=parent, germplasm=germplasm, factor_levels=factor_levels, facility=facility, existence_date=existence_date, creation_date=creation_date, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_scientific_objects(experiment=experiment, rdf_types=rdf_types, name=name, parent=parent, germplasms=germplasms, factor_levels=factor_levels, facility=facility, variables=variables, devices=devices, existence_date=existence_date, creation_date=creation_date, criteria_on_data=criteria_on_data, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ScientificObjectsApi->search_scientific_objects: %s\n" % e)
@@ -829,11 +834,14 @@ Name | Type | Description  | Notes
  **rdf_types** | [**list[str]**](str.md)| RDF type filter | [optional] 
  **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **parent** | **str**| Parent URI | [optional] 
- **germplasm** | **str**| Germplasm URI | [optional] 
+ **germplasms** | [**list[str]**](str.md)| Germplasm URIs | [optional] 
  **factor_levels** | [**list[str]**](str.md)| Factor levels URI | [optional] 
  **facility** | **str**| Facility | [optional] 
+ **variables** | [**list[str]**](str.md)| Variables URI | [optional] 
+ **devices** | [**list[str]**](str.md)| Devices URI | [optional] 
  **existence_date** | **str**| Date to filter object existence | [optional] 
  **creation_date** | **str**| Date to filter object creation | [optional] 
+ **criteria_on_data** | **str**| A CriteriaDTO to be applied to data, retain objects that are targets in returned data | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]

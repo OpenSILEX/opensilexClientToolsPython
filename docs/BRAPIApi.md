@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_calls**](BRAPIApi.md#get_calls) | **GET** /brapi/v1/calls | Check the available BrAPI calls
-[**get_germplasm_by_search**](BRAPIApi.md#get_germplasm_by_search) | **GET** /brapi/v1/germplasm | Submit a search request for germplasm
+[**get_germplasm_by_search**](BRAPIApi.md#get_germplasm_by_search) | **GET** /brapi/v1/germplasm | Submit a search request for germplasm (type accession in OpenSILEX
 [**get_observation_units**](BRAPIApi.md#get_observation_units) | **GET** /brapi/v1/studies/{studyDbId}/observationunits | List all the observation units measured in the study.
 [**get_observation_variables**](BRAPIApi.md#get_observation_variables) | **GET** /brapi/v1/studies/{studyDbId}/observationvariables | List all the observation variables measured in the study.
 [**get_observations**](BRAPIApi.md#get_observations) | **GET** /brapi/v1/studies/{studyDbId}/observations | Get the observations associated to a specific study
@@ -13,11 +13,11 @@ Method | HTTP request | Description
 [**get_studies_search**](BRAPIApi.md#get_studies_search) | **GET** /brapi/v1/studies-search | Retrieve studies information
 [**get_study_details**](BRAPIApi.md#get_study_details) | **GET** /brapi/v1/studies/{studyDbId} | Retrieve study details
 [**get_variable_details**](BRAPIApi.md#get_variable_details) | **GET** /brapi/v1/variables/{observationVariableDbId} | Retrieve variable details by id
-[**get_variables_list**](BRAPIApi.md#get_variables_list) | **GET** /brapi/v1/variables | Call to retrieve a list of observationVariables available in the system
+[**get_variables_list**](BRAPIApi.md#get_variables_list) | **GET** /brapi/v1/variables | BrAPIv1CallDTO to retrieve a list of observationVariables available in the system
 
 
 # **get_calls**
-> list[Call] get_calls(page=page, page_size=page_size, data_type=data_type)
+> BrAPIv1CallListResponse get_calls(page=page, page_size=page_size, data_type=data_type)
 
 Check the available BrAPI calls
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[Call]**](Call.md)
+[**BrAPIv1CallListResponse**](BrAPIv1CallListResponse.md)
 
 ### Authorization
 
@@ -73,9 +73,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_germplasm_by_search**
-> GermplasmDTO get_germplasm_by_search(authorization, germplasm_db_id=germplasm_db_id, germplasm_pui=germplasm_pui, germplasm_name=germplasm_name, common_crop_name=common_crop_name, page=page, page_size=page_size, accept_language=accept_language)
+> BrAPIv1GermplasmListResponse get_germplasm_by_search(authorization, germplasm_db_id=germplasm_db_id, germplasm_pui=germplasm_pui, germplasm_name=germplasm_name, common_crop_name=common_crop_name, page=page, page_size=page_size, accept_language=accept_language)
 
-Submit a search request for germplasm
+Submit a search request for germplasm (type accession in OpenSILEX
 
 
 
@@ -91,16 +91,16 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
-germplasm_db_id = 'germplasm_db_id_example' # str | Search by germplasmDbId (optional)
-germplasm_pui = 'germplasm_pui_example' # str | Search by germplasmPUI (optional)
-germplasm_name = 'germplasm_name_example' # str | Search by germplasmName (optional)
-common_crop_name = 'common_crop_name_example' # str | Search by commonCropName (optional)
+germplasm_db_id = 'germplasm_db_id_example' # str | Search by germplasmDbId (URI of an OpenSilex accession) (optional)
+germplasm_pui = 'germplasm_pui_example' # str | Search by germplasmPUI (URI of an OpenSilex accession) (optional)
+germplasm_name = 'germplasm_name_example' # str | Search by germplasmName (name of an OpenSilex accession) (optional)
+common_crop_name = 'common_crop_name_example' # str | Search by commonCropName (name of the species of an OpenSilex accession) (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
 
 try:
-    # Submit a search request for germplasm
+    # Submit a search request for germplasm (type accession in OpenSILEX
     api_response = api_instance.get_germplasm_by_search(germplasm_db_id=germplasm_db_id, germplasm_pui=germplasm_pui, germplasm_name=germplasm_name, common_crop_name=common_crop_name, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
@@ -111,17 +111,17 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **germplasm_db_id** | **str**| Search by germplasmDbId | [optional] 
- **germplasm_pui** | **str**| Search by germplasmPUI | [optional] 
- **germplasm_name** | **str**| Search by germplasmName | [optional] 
- **common_crop_name** | **str**| Search by commonCropName | [optional] 
+ **germplasm_db_id** | **str**| Search by germplasmDbId (URI of an OpenSilex accession) | [optional] 
+ **germplasm_pui** | **str**| Search by germplasmPUI (URI of an OpenSilex accession) | [optional] 
+ **germplasm_name** | **str**| Search by germplasmName (name of an OpenSilex accession) | [optional] 
+ **common_crop_name** | **str**| Search by commonCropName (name of the species of an OpenSilex accession) | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
 
 
 ### Return type
 
-[**GermplasmDTO**](GermplasmDTO.md)
+[**BrAPIv1GermplasmListResponse**](BrAPIv1GermplasmListResponse.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_observation_units**
-> list[ObservationUnitDTO] get_observation_units(study_db_id, authorization, observation_level=observation_level, page_size=page_size, page=page, accept_language=accept_language)
+> BrAPIv1ObservationUnitListResponse get_observation_units(study_db_id, authorization, observation_level=observation_level, page_size=page_size, page=page, accept_language=accept_language)
 
 List all the observation units measured in the study.
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ObservationUnitDTO]**](ObservationUnitDTO.md)
+[**BrAPIv1ObservationUnitListResponse**](BrAPIv1ObservationUnitListResponse.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_observation_variables**
-> list[ObservationVariableDTO] get_observation_variables(study_db_id, authorization, page_size=page_size, page=page, accept_language=accept_language)
+> BrAPIv1ObservationVariableListResponse get_observation_variables(study_db_id, authorization, page_size=page_size, page=page, accept_language=accept_language)
 
 List all the observation variables measured in the study.
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ObservationVariableDTO]**](ObservationVariableDTO.md)
+[**BrAPIv1ObservationVariableListResponse**](BrAPIv1ObservationVariableListResponse.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_observations**
-> list[ObservationDTO] get_observations(study_db_id, authorization, observation_variable_db_ids=observation_variable_db_ids, page_size=page_size, page=page, accept_language=accept_language)
+> BrAPIv1ObservationListResponse get_observations(study_db_id, authorization, observation_variable_db_ids=observation_variable_db_ids, page_size=page_size, page=page, accept_language=accept_language)
 
 Get the observations associated to a specific study
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ObservationDTO]**](ObservationDTO.md)
+[**BrAPIv1ObservationListResponse**](BrAPIv1ObservationListResponse.md)
 
 ### Authorization
 
@@ -307,7 +307,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_studies**
-> list[StudyDTO] get_studies(authorization, study_db_id=study_db_id, active=active, sort_by=sort_by, sort_order=sort_order, page=page, page_size=page_size, accept_language=accept_language)
+> BrAPIv1StudyListResponse get_studies(authorization, study_db_id=study_db_id, active=active, sort_by=sort_by, sort_order=sort_order, page=page, page_size=page_size, accept_language=accept_language)
 
 Retrieve studies information
 
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[StudyDTO]**](StudyDTO.md)
+[**BrAPIv1StudyListResponse**](BrAPIv1StudyListResponse.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_studies_search**
-> list[StudyDTO] get_studies_search(authorization, study_db_id=study_db_id, active=active, sort_by=sort_by, sort_order=sort_order, page_size=page_size, page=page, accept_language=accept_language)
+> BrAPIv1StudyListResponse get_studies_search(authorization, study_db_id=study_db_id, active=active, sort_by=sort_by, sort_order=sort_order, page_size=page_size, page=page, accept_language=accept_language)
 
 Retrieve studies information
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[StudyDTO]**](StudyDTO.md)
+[**BrAPIv1StudyListResponse**](BrAPIv1StudyListResponse.md)
 
 ### Authorization
 
@@ -431,7 +431,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_study_details**
-> list[StudyDetailsDTO] get_study_details(study_db_id, authorization, accept_language=accept_language)
+> BrAPIv1SingleStudyResponse get_study_details(study_db_id, authorization, accept_language=accept_language)
 
 Retrieve study details
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[StudyDetailsDTO]**](StudyDetailsDTO.md)
+[**BrAPIv1SingleStudyResponse**](BrAPIv1SingleStudyResponse.md)
 
 ### Authorization
 
@@ -483,7 +483,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_variable_details**
-> list[ObservationVariableDTO] get_variable_details(observation_variable_db_id, authorization, accept_language=accept_language)
+> BrAPIv1SingleObservationVariableResponse get_variable_details(observation_variable_db_id, authorization, accept_language=accept_language)
 
 Retrieve variable details by id
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ObservationVariableDTO]**](ObservationVariableDTO.md)
+[**BrAPIv1SingleObservationVariableResponse**](BrAPIv1SingleObservationVariableResponse.md)
 
 ### Authorization
 
@@ -535,9 +535,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_variables_list**
-> list[ObservationVariableDTO] get_variables_list(authorization, observation_variable_db_id=observation_variable_db_id, page_size=page_size, page=page, accept_language=accept_language)
+> BrAPIv1ObservationVariableListResponse get_variables_list(authorization, observation_variable_db_id=observation_variable_db_id, page_size=page_size, page=page, accept_language=accept_language)
 
-Call to retrieve a list of observationVariables available in the system
+BrAPIv1CallDTO to retrieve a list of observationVariables available in the system
 
 retrieve variables information
 
@@ -559,7 +559,7 @@ page = 0 # int | page (optional) (default to 0)
 
 
 try:
-    # Call to retrieve a list of observationVariables available in the system
+    # BrAPIv1CallDTO to retrieve a list of observationVariables available in the system
     api_response = api_instance.get_variables_list(observation_variable_db_id=observation_variable_db_id, page_size=page_size, page=page, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ObservationVariableDTO]**](ObservationVariableDTO.md)
+[**BrAPIv1ObservationVariableListResponse**](BrAPIv1ObservationVariableListResponse.md)
 
 ### Authorization
 

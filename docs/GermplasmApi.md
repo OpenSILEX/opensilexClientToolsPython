@@ -771,7 +771,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_germplasm**
-> list[GermplasmGetAllDTO] search_germplasm(authorization, uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[GermplasmGetAllDTO] search_germplasm(authorization, uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, parent_germplasms=parent_germplasms, parent_germplasms_m=parent_germplasms_m, parent_germplasms_f=parent_germplasms_f, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search germplasm
 
@@ -795,11 +795,14 @@ name = '.*' # str | Regex pattern for filtering list by name and synonyms (optio
 code = '.*' # str | Regex pattern for filtering list by code (optional) (default to .*)
 production_year = 2020 # int | Search by production year (optional)
 species = '\"http://www.phenome-fppn.fr/id/species/zeamays\"' # str | Search by species (optional)
-variety = 'variety_example' # str | Search by variety (optional)
-accession = 'accession_example' # str | Search by accession (optional)
+variety = '\"http://opensilex.test/id/germplasm/variety.huachano\"' # str | Search by variety (optional)
+accession = '\"http://opensilex.test/id/germplasm/accession.v_a_x_v_b\"' # str | Search by accession (optional)
 group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
 institute = '\"INRA\"' # str | Search by institute (optional)
 experiment = 'experiment_example' # str | Search by experiment (optional)
+parent_germplasms = ['parent_germplasms_example'] # list[str] | Search by parent varieties A or B (optional)
+parent_germplasms_m = ['parent_germplasms_m_example'] # list[str] | Search by parent varieties A (optional)
+parent_germplasms_f = ['parent_germplasms_f_example'] # list[str] | Search by parent varieties B (optional)
 metadata = '\"{ \\\"water_stress\\\" : \\\"resistant\\\",\\n\\\"yield\\\" : \\\"moderate\\\"}\"' # str | Search by metadata (optional)
 order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
@@ -808,7 +811,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search germplasm
-    api_response = api_instance.search_germplasm(uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_germplasm(uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, parent_germplasms=parent_germplasms, parent_germplasms_m=parent_germplasms_m, parent_germplasms_f=parent_germplasms_f, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->search_germplasm: %s\n" % e)
@@ -829,6 +832,9 @@ Name | Type | Description  | Notes
  **group_of_germplasm** | **str**| Group filter | [optional] 
  **institute** | **str**| Search by institute | [optional] 
  **experiment** | **str**| Search by experiment | [optional] 
+ **parent_germplasms** | [**list[str]**](str.md)| Search by parent varieties A or B | [optional] 
+ **parent_germplasms_m** | [**list[str]**](str.md)| Search by parent varieties A | [optional] 
+ **parent_germplasms_f** | [**list[str]**](str.md)| Search by parent varieties B | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]

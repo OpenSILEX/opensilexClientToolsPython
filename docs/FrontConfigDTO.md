@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 **application_name** | **str** | Name of the application to display | [optional] 
 **connect_as_guest** | **bool** | Ability to be logged as guest | [optional] 
 **dashboard** | [**DashboardConfigDTO**](DashboardConfigDTO.md) |  | [optional] 
+**gdpr_file_is_configured** | **bool** | GDPR PDF is configured | [optional] 
+**matomo** | [**MatomoConfigDTO**](MatomoConfigDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,6 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
 **variables** | [**list[NamedResourceDTOVariableModel]**](NamedResourceDTOVariableModel.md) |  | [optional] 

@@ -4,6 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 **identifier** | **str** |  | [optional] 
 **rdf_type** | **str** |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 

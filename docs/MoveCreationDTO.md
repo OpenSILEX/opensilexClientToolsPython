@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **_from** | **str** |  | [optional] 
 **to** | **str** |  | [optional] 
 **targets_positions** | [**list[TargetPositionCreationDTO]**](TargetPositionCreationDTO.md) |  | [optional] 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

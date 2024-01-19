@@ -10,6 +10,9 @@ Name | Type | Description | Notes
 **rdf_type** | **str** | The type of property | 
 **name_translations** | **dict(str, str)** | Name by languages, at least one name/language is required. Use &#39;&#39; as language if no language is specified | 
 **comment_translations** | **dict(str, str)** | Description by languages, at least one description/language is required. Use &#39;&#39; as language if no language is specified | 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**create_person**](SecurityApi.md#create_person) | **POST** /security/persons | Add a person
 [**create_profile**](SecurityApi.md#create_profile) | **POST** /security/profiles | Add a profile
 [**create_user**](SecurityApi.md#create_user) | **POST** /security/users | Add a user
+[**delete_account**](SecurityApi.md#delete_account) | **DELETE** /security/accounts/{accountURI} | Delete an account
 [**delete_favorite**](SecurityApi.md#delete_favorite) | **DELETE** /security/accounts/favorites/{uriFavorite} | Delete a favorite
 [**delete_favorite1**](SecurityApi.md#delete_favorite1) | **DELETE** /security/users/favorites/{uriFavorite} | Delete a favorite
 [**delete_group**](SecurityApi.md#delete_group) | **DELETE** /security/groups/{uri} | Delete a group
@@ -20,8 +21,10 @@ Method | HTTP request | Description
 [**get_all_profiles**](SecurityApi.md#get_all_profiles) | **GET** /security/profiles/all | Get all profiles
 [**get_favorites**](SecurityApi.md#get_favorites) | **GET** /security/accounts/favorites | Get list of favorites for a user
 [**get_favorites1**](SecurityApi.md#get_favorites1) | **GET** /security/users/favorites | Get list of favorites for a user
+[**get_gdpr_file**](SecurityApi.md#get_gdpr_file) | **GET** /security/persons/GDPR | Get RGPD PDF
 [**get_group**](SecurityApi.md#get_group) | **GET** /security/groups/{uri} | Get a group
 [**get_groups_by_uri**](SecurityApi.md#get_groups_by_uri) | **GET** /security/groups/by_uris | Get groups by their URIs
+[**get_orcid_record**](SecurityApi.md#get_orcid_record) | **GET** /security/persons/orcid_record | Get infos from an ORCID
 [**get_person**](SecurityApi.md#get_person) | **GET** /security/persons/{uri} | Get a Person
 [**get_persons_by_uri**](SecurityApi.md#get_persons_by_uri) | **GET** /security/persons/by_uris | Get persons by their URIs
 [**get_profile**](SecurityApi.md#get_profile) | **GET** /security/profiles/{uri} | Get a profile
@@ -386,6 +389,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_account**
+> str delete_account(account_uri, authorization, accept_language=accept_language)
+
+Delete an account
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+account_uri = 'account_uri_example' # str | Account URI
+
+
+try:
+    # Delete an account
+    api_response = api_instance.delete_account(account_uri, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling SecurityApi->delete_account: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account_uri** | **str**| Account URI | 
+
+
+### Return type
+
+**str**
 
 ### Authorization
 
@@ -862,6 +917,57 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_gdpr_file**
+> get_gdpr_file(language=language)
+
+Get RGPD PDF
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+language = '\"fr\"' # str | preferred language of the file (optional)
+
+
+try:
+    # Get RGPD PDF
+    api_instance.get_gdpr_file(language=language)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling SecurityApi->get_gdpr_file: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **language** | **str**| preferred language of the file | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/pdf
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_group**
 > GroupDTO get_group(uri, authorization, accept_language=accept_language)
 
@@ -954,6 +1060,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[GroupDTO]**](GroupDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_orcid_record**
+> OrcidRecordDTO get_orcid_record(orcid)
+
+Get infos from an ORCID
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+orcid = 'orcid_example' # str | orcid
+
+
+try:
+    # Get infos from an ORCID
+    api_response = api_instance.get_orcid_record(orcid)
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling SecurityApi->get_orcid_record: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **orcid** | **str**| orcid | 
+
+
+### Return type
+
+[**OrcidRecordDTO**](OrcidRecordDTO.md)
 
 ### Authorization
 

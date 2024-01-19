@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **description** | **str** | Content of the annotation | [optional] 
 **targets** | **list[str]** |  | [optional] 
 **motivation** | [**MotivationGetDTO**](MotivationGetDTO.md) |  | [optional] 
-**created** | **str** | Creation date | [optional] 
-**author** | **str** | Annotation author URI | [optional] 
+**published** | **datetime** |  | [optional] 
+**publisher** | **str** | Annotation publisher URI | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **facilities** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

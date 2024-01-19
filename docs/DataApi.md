@@ -11,8 +11,8 @@ Method | HTTP request | Description
 [**delete_data**](DataApi.md#delete_data) | **DELETE** /core/data/{uri} | Delete data
 [**delete_data_on_search**](DataApi.md#delete_data_on_search) | **DELETE** /core/data | Delete data on criteria
 [**delete_provenance**](DataApi.md#delete_provenance) | **DELETE** /core/provenances/{uri} | Delete a provenance that doesn&#39;t describe data
-[**export_data**](DataApi.md#export_data) | **GET** /core/data/export | Export data
-[**export_data1**](DataApi.md#export_data1) | **POST** /core/data/export | Export data
+[**export_data**](DataApi.md#export_data) | **POST** /core/data/export | Export data
+[**export_data1**](DataApi.md#export_data1) | **GET** /core/data/export | Export data
 [**get_data**](DataApi.md#get_data) | **GET** /core/data/{uri} | Get data
 [**get_data_file**](DataApi.md#get_data_file) | **GET** /core/datafiles/{uri} | Get a data file
 [**get_data_file_description**](DataApi.md#get_data_file_description) | **GET** /core/datafiles/{uri}/description | Get a data file description
@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**get_data_series_by_facility**](DataApi.md#get_data_series_by_facility) | **GET** /core/data/data_serie/facility | Get all data series associated with a facility
 [**get_datafiles_provenances**](DataApi.md#get_datafiles_provenances) | **GET** /core/datafiles/provenances | Search provenances linked to datafiles
 [**get_datafiles_provenances_by_targets**](DataApi.md#get_datafiles_provenances_by_targets) | **POST** /core/datafiles/provenances/by_targets | Search provenances linked to datafiles for a large list of targets
+[**get_mathematical_operators**](DataApi.md#get_mathematical_operators) | **GET** /core/data/mathematicalOperators | Get mathematical operators
 [**get_pictures_thumbnails**](DataApi.md#get_pictures_thumbnails) | **GET** /core/datafiles/{uri}/thumbnail | Get a picture thumbnail
 [**get_provenance**](DataApi.md#get_provenance) | **GET** /core/provenances/{uri} | Get a provenance
 [**get_provenances_by_ur_is**](DataApi.md#get_provenances_by_ur_is) | **GET** /core/provenances/by_uris | Get a list of provenances by their URIs
@@ -434,7 +435,58 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_data**
-> export_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> export_data(authorization, body=body, accept_language=accept_language)
+
+Export data
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
+
+
+try:
+    # Export data
+    api_instance.export_data(body=body, )
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->export_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_data1**
+> export_data1(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Export data
 
@@ -473,9 +525,9 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Export data
-    api_instance.export_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
+    api_instance.export_data1(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling DataApi->export_data: %s\n" % e)
+    print("Exception when calling DataApi->export_data1: %s\n" % e)
 ```
 
 ### Parameters
@@ -499,57 +551,6 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **export_data1**
-> export_data1(authorization, body=body, accept_language=accept_language)
-
-Export data
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
-
-
-try:
-    # Export data
-    api_instance.export_data1(body=body, )
-except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling DataApi->export_data1: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
 
 
 ### Return type
@@ -871,7 +872,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_list_by_targets**
-> list[DataGetDTO] get_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, order_by=order_by, page=page, page_size=page_size, targets=targets, accept_language=accept_language)
+> list[DataGetDTO] get_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, targets=targets, accept_language=accept_language)
 
 Search data for a large list of targets
 
@@ -901,6 +902,7 @@ provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] 
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
 group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
 operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+germplasm_uris = ['germplasm_uris_example'] # list[str] | Targets uris, can be an empty array but can't be null (optional)
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -909,7 +911,7 @@ targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, c
 
 try:
     # Search data for a large list of targets
-    api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, order_by=order_by, page=page, page_size=page_size, targets=targets, )
+    api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, targets=targets, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_list_by_targets: %s\n" % e)
@@ -931,6 +933,7 @@ Name | Type | Description  | Notes
  **metadata** | **str**| Search by metadata | [optional] 
  **group_of_germplasm** | **str**| Group filter | [optional] 
  **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
+ **germplasm_uris** | [**list[str]**](str.md)| Targets uris, can be an empty array but can&#39;t be null | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
@@ -1112,6 +1115,56 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ProvenanceGetDTO]**](ProvenanceGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_mathematical_operators**
+> list[str] get_mathematical_operators(authorization, accept_language=accept_language)
+
+Get mathematical operators
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+
+
+try:
+    # Get mathematical operators
+    api_response = api_instance.get_mathematical_operators()
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->get_mathematical_operators: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**list[str]**
 
 ### Authorization
 

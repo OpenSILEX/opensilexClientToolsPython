@@ -7,9 +7,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **alternative_name** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
-**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
-**publication_date** | **datetime** |  | [optional] 
-**last_updated_date** | **datetime** |  | [optional] 
 **entity** | [**EntityGetDTO**](EntityGetDTO.md) |  | [optional] 
 **entity_of_interest** | [**InterestEntityGetDTO**](InterestEntityGetDTO.md) |  | [optional] 
 **characteristic** | [**CharacteristicGetDTO**](CharacteristicGetDTO.md) |  | [optional] 
@@ -25,6 +22,9 @@ Name | Type | Description | Notes
 **close_match** | **list[str]** |  | [optional] 
 **broad_match** | **list[str]** |  | [optional] 
 **narrow_match** | **list[str]** |  | [optional] 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 **from_shared_resource_instance** | [**SharedResourceInstanceDTO**](SharedResourceInstanceDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

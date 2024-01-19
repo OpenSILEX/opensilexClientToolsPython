@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **publisher** | **str** |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_update_date** | **datetime** |  | [optional] 
-**creator** | **str** |  | [optional] 
 **relations** | [**list[SPARQLModelRelation]**](SPARQLModelRelation.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 

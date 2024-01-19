@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**get_rdf_type**](OntologyApi.md#get_rdf_type) | **GET** /ontology/rdf_type | Return class model definition with properties
 [**get_shared_resource_instances**](OntologyApi.md#get_shared_resource_instances) | **GET** /ontology/shared_resource_instances | Return the list of shared resource instances
 [**get_sub_classes_of**](OntologyApi.md#get_sub_classes_of) | **GET** /ontology/subclasses_of | Search sub-classes tree of an RDF class
+[**get_sub_properties_of**](OntologyApi.md#get_sub_properties_of) | **GET** /ontology/subproperties_of | Return property list from a parent property
 [**get_uri_label**](OntologyApi.md#get_uri_label) | **GET** /ontology/uri_label | Return associated rdfs:label of an uri if exists
 [**get_uri_labels_list**](OntologyApi.md#get_uri_labels_list) | **GET** /ontology/uris_labels | Return associated rdfs:label of uris if they exist
 [**get_uri_types**](OntologyApi.md#get_uri_types) | **GET** /ontology/uri_types | Return all rdf types of an uri
@@ -811,6 +812,62 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **parent_type** | **str**| Parent RDF class URI | [optional] 
  **ignore_root_classes** | **bool**| Flag to determine if only sub-classes must be include in result | [optional] [default to false]
+
+
+### Return type
+
+[**list[ResourceTreeDTO]**](ResourceTreeDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_sub_properties_of**
+> list[ResourceTreeDTO] get_sub_properties_of(authorization, domain=domain, uri=uri, ignore_root_property=ignore_root_property, accept_language=accept_language)
+
+Return property list from a parent property
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+domain = 'domain_example' # str | Domain URI (optional)
+uri = 'uri_example' # str | Property URI (optional)
+ignore_root_property = false # bool | Flag to determine if only sub-properties must be included in result (optional) (default to false)
+
+
+try:
+    # Return property list from a parent property
+    api_response = api_instance.get_sub_properties_of(domain=domain, uri=uri, ignore_root_property=ignore_root_property, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OntologyApi->get_sub_properties_of: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **domain** | **str**| Domain URI | [optional] 
+ **uri** | **str**| Property URI | [optional] 
+ **ignore_root_property** | **bool**| Flag to determine if only sub-properties must be included in result | [optional] [default to false]
 
 
 ### Return type

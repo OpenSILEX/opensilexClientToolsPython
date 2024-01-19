@@ -12,6 +12,9 @@ Name | Type | Description | Notes
 **rdf_type** | **str** | The type of property | 
 **name_translations** | **dict(str, str)** | Name by languages, at least one name/language is required. Use &#39;&#39; as language if no language is specified | 
 **comment_translations** | **dict(str, str)** | Description by languages, at least one description/language is required. Use &#39;&#39; as language if no language is specified | 
+**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 **domain_label** | **str** |  | [optional] 
 **range_label** | **str** |  | [optional] 
 

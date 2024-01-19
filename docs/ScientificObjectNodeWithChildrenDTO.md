@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
 **rdf_type** | **str** |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 **creation_date** | **str** | Scientific object creation date | [optional] 
 **destruction_date** | **str** | Scientific object creation date | [optional] 
 **child_count** | **int** |  | [optional] 

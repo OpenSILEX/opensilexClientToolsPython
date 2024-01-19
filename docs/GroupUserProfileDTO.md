@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **profile_name** | **str** | User associated profile name | [optional] 
 **user_uri** | **str** | User URI | 
 **user_name** | **str** | User name | [optional] 
+**publication_date** | **datetime** |  | [optional] 
+**last_updated_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_area**](AreaApi.md#create_area) | **POST** /core/area | Add an area
 [**delete_area**](AreaApi.md#delete_area) | **DELETE** /core/area/{uri} | Delete an area
+[**export_geospatial**](AreaApi.md#export_geospatial) | **POST** /core/area/export_geospatial | Export a given list of areas URIs to shapefile
 [**get_by_uri**](AreaApi.md#get_by_uri) | **GET** /core/area/{uri} | Get an area
 [**search_intersects**](AreaApi.md#search_intersects) | **POST** /core/area/intersects | Get area whose geometry corresponds to the Intersections
 [**update_area**](AreaApi.md#update_area) | **PUT** /core/area | Update an area
@@ -112,6 +113,63 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_geospatial**
+> export_geospatial(authorization, body=body, selected_props=selected_props, format=format, page_size=page_size, accept_language=accept_language)
+
+Export a given list of areas URIs to shapefile
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.AreaApi(pythonClient)
+body = [opensilexClientToolsPython.GeometryDTO()] # list[GeometryDTO] | Areas (optional)
+selected_props = ['\"test\"'] # list[str] | properties selected (optional)
+format = '\"shp\"' # str | export format (shp/geojson) (optional)
+page_size = 10000 # int | Page size limited to 10,000 objects (optional)
+
+
+try:
+    # Export a given list of areas URIs to shapefile
+    api_instance.export_geospatial(body=body, selected_props=selected_props, format=format, page_size=page_size, )
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling AreaApi->export_geospatial: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[GeometryDTO]**](GeometryDTO.md)| Areas | [optional] 
+ **selected_props** | [**list[str]**](str.md)| properties selected | [optional] 
+ **format** | **str**| export format (shp/geojson) | [optional] 
+ **page_size** | **int**| Page size limited to 10,000 objects | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/octet-stream
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

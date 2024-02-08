@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **metadata** | **dict(str, object)** | key-value system to store additional information that can be used to query data | [optional] 
 **raw_data** | **list[object]** | list of repetition values | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
-**issued** | **int** |  | [optional] 
-**modified** | **int** |  | [optional] 
+**issued** | **datetime** |  | [optional] 
+**modified** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

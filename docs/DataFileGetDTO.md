@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **archive** | **str** | archive file URI if file is inside | [optional] 
 **filename** | **str** |  | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
-**issued** | **int** |  | [optional] 
+**issued** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

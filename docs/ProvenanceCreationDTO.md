@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **prov_activity** | [**list[ActivityCreationDTO]**](ActivityCreationDTO.md) |  | [optional] 
 **prov_agent** | [**list[AgentModel]**](AgentModel.md) |  | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
-**issued** | **int** |  | [optional] 
-**modified** | **int** |  | [optional] 
+**issued** | **datetime** |  | [optional] 
+**modified** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

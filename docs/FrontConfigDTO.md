@@ -26,6 +26,9 @@ Name | Type | Description | Notes
 **dashboard** | [**DashboardConfigDTO**](DashboardConfigDTO.md) |  | [optional] 
 **gdpr_file_is_configured** | **bool** | GDPR PDF is configured | [optional] 
 **matomo** | [**MatomoConfigDTO**](MatomoConfigDTO.md) |  | [optional] 
+**notification_message** | **dict(str, str)** | Notification message for the instance | [optional] 
+**notification_color_theme** | **str** | Color theme for the notification message | [optional] 
+**notification_end_date** | **str** | Date until which to send the notification | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **provenance** | [**DataProvenanceModel**](DataProvenanceModel.md) |  | 
 **metadata** | **dict(str, object)** | key-value system to store additional information that can be used to query data | [optional] 
 **raw_data** | **list[object]** | list of repetition values | [optional] 
-**publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 **issued** | **datetime** |  | [optional] 
 **modified** | **datetime** |  | [optional] 
 

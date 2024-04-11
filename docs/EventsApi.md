@@ -438,7 +438,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **import_event_csv**
-> CSVValidationDTO import_event_csv(file, authorization, accept_language=accept_language)
+> CSVValidationDTO import_event_csv(description, file, authorization, accept_language=accept_language)
 
 Import a CSV file with one move and one target per line
 
@@ -456,12 +456,13 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
+description = opensilexClientToolsPython.Object() # Object | CSV import settings
 file = '/path/to/file.txt' # file | Event file
 
 
 try:
     # Import a CSV file with one move and one target per line
-    api_response = api_instance.import_event_csv(file, )
+    api_response = api_instance.import_event_csv(description, file, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->import_event_csv: %s\n" % e)
@@ -471,6 +472,7 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **description** | [**Object**](.md)| CSV import settings | 
  **file** | **file**| Event file | 
 
 
@@ -712,7 +714,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **validate_event_csv**
-> CSVValidationDTO validate_event_csv(file, authorization, accept_language=accept_language)
+> CSVValidationDTO validate_event_csv(description, file, authorization, accept_language=accept_language)
 
 Check a CSV file with one move and one target per line
 
@@ -730,12 +732,13 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
+description = opensilexClientToolsPython.Object() # Object | CSV import settings
 file = '/path/to/file.txt' # file | Event file
 
 
 try:
     # Check a CSV file with one move and one target per line
-    api_response = api_instance.validate_event_csv(file, )
+    api_response = api_instance.validate_event_csv(description, file, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling EventsApi->validate_event_csv: %s\n" % e)
@@ -745,6 +748,7 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **description** | [**Object**](.md)| CSV import settings | 
  **file** | **file**| Event file | 
 
 

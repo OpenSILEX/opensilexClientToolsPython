@@ -5,14 +5,14 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_list_data**](DataApi.md#add_list_data) | **POST** /core/data | Add data
-[**count_data**](DataApi.md#count_data) | **GET** /core/data/count | Count data
+[**count_data**](DataApi.md#count_data) | **POST** /core/data/count | Count data
 [**count_datafiles**](DataApi.md#count_datafiles) | **GET** /core/datafiles/count | Count datafiles
 [**create_provenance**](DataApi.md#create_provenance) | **POST** /core/provenances | Add a provenance
 [**delete_data**](DataApi.md#delete_data) | **DELETE** /core/data/{uri} | Delete data
 [**delete_data_on_search**](DataApi.md#delete_data_on_search) | **DELETE** /core/data | Delete data on criteria
 [**delete_provenance**](DataApi.md#delete_provenance) | **DELETE** /core/provenances/{uri} | Delete a provenance that doesn&#39;t describe data
-[**export_data**](DataApi.md#export_data) | **POST** /core/data/export | Export data
-[**export_data1**](DataApi.md#export_data1) | **GET** /core/data/export | Export data
+[**export_data**](DataApi.md#export_data) | **GET** /core/data/export | Export data
+[**export_data1**](DataApi.md#export_data1) | **POST** /core/data/export | Export data
 [**get_data**](DataApi.md#get_data) | **GET** /core/data/{uri} | Get data
 [**get_data_file**](DataApi.md#get_data_file) | **GET** /core/datafiles/{uri} | Get a data file
 [**get_data_file_description**](DataApi.md#get_data_file_description) | **GET** /core/datafiles/{uri}/description | Get a data file description
@@ -33,6 +33,7 @@ Method | HTTP request | Description
 [**post_data_file**](DataApi.md#post_data_file) | **POST** /core/datafiles | Add a data file
 [**post_data_file_paths**](DataApi.md#post_data_file_paths) | **POST** /core/datafiles/description | Describe datafiles and give their relative paths in the configured storage system. In the case of already stored datafiles.
 [**search_data_list**](DataApi.md#search_data_list) | **GET** /core/data | Search data
+[**search_data_list_by_targets**](DataApi.md#search_data_list_by_targets) | **POST** /core/data/search | Search data for a large list of targets
 [**search_provenance**](DataApi.md#search_provenance) | **GET** /core/provenances | Get provenances
 [**update**](DataApi.md#update) | **PUT** /core/data | Update data
 [**update_confidence**](DataApi.md#update_confidence) | **PUT** /core/data/{uri}/confidence | Update confidence index
@@ -93,7 +94,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_data**
-> int count_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, accept_language=accept_language)
+> int count_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, group_of_germplasm=group_of_germplasm, germplasm_uris=germplasm_uris, count_limit=count_limit, targets=targets, accept_language=accept_language)
 
 Count data
 
@@ -115,7 +116,6 @@ start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (opt
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
 timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
 experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by target uris (optional)
 variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
 devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
@@ -123,11 +123,15 @@ max_confidence = 1.0 # float | Search by maximal confidence index (optional)
 provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
 metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
 operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
+germplasm_uris = ['germplasm_uris_example'] # list[str] | Germplasm uris, can be an empty array but can't be null (optional)
+count_limit = 1000 # int | Count limit. Specify the maximum number of data to count. Set to 0 for no limit (optional) (default to 1000)
+targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
 
 
 try:
     # Count data
-    api_response = api_instance.count_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, )
+    api_response = api_instance.count_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, group_of_germplasm=group_of_germplasm, germplasm_uris=germplasm_uris, count_limit=count_limit, targets=targets, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->count_data: %s\n" % e)
@@ -141,7 +145,6 @@ Name | Type | Description  | Notes
  **end_date** | **str**| Search by maximal date | [optional] 
  **timezone** | **str**| Precise the timezone corresponding to the given dates | [optional] 
  **experiments** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
- **targets** | [**list[str]**](str.md)| Search by target uris | [optional] 
  **variables** | [**list[str]**](str.md)| Search by variables uris | [optional] 
  **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
  **min_confidence** | **float**| Search by minimal confidence index | [optional] 
@@ -149,6 +152,10 @@ Name | Type | Description  | Notes
  **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
  **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
+ **group_of_germplasm** | **str**| Group filter | [optional] 
+ **germplasm_uris** | [**list[str]**](str.md)| Germplasm uris, can be an empty array but can&#39;t be null | [optional] 
+ **count_limit** | **int**| Count limit. Specify the maximum number of data to count. Set to 0 for no limit | [optional] [default to 1000]
+ **targets** | **list[str]**| Targets uris, can be an empty array but can&#39;t be null | [optional] 
 
 
 ### Return type
@@ -435,58 +442,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_data**
-> export_data(authorization, body=body, accept_language=accept_language)
-
-Export data
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
-
-
-try:
-    # Export data
-    api_instance.export_data(body=body, )
-except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling DataApi->export_data: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
-
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: text/plain
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **export_data1**
-> export_data1(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> export_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Export data
 
@@ -525,9 +481,9 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Export data
-    api_instance.export_data1(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
+    api_instance.export_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling DataApi->export_data1: %s\n" % e)
+    print("Exception when calling DataApi->export_data: %s\n" % e)
 ```
 
 ### Parameters
@@ -568,8 +524,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **export_data1**
+> export_data1(authorization, body=body, accept_language=accept_language)
+
+Export data
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
+
+
+try:
+    # Export data
+    api_instance.export_data1(body=body, )
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->export_data1: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_data**
-> DataGetDTO get_data(uri, authorization, accept_language=accept_language)
+> DataGetDetailsDTO get_data(uri, authorization, accept_language=accept_language)
 
 Get data
 
@@ -607,7 +614,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataGetDTO**](DataGetDTO.md)
+[**DataGetDetailsDTO**](DataGetDetailsDTO.md)
 
 ### Authorization
 
@@ -872,11 +879,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_list_by_targets**
-> list[DataGetDTO] get_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, targets=targets, accept_language=accept_language)
+> list[DataGetSearchDTO] get_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search data for a large list of targets
 
-
+Deprecated. Use searchDataListByTargets (/search) service which is more optimized
 
 ### Example
 ```python
@@ -894,6 +901,7 @@ start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (opt
 end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
 timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
 experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
 variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
 devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
@@ -906,12 +914,11 @@ germplasm_uris = ['germplasm_uris_example'] # list[str] | Targets uris, can be a
 order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
-targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
 
 
 try:
     # Search data for a large list of targets
-    api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, targets=targets, )
+    api_response = api_instance.get_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_list_by_targets: %s\n" % e)
@@ -925,6 +932,7 @@ Name | Type | Description  | Notes
  **end_date** | **str**| Search by maximal date | [optional] 
  **timezone** | **str**| Precise the timezone corresponding to the given dates | [optional] 
  **experiments** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
+ **targets** | **list[str]**| Targets uris, can be an empty array but can&#39;t be null | [optional] 
  **variables** | [**list[str]**](str.md)| Search by variables uris | [optional] 
  **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
  **min_confidence** | **float**| Search by minimal confidence index | [optional] 
@@ -937,12 +945,11 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
- **targets** | **list[str]**| Targets uris, can be an empty array but can&#39;t be null | [optional] 
 
 
 ### Return type
 
-[**list[DataGetDTO]**](DataGetDTO.md)
+[**list[DataGetSearchDTO]**](DataGetSearchDTO.md)
 
 ### Authorization
 
@@ -1673,11 +1680,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_data_list**
-> list[DataGetDTO] search_data_list(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[DataGetSearchDTO] search_data_list(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search data
 
-
+Deprecated. Use searchDataListByTargets (/search) service which is more optimized
 
 ### Example
 ```python
@@ -1739,7 +1746,91 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[DataGetDTO]**](DataGetDTO.md)
+[**list[DataGetSearchDTO]**](DataGetSearchDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_data_list_by_targets**
+> list[DataGetSearchDTO] search_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+
+Search data for a large list of targets
+
+Optimized search. The total count of element is not returned. Use countData (/count) service in order to get exact count of element
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
+end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
+targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
+variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
+devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+min_confidence = 0.5 # float | Search by minimal confidence index (optional)
+max_confidence = 1.0 # float | Search by maximal confidence index (optional)
+provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
+metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
+operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+germplasm_uris = ['germplasm_uris_example'] # list[str] | Targets uris, can be an empty array but can't be null (optional)
+order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+
+
+try:
+    # Search data for a large list of targets
+    api_response = api_instance.search_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->search_data_list_by_targets: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
+ **timezone** | **str**| Precise the timezone corresponding to the given dates | [optional] 
+ **experiments** | [**list[str]**](str.md)| Search by experiment uris | [optional] 
+ **targets** | **list[str]**| Targets uris, can be an empty array but can&#39;t be null | [optional] 
+ **variables** | [**list[str]**](str.md)| Search by variables uris | [optional] 
+ **devices** | [**list[str]**](str.md)| Search by devices uris | [optional] 
+ **min_confidence** | **float**| Search by minimal confidence index | [optional] 
+ **max_confidence** | **float**| Search by maximal confidence index | [optional] 
+ **provenances** | [**list[str]**](str.md)| Search by provenances | [optional] 
+ **metadata** | **str**| Search by metadata | [optional] 
+ **group_of_germplasm** | **str**| Group filter | [optional] 
+ **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
+ **germplasm_uris** | [**list[str]**](str.md)| Targets uris, can be an empty array but can&#39;t be null | [optional] 
+ **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[DataGetSearchDTO]**](DataGetSearchDTO.md)
 
 ### Authorization
 

@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **included_uris** | **list[str]** |  | [optional] 
+**rdf_types** | **list[str]** |  | [optional] 
 **page** | **int** | Page number | [optional] 
 **lang** | **str** |  | [optional] 
 **uri** | **str** | Regex pattern for filtering list by uri | [optional] 

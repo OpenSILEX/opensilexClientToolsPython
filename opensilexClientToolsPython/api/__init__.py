@@ -22,7 +22,6 @@ from opensilexClientToolsPython.api.projects_api import ProjectsApi
 from opensilexClientToolsPython.api.scientific_objects_api import ScientificObjectsApi
 from opensilexClientToolsPython.api.security_api import SecurityApi
 from opensilexClientToolsPython.api.species_api import SpeciesApi
-from opensilexClientToolsPython.api.staple_api_api import StapleAPIApi
 from opensilexClientToolsPython.api.system_api import SystemApi
 from opensilexClientToolsPython.api.variables_api import VariablesApi
 from opensilexClientToolsPython.api.vue_js_api import VueJsApi

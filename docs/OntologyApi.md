@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**get_name_space**](OntologyApi.md#get_name_space) | **GET** /ontology/name_space | Return namespaces
 [**get_object_properties**](OntologyApi.md#get_object_properties) | **GET** /ontology/object_properties | Search object properties tree
 [**get_properties**](OntologyApi.md#get_properties) | **GET** /ontology/properties/{domain} | Search properties tree
+[**get_properties_by_domain_hierarchy_using_restrictions**](OntologyApi.md#get_properties_by_domain_hierarchy_using_restrictions) | **GET** /ontology/domain_hierarchy_restrictions | Get restrictions from some super-class domain to one lower down in the hierarchy, ordered by what domain they first appear in.
 [**get_property**](OntologyApi.md#get_property) | **GET** /ontology/property | Return property model definition detail
 [**get_rdf_type**](OntologyApi.md#get_rdf_type) | **GET** /ontology/rdf_type | Return class model definition with properties
 [**get_shared_resource_instances**](OntologyApi.md#get_shared_resource_instances) | **GET** /ontology/shared_resource_instances | Return the list of shared resource instances
@@ -603,6 +604,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ResourceTreeDTO]**](ResourceTreeDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_properties_by_domain_hierarchy_using_restrictions**
+> list[PropertiesByDomainDTO] get_properties_by_domain_hierarchy_using_restrictions(ancestor, children, authorization, accept_language=accept_language)
+
+Get restrictions from some super-class domain to one lower down in the hierarchy, ordered by what domain they first appear in.
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+ancestor = 'ancestor_example' # str | Domain ancestor URI
+children = ['children_example'] # list[str] | Domain uris from types that have ancestor as an ancestor
+
+
+try:
+    # Get restrictions from some super-class domain to one lower down in the hierarchy, ordered by what domain they first appear in.
+    api_response = api_instance.get_properties_by_domain_hierarchy_using_restrictions(ancestor, children, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OntologyApi->get_properties_by_domain_hierarchy_using_restrictions: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ancestor** | **str**| Domain ancestor URI | 
+ **children** | [**list[str]**](str.md)| Domain uris from types that have ancestor as an ancestor | 
+
+
+### Return type
+
+[**list[PropertiesByDomainDTO]**](PropertiesByDomainDTO.md)
 
 ### Authorization
 

@@ -8,6 +8,7 @@ from opensilexClientToolsPython.api.area_api import AreaApi
 from opensilexClientToolsPython.api.authentication_api import AuthenticationApi
 from opensilexClientToolsPython.api.brapi_api import BRAPIApi
 from opensilexClientToolsPython.api.data_api import DataApi
+from opensilexClientToolsPython.api.dataverse_api import DataverseApi
 from opensilexClientToolsPython.api.devices_api import DevicesApi
 from opensilexClientToolsPython.api.documents_api import DocumentsApi
 from opensilexClientToolsPython.api.events_api import EventsApi
@@ -22,6 +23,7 @@ from opensilexClientToolsPython.api.projects_api import ProjectsApi
 from opensilexClientToolsPython.api.scientific_objects_api import ScientificObjectsApi
 from opensilexClientToolsPython.api.security_api import SecurityApi
 from opensilexClientToolsPython.api.species_api import SpeciesApi
+from opensilexClientToolsPython.api.staple_api_api import StapleAPIApi
 from opensilexClientToolsPython.api.system_api import SystemApi
 from opensilexClientToolsPython.api.variables_api import VariablesApi
 from opensilexClientToolsPython.api.vue_js_api import VueJsApi

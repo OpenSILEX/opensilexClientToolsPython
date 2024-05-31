@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**string** | **str** |  | [optional] 
 **boolean** | **bool** |  | [optional] 
 **byte** | **str** |  | [optional] 
 **short** | **int** |  | [optional] 
@@ -14,6 +13,7 @@ Name | Type | Description | Notes
 **double** | **float** |  | [optional] 
 **value** | **object** |  | [optional] 
 **language** | **str** |  | [optional] 
+**string** | **str** |  | [optional] 
 **datatype** | [**RDFDatatype**](RDFDatatype.md) |  | [optional] 
 **datatype_uri** | **str** |  | [optional] 
 **lexical_form** | **str** |  | [optional] 

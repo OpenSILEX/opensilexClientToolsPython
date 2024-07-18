@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **coordinators** | **list[str]** |  | [optional] 
 **scientific_contacts** | **list[str]** |  | [optional] 
 **administrative_contacts** | **list[str]** |  | [optional] 
-**experiments** | **list[str]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

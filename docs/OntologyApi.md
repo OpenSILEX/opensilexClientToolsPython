@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**create_property**](OntologyApi.md#create_property) | **POST** /ontology/property | Create a RDF property
 [**delete_class_property_restriction**](OntologyApi.md#delete_class_property_restriction) | **DELETE** /ontology/rdf_type_property_restriction | Delete a rdf type property restriction
 [**delete_property**](OntologyApi.md#delete_property) | **DELETE** /ontology/property | Delete a property
+[**get_base_uri**](OntologyApi.md#get_base_uri) | **GET** /ontology/base_uri | Return base uri
 [**get_classes**](OntologyApi.md#get_classes) | **GET** /ontology/rdf_types | Return classes models definitions with properties for a list of rdf types
 [**get_data_properties**](OntologyApi.md#get_data_properties) | **GET** /ontology/data_properties | Search data properties tree
 [**get_linkable_properties**](OntologyApi.md#get_linkable_properties) | **GET** /ontology/linkable_properties | Search properties linkable to a domain
@@ -279,6 +280,54 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | **str**| Property URI | 
  **rdf_type** | **str**| Property type | 
+
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_base_uri**
+> str get_base_uri()
+
+Return base uri
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
+
+
+try:
+    # Return base uri
+    api_response = api_instance.get_base_uri()
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OntologyApi->get_base_uri: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -885,7 +934,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_sub_properties_of**
-> list[ResourceTreeDTO] get_sub_properties_of(authorization, domain=domain, uri=uri, ignore_root_property=ignore_root_property, accept_language=accept_language)
+> list[ObjectNamedResourceDTO] get_sub_properties_of(authorization, domain=domain, uri=uri, ignore_root_property=ignore_root_property, accept_language=accept_language)
 
 Return property list from a parent property
 
@@ -927,7 +976,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[ResourceTreeDTO]**](ResourceTreeDTO.md)
+[**list[ObjectNamedResourceDTO]**](ObjectNamedResourceDTO.md)
 
 ### Authorization
 

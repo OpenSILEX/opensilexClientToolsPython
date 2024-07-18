@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**get_organization**](OrganizationsApi.md#get_organization) | **GET** /core/organisations/{uri} | Get an organisation 
 [**get_site**](OrganizationsApi.md#get_site) | **GET** /core/sites/{uri} | Get a site
 [**get_sites_by_uri**](OrganizationsApi.md#get_sites_by_uri) | **GET** /core/sites/by_uris | Get a list of sites
+[**minimal_search_facilities**](OrganizationsApi.md#minimal_search_facilities) | **GET** /core/facilities/minimal_search | Search facilities returning minimal embedded information for better performance
 [**search_facilities**](OrganizationsApi.md#search_facilities) | **GET** /core/facilities | Search facilities
 [**search_organizations**](OrganizationsApi.md#search_organizations) | **GET** /core/organisations | Search organisations
 [**search_sites**](OrganizationsApi.md#search_sites) | **GET** /core/sites | Search all sites
@@ -646,8 +647,68 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **minimal_search_facilities**
+> list[NamedResourceDTO] minimal_search_facilities(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+
+Search facilities returning minimal embedded information for better performance
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
+pattern = '.*' # str | Regex pattern for filtering facilities by names (optional) (default to .*)
+organizations = ['organizations_example'] # list[str] | List of organizations hosted by the facilities to filter (optional)
+order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+page = 56 # int | Page number (optional)
+page_size = 56 # int | Page size (optional)
+
+
+try:
+    # Search facilities returning minimal embedded information for better performance
+    api_response = api_instance.minimal_search_facilities(pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->minimal_search_facilities: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **pattern** | **str**| Regex pattern for filtering facilities by names | [optional] [default to .*]
+ **organizations** | [**list[str]**](str.md)| List of organizations hosted by the facilities to filter | [optional] 
+ **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
+ **page** | **int**| Page number | [optional] 
+ **page_size** | **int**| Page size | [optional] 
+
+
+### Return type
+
+[**list[NamedResourceDTO]**](NamedResourceDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_facilities**
-> list[FacilityNamedDTO] search_facilities(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[FacilityGetDTO] search_facilities(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search facilities
 
@@ -693,7 +754,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[FacilityNamedDTO]**](FacilityNamedDTO.md)
+[**list[FacilityGetDTO]**](FacilityGetDTO.md)
 
 ### Authorization
 

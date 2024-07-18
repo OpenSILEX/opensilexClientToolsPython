@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**string** | **str** |  | [optional] 
 **object** | [**RDFNode**](RDFNode.md) |  | [optional] 
 **boolean** | **bool** |  | [optional] 
 **byte** | **str** |  | [optional] 
@@ -14,7 +15,6 @@ Name | Type | Description | Notes
 **double** | **float** |  | [optional] 
 **resource** | [**Resource**](Resource.md) |  | [optional] 
 **language** | **str** |  | [optional] 
-**string** | **str** |  | [optional] 
 **subject** | [**Resource**](Resource.md) |  | [optional] 
 **list** | [**RDFList**](RDFList.md) |  | [optional] 
 **model** | [**Model**](Model.md) |  | [optional] 

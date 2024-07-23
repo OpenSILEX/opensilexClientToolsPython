@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_event**](EventsApi.md#get_event) | **GET** /core/events/{uri} | Get an event
 [**get_event_details**](EventsApi.md#get_event_details) | **GET** /core/events/{uri}/details | Get an event with all it&#39;s properties
 [**get_move_event**](EventsApi.md#get_move_event) | **GET** /core/events/moves/{uri} | Get a move with all it&#39;s properties
+[**get_move_event_by_uris**](EventsApi.md#get_move_event_by_uris) | **GET** /core/events/moves/by_uris | Get a list of moves with all positional information
 [**import_event_csv**](EventsApi.md#import_event_csv) | **POST** /core/events/import | Import a CSV file with one move and one target per line
 [**import_move_csv**](EventsApi.md#import_move_csv) | **POST** /core/events/moves/import | Import a CSV file with one move and one target per line
 [**search_events**](EventsApi.md#search_events) | **GET** /core/events | Search events
@@ -420,6 +421,58 @@ except opensilexClientToolsPython.rest.ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | **str**| Move URI | 
+
+
+### Return type
+
+[**MoveDetailsDTO**](MoveDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_move_event_by_uris**
+> MoveDetailsDTO get_move_event_by_uris(uris, authorization, accept_language=accept_language)
+
+Get a list of moves with all positional information
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
+uris = ['uris_example'] # list[str] | Device URIs
+
+
+try:
+    # Get a list of moves with all positional information
+    api_response = api_instance.get_move_event_by_uris(uris, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling EventsApi->get_move_event_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uris** | [**list[str]**](str.md)| Device URIs | 
 
 
 ### Return type

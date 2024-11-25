@@ -8,7 +8,6 @@ from opensilexClientToolsPython.api.area_api import AreaApi
 from opensilexClientToolsPython.api.authentication_api import AuthenticationApi
 from opensilexClientToolsPython.api.brapi_api import BRAPIApi
 from opensilexClientToolsPython.api.data_api import DataApi
-from opensilexClientToolsPython.api.dataverse_api import DataverseApi
 from opensilexClientToolsPython.api.devices_api import DevicesApi
 from opensilexClientToolsPython.api.documents_api import DocumentsApi
 from opensilexClientToolsPython.api.events_api import EventsApi

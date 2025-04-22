@@ -19,6 +19,8 @@ import os
 import re
 import tempfile
 import hashlib
+import csv
+import io
 
 # python 2 and python 3 compatibility library
 import six
@@ -175,8 +177,9 @@ class ApiClient(object):
             
             return_data_dict = {}
             return_data_dict['result'] = return_data
-            return_data_dict['metadata'] = json.loads(response_data.data)["metadata"]
-            
+            csv_data = io.StringIO(response_data.data)
+            reader = csv.DictReader(csv_data)
+            return_data_dict['metadata'] = [row for row in reader]     
         if _return_http_data_only:
             return (return_data_dict)
         else:

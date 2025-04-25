@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**get_available_factors**](ExperimentsApi.md#get_available_factors) | **GET** /core/experiments/{uri}/factors | Get factors with their levels associated to an experiment
 [**get_available_species**](ExperimentsApi.md#get_available_species) | **GET** /core/experiments/{uri}/species | Get species present in an experiment
 [**get_experiment**](ExperimentsApi.md#get_experiment) | **GET** /core/experiments/{uri} | Get an experiment
-[**get_experiments_by_ur_is**](ExperimentsApi.md#get_experiments_by_ur_is) | **GET** /core/experiments/by_uris | Get experiments URIs
+[**get_experiments_by_uris**](ExperimentsApi.md#get_experiments_by_uris) | **GET** /core/experiments/by_uris | Get experiments URIs
 [**get_used_variables1**](ExperimentsApi.md#get_used_variables1) | **GET** /core/experiments/{uri}/variables | Get variables involved in an experiment
 [**import_csv_data1**](ExperimentsApi.md#import_csv_data1) | **POST** /core/experiments/{uri}/data/import | Import a CSV file for the given experiment URI and scientific object type.
 [**search_experiment_data_list**](ExperimentsApi.md#search_experiment_data_list) | **GET** /core/experiments/{uri}/data | Search data
@@ -92,7 +92,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
 
 
 try:
@@ -144,19 +144,19 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-scientific_objects = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by objects (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables (optional)
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+scientific_objects = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by objects (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
-provenance = '\"http://opensilex.dev/provenance/1598001689415\"' # str | Search by provenance uri (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+provenance = 'http://opensilex.dev/provenance/1598001689415' # str | Search by provenance uri (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
 mode = 'wide' # str | Format wide or long (optional) (default to wide)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -223,7 +223,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
 
 
 try:
@@ -275,7 +275,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
 
 
 try:
@@ -327,7 +327,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
 
 
 try:
@@ -379,7 +379,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
 
 
 try:
@@ -412,8 +412,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_experiments_by_ur_is**
-> list[ExperimentGetListDTO] get_experiments_by_ur_is(uris, authorization, accept_language=accept_language)
+# **get_experiments_by_uris**
+> list[ExperimentGetListDTO] get_experiments_by_uris(uris, authorization, accept_language=accept_language)
 
 Get experiments URIs
 
@@ -436,10 +436,10 @@ uris = ['uris_example'] # list[str] | Experiments URIs
 
 try:
     # Get experiments URIs
-    api_response = api_instance.get_experiments_by_ur_is(uris, )
+    api_response = api_instance.get_experiments_by_uris(uris, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling ExperimentsApi->get_experiments_by_ur_is: %s\n" % e)
+    print("Exception when calling ExperimentsApi->get_experiments_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -483,8 +483,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
-scientific_objects = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by objects uris (optional)
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
+scientific_objects = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by objects uris (optional)
 
 
 try:
@@ -537,8 +537,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
-provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
+provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
 file = '/path/to/file.txt' # file | Data file
 
 
@@ -593,18 +593,18 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-scientific_objects = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by objects (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables (optional)
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+scientific_objects = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by objects (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uri (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uri (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -671,14 +671,14 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
 description = 'description_example' # str | Search by description (optional)
 activity = 'activity_example' # str | Search by activity URI (optional)
 activity_type = 'activity_type_example' # str | Search by activity type (optional)
 agent = 'agent_example' # str | Search by agent URI (optional)
 agent_type = 'agent_type_example' # str | Search by agent type (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -741,15 +741,15 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-name = '\"ZA17\"' # str | Regex pattern for filtering by name (optional)
+name = 'ZA17' # str | Regex pattern for filtering by name (optional)
 year = 2017 # int | Search by year (optional)
 is_ended = true # bool | Search ended(false) or active experiments(true) (optional)
-species = ['\"http://www.phenome-fppn.fr/id/species/zeamays\"'] # list[str] | Search by involved species (optional)
-factors = ['\"http://purl.obolibrary.org/obo/CHEBI_25555\"'] # list[str] | Search by studied effect (optional)
-projects = ['\"http://www.phenome-fppn.fr/projects/ZA17\\nhttp://www.phenome-fppn.fr/id/projects/ZA18\"'] # list[str] | Search by related project uri (optional)
+species = ['http://www.phenome-fppn.fr/id/species/zeamays'] # list[str] | Search by involved species (optional)
+factors = ['http://purl.obolibrary.org/obo/CHEBI_25555'] # list[str] | Search by studied effect (optional)
+projects = ['http://www.phenome-fppn.fr/projects/ZA17 http://www.phenome-fppn.fr/id/projects/ZA18'] # list[str] | Search by related project uri (optional)
 is_public = true # bool | Search private(false) or public experiments(true) (optional)
 facilities = ['facilities_example'] # list[str] | Search by involved facilities (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -865,8 +865,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
-uri = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI
-provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
+uri = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI
+provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
 file = '/path/to/file.txt' # file | Data file
 
 

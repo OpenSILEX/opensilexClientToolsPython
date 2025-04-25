@@ -28,7 +28,8 @@ Name | Type | Description | Notes
 **matomo** | [**MatomoConfigDTO**](MatomoConfigDTO.md) |  | [optional] 
 **notification_message** | **dict(str, str)** | Notification message for the instance | [optional] 
 **notification_color_theme** | **str** | Color theme for the notification message | [optional] 
-**notification_end_date** | **str** | Date until which to send the notification | [optional] 
+**notification_end_date** | **date** | Date until which to send the notification | [optional] 
+**agroportal** | [**AgroportalOntologiesConfigDTO**](AgroportalOntologiesConfigDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

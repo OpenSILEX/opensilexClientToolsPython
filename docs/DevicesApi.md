@@ -43,17 +43,17 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Device URI
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiment = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-variable = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables (optional)
+uri = 'http://example.com/' # str | Device URI
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiment = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+variable = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
-provenance = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uri (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+provenance = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uri (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
 
 
 try:
@@ -169,7 +169,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"' # str | Device URI
+uri = 'http://opensilex.dev/set/device/sensingdevice-sensor_01' # str | Device URI
 
 
 try:
@@ -221,15 +221,15 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-rdf_type = '\"vocabulary:SensingDevice\"' # str | RDF type filter (optional)
+rdf_type = 'vocabulary:SensingDevice' # str | RDF type filter (optional)
 include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 year = 2017 # int | Search by year (optional)
-existence_date = '2013-10-20' # str | Date to filter device existence (optional)
-brand = '\".*\"' # str | Regex pattern for filtering by brand (optional)
-model = '\".*\"' # str | Regex pattern for filtering by model (optional)
-serial_number = '\".*\"' # str | Regex pattern for filtering by serial number (optional)
-metadata = '\"{ \\\"Group\\\" : \\\"weather station\\\",\\n\\\"Group2\\\" : \\\"A\\\"}\"' # str | Search by metadata (optional)
+existence_date = '2013-10-20' # date | Date to filter device existence (optional)
+brand = '.*' # str | Regex pattern for filtering by brand (optional)
+model = '.*' # str | Regex pattern for filtering by model (optional)
+serial_number = '.*' # str | Regex pattern for filtering by serial number (optional)
+metadata = '{ \"Group\" : \"weather station\", \"Group2\" : \"A\"}' # str | Search by metadata (optional)
 
 
 try:
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
  **include_subtypes** | **bool**| Set this param to true when filtering on rdf_type to also retrieve sub-types | [optional] [default to false]
  **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **year** | **int**| Search by year | [optional] 
- **existence_date** | **str**| Date to filter device existence | [optional] 
+ **existence_date** | **date**| Date to filter device existence | [optional] 
  **brand** | **str**| Regex pattern for filtering by brand | [optional] 
  **model** | **str**| Regex pattern for filtering by model | [optional] 
  **serial_number** | **str**| Regex pattern for filtering by serial number | [optional] 
@@ -289,8 +289,8 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
 body = [opensilexClientToolsPython.GeometryDTO()] # list[GeometryDTO] | Devices (optional)
-selected_props = ['\"test\"'] # list[str] | properties selected (optional)
-format = '\"shp\"' # str | export format (shp/geojson) (optional)
+selected_props = ['test'] # list[str] | properties selected (optional)
+format = 'shp' # str | export format (shp/geojson) (optional)
 page_size = 10000 # int | Page size limited to 10,000 objects (optional)
 
 
@@ -396,7 +396,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"' # str | device URI
+uri = 'http://opensilex.dev/set/device/sensingdevice-sensor_01' # str | device URI
 
 
 try:
@@ -500,7 +500,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Device URI
+uri = 'http://example.com/' # str | Device URI
 
 
 try:
@@ -552,7 +552,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Device URI
+uri = 'http://example.com/' # str | Device URI
 
 
 try:
@@ -604,7 +604,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"' # str | Device URI
+uri = 'http://opensilex.dev/set/device/sensingdevice-sensor_01' # str | Device URI
 
 
 try:
@@ -656,7 +656,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://example.com/\"' # str | target URI
+uri = 'http://example.com/' # str | target URI
 
 
 try:
@@ -762,18 +762,18 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Device URI
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiment = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-variable = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables (optional)
+uri = 'http://example.com/' # str | Device URI
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiment = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+variable = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
-provenance = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uri (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+provenance = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uri (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -840,16 +840,16 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Device URI
+uri = 'http://example.com/' # str | Device URI
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiment = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiments (optional)
-scientific_objects = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by object uris list (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uris list (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiment = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiments (optional)
+scientific_objects = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by object uris list (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uris list (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -914,18 +914,18 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
-rdf_type = '\"vocabulary:SensingDevice\"' # str | RDF type filter (optional)
+rdf_type = 'vocabulary:SensingDevice' # str | RDF type filter (optional)
 include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
-variable = '\"test:set/variables#air_temperature_thermocouple_degree-celsius\"' # str | Variable (optional)
+variable = 'test:set/variables#air_temperature_thermocouple_degree-celsius' # str | Variable (optional)
 year = 2017 # int | Search by year (optional)
-existence_date = '2013-10-20' # str | Date to filter device existence (optional)
-facility = '\"http://example.com\"' # str | Search by facility (optional)
-brand = '\".*\"' # str | Regex pattern for filtering by brand (optional)
-model = '\".*\"' # str | Regex pattern for filtering by model (optional)
-serial_number = '\".*\"' # str | Regex pattern for filtering by serial number (optional)
-metadata = '\"{ \\\"Group\\\" : \\\"weather station\\\",\\n\\\"Group2\\\" : \\\"A\\\"}\"' # str | Search by metadata (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+existence_date = '2013-10-20' # date | Date to filter device existence (optional)
+facility = 'http://example.com' # str | Search by facility (optional)
+brand = '.*' # str | Regex pattern for filtering by brand (optional)
+model = '.*' # str | Regex pattern for filtering by model (optional)
+serial_number = '.*' # str | Regex pattern for filtering by serial number (optional)
+metadata = '{ \"Group\" : \"weather station\", \"Group2\" : \"A\"}' # str | Search by metadata (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -947,7 +947,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **variable** | **str**| Variable | [optional] 
  **year** | **int**| Search by year | [optional] 
- **existence_date** | **str**| Date to filter device existence | [optional] 
+ **existence_date** | **date**| Date to filter device existence | [optional] 
  **facility** | **str**| Search by facility | [optional] 
  **brand** | **str**| Regex pattern for filtering by brand | [optional] 
  **model** | **str**| Regex pattern for filtering by model | [optional] 

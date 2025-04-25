@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**add_class_property_restriction**](OntologyApi.md#add_class_property_restriction) | **POST** /ontology/rdf_type_property_restriction | Add a rdf type property restriction
-[**check_ur_is_types**](OntologyApi.md#check_ur_is_types) | **POST** /ontology/check_rdf_types | Check the given rdf-types on the given uris
+[**check_uris_types**](OntologyApi.md#check_uris_types) | **POST** /ontology/check_rdf_types | Check the given rdf-types on the given uris
 [**create_property**](OntologyApi.md#create_property) | **POST** /ontology/property | Create a RDF property
 [**delete_class_property_restriction**](OntologyApi.md#delete_class_property_restriction) | **DELETE** /ontology/rdf_type_property_restriction | Delete a rdf type property restriction
 [**delete_property**](OntologyApi.md#delete_property) | **DELETE** /ontology/property | Delete a property
@@ -23,8 +23,8 @@ Method | HTTP request | Description
 [**get_sub_classes_of**](OntologyApi.md#get_sub_classes_of) | **GET** /ontology/subclasses_of | Search sub-classes tree of an RDF class
 [**get_sub_properties_of**](OntologyApi.md#get_sub_properties_of) | **GET** /ontology/subproperties_of | Return property list from a parent property
 [**get_uri_label**](OntologyApi.md#get_uri_label) | **GET** /ontology/uri_label | Return associated rdfs:label of an uri if exists
-[**get_uri_labels_list**](OntologyApi.md#get_uri_labels_list) | **GET** /ontology/uris_labels | Return associated rdfs:label of uris if they exist
-[**get_uri_types**](OntologyApi.md#get_uri_types) | **GET** /ontology/uri_types | Return all rdf types of an uri
+[**get_uri_labels_list**](OntologyApi.md#get_uri_labels_list) | **POST** /ontology/uris_labels | Return associated rdfs:label of uris if they exist
+[**get_uri_types**](OntologyApi.md#get_uri_types) | **POST** /ontology/uri_types | Return all rdf types of an uri
 [**rename_uri**](OntologyApi.md#rename_uri) | **PUT** /ontology/{uri}/rename | Rename all occurrences of the given URI
 [**search_sub_classes_of**](OntologyApi.md#search_sub_classes_of) | **GET** /ontology/subclasses_of/search | Search sub-classes tree of an RDF class
 [**update_class_property_restriction**](OntologyApi.md#update_class_property_restriction) | **PUT** /ontology/rdf_type_property_restriction | Update a rdf type property restriction
@@ -83,8 +83,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **check_ur_is_types**
-> list[URITypesDTO] check_ur_is_types(rdf_types, authorization, body=body, accept_language=accept_language)
+# **check_uris_types**
+> list[URITypesDTO] check_uris_types(rdf_types, authorization, body=body, accept_language=accept_language)
 
 Check the given rdf-types on the given uris
 
@@ -108,10 +108,10 @@ body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | URIs lis
 
 try:
     # Check the given rdf-types on the given uris
-    api_response = api_instance.check_ur_is_types(rdf_types, body=body, )
+    api_response = api_instance.check_uris_types(rdf_types, body=body, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling OntologyApi->check_ur_is_types: %s\n" % e)
+    print("Exception when calling OntologyApi->check_uris_types: %s\n" % e)
 ```
 
 ### Parameters
@@ -419,7 +419,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI (optional)
-name = '\"plant_height\"' # str | Name regex pattern (optional)
+name = 'plant_height' # str | Name regex pattern (optional)
 
 
 try:
@@ -575,7 +575,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI (optional)
-name = '\"plant_height\"' # str | Name regex pattern (optional)
+name = 'plant_height' # str | Name regex pattern (optional)
 
 
 try:
@@ -629,7 +629,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 domain = 'domain_example' # str | Domain URI
-name = '\"plant_height\"' # str | Name regex pattern (optional)
+name = 'plant_height' # str | Name regex pattern (optional)
 include_sub_classes = true # bool | Return all properties from sub-classes (optional) (default to true)
 
 
@@ -1042,7 +1042,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_uri_labels_list**
-> list[NamedResourceDTO] get_uri_labels_list(uri, authorization, context=context, search_default=search_default, accept_language=accept_language)
+> list[NamedResourceDTO] get_uri_labels_list(body, authorization, context=context, search_default=search_default, accept_language=accept_language)
 
 Return associated rdfs:label of uris if they exist
 
@@ -1060,14 +1060,14 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
-uri = ['uri_example'] # list[str] | URIs to get label from
+body = [opensilexClientToolsPython.list[str]()] # list[str] | URIs to get label from
 context = 'context_example' # str | Context URI (optional)
 search_default = true # bool | Look for all contexts if not present in specified context (optional)
 
 
 try:
     # Return associated rdfs:label of uris if they exist
-    api_response = api_instance.get_uri_labels_list(uri, context=context, search_default=search_default, )
+    api_response = api_instance.get_uri_labels_list(body, context=context, search_default=search_default, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_uri_labels_list: %s\n" % e)
@@ -1077,7 +1077,7 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uri** | [**list[str]**](str.md)| URIs to get label from | 
+ **body** | **list[str]**| URIs to get label from | 
  **context** | **str**| Context URI | [optional] 
  **search_default** | **bool**| Look for all contexts if not present in specified context | [optional] 
 
@@ -1098,7 +1098,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_uri_types**
-> list[URITypesDTO] get_uri_types(uri, authorization, accept_language=accept_language)
+> list[URITypesDTO] get_uri_types(body, authorization, accept_language=accept_language)
 
 Return all rdf types of an uri
 
@@ -1116,12 +1116,12 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
-uri = ['uri_example'] # list[str] | URIs to get types from
+body = [opensilexClientToolsPython.list[str]()] # list[str] | URIs to get types from
 
 
 try:
     # Return all rdf types of an uri
-    api_response = api_instance.get_uri_types(uri, )
+    api_response = api_instance.get_uri_types(body, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OntologyApi->get_uri_types: %s\n" % e)
@@ -1131,7 +1131,7 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uri** | [**list[str]**](str.md)| URIs to get types from | 
+ **body** | **list[str]**| URIs to get types from | 
 
 
 ### Return type
@@ -1222,7 +1222,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OntologyApi(pythonClient)
 parent_type = 'parent_type_example' # str | Parent RDF class URI
-name = '\"plant_height\"' # str | Name regex pattern (optional)
+name = 'plant_height' # str | Name regex pattern (optional)
 ignore_root_classes = false # bool | Flag to determine if only sub-classes must be include in result (optional) (default to false)
 
 

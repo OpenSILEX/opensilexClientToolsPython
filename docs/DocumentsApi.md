@@ -32,7 +32,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
-target = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Target URI (optional)
+target = 'http://www.opensilex.org/demo/2018/o18000076' # str | Target URI (optional)
 
 
 try:
@@ -190,7 +190,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
-uri = '\"http://opensilex.dev/set/documents/ZA17\"' # str | Document URI
+uri = 'http://opensilex.dev/set/documents/ZA17' # str | Document URI
 
 
 try:
@@ -241,7 +241,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
-uri = '\"http://opensilex.dev/set/documents/ZA17\"' # str | Document URI
+uri = 'http://opensilex.dev/set/documents/ZA17' # str | Document URI
 
 
 try:
@@ -293,15 +293,15 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DocumentsApi(pythonClient)
-rdf_type = '\"http://www.opensilex.org/vocabulary/oeso#ScientificDocument\"' # str | Search by type (optional)
-title = '\"experimental_protocol_3\"' # str | Regex pattern for filtering list by title (optional)
-_date = '\"2020\"' # str | Regex pattern for filtering list by date (optional)
-targets = '\"dev-expe:za17\"' # str | Search by targets (optional)
-authors = '\"Firstname Lastname\"' # str | Regex pattern for filtering list by author (optional)
-keyword = '\"keyword\"' # str | Regex pattern for filtering list by keyword (optional)
-multiple = '\"keyword or title\"' # str | Regex pattern for filtering list by keyword or title (optional)
-deprecated = '\"true\"' # str | Search deprecated file (optional)
-order_by = ['\"date=asc\"'] # list[str] | List of fields to sort as an array of fieldTitle=asc|desc (optional)
+rdf_type = 'http://www.opensilex.org/vocabulary/oeso#ScientificDocument' # str | Search by type (optional)
+title = 'experimental_protocol_3' # str | Regex pattern for filtering list by title (optional)
+_date = '2020' # str | Regex pattern for filtering list by date (optional)
+targets = 'dev-expe:za17' # str | Search by targets (optional)
+authors = 'Firstname Lastname' # str | Regex pattern for filtering list by author (optional)
+keyword = 'keyword' # str | Regex pattern for filtering list by keyword (optional)
+multiple = 'keyword or title' # str | Regex pattern for filtering list by keyword or title (optional)
+deprecated = 'true' # str | Search deprecated file (optional)
+order_by = ['date=asc'] # list[str] | List of fields to sort as an array of fieldTitle=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

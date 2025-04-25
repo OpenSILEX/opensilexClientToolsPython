@@ -4,7 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**classic_export_variable_by_ur_is**](VariablesApi.md#classic_export_variable_by_ur_is) | **POST** /core/variables/export_classic_by_uris | export variable by list of uris
+[**classic_export_variable_by_uris**](VariablesApi.md#classic_export_variable_by_uris) | **POST** /core/variables/export_classic_by_uris | export variable by list of uris
 [**copy_from_shared_resource_instance**](VariablesApi.md#copy_from_shared_resource_instance) | **POST** /core/variables/copy_from_shared_resource_instance | Copy the selected variables from the shared resource instance
 [**create_characteristic**](VariablesApi.md#create_characteristic) | **POST** /core/characteristics | Add a characteristic
 [**create_entity**](VariablesApi.md#create_entity) | **POST** /core/entities | Add an entity
@@ -20,22 +20,22 @@ Method | HTTP request | Description
 [**delete_unit**](VariablesApi.md#delete_unit) | **DELETE** /core/units/{uri} | Delete an unit
 [**delete_variable**](VariablesApi.md#delete_variable) | **DELETE** /core/variables/{uri} | Delete a variable
 [**delete_variables_group**](VariablesApi.md#delete_variables_group) | **DELETE** /core/variables_group/{uri} | Delete a variables group
-[**details_export_variable_by_ur_is**](VariablesApi.md#details_export_variable_by_ur_is) | **POST** /core/variables/export_details_by_uris | export detailed variable by list of uris
+[**details_export_variable_by_uris**](VariablesApi.md#details_export_variable_by_uris) | **POST** /core/variables/export_details_by_uris | export detailed variable by list of uris
 [**get_characteristic**](VariablesApi.md#get_characteristic) | **GET** /core/characteristics/{uri} | Get a characteristic
-[**get_characteristics_by_ur_is**](VariablesApi.md#get_characteristics_by_ur_is) | **GET** /core/characteristics/by_uris | Get detailed characteristics by uris
+[**get_characteristics_by_uris**](VariablesApi.md#get_characteristics_by_uris) | **GET** /core/characteristics/by_uris | Get detailed characteristics by uris
 [**get_datatypes**](VariablesApi.md#get_datatypes) | **GET** /core/variables/datatypes | Get variables datatypes
-[**get_entities_by_ur_is**](VariablesApi.md#get_entities_by_ur_is) | **GET** /core/entities/by_uris | Get detailed entities by uris
+[**get_entities_by_uris**](VariablesApi.md#get_entities_by_uris) | **GET** /core/entities/by_uris | Get detailed entities by uris
 [**get_entity**](VariablesApi.md#get_entity) | **GET** /core/entities/{uri} | Get an entity
-[**get_interest_entities_by_ur_is**](VariablesApi.md#get_interest_entities_by_ur_is) | **GET** /core/entities_of_interest/by_uris | Get detailed entities of interest by uris
+[**get_interest_entities_by_uris**](VariablesApi.md#get_interest_entities_by_uris) | **GET** /core/entities_of_interest/by_uris | Get detailed entities of interest by uris
 [**get_interest_entity**](VariablesApi.md#get_interest_entity) | **GET** /core/entities_of_interest/{uri} | Get an entity of interest
 [**get_method**](VariablesApi.md#get_method) | **GET** /core/methods/{uri} | Get a method
-[**get_methods_by_ur_is**](VariablesApi.md#get_methods_by_ur_is) | **GET** /core/methods/by_uris | Get detailed methods by uris
+[**get_methods_by_uris**](VariablesApi.md#get_methods_by_uris) | **GET** /core/methods/by_uris | Get detailed methods by uris
 [**get_unit**](VariablesApi.md#get_unit) | **GET** /core/units/{uri} | Get an unit
-[**get_units_by_ur_is**](VariablesApi.md#get_units_by_ur_is) | **GET** /core/units/by_uris | Get detailed units by uris
+[**get_units_by_uris**](VariablesApi.md#get_units_by_uris) | **GET** /core/units/by_uris | Get detailed units by uris
 [**get_variable**](VariablesApi.md#get_variable) | **GET** /core/variables/{uri} | Get a variable
-[**get_variables_by_ur_is**](VariablesApi.md#get_variables_by_ur_is) | **GET** /core/variables/by_uris | Get detailed variables by uris
+[**get_variables_by_uris**](VariablesApi.md#get_variables_by_uris) | **GET** /core/variables/by_uris | Get detailed variables by uris
 [**get_variables_group**](VariablesApi.md#get_variables_group) | **GET** /core/variables_group/{uri} | Get a variables group
-[**get_variables_group_by_ur_is**](VariablesApi.md#get_variables_group_by_ur_is) | **GET** /core/variables_group/by_uris | Get variables groups by their URIs
+[**get_variables_group_by_uris**](VariablesApi.md#get_variables_group_by_uris) | **GET** /core/variables_group/by_uris | Get variables groups by their URIs
 [**search_characteristics**](VariablesApi.md#search_characteristics) | **GET** /core/characteristics | Search characteristics by name
 [**search_entities**](VariablesApi.md#search_entities) | **GET** /core/entities | Search entities by name
 [**search_interest_entity**](VariablesApi.md#search_interest_entity) | **GET** /core/entities_of_interest | Search entities of interest by name
@@ -53,8 +53,8 @@ Method | HTTP request | Description
 [**update_variables_group**](VariablesApi.md#update_variables_group) | **PUT** /core/variables_group | Update a variables group
 
 
-# **classic_export_variable_by_ur_is**
-> classic_export_variable_by_ur_is(authorization, body=body, accept_language=accept_language)
+# **classic_export_variable_by_uris**
+> classic_export_variable_by_uris(authorization, body=body, accept_language=accept_language)
 
 export variable by list of uris
 
@@ -77,9 +77,9 @@ body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of 
 
 try:
     # export variable by list of uris
-    api_instance.classic_export_variable_by_ur_is(body=body, )
+    api_instance.classic_export_variable_by_uris(body=body, )
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->classic_export_variable_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->classic_export_variable_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -539,7 +539,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/characteristic/Height\"' # str | Characteristic URI
+uri = 'http://opensilex.dev/set/variables/characteristic/Height' # str | Characteristic URI
 
 
 try:
@@ -591,7 +591,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/entity/Plant\"' # str | Entity URI
+uri = 'http://opensilex.dev/set/variables/entity/Plant' # str | Entity URI
 
 
 try:
@@ -643,7 +643,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/entity_of_interest/Plot\"' # str | Entity of interest URI
+uri = 'http://opensilex.dev/set/variables/entity_of_interest/Plot' # str | Entity of interest URI
 
 
 try:
@@ -695,7 +695,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/method/ImageAnalysis\"' # str | Method URI
+uri = 'http://opensilex.dev/set/variables/method/ImageAnalysis' # str | Method URI
 
 
 try:
@@ -747,7 +747,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/unit/Centimeter\"' # str | Unit URI
+uri = 'http://opensilex.dev/set/variables/unit/Centimeter' # str | Unit URI
 
 
 try:
@@ -799,7 +799,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/Plant_Height\"' # str | Variable URI
+uri = 'http://opensilex.dev/set/variables/Plant_Height' # str | Variable URI
 
 
 try:
@@ -884,8 +884,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **details_export_variable_by_ur_is**
-> details_export_variable_by_ur_is(authorization, body=body, accept_language=accept_language)
+# **details_export_variable_by_uris**
+> details_export_variable_by_uris(authorization, body=body, accept_language=accept_language)
 
 export detailed variable by list of uris
 
@@ -908,9 +908,9 @@ body = opensilexClientToolsPython.URIsListPostDTO() # URIsListPostDTO | List of 
 
 try:
     # export detailed variable by list of uris
-    api_instance.details_export_variable_by_ur_is(body=body, )
+    api_instance.details_export_variable_by_uris(body=body, )
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->details_export_variable_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->details_export_variable_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -954,7 +954,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/characteristic/Height\"' # str | Characteristic URI
+uri = 'http://opensilex.dev/set/variables/characteristic/Height' # str | Characteristic URI
 
 
 try:
@@ -987,8 +987,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_characteristics_by_ur_is**
-> list[CharacteristicDetailsDTO] get_characteristics_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
+# **get_characteristics_by_uris**
+> list[CharacteristicDetailsDTO] get_characteristics_by_uris(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed characteristics by uris
 
@@ -1012,10 +1012,10 @@ shared_resource_instance = 'shared_resource_instance_example' # str | Shared res
 
 try:
     # Get detailed characteristics by uris
-    api_response = api_instance.get_characteristics_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
+    api_response = api_instance.get_characteristics_by_uris(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->get_characteristics_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->get_characteristics_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1089,8 +1089,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_entities_by_ur_is**
-> list[EntityDetailsDTO] get_entities_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
+# **get_entities_by_uris**
+> list[EntityDetailsDTO] get_entities_by_uris(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed entities by uris
 
@@ -1114,10 +1114,10 @@ shared_resource_instance = 'shared_resource_instance_example' # str | Shared res
 
 try:
     # Get detailed entities by uris
-    api_response = api_instance.get_entities_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
+    api_response = api_instance.get_entities_by_uris(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->get_entities_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->get_entities_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1162,7 +1162,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/entity/Plant\"' # str | Entity URI
+uri = 'http://opensilex.dev/set/variables/entity/Plant' # str | Entity URI
 
 
 try:
@@ -1195,8 +1195,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_interest_entities_by_ur_is**
-> list[InterestEntityDetailsDTO] get_interest_entities_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
+# **get_interest_entities_by_uris**
+> list[InterestEntityDetailsDTO] get_interest_entities_by_uris(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed entities of interest by uris
 
@@ -1220,10 +1220,10 @@ shared_resource_instance = 'shared_resource_instance_example' # str | Shared res
 
 try:
     # Get detailed entities of interest by uris
-    api_response = api_instance.get_interest_entities_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
+    api_response = api_instance.get_interest_entities_by_uris(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->get_interest_entities_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->get_interest_entities_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1268,7 +1268,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/entity_of_interest/Plot\"' # str | Entity of interest URI
+uri = 'http://opensilex.dev/set/variables/entity_of_interest/Plot' # str | Entity of interest URI
 
 
 try:
@@ -1320,7 +1320,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/method/ImageAnalysis\"' # str | Method URI
+uri = 'http://opensilex.dev/set/variables/method/ImageAnalysis' # str | Method URI
 
 
 try:
@@ -1353,8 +1353,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_methods_by_ur_is**
-> list[MethodDetailsDTO] get_methods_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
+# **get_methods_by_uris**
+> list[MethodDetailsDTO] get_methods_by_uris(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed methods by uris
 
@@ -1378,10 +1378,10 @@ shared_resource_instance = 'shared_resource_instance_example' # str | Shared res
 
 try:
     # Get detailed methods by uris
-    api_response = api_instance.get_methods_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
+    api_response = api_instance.get_methods_by_uris(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->get_methods_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->get_methods_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1426,7 +1426,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/unit/Centimeter\"' # str | Unit URI
+uri = 'http://opensilex.dev/set/variables/unit/Centimeter' # str | Unit URI
 
 
 try:
@@ -1459,8 +1459,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_units_by_ur_is**
-> list[UnitDetailsDTO] get_units_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
+# **get_units_by_uris**
+> list[UnitDetailsDTO] get_units_by_uris(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get detailed units by uris
 
@@ -1484,10 +1484,10 @@ shared_resource_instance = 'shared_resource_instance_example' # str | Shared res
 
 try:
     # Get detailed units by uris
-    api_response = api_instance.get_units_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
+    api_response = api_instance.get_units_by_uris(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->get_units_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->get_units_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1532,7 +1532,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-uri = '\"http://opensilex.dev/set/variables/Plant_Height\"' # str | Variable URI
+uri = 'http://opensilex.dev/set/variables/Plant_Height' # str | Variable URI
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
 
 
@@ -1567,8 +1567,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_variables_by_ur_is**
-> list[VariableDetailsDTO] get_variables_by_ur_is(uris, authorization, accept_language=accept_language)
+# **get_variables_by_uris**
+> list[VariableDetailsDTO] get_variables_by_uris(uris, authorization, accept_language=accept_language)
 
 Get detailed variables by uris
 
@@ -1591,10 +1591,10 @@ uris = ['uris_example'] # list[str] | Variables URIs
 
 try:
     # Get detailed variables by uris
-    api_response = api_instance.get_variables_by_ur_is(uris, )
+    api_response = api_instance.get_variables_by_uris(uris, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->get_variables_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->get_variables_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1671,8 +1671,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_variables_group_by_ur_is**
-> list[VariablesGroupGetDTO] get_variables_group_by_ur_is(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
+# **get_variables_group_by_uris**
+> list[VariablesGroupGetDTO] get_variables_group_by_uris(uris, authorization, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
 Get variables groups by their URIs
 
@@ -1696,10 +1696,10 @@ shared_resource_instance = 'shared_resource_instance_example' # str | Shared res
 
 try:
     # Get variables groups by their URIs
-    api_response = api_instance.get_variables_group_by_ur_is(uris, shared_resource_instance=shared_resource_instance, )
+    api_response = api_instance.get_variables_group_by_uris(uris, shared_resource_instance=shared_resource_instance, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling VariablesApi->get_variables_group_by_ur_is: %s\n" % e)
+    print("Exception when calling VariablesApi->get_variables_group_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1744,8 +1744,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = '\"Height\"' # str | Name (regex) (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'Height' # str | Name (regex) (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
@@ -1804,8 +1804,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = '\"plant\"' # str | Name (regex) (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'plant' # str | Name (regex) (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
@@ -1864,8 +1864,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = '\"plot\"' # str | Name (regex) (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'plot' # str | Name (regex) (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
@@ -1924,8 +1924,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = '\"ImageAnalysis\"' # str | Name (regex) (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'ImageAnalysis' # str | Name (regex) (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
@@ -1984,8 +1984,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = '\"Centimeter\"' # str | Name (regex) (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'Centimeter' # str | Name (regex) (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional)
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
@@ -2044,7 +2044,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = '\"plant_height\"' # str | Name regex pattern (optional)
+name = 'plant_height' # str | Name regex pattern (optional)
 entity = 'entity_example' # str | Entity filter (optional)
 entity_of_interest = 'entity_of_interest_example' # str | Entity of interest filter (optional)
 characteristic = 'characteristic_example' # str | Characteristic filter (optional)
@@ -2059,7 +2059,7 @@ with_associated_data = false # bool | Set this param to true to get associated d
 experiments = ['experiments_example'] # list[str] | Experiment filter (optional)
 scientific_objects = ['scientific_objects_example'] # list[str] | Scientific object filter (optional)
 devices = ['devices_example'] # list[str] | Device filter (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)
@@ -2132,8 +2132,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
-name = '\"plant_height\"' # str | Name regex pattern (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'plant_height' # str | Name regex pattern (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -2192,7 +2192,7 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
 variable_uri = 'variable_uri_example' # str | Variable URI (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 shared_resource_instance = 'shared_resource_instance_example' # str | Shared resource instance (optional)

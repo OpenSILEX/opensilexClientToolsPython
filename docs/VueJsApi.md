@@ -82,7 +82,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module = '\"opensilex\"' # str | Module identifier
+module = 'opensilex' # str | Module identifier
 
 
 try:
@@ -134,7 +134,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module = '\"opensilex\"' # str | Module identifier
+module = 'opensilex' # str | Module identifier
 
 
 try:
@@ -186,8 +186,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = '\"opensilex-front\"' # str | Module identifier
-theme_id = '\"phis\"' # str | Theme identifier
+module_id = 'opensilex-front' # str | Module identifier
+theme_id = 'phis' # str | Theme identifier
 
 
 try:
@@ -240,8 +240,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = '\"opensilex-front\"' # str | Module identifier
-theme_id = '\"phis\"' # str | Theme identifier
+module_id = 'opensilex-front' # str | Module identifier
+theme_id = 'phis' # str | Theme identifier
 
 
 try:
@@ -294,10 +294,10 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.VueJsApi(pythonClient)
-module_id = '\"opensilex-front\"' # str | Module identifier
-theme_id = '\"phis\"' # str | Theme identifier
-file_path = '\"images/opensilex.png\"' # str | Resource path (optional)
-accepted_extensions = ['\"png\"'] # list[str] | List of supported file extensions (optional)
+module_id = 'opensilex-front' # str | Module identifier
+theme_id = 'phis' # str | Theme identifier
+file_path = 'images/opensilex.png' # str | Resource path (optional)
+accepted_extensions = ['png'] # list[str] | List of supported file extensions (optional)
 
 
 try:

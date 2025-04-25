@@ -37,7 +37,7 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
-data_type = '\"json\"' # str | datatype (optional)
+data_type = 'json' # str | datatype (optional)
 
 
 try:
@@ -154,7 +154,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.BRAPIApi(pythonClient)
 study_db_id = 'study_db_id_example' # str | studyDbId
-observation_level = '\"Plot\"' # str | observationLevel (optional)
+observation_level = 'Plot' # str | observationLevel (optional)
 page_size = 20 # int | pageSize (optional) (default to 20)
 page = 0 # int | page (optional) (default to 0)
 

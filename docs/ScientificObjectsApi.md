@@ -43,7 +43,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Experiment URI (optional)
+experiment = 'http://www.opensilex.org/demo/2018/o18000076' # str | Experiment URI (optional)
 
 
 try:
@@ -147,8 +147,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = '\"http://opensilex.org/id/Plot 12\"' # str | scientific object URI
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
+uri = 'http://opensilex.org/id/Plot 12' # str | scientific object URI
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
 
 
 try:
@@ -253,9 +253,9 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
 body = [opensilexClientToolsPython.GeometryDTO()] # list[GeometryDTO] | Scientific objects (optional)
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
-selected_props = ['\"test\"'] # list[str] | properties selected (optional)
-format = '\"shp\"' # str | export format (shp/geojson) (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
+selected_props = ['test'] # list[str] | properties selected (optional)
+format = 'shp' # str | export format (shp/geojson) (optional)
 page_size = 10000 # int | Page size limited to 10,000 objects (optional)
 
 
@@ -311,7 +311,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = '\"http://opensilex.org/id/Plot 12\"' # str | Scientific Object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | Scientific Object URI
 
 
 try:
@@ -363,7 +363,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = '\"http://opensilex.org/id/Plot 12\"' # str | Scientific Object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | Scientific Object URI
 
 
 try:
@@ -415,8 +415,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = '\"http://opensilex.org/set/scientific-objects/so-1357dz_pg_34zm4384wwveg_323_37arch2017-03-30\"' # str | scientific object URI
-experiment = '\"http://opensilex.org/set/experiments/21ik1_cims-on\"' # str | Experiment URI (optional)
+uri = 'http://opensilex.org/set/scientific-objects/so-1357dz_pg_34zm4384wwveg_323_37arch2017-03-30' # str | scientific object URI
+experiment = 'http://opensilex.org/set/experiments/21ik1_cims-on' # str | Experiment URI (optional)
 
 
 try:
@@ -469,7 +469,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = '\"http://opensilex.org/id/Plot 12\"' # str | scientific object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | scientific object URI
 
 
 try:
@@ -521,7 +521,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-uri = '\"http://opensilex.org/id/Plot 12\"' # str | Scientific Object URI
+uri = 'http://opensilex.org/id/Plot 12' # str | Scientific Object URI
 
 
 try:
@@ -573,13 +573,13 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-parent = '\"http://opensilex.org/id/Plot 12\"' # str | Parent object URI (optional)
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
-rdf_types = ['\"vocabulary:Plant\"'] # list[str] | RDF type filter (optional)
+parent = 'http://opensilex.org/id/Plot 12' # str | Parent object URI (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
+rdf_types = ['vocabulary:Plant'] # list[str] | RDF type filter (optional)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
-factor_levels = ['\"vocabulary:IrrigationStress\"'] # list[str] | Factor levels URI (optional)
-facility = '\"diaphen:serre-2\"' # str | Facility (optional)
-order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+factor_levels = ['vocabulary:IrrigationStress'] # list[str] | Factor levels URI (optional)
+facility = 'diaphen:serre-2' # str | Facility (optional)
+order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -641,7 +641,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
 body = [opensilexClientToolsPython.list[str]()] # list[str] | Scientific object uris (optional)
 
 
@@ -695,7 +695,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
 
 
 try:
@@ -801,19 +801,19 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
-rdf_types = ['\"vocabulary:Plant\"'] # list[str] | RDF type filter (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
+rdf_types = ['vocabulary:Plant'] # list[str] | RDF type filter (optional)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
-parent = '\"http://opensilex.org/id/Plot 12\"' # str | Parent URI (optional)
-germplasms = ['\"http://aims.fao.org/aos/agrovoc/c_1066\"'] # list[str] | Germplasm URIs (optional)
-factor_levels = ['\"vocabulary:IrrigationStress\"'] # list[str] | Factor levels URI (optional)
-facility = '\"diaphen:serre-2\"' # str | Facility (optional)
+parent = 'http://opensilex.org/id/Plot 12' # str | Parent URI (optional)
+germplasms = ['http://aims.fao.org/aos/agrovoc/c_1066'] # list[str] | Germplasm URIs (optional)
+factor_levels = ['vocabulary:IrrigationStress'] # list[str] | Factor levels URI (optional)
+facility = 'diaphen:serre-2' # str | Facility (optional)
 variables = ['variables_example'] # list[str] | Variables URI (optional)
 devices = ['devices_example'] # list[str] | Devices URI (optional)
-existence_date = '2013-10-20' # str | Date to filter object existence (optional)
-creation_date = '2013-10-20' # str | Date to filter object creation (optional)
+existence_date = '2013-10-20' # date | Date to filter object existence (optional)
+creation_date = '2013-10-20' # date | Date to filter object creation (optional)
 criteria_on_data = 'criteria_on_data_example' # str | A CriteriaDTO to be applied to data, retain objects that are targets in returned data (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -839,8 +839,8 @@ Name | Type | Description  | Notes
  **facility** | **str**| Facility | [optional] 
  **variables** | [**list[str]**](str.md)| Variables URI | [optional] 
  **devices** | [**list[str]**](str.md)| Devices URI | [optional] 
- **existence_date** | **str**| Date to filter object existence | [optional] 
- **creation_date** | **str**| Date to filter object creation | [optional] 
+ **existence_date** | **date**| Date to filter object existence | [optional] 
+ **creation_date** | **date**| Date to filter object creation | [optional] 
  **criteria_on_data** | **str**| A CriteriaDTO to be applied to data, retain objects that are targets in returned data | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
@@ -881,9 +881,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = '\"http://example.com/\"' # str | Context URI
-start_date = '\"2020-08-21\"' # str | Search by minimal date (optional)
-end_date = '\"2020-08-22\"' # str | Search by maximal date (optional)
+experiment = 'http://example.com/' # str | Context URI
+start_date = '2020-08-21' # str | Search by minimal date (optional)
+end_date = '2020-08-22' # str | Search by maximal date (optional)
 
 
 try:

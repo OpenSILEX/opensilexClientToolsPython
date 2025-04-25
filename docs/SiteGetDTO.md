@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **facilities** | [**list[NamedResourceDTOFacilityModel]**](NamedResourceDTOFacilityModel.md) |  | [optional] 
 **groups** | [**list[NamedResourceDTOGroupModel]**](NamedResourceDTOGroupModel.md) |  | [optional] 
 **geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
+**description** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

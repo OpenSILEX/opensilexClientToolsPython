@@ -29,9 +29,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.MetricsApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Metrics URI
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+uri = 'http://opensilex/set/experiments/ZA17' # str | Metrics URI
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -89,8 +89,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.MetricsApi(pythonClient)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -147,8 +147,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.MetricsApi(pythonClient)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -205,7 +205,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.MetricsApi(pythonClient)
-period = '\"DAY, WEEK, MONTH, YEAR\"' # str | Search by minimal date (optional)
+period = 'DAY, WEEK, MONTH, YEAR' # str | Search by minimal date (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

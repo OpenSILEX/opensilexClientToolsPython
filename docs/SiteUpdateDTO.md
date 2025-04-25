@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **organizations** | **list[str]** |  | [optional] 
 **facilities** | **list[str]** |  | [optional] 
 **groups** | **list[str]** |  | [optional] 
+**description** | **str** |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 

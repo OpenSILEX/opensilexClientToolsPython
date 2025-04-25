@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**get_factor_level**](FactorsApi.md#get_factor_level) | **GET** /core/experiments/factors/levels/{uri} | Get a factor level
 [**get_factor_level_detail**](FactorsApi.md#get_factor_level_detail) | **GET** /core/experiments/factors/levels/{uri}/details | Get a factor level
 [**get_factor_levels**](FactorsApi.md#get_factor_levels) | **GET** /core/experiments/factors/{uri}/levels | Get factor levels
-[**get_factors_by_ur_is**](FactorsApi.md#get_factors_by_ur_is) | **GET** /core/experiments/factors/by_uris | Get a list of factors by their URIs
+[**get_factors_by_uris**](FactorsApi.md#get_factors_by_uris) | **GET** /core/experiments/factors/by_uris | Get a list of factors by their URIs
 [**search_categories**](FactorsApi.md#search_categories) | **GET** /core/experiments/factors/categories | Search categories
 [**search_factor_levels**](FactorsApi.md#search_factor_levels) | **GET** /core/experiments/factors/factor_levels | Search factors levels
 [**search_factors**](FactorsApi.md#search_factors) | **GET** /core/experiments/factors | Search factors
@@ -39,7 +39,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-experiment = '\"http://www.opensilex.org/demo/2018/o18000076\"' # str | Experiment URI (optional)
+experiment = 'http://www.opensilex.org/demo/2018/o18000076' # str | Experiment URI (optional)
 
 
 try:
@@ -142,7 +142,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-uri = '\"platform-factor:irrigation\"' # str | Factor URI
+uri = 'platform-factor:irrigation' # str | Factor URI
 
 
 try:
@@ -194,7 +194,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-uri = '\"platform-factor:irrigation\"' # str | Factor level URI
+uri = 'platform-factor:irrigation' # str | Factor level URI
 
 
 try:
@@ -246,7 +246,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-uri = '\"platform-factor:irrigation\"' # str | Factor URI
+uri = 'platform-factor:irrigation' # str | Factor URI
 
 
 try:
@@ -298,7 +298,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-uri = '\"platform-factor:irrigation\"' # str | Factor URI
+uri = 'platform-factor:irrigation' # str | Factor URI
 
 
 try:
@@ -350,7 +350,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-uri = '\"http://opensilex/set/factorLevel/irrigation.ww\"' # str | Factor Level URI
+uri = 'http://opensilex/set/factorLevel/irrigation.ww' # str | Factor Level URI
 
 
 try:
@@ -402,7 +402,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-uri = '\"http://opensilex/set/factorLevel/irrigation.ww\"' # str | Factor Level URI
+uri = 'http://opensilex/set/factorLevel/irrigation.ww' # str | Factor Level URI
 
 
 try:
@@ -454,7 +454,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-uri = '\"platform-factor:irrigation\"' # str | Factor URI
+uri = 'platform-factor:irrigation' # str | Factor URI
 
 
 try:
@@ -487,8 +487,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_factors_by_ur_is**
-> list[FactorGetDTO] get_factors_by_ur_is(uris, authorization, accept_language=accept_language)
+# **get_factors_by_uris**
+> list[FactorGetDTO] get_factors_by_uris(uris, authorization, accept_language=accept_language)
 
 Get a list of factors by their URIs
 
@@ -511,10 +511,10 @@ uris = ['uris_example'] # list[str] | Factors URIs
 
 try:
     # Get a list of factors by their URIs
-    api_response = api_instance.get_factors_by_ur_is(uris, )
+    api_response = api_instance.get_factors_by_uris(uris, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling FactorsApi->get_factors_by_ur_is: %s\n" % e)
+    print("Exception when calling FactorsApi->get_factors_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -558,8 +558,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-name = '\"describing\"' # str | Category name regex pattern (optional)
-order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'describing' # str | Category name regex pattern (optional)
+order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 
 
 try:
@@ -612,8 +612,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-name = '\"WW\"' # str | Regex pattern for filtering on name (optional)
-order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'WW' # str | Regex pattern for filtering on name (optional)
+order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -670,11 +670,11 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
-name = '\"irrigation\"' # str | Regex pattern for filtering on name (optional)
-description = '\"20ml of water\"' # str | Regex pattern for filtering on description (optional)
-category = '\"http://aims.fao.org/aos/agrovoc/c_32668\"' # str | Filter by category of a factor (optional)
-experiment = '\"demo-exp:experiment1\"' # str | Filter by experiment (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+name = 'irrigation' # str | Regex pattern for filtering on name (optional)
+description = '20ml of water' # str | Regex pattern for filtering on description (optional)
+category = 'http://aims.fao.org/aos/agrovoc/c_32668' # str | Filter by category of a factor (optional)
+experiment = 'demo-exp:experiment1' # str | Filter by experiment (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 
 **name** | **str** |  | [optional] 
-**start_date** | **str** |  | 
-**end_date** | **str** |  | [optional] 
+**start_date** | **date** |  | 
+**end_date** | **date** |  | [optional] 
 **description** | **str** |  | [optional] 
 **objective** | **str** |  | [optional] 
 **species** | **list[str]** |  | [optional] 

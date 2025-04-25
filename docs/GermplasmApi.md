@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**get_germplasm_attributes**](GermplasmApi.md#get_germplasm_attributes) | **GET** /core/germplasm/attributes | Get attributes of all germplasm
 [**get_germplasm_experiments**](GermplasmApi.md#get_germplasm_experiments) | **GET** /core/germplasm/{uri}/experiments | Get experiments where a germplasm has been used
 [**get_germplasm_group**](GermplasmApi.md#get_germplasm_group) | **GET** /core/germplasm_group/{uri} | Get a germplasm group
-[**get_germplasm_group_by_ur_is**](GermplasmApi.md#get_germplasm_group_by_ur_is) | **GET** /core/germplasm_group/by-uris | Get germplasm groups by their URIs
+[**get_germplasm_group_by_uris**](GermplasmApi.md#get_germplasm_group_by_uris) | **GET** /core/germplasm_group/by-uris | Get germplasm groups by their URIs
 [**get_germplasm_group_content**](GermplasmApi.md#get_germplasm_group_content) | **GET** /core/germplasm_group/{uri}/germplasm | Get a germplasm group&#39;s germplasm, paginated
 [**get_germplasm_group_with_germplasms**](GermplasmApi.md#get_germplasm_group_with_germplasms) | **GET** /core/germplasm_group/with-germplasm/{uri} | Get a germplasm group with nested germplasm details
 [**get_germplasms_by_uri**](GermplasmApi.md#get_germplasms_by_uri) | **POST** /core/germplasm/by_uris | Get a list of germplasms by their URIs
@@ -149,7 +149,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Germplasm URI
+uri = 'http://example.com/' # str | Germplasm URI
 
 
 try:
@@ -303,7 +303,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = '\"http://www.phenome-fppn.fr/id/species/zeamays\"' # str | germplasm URI
+uri = 'http://www.phenome-fppn.fr/id/species/zeamays' # str | germplasm URI
 
 
 try:
@@ -356,7 +356,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 attribute = 'attribute_example' # str | 
-attribute_value = '\".*\"' # str | Regex pattern for filtering attribute value (optional)
+attribute_value = '.*' # str | Regex pattern for filtering attribute value (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -463,9 +463,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = '\"dev-germplasm:g01\"' # str | germplasm URI
+uri = 'dev-germplasm:g01' # str | germplasm URI
 attribute_value = '.*' # str | Regex pattern for filtering experiments by name (optional) (default to .*)
-order_by = ['\"name=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['name=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -556,8 +556,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_germplasm_group_by_ur_is**
-> list[GermplasmGroupGetDTO] get_germplasm_group_by_ur_is(uris, authorization, accept_language=accept_language)
+# **get_germplasm_group_by_uris**
+> list[GermplasmGroupGetDTO] get_germplasm_group_by_uris(uris, authorization, accept_language=accept_language)
 
 Get germplasm groups by their URIs
 
@@ -580,10 +580,10 @@ uris = ['uris_example'] # list[str] | Germplasm group URIs
 
 try:
     # Get germplasm groups by their URIs
-    api_response = api_instance.get_germplasm_group_by_ur_is(uris, )
+    api_response = api_instance.get_germplasm_group_by_uris(uris, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling GermplasmApi->get_germplasm_group_by_ur_is: %s\n" % e)
+    print("Exception when calling GermplasmApi->get_germplasm_group_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -628,7 +628,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 uri = 'uri_example' # str | Germplasm group URI
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -789,22 +789,22 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-uri = '\"http://opensilex/set/experiments/ZA17\"' # str | Regex pattern for filtering list by uri (optional)
-rdf_type = '\"http://www.opensilex.org/vocabulary/oeso#Variety\"' # str | Search by type (optional)
+uri = 'http://opensilex/set/experiments/ZA17' # str | Regex pattern for filtering list by uri (optional)
+rdf_type = 'http://www.opensilex.org/vocabulary/oeso#Variety' # str | Search by type (optional)
 name = '.*' # str | Regex pattern for filtering list by name and synonyms (optional) (default to .*)
 code = '.*' # str | Regex pattern for filtering list by code (optional) (default to .*)
 production_year = 2020 # int | Search by production year (optional)
-species = '\"http://www.phenome-fppn.fr/id/species/zeamays\"' # str | Search by species (optional)
-variety = '\"http://opensilex.test/id/germplasm/variety.huachano\"' # str | Search by variety (optional)
-accession = '\"http://opensilex.test/id/germplasm/accession.v_a_x_v_b\"' # str | Search by accession (optional)
+species = 'http://www.phenome-fppn.fr/id/species/zeamays' # str | Search by species (optional)
+variety = 'http://opensilex.test/id/germplasm/variety.huachano' # str | Search by variety (optional)
+accession = 'http://opensilex.test/id/germplasm/accession.v_a_x_v_b' # str | Search by accession (optional)
 group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
-institute = '\"INRA\"' # str | Search by institute (optional)
+institute = 'INRA' # str | Search by institute (optional)
 experiment = 'experiment_example' # str | Search by experiment (optional)
 parent_germplasms = ['parent_germplasms_example'] # list[str] | Search by parent varieties A or B (optional)
 parent_germplasms_m = ['parent_germplasms_m_example'] # list[str] | Search by parent varieties A (optional)
 parent_germplasms_f = ['parent_germplasms_f_example'] # list[str] | Search by parent varieties B (optional)
-metadata = '\"{ \\\"water_stress\\\" : \\\"resistant\\\",\\n\\\"yield\\\" : \\\"moderate\\\"}\"' # str | Search by metadata (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+metadata = '{ \"water_stress\" : \"resistant\", \"yield\" : \"moderate\"}' # str | Search by metadata (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -876,8 +876,8 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
 name = 'name_example' # str | Regex pattern for filtering by name (optional)
-germplasm = ['\"http://aims.fao.org/aos/agrovoc/c_1066\"'] # list[str] | Germplasm URIs (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+germplasm = ['http://aims.fao.org/aos/agrovoc/c_1066'] # list[str] | Germplasm URIs (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

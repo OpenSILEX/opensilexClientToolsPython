@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**get_organization**](OrganizationsApi.md#get_organization) | **GET** /core/organisations/{uri} | Get an organisation 
 [**get_site**](OrganizationsApi.md#get_site) | **GET** /core/sites/{uri} | Get a site
 [**get_sites_by_uri**](OrganizationsApi.md#get_sites_by_uri) | **GET** /core/sites/by_uris | Get a list of sites
+[**get_sites_with_location**](OrganizationsApi.md#get_sites_with_location) | **GET** /core/sites/with_location | Get only the list of sites with a location
 [**minimal_search_facilities**](OrganizationsApi.md#minimal_search_facilities) | **GET** /core/facilities/minimal_search | Search facilities returning minimal embedded information for better performance
 [**search_facilities**](OrganizationsApi.md#search_facilities) | **GET** /core/facilities | Search facilities
 [**search_organizations**](OrganizationsApi.md#search_organizations) | **GET** /core/organisations | Search organisations
@@ -200,7 +201,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Facility URI
+uri = 'http://example.com/' # str | Facility URI
 
 
 try:
@@ -252,7 +253,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Organisation URI
+uri = 'http://example.com/' # str | Organisation URI
 
 
 try:
@@ -458,7 +459,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-uri = '\"http://opensilex.dev/organisations/facility/phenoarch\"' # str | facility URI
+uri = 'http://opensilex.dev/organisations/facility/phenoarch' # str | facility URI
 
 
 try:
@@ -510,7 +511,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
-uri = '\"http://opensilex.dev/organisation/phenoarch\"' # str | Organisation URI
+uri = 'http://opensilex.dev/organisation/phenoarch' # str | Organisation URI
 
 
 try:
@@ -647,6 +648,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_sites_with_location**
+> list[SiteGetWithGeometryDTO] get_sites_with_location(authorization, accept_language=accept_language)
+
+Get only the list of sites with a location
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
+
+
+try:
+    # Get only the list of sites with a location
+    api_response = api_instance.get_sites_with_location()
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->get_sites_with_location: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**list[SiteGetWithGeometryDTO]**](SiteGetWithGeometryDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **minimal_search_facilities**
 > list[NamedResourceDTO] minimal_search_facilities(authorization, pattern=pattern, organizations=organizations, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -668,7 +719,7 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
 pattern = '.*' # str | Regex pattern for filtering facilities by names (optional) (default to .*)
 organizations = ['organizations_example'] # list[str] | List of organizations hosted by the facilities to filter (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 56 # int | Page number (optional)
 page_size = 56 # int | Page size (optional)
 
@@ -728,7 +779,7 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
 pattern = '.*' # str | Regex pattern for filtering facilities by names (optional) (default to .*)
 organizations = ['organizations_example'] # list[str] | List of organizations hosted by the facilities to filter (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 56 # int | Page number (optional)
 page_size = 56 # int | Page size (optional)
 
@@ -768,7 +819,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_organizations**
-> list[ResourceDagDTO] search_organizations(authorization, pattern=pattern, organisation_uris=organisation_uris, accept_language=accept_language)
+> list[OrganizationDagDTO] search_organizations(authorization, pattern=pattern, organisation_uris=organisation_uris, type=type, parent_organization_uri=parent_organization_uri, facility_uri=facility_uri, accept_language=accept_language)
 
 Search organisations
 
@@ -788,11 +839,14 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
 pattern = '.*' # str | Regex pattern for filtering list by names (optional) (default to .*)
 organisation_uris = ['organisation_uris_example'] # list[str] |  organisation URIs (optional)
+type = '.*' # str | Regex pattern for filtering list by types (optional)
+parent_organization_uri = 'parent_organization_uri_example' # str | Organization every result will be direct child of (optional)
+facility_uri = 'facility_uri_example' # str | Facility for filtering (optional)
 
 
 try:
     # Search organisations
-    api_response = api_instance.search_organizations(pattern=pattern, organisation_uris=organisation_uris, )
+    api_response = api_instance.search_organizations(pattern=pattern, organisation_uris=organisation_uris, type=type, parent_organization_uri=parent_organization_uri, facility_uri=facility_uri, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling OrganizationsApi->search_organizations: %s\n" % e)
@@ -804,11 +858,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **pattern** | **str**| Regex pattern for filtering list by names | [optional] [default to .*]
  **organisation_uris** | [**list[str]**](str.md)|  organisation URIs | [optional] 
+ **type** | **str**| Regex pattern for filtering list by types | [optional] 
+ **parent_organization_uri** | **str**| Organization every result will be direct child of | [optional] 
+ **facility_uri** | **str**| Facility for filtering | [optional] 
 
 
 ### Return type
 
-[**list[ResourceDagDTO]**](ResourceDagDTO.md)
+[**list[OrganizationDagDTO]**](OrganizationDagDTO.md)
 
 ### Authorization
 
@@ -842,7 +899,7 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
 pattern = '.*' # str | Regex pattern for filtering sites by names (optional) (default to .*)
 organizations = ['organizations_example'] # list[str] | List of organizations of the sites to filter (optional)
-order_by = ['\"uri=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 56 # int | Page number (optional)
 page_size = 56 # int | Page size (optional)
 

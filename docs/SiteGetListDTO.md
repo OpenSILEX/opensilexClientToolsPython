@@ -5,7 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**address** | [**SiteAddressDTO**](SiteAddressDTO.md) |  | [optional] 
+**description** | **str** |  | [optional] 
 **organizations** | **list[str]** |  | [optional] 
+**facilities** | [**list[NamedResourceDTO]**](NamedResourceDTO.md) |  | [optional] 
 **rdf_type** | **str** |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 

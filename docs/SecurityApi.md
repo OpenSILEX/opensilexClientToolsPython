@@ -472,7 +472,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri_favorite = '\"http://example.com/\"' # str | Favorite URI
+uri_favorite = 'http://example.com/' # str | Favorite URI
 
 
 try:
@@ -523,7 +523,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri_favorite = '\"http://example.com/\"' # str | Favorite URI
+uri_favorite = 'http://example.com/' # str | Favorite URI
 
 
 try:
@@ -574,7 +574,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Group URI
+uri = 'http://example.com/' # str | Group URI
 
 
 try:
@@ -625,7 +625,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | Profile URI
+uri = 'http://example.com/' # str | Profile URI
 
 
 try:
@@ -676,7 +676,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://opensilex.dev/users#jean.michel.inrae\"' # str | Account URI
+uri = 'http://opensilex.dev/users#jean.michel.inrae' # str | Account URI
 
 
 try:
@@ -780,7 +780,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 
 
 try:
@@ -936,7 +936,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-language = '\"fr\"' # str | preferred language of the file (optional)
+language = 'fr' # str | preferred language of the file (optional)
 
 
 try:
@@ -987,7 +987,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"dev-groups:admin_group\"' # str | Group URI
+uri = 'dev-groups:admin_group' # str | Group URI
 
 
 try:
@@ -1143,7 +1143,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://opensilex.dev/person#harold.haddock.mistea\"' # str | Person URI
+uri = 'http://opensilex.dev/person#harold.haddock.mistea' # str | Person URI
 
 
 try:
@@ -1247,7 +1247,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"dev-users:Admin_OpenSilex\"' # str | Profile URI
+uri = 'dev-users:Admin_OpenSilex' # str | Profile URI
 
 
 try:
@@ -1299,7 +1299,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://opensilex.dev/users#jean.michel.inrae\"' # str | User URI
+uri = 'http://opensilex.dev/users#jean.michel.inrae' # str | User URI
 
 
 try:
@@ -1351,7 +1351,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | User URI
+uri = 'http://example.com/' # str | User URI
 
 
 try:
@@ -1403,7 +1403,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
-uri = '\"http://example.com/\"' # str | User URI
+uri = 'http://example.com/' # str | User URI
 
 
 try:
@@ -1508,7 +1508,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name or email (optional) (default to .*)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1566,7 +1566,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name (optional) (default to .*)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1625,7 +1625,7 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name or email (optional) (default to .*)
 only_without_account = false # bool | set 'true' if you want to select only persons without account (optional) (default to false)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1684,7 +1684,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name (optional) (default to .*)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1742,7 +1742,7 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
 name = '.*' # str | Regex pattern for filtering list by name or email (optional) (default to .*)
-order_by = ['\"email=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['email=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 

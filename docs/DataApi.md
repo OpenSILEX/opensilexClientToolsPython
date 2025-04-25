@@ -25,7 +25,7 @@ Method | HTTP request | Description
 [**get_mathematical_operators**](DataApi.md#get_mathematical_operators) | **GET** /core/data/mathematicalOperators | Get mathematical operators
 [**get_pictures_thumbnails**](DataApi.md#get_pictures_thumbnails) | **GET** /core/datafiles/{uri}/thumbnail | Get a picture thumbnail
 [**get_provenance**](DataApi.md#get_provenance) | **GET** /core/provenances/{uri} | Get a provenance
-[**get_provenances_by_ur_is**](DataApi.md#get_provenances_by_ur_is) | **GET** /core/provenances/by_uris | Get a list of provenances by their URIs
+[**get_provenances_by_uris**](DataApi.md#get_provenances_by_uris) | **GET** /core/provenances/by_uris | Get a list of provenances by their URIs
 [**get_used_provenances**](DataApi.md#get_used_provenances) | **GET** /core/data/provenances | Search provenances linked to data
 [**get_used_provenances_by_targets**](DataApi.md#get_used_provenances_by_targets) | **POST** /core/data/provenances/by_targets | Search provenances linked to data for a large list of targets
 [**get_used_variables**](DataApi.md#get_used_variables) | **GET** /core/data/variables | Get variables linked to data
@@ -112,17 +112,17 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
 group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
 germplasm_uris = ['germplasm_uris_example'] # list[str] | Germplasm uris, can be an empty array but can't be null (optional)
 count_limit = 1000 # int | Count limit. Specify the maximum number of data to count. Set to 0 for no limit (optional) (default to 1000)
@@ -192,8 +192,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-target = ['\"http://www.opensilex.org/demo/2018/o18000076\"'] # list[str] | Target URI (optional)
-device = ['\"http://www.opensilex.org/demo/2018/o18000076\"'] # list[str] | Device URI (optional)
+target = ['http://www.opensilex.org/demo/2018/o18000076'] # list[str] | Target URI (optional)
+device = ['http://www.opensilex.org/demo/2018/o18000076'] # list[str] | Device URI (optional)
 
 
 try:
@@ -298,7 +298,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-uri = '\"http://opensilex.dev/id/data/1598857852858\"' # str | Data URI
+uri = 'http://opensilex.dev/id/data/1598857852858' # str | Data URI
 
 
 try:
@@ -350,10 +350,10 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Search by experiment uri (optional)
-target = '\"http://opensilex.dev/opensilex/2020/o20000345\"' # str | Search by target uri (optional)
-variable = '\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"' # str | Search by variable uri (optional)
-provenance = '\"http://opensilex.dev/provenance/1598001689415\"' # str | Search by provenance uri (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Search by experiment uri (optional)
+target = 'http://opensilex.dev/opensilex/2020/o20000345' # str | Search by target uri (optional)
+variable = 'http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6' # str | Search by variable uri (optional)
+provenance = 'http://opensilex.dev/provenance/1598001689415' # str | Search by provenance uri (optional)
 
 
 try:
@@ -408,7 +408,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-uri = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
+uri = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
 
 
 try:
@@ -460,21 +460,21 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 0.5 # float | Search by maximal confidence index (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
 mode = 'wide' # str | Format wide or long (optional) (default to wide)
 with_raw_data = false # bool | Export also raw_data (optional) (default to false)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -750,15 +750,15 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiments (optional)
-targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris list (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uris list (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiments (optional)
+targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris list (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uris list (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -824,14 +824,14 @@ pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiments (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenance uris list (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiments (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uris list (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
@@ -897,21 +897,21 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
 targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
 group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
 germplasm_uris = ['germplasm_uris_example'] # list[str] | Targets uris, can be an empty array but can't be null (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -981,10 +981,10 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-variable = '\"http://example.com/\"' # str | variable URI
-target = '\"http://example.com/\"' # str | target URI
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
+variable = 'http://example.com/' # str | variable URI
+target = 'http://example.com/' # str | target URI
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
 calculated_only = false # bool | Retreive calculated series only (optional)
 
 
@@ -1041,9 +1041,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 
 
 try:
@@ -1097,8 +1097,8 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 body = [opensilexClientToolsPython.list[str]()] # list[str] | Search by targets uris (optional)
 
 
@@ -1291,8 +1291,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_provenances_by_ur_is**
-> list[ProvenanceGetDTO] get_provenances_by_ur_is(uris, authorization, accept_language=accept_language)
+# **get_provenances_by_uris**
+> list[ProvenanceGetDTO] get_provenances_by_uris(uris, authorization, accept_language=accept_language)
 
 Get a list of provenances by their URIs
 
@@ -1315,10 +1315,10 @@ uris = ['uris_example'] # list[str] | Provenances URIs
 
 try:
     # Get a list of provenances by their URIs
-    api_response = api_instance.get_provenances_by_ur_is(uris, )
+    api_response = api_instance.get_provenances_by_uris(uris, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling DataApi->get_provenances_by_ur_is: %s\n" % e)
+    print("Exception when calling DataApi->get_provenances_by_uris: %s\n" % e)
 ```
 
 ### Parameters
@@ -1362,10 +1362,10 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 
 
 try:
@@ -1420,9 +1420,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 body = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris (optional)
 
 
@@ -1478,9 +1478,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
-provenances = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by provenance uris (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
+provenances = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by provenance uris (optional)
 devices = ['devices_example'] # list[str] | Search by device uris (optional)
 
 
@@ -1536,9 +1536,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
+provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
 file = '/path/to/file.txt' # file | File
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
 
 
 try:
@@ -1698,19 +1698,19 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
-targets = ['\"http://opensilex.dev/opensilex/2020/o20000345\"'] # list[str] | Search by targets uris (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
+targets = ['http://opensilex.dev/opensilex/2020/o20000345'] # list[str] | Search by targets uris (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1778,21 +1778,21 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-start_date = '\"2020-08-21T00:00:00+01:00\"' # str | Search by minimal date (optional)
-end_date = '\"2020-09-21T00:00:00+01:00\"' # str | Search by maximal date (optional)
-timezone = '\"Europe/Paris\"' # str | Precise the timezone corresponding to the given dates (optional)
-experiments = ['\"http://opensilex/experiment/id/ZA17\"'] # list[str] | Search by experiment uris (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiment uris (optional)
 targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
-variables = ['\"http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6\"'] # list[str] | Search by variables uris (optional)
-devices = ['\"http://opensilex.dev/set/device/sensingdevice-sensor_01\"'] # list[str] | Search by devices uris (optional)
+variables = ['http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6'] # list[str] | Search by variables uris (optional)
+devices = ['http://opensilex.dev/set/device/sensingdevice-sensor_01'] # list[str] | Search by devices uris (optional)
 min_confidence = 0.5 # float | Search by minimal confidence index (optional)
 max_confidence = 1.0 # float | Search by maximal confidence index (optional)
-provenances = ['\"http://opensilex.dev/provenance/1598001689415\"'] # list[str] | Search by provenances (optional)
-metadata = '\"{ \\\"LabelView\\\" : \\\"side90\\\",\\n\\\"paramA\\\" : \\\"90\\\"}\"' # str | Search by metadata (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenances (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
 group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
-operators = ['\"dev:id/user/isa.droits\"'] # list[str] | Search by operators (optional)
+operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
 germplasm_uris = ['germplasm_uris_example'] # list[str] | Targets uris, can be an empty array but can't be null (optional)
-order_by = ['\"date=desc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1866,9 +1866,9 @@ name = 'name_example' # str | Regex pattern for filtering by name (optional)
 description = 'description_example' # str | Search by description (optional)
 activity = 'activity_example' # str | Search by activity URI (optional)
 activity_type = 'activity_type_example' # str | Search by activity type (optional)
-agent = 'agent_example' # str | Search by agent URI (optional)
+agent = ['agent_example'] # list[str] | Search by agent URIs (optional)
 agent_type = 'agent_type_example' # str | Search by agent type (optional)
-order_by = ['\"date=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+order_by = ['date=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
 
@@ -1889,7 +1889,7 @@ Name | Type | Description  | Notes
  **description** | **str**| Search by description | [optional] 
  **activity** | **str**| Search by activity URI | [optional] 
  **activity_type** | **str**| Search by activity type | [optional] 
- **agent** | **str**| Search by agent URI | [optional] 
+ **agent** | [**list[str]**](str.md)| Search by agent URIs | [optional] 
  **agent_type** | **str**| Search by agent type | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
@@ -2088,9 +2088,9 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-provenance = '\"http://opensilex.dev/id/provenance/provenancelabel\"' # str | Provenance URI
+provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
 file = '/path/to/file.txt' # file | File
-experiment = '\"http://opensilex/experiment/id/ZA17\"' # str | Experiment URI (optional)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
 
 
 try:

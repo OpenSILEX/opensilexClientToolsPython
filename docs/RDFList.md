@@ -3,17 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**head** | [**RDFNode**](RDFNode.md) |  | [optional] 
+**empty** | **bool** |  | [optional] 
 **strict** | **bool** |  | [optional] 
 **valid** | **bool** |  | [optional] 
-**tail** | [**RDFList**](RDFList.md) |  | [optional] 
-**empty** | **bool** |  | [optional] 
 **validity_error_message** | **str** |  | [optional] 
+**head** | [**RDFNode**](RDFNode.md) |  | [optional] 
+**tail** | [**RDFList**](RDFList.md) |  | [optional] 
 **id** | [**AnonId**](AnonId.md) |  | [optional] 
-**name_space** | **str** |  | [optional] 
-**stmt_term** | [**Statement**](Statement.md) |  | [optional] 
 **uri** | **str** |  | [optional] 
 **local_name** | **str** |  | [optional] 
+**name_space** | **str** |  | [optional] 
+**stmt_term** | [**Statement**](Statement.md) |  | [optional] 
 **resource** | **bool** |  | [optional] 
 **model** | [**Model**](Model.md) |  | [optional] 
 **literal** | **bool** |  | [optional] 

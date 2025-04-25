@@ -197,7 +197,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
-uri = '\"http://opensilex.dev/events/deplacement/1865162374\"' # str | Event URI
+uri = 'http://opensilex.dev/events/deplacement/1865162374' # str | Event URI
 
 
 try:
@@ -249,7 +249,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
-uri = '\"http://opensilex.dev/events/deplacement/1865162374\"' # str | Event URI
+uri = 'http://opensilex.dev/events/deplacement/1865162374' # str | Event URI
 
 
 try:
@@ -301,7 +301,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
-uri = '\"http://opensilex.dev/events/1865162374\"' # str | Event URI
+uri = 'http://opensilex.dev/events/1865162374' # str | Event URI
 
 
 try:
@@ -353,7 +353,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
-uri = '\"http://opensilex.dev/events/1865162374\"' # str | Event URI
+uri = 'http://opensilex.dev/events/1865162374' # str | Event URI
 
 
 try:
@@ -405,7 +405,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
-uri = '\"http://opensilex.dev/events/1865162374\"' # str | Move URI
+uri = 'http://opensilex.dev/events/1865162374' # str | Move URI
 
 
 try:
@@ -439,7 +439,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_move_event_by_uris**
-> MoveDetailsDTO get_move_event_by_uris(uris, authorization, accept_language=accept_language)
+> list[MoveDetailsDTO] get_move_event_by_uris(uris, authorization, accept_language=accept_language)
 
 Get a list of moves with all positional information
 
@@ -457,7 +457,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
-uris = ['uris_example'] # list[str] | Device URIs
+uris = ['uris_example'] # list[str] | Move URIs
 
 
 try:
@@ -472,12 +472,12 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uris** | [**list[str]**](str.md)| Device URIs | 
+ **uris** | [**list[str]**](str.md)| Move URIs | 
 
 
 ### Return type
 
-[**MoveDetailsDTO**](MoveDetailsDTO.md)
+[**list[MoveDetailsDTO]**](MoveDetailsDTO.md)
 
 ### Authorization
 
@@ -615,12 +615,12 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.EventsApi(pythonClient)
-rdf_type = '\"http://www.opensilex.org/vocabulary/oeev#MoveFrom\"' # str | Event type (optional)
-start = '\"2019-09-08T12:00:00+01:00\"' # str | Start date : match event after the given start date (optional)
-end = '\"2021-09-08T12:00:00+01:00\"' # str | End date : match event before the given end date (optional)
-target = '\"http://www.opensilex.org/demo/2018/o18000076(exact match) or o18000076(partial match)\"' # str | Target partial/exact URI (optional)
-description = '\"The pest attack\"' # str | Description regex pattern (optional)
-order_by = ['\"end=asc\"'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+rdf_type = 'http://www.opensilex.org/vocabulary/oeev#MoveFrom' # str | Event type (optional)
+start = '2019-09-08T12:00:00+01:00' # str | Start date : match event after the given start date (optional)
+end = '2021-09-08T12:00:00+01:00' # str | End date : match event before the given end date (optional)
+target = 'http://www.opensilex.org/demo/2018/o18000076(exact match) or o18000076(partial match)' # str | Target partial/exact URI (optional)
+description = 'The pest attack' # str | Description regex pattern (optional)
+order_by = ['end=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 56 # int | Page number (optional)
 page_size = 56 # int | Page size (optional)
 

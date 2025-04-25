@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | 
-**start_date** | **str** |  | 
-**end_date** | **str** |  | [optional] 
+**start_date** | **date** |  | 
+**end_date** | **date** |  | [optional] 
 **description** | **str** |  | [optional] 
 **objective** | **str** |  | 
 **organisations** | **list[str]** |  | [optional] 

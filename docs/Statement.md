@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subject** | [**Resource**](Resource.md) |  | [optional] 
 **boolean** | **bool** |  | [optional] 
 **byte** | **str** |  | [optional] 
 **short** | **int** |  | [optional] 
@@ -18,6 +17,7 @@ Name | Type | Description | Notes
 **string** | **str** |  | [optional] 
 **list** | [**RDFList**](RDFList.md) |  | [optional] 
 **model** | [**Model**](Model.md) |  | [optional] 
+**subject** | [**Resource**](Resource.md) |  | [optional] 
 **literal** | [**Literal**](Literal.md) |  | [optional] 
 **bag** | [**Bag**](Bag.md) |  | [optional] 
 **alt** | [**Alt**](Alt.md) |  | [optional] 

@@ -332,7 +332,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_factor_level**
-> FactorLevelGetDTO get_factor_level(uri, authorization, accept_language=accept_language)
+> list[FactorLevelGetDTO] get_factor_level(uri, authorization, accept_language=accept_language)
 
 Get a factor level
 
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FactorLevelGetDTO**](FactorLevelGetDTO.md)
+[**list[FactorLevelGetDTO]**](FactorLevelGetDTO.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_factor_level_detail**
-> FactorLevelGetDetailDTO get_factor_level_detail(uri, authorization, accept_language=accept_language)
+> list[FactorLevelGetDetailDTO] get_factor_level_detail(uri, authorization, accept_language=accept_language)
 
 Get a factor level
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FactorLevelGetDetailDTO**](FactorLevelGetDetailDTO.md)
+[**list[FactorLevelGetDetailDTO]**](FactorLevelGetDetailDTO.md)
 
 ### Authorization
 

@@ -174,12 +174,16 @@ class ApiClient(object):
                     return_data = json.loads(response_data.data)
             
             return_data_dict = {}
-            # with json - 'Content-Type' not in header_param is a case when multipart/form is send 
-            if 'Content-Type' not in header_params or header_params['Content-Type'] != "application/octet-stream":
-                return_data_dict['metadata'] = json.loads(response_data.data)["metadata"]
-                return_data_dict['result'] = return_data
+            if 'Content-Type' not in header_params or header_params['Content-Type'] != "application/octet-stream"  :
+                if 'Accept' in header_params and header_params['Accept'] != "application/octet-stream" :
+                # with json - 'Content-Type' not in header_param is a case when multipart/form is send 
+                    return_data_dict['metadata'] = json.loads(response_data.data)["metadata"]
+                    return_data_dict['result'] = return_data  
+                else :  
+                    # with data file - TODO accept and content type need to be fix in webservices 
+                    return_data_dict = response_data.data 
             else: 
-                # with file
+                # with document file
                 # return_data_dict['metadata'] = json.loads(response_data.data)["metadata"]
                 return_data_dict = response_data.data
         if _return_http_data_only:

@@ -87,8 +87,7 @@ class GermplasmCreationDTO(object):
         website : 'str' = None,
         relations : 'List[RDFObjectRelationDTO]' = None,
         metadata : 'Dict[str, str]' = None,
-        groups : 'List[str]' = None,
-        rdf_type : 'str' = None):  # noqa: E501
+        groups : 'List[str]' = None ):  # noqa: E501
         """GermplasmCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None

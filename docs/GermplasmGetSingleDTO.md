@@ -22,6 +22,8 @@ Name | Type | Description | Notes
 **accession_name** | **str** |  | [optional] 
 **institute** | **str** |  | [optional] 
 **website** | **str** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**groups** | **list[str]** |  | [optional] 
 **has_parent_germplasm** | [**list[GermplasmGetAllDTO]**](GermplasmGetAllDTO.md) |  | [optional] 
 **has_parent_germplasm_m** | [**list[GermplasmGetAllDTO]**](GermplasmGetAllDTO.md) |  | [optional] 
 **has_parent_germplasm_f** | [**list[GermplasmGetAllDTO]**](GermplasmGetAllDTO.md) |  | [optional] 

@@ -40,6 +40,10 @@ Name | Type | Description | Notes
 **valid_csv** | **bool** |  | [optional] 
 **too_large_dataset** | **bool** |  | [optional] 
 **error_message** | **str** |  | [optional] 
+**validation_key** | **str** |  | [optional] 
+**file_name** | **str** |  | [optional] 
+**batch_history_uri** | **str** |  | [optional] 
+**invalid_duplicate_header_by_indexes** | **dict(str, str)** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

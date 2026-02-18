@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **species** | **list[str]** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
 **facilities** | **list[str]** |  | [optional] 
+**funding** | **list[str]** |  | [optional] 
+**alternative_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

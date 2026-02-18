@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **groups** | **list[str]** |  | [optional] 
 **factors** | **list[str]** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
+**funding** | **list[str]** |  | [optional] 
+**alternative_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

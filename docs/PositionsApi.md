@@ -179,7 +179,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_position_history**
-> list[PositionGetDTO] search_position_history(target, authorization, start_date_time=start_date_time, end_date_time=end_date_time, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[MoveGetDTO] search_position_history(target, authorization, start_date_time=start_date_time, end_date_time=end_date_time, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search history of position of an object
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**list[PositionGetDTO]**](PositionGetDTO.md)
+[**list[MoveGetDTO]**](MoveGetDTO.md)
 
 ### Authorization
 

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
-**geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
+**location** | [**LocationObservationDTO**](LocationObservationDTO.md) |  | [optional] 
 **rdf_type** | **str** |  | [optional] 
 **rdf_type_name** | **str** |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 

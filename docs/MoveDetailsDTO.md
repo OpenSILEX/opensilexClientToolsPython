@@ -12,12 +12,10 @@ Name | Type | Description | Notes
 **description** | **str** | Description of the move | [optional] 
 **targets** | **list[str]** | URI(s) of items concerned by this event | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
-**_from** | [**FacilityNamedDTO**](FacilityNamedDTO.md) |  | [optional] 
-**to** | [**FacilityNamedDTO**](FacilityNamedDTO.md) |  | [optional] 
-**targets_positions** | [**list[TargetPositionGetDTO]**](TargetPositionGetDTO.md) |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
+**location** | [**LocationObservationDTO**](LocationObservationDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

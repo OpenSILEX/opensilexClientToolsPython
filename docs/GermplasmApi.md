@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**check_germplasms_exist**](GermplasmApi.md#check_germplasms_exist) | **POST** /core/germplasm/check | check germplasms exist
 [**create_germplasm**](GermplasmApi.md#create_germplasm) | **POST** /core/germplasm | Add a germplasm
 [**create_germplasm_group**](GermplasmApi.md#create_germplasm_group) | **POST** /core/germplasm_group | Add a germplasm group
 [**delete_germplasm**](GermplasmApi.md#delete_germplasm) | **DELETE** /core/germplasm/{uri} | Delete a germplasm
@@ -22,7 +23,60 @@ Method | HTTP request | Description
 [**search_germplasm_groups**](GermplasmApi.md#search_germplasm_groups) | **POST** /core/germplasm_group/search | Search germplasm groups
 [**update_germplasm**](GermplasmApi.md#update_germplasm) | **PUT** /core/germplasm | Update a germplasm
 [**update_germplasm_group**](GermplasmApi.md#update_germplasm_group) | **PUT** /core/germplasm_group | Update a germplasm group
+[**upsert_germplasms**](GermplasmApi.md#upsert_germplasms) | **POST** /core/germplasm/import | Add or update many germplasms
 
+
+# **check_germplasms_exist**
+> list[str] check_germplasms_exist(authorization, body=body, accept_language=accept_language)
+
+check germplasms exist
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
+body = opensilexClientToolsPython.StringURIsListDTO() # StringURIsListDTO | list of uris to check for existence (optional)
+
+
+try:
+    # check germplasms exist
+    api_response = api_instance.check_germplasms_exist(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling GermplasmApi->check_germplasms_exist: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**StringURIsListDTO**](StringURIsListDTO.md)| list of uris to check for existence | [optional] 
+
+
+### Return type
+
+**list[str]**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_germplasm**
 > str create_germplasm(authorization, body=body, check_only=check_only, accept_language=accept_language)
@@ -771,7 +825,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_germplasm**
-> list[GermplasmGetAllDTO] search_germplasm(authorization, uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, parent_germplasms=parent_germplasms, parent_germplasms_m=parent_germplasms_m, parent_germplasms_f=parent_germplasms_f, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[GermplasmGetAllDTO] search_germplasm(authorization, uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, parent_germplasms=parent_germplasms, parent_germplasms_m=parent_germplasms_m, parent_germplasms_f=parent_germplasms_f, metadata=metadata, is_public=is_public, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search germplasm
 
@@ -804,6 +858,7 @@ parent_germplasms = ['parent_germplasms_example'] # list[str] | Search by parent
 parent_germplasms_m = ['parent_germplasms_m_example'] # list[str] | Search by parent varieties A (optional)
 parent_germplasms_f = ['parent_germplasms_f_example'] # list[str] | Search by parent varieties B (optional)
 metadata = '{ \"water_stress\" : \"resistant\", \"yield\" : \"moderate\"}' # str | Search by metadata (optional)
+is_public = true # bool | Search private(false) or public germplasm (true) (optional)
 order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -811,7 +866,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search germplasm
-    api_response = api_instance.search_germplasm(uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, parent_germplasms=parent_germplasms, parent_germplasms_m=parent_germplasms_m, parent_germplasms_f=parent_germplasms_f, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_germplasm(uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, parent_germplasms=parent_germplasms, parent_germplasms_m=parent_germplasms_m, parent_germplasms_f=parent_germplasms_f, metadata=metadata, is_public=is_public, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling GermplasmApi->search_germplasm: %s\n" % e)
@@ -836,6 +891,7 @@ Name | Type | Description  | Notes
  **parent_germplasms_m** | [**list[str]**](str.md)| Search by parent varieties A | [optional] 
  **parent_germplasms_f** | [**list[str]**](str.md)| Search by parent varieties B | [optional] 
  **metadata** | **str**| Search by metadata | [optional] 
+ **is_public** | **bool**| Search private(false) or public germplasm (true) | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
@@ -1003,6 +1059,60 @@ except opensilexClientToolsPython.rest.ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**GermplasmGroupUpdateDTO**](GermplasmGroupUpdateDTO.md)| Germplasm group description | [optional] 
+
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upsert_germplasms**
+> str upsert_germplasms(authorization, body=body, check_only=check_only, accept_language=accept_language)
+
+Add or update many germplasms
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
+body = [opensilexClientToolsPython.GermplasmCreationDTO()] # list[GermplasmCreationDTO] | List of germplasm description (optional)
+check_only = false # bool | Checking only (optional) (default to false)
+
+
+try:
+    # Add or update many germplasms
+    api_response = api_instance.upsert_germplasms(body=body, check_only=check_only, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling GermplasmApi->upsert_germplasms: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**list[GermplasmCreationDTO]**](GermplasmCreationDTO.md)| List of germplasm description | [optional] 
+ **check_only** | **bool**| Checking only | [optional] [default to false]
 
 
 ### Return type

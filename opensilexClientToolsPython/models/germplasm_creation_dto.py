@@ -48,8 +48,7 @@ class GermplasmCreationDTO(object):
         'relations': 'list[RDFObjectRelationDTO]',
         'metadata': 'dict(str, str)',
         'is_public': 'bool',
-        'groups': 'list[str]',
-        'rdf_type': 'str'
+        'groups': 'list[str]'
     }
 
     attribute_map = {
@@ -68,8 +67,7 @@ class GermplasmCreationDTO(object):
         'relations': 'relations',
         'metadata': 'metadata',
         'is_public': 'is_public',
-        'groups': 'groups',
-        'rdf_type': 'rdfType'
+        'groups': 'groups'
     }
     def __init__(self,
         rdf_type : 'str',
@@ -87,7 +85,7 @@ class GermplasmCreationDTO(object):
         website : 'str' = None,
         relations : 'List[RDFObjectRelationDTO]' = None,
         metadata : 'Dict[str, str]' = None,
-        groups : 'List[str]' = None ):  # noqa: E501
+        groups : 'List[str]' = None):  # noqa: E501
         """GermplasmCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -106,7 +104,6 @@ class GermplasmCreationDTO(object):
         self._metadata = None
         self._is_public = None
         self._groups = None
-        self._rdf_type = None
         self.discriminator = None
 
         if uri is not None:
@@ -138,8 +135,6 @@ class GermplasmCreationDTO(object):
         self.is_public = is_public
         if groups is not None:
             self.groups = groups
-        if rdf_type is not None:
-            self.rdf_type = rdf_type
 
     @property
     def uri(self):
@@ -508,27 +503,6 @@ class GermplasmCreationDTO(object):
         """
 
         self._groups = groups
-
-    @property
-    def rdf_type(self):
-        """Gets the rdf_type of this GermplasmCreationDTO.  # noqa: E501
-
-
-        :return: The rdf_type of this GermplasmCreationDTO.  # noqa: E501
-        :rtype: str
-        """
-        return self._rdf_type
-
-    @rdf_type.setter
-    def rdf_type(self, rdf_type):
-        """Sets the rdf_type of this GermplasmCreationDTO.
-
-
-        :param rdf_type: The rdf_type of this GermplasmCreationDTO.  # noqa: E501
-        :type: str
-        """
-
-        self._rdf_type = rdf_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -33,10 +33,10 @@ class ModelProperty(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'local_name': 'str',
         'name_space': 'str',
         '_property': 'bool',
         'ordinal': 'int',
-        'local_name': 'str',
         'id': 'AnonId',
         'uri': 'str',
         'resource': 'bool',
@@ -48,10 +48,10 @@ class ModelProperty(object):
     }
 
     attribute_map = {
+        'local_name': 'localName',
         'name_space': 'nameSpace',
         '_property': 'property',
         'ordinal': 'ordinal',
-        'local_name': 'localName',
         'id': 'id',
         'uri': 'uri',
         'resource': 'resource',
@@ -62,10 +62,10 @@ class ModelProperty(object):
         'statement_term': 'statementTerm'
     }
     def __init__(self,
+        local_name : 'str' = None,
         name_space : 'str' = None,
         _property : 'bool' = None,
         ordinal : 'int' = None,
-        local_name : 'str' = None,
         id : 'AnonId' = None,
         uri : 'str' = None,
         resource : 'bool' = None,
@@ -76,10 +76,10 @@ class ModelProperty(object):
         statement_term : 'bool' = None):  # noqa: E501
         """ModelProperty - a model defined in Swagger"""  # noqa: E501
 
+        self._local_name = None
         self._name_space = None
         self.__property = None
         self._ordinal = None
-        self._local_name = None
         self._id = None
         self._uri = None
         self._resource = None
@@ -90,14 +90,14 @@ class ModelProperty(object):
         self._statement_term = None
         self.discriminator = None
 
+        if local_name is not None:
+            self.local_name = local_name
         if name_space is not None:
             self.name_space = name_space
         if _property is not None:
             self._property = _property
         if ordinal is not None:
             self.ordinal = ordinal
-        if local_name is not None:
-            self.local_name = local_name
         if id is not None:
             self.id = id
         if uri is not None:
@@ -114,6 +114,27 @@ class ModelProperty(object):
             self.uriresource = uriresource
         if statement_term is not None:
             self.statement_term = statement_term
+
+    @property
+    def local_name(self):
+        """Gets the local_name of this ModelProperty.  # noqa: E501
+
+
+        :return: The local_name of this ModelProperty.  # noqa: E501
+        :rtype: str
+        """
+        return self._local_name
+
+    @local_name.setter
+    def local_name(self, local_name):
+        """Sets the local_name of this ModelProperty.
+
+
+        :param local_name: The local_name of this ModelProperty.  # noqa: E501
+        :type: str
+        """
+
+        self._local_name = local_name
 
     @property
     def name_space(self):
@@ -177,27 +198,6 @@ class ModelProperty(object):
         """
 
         self._ordinal = ordinal
-
-    @property
-    def local_name(self):
-        """Gets the local_name of this ModelProperty.  # noqa: E501
-
-
-        :return: The local_name of this ModelProperty.  # noqa: E501
-        :rtype: str
-        """
-        return self._local_name
-
-    @local_name.setter
-    def local_name(self, local_name):
-        """Sets the local_name of this ModelProperty.
-
-
-        :param local_name: The local_name of this ModelProperty.  # noqa: E501
-        :type: str
-        """
-
-        self._local_name = local_name
 
     @property
     def id(self):

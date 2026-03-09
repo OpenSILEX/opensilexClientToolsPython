@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **metadata** | **dict(str, str)** |  | [optional] 
 **is_public** | **bool** | boolean | 
 **groups** | **list[str]** | groups | [optional] 
-**rdf_type** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

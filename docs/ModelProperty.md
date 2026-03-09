@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**local_name** | **str** |  | [optional] 
 **name_space** | **str** |  | [optional] 
 **_property** | **bool** |  | [optional] 
 **ordinal** | **int** |  | [optional] 
-**local_name** | **str** |  | [optional] 
 **id** | [**AnonId**](AnonId.md) |  | [optional] 
 **uri** | **str** |  | [optional] 
 **resource** | **bool** |  | [optional] 

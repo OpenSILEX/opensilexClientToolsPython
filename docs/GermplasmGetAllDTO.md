@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **species** | **str** |  | [optional] 
 **species_name** | **str** |  | [optional] 
+**is_public** | **bool** |  | [optional] 
+**groups** | **list[str]** |  | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 

@@ -8,11 +8,15 @@ Method | HTTP request | Description
 [**count_data**](DataApi.md#count_data) | **POST** /core/data/count | Count data
 [**count_datafiles**](DataApi.md#count_datafiles) | **GET** /core/datafiles/count | Count datafiles
 [**create_provenance**](DataApi.md#create_provenance) | **POST** /core/provenances | Add a provenance
+[**delete_batch_history_by_uri**](DataApi.md#delete_batch_history_by_uri) | **DELETE** /core/data/batch_history/{uri} | Delete batch history by URI
 [**delete_data**](DataApi.md#delete_data) | **DELETE** /core/data/{uri} | Delete data
 [**delete_data_on_search**](DataApi.md#delete_data_on_search) | **DELETE** /core/data | Delete data on criteria
+[**delete_datafile**](DataApi.md#delete_datafile) | **DELETE** /core/datafiles/{uri} | Delete a datafile
 [**delete_provenance**](DataApi.md#delete_provenance) | **DELETE** /core/provenances/{uri} | Delete a provenance that doesn&#39;t describe data
-[**export_data**](DataApi.md#export_data) | **GET** /core/data/export | Export data
-[**export_data1**](DataApi.md#export_data1) | **POST** /core/data/export | Export data
+[**export_data**](DataApi.md#export_data) | **POST** /core/data/export | Export data
+[**export_data1**](DataApi.md#export_data1) | **GET** /core/data/export | Export data
+[**export_spectra_files**](DataApi.md#export_spectra_files) | **POST** /core/datafiles/export-spectra-files | 
+[**get_batch_history**](DataApi.md#get_batch_history) | **GET** /core/data/batch_history/{uri} | Get batch
 [**get_data**](DataApi.md#get_data) | **GET** /core/data/{uri} | Get data
 [**get_data_file**](DataApi.md#get_data_file) | **GET** /core/datafiles/{uri} | Get a data file
 [**get_data_file_description**](DataApi.md#get_data_file_description) | **GET** /core/datafiles/{uri}/description | Get a data file description
@@ -20,6 +24,7 @@ Method | HTTP request | Description
 [**get_data_file_descriptions_by_targets**](DataApi.md#get_data_file_descriptions_by_targets) | **POST** /core/datafiles/by_targets | Search data files for a large list of targets 
 [**get_data_list_by_targets**](DataApi.md#get_data_list_by_targets) | **POST** /core/data/by_targets | Search data for a large list of targets
 [**get_data_series_by_facility**](DataApi.md#get_data_series_by_facility) | **GET** /core/data/data_serie/facility | Get all data series associated with a facility
+[**get_datafile_path**](DataApi.md#get_datafile_path) | **GET** /core/datafiles/{uri}/path | Get a datafile path
 [**get_datafiles_provenances**](DataApi.md#get_datafiles_provenances) | **GET** /core/datafiles/provenances | Search provenances linked to datafiles
 [**get_datafiles_provenances_by_targets**](DataApi.md#get_datafiles_provenances_by_targets) | **POST** /core/datafiles/provenances/by_targets | Search provenances linked to datafiles for a large list of targets
 [**get_mathematical_operators**](DataApi.md#get_mathematical_operators) | **GET** /core/data/mathematicalOperators | Get mathematical operators
@@ -32,12 +37,15 @@ Method | HTTP request | Description
 [**import_csv_data**](DataApi.md#import_csv_data) | **POST** /core/data/import | Import a CSV file for the given provenanceURI
 [**post_data_file**](DataApi.md#post_data_file) | **POST** /core/datafiles | Add a data file
 [**post_data_file_paths**](DataApi.md#post_data_file_paths) | **POST** /core/datafiles/description | Describe datafiles and give their relative paths in the configured storage system. In the case of already stored datafiles.
+[**search_batch_history**](DataApi.md#search_batch_history) | **GET** /core/data/batch_history | Search data batch history
 [**search_data_list**](DataApi.md#search_data_list) | **GET** /core/data | Search data
 [**search_data_list_by_targets**](DataApi.md#search_data_list_by_targets) | **POST** /core/data/search | Search data for a large list of targets
 [**search_provenance**](DataApi.md#search_provenance) | **GET** /core/provenances | Get provenances
 [**update**](DataApi.md#update) | **PUT** /core/data | Update data
 [**update_confidence**](DataApi.md#update_confidence) | **PUT** /core/data/{uri}/confidence | Update confidence index
 [**update_provenance**](DataApi.md#update_provenance) | **PUT** /core/provenances | Update a provenance
+[**upload_and_parse_dx**](DataApi.md#upload_and_parse_dx) | **POST** /core/datafiles/upload-dx | Upload and parse DX file
+[**upload_and_parse_spectra_csv**](DataApi.md#upload_and_parse_spectra_csv) | **POST** /core/datafiles/upload-spectra-csv | Upload and parse spectra CSV file
 [**validate_csv**](DataApi.md#validate_csv) | **POST** /core/data/import_validation | Import a CSV file for the given provenanceURI.
 
 
@@ -94,7 +102,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_data**
-> int count_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, group_of_germplasm=group_of_germplasm, germplasm_uris=germplasm_uris, count_limit=count_limit, targets=targets, accept_language=accept_language)
+> int count_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, group_of_germplasm=group_of_germplasm, germplasm_uris=germplasm_uris, count_limit=count_limit, targets=targets, batch_uri=batch_uri, accept_language=accept_language)
 
 Count data
 
@@ -127,11 +135,12 @@ group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional
 germplasm_uris = ['germplasm_uris_example'] # list[str] | Germplasm uris, can be an empty array but can't be null (optional)
 count_limit = 1000 # int | Count limit. Specify the maximum number of data to count. Set to 0 for no limit (optional) (default to 1000)
 targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, can be an empty array but can't be null (optional)
+batch_uri = 'http://opensilex.test/id/batchHistory/594818cf-808d-4b68-ae0f-906717918804' # str | Search by batch uri for a specific import csv/json file (optional)
 
 
 try:
     # Count data
-    api_response = api_instance.count_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, group_of_germplasm=group_of_germplasm, germplasm_uris=germplasm_uris, count_limit=count_limit, targets=targets, )
+    api_response = api_instance.count_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, group_of_germplasm=group_of_germplasm, germplasm_uris=germplasm_uris, count_limit=count_limit, targets=targets, batch_uri=batch_uri, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->count_data: %s\n" % e)
@@ -156,6 +165,7 @@ Name | Type | Description  | Notes
  **germplasm_uris** | [**list[str]**](str.md)| Germplasm uris, can be an empty array but can&#39;t be null | [optional] 
  **count_limit** | **int**| Count limit. Specify the maximum number of data to count. Set to 0 for no limit | [optional] [default to 1000]
  **targets** | **list[str]**| Targets uris, can be an empty array but can&#39;t be null | [optional] 
+ **batch_uri** | **str**| Search by batch uri for a specific import csv/json file | [optional] 
 
 
 ### Return type
@@ -174,7 +184,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **count_datafiles**
-> int count_datafiles(authorization, target=target, device=device, accept_language=accept_language)
+> int count_datafiles(authorization, target=target, device=device, name=name, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, provenances=provenances, metadata=metadata, accept_language=accept_language)
 
 Count datafiles
 
@@ -194,11 +204,19 @@ pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 target = ['http://www.opensilex.org/demo/2018/o18000076'] # list[str] | Target URI (optional)
 device = ['http://www.opensilex.org/demo/2018/o18000076'] # list[str] | Device URI (optional)
+name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
+rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+timezone = 'Europe/Paris' # str | Precise the timezone corresponding to the given dates (optional)
+experiments = ['http://opensilex/experiment/id/ZA17'] # list[str] | Search by experiments (optional)
+provenances = ['http://opensilex.dev/provenance/1598001689415'] # list[str] | Search by provenance uris list (optional)
+metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search by metadata (optional)
 
 
 try:
     # Count datafiles
-    api_response = api_instance.count_datafiles(target=target, device=device, )
+    api_response = api_instance.count_datafiles(target=target, device=device, name=name, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, provenances=provenances, metadata=metadata, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->count_datafiles: %s\n" % e)
@@ -210,6 +228,14 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **target** | [**list[str]**](str.md)| Target URI | [optional] 
  **device** | [**list[str]**](str.md)| Device URI | [optional] 
+ **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
+ **rdf_type** | **str**| Search by rdf type uri | [optional] 
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
+ **timezone** | **str**| Precise the timezone corresponding to the given dates | [optional] 
+ **experiments** | [**list[str]**](str.md)| Search by experiments | [optional] 
+ **provenances** | [**list[str]**](str.md)| Search by provenance uris list | [optional] 
+ **metadata** | **str**| Search by metadata | [optional] 
 
 
 ### Return type
@@ -262,6 +288,58 @@ except opensilexClientToolsPython.rest.ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**ProvenanceCreationDTO**](ProvenanceCreationDTO.md)| Provenance description | [optional] 
+
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_batch_history_by_uri**
+> str delete_batch_history_by_uri(uri, authorization, accept_language=accept_language)
+
+Delete batch history by URI
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+uri = 'http://opensilex.dev/id/batchHistory/cd3dde33d6f5dc2' # str | Batch history URI
+
+
+try:
+    # Delete batch history by URI
+    api_response = api_instance.delete_batch_history_by_uri(uri, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->delete_batch_history_by_uri: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Batch history URI | 
 
 
 ### Return type
@@ -332,7 +410,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_data_on_search**
-> str delete_data_on_search(authorization, experiment=experiment, target=target, variable=variable, provenance=provenance, accept_language=accept_language)
+> str delete_data_on_search(authorization, experiment=experiment, target=target, variable=variable, provenance=provenance, batch_uri=batch_uri, accept_language=accept_language)
 
 Delete data on criteria
 
@@ -354,11 +432,12 @@ experiment = 'http://opensilex/experiment/id/ZA17' # str | Search by experiment 
 target = 'http://opensilex.dev/opensilex/2020/o20000345' # str | Search by target uri (optional)
 variable = 'http://opensilex.dev/variable#variable.2020-08-21_11-21-23entity6_method6_quality6_unit6' # str | Search by variable uri (optional)
 provenance = 'http://opensilex.dev/provenance/1598001689415' # str | Search by provenance uri (optional)
+batch_uri = 'http://opensilex.test/id/batchHistory/594818cf-808d-4b68-ae0f-906717918804' # str | Search by batch id for a specific import csv/json file (optional)
 
 
 try:
     # Delete data on criteria
-    api_response = api_instance.delete_data_on_search(experiment=experiment, target=target, variable=variable, provenance=provenance, )
+    api_response = api_instance.delete_data_on_search(experiment=experiment, target=target, variable=variable, provenance=provenance, batch_uri=batch_uri, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->delete_data_on_search: %s\n" % e)
@@ -372,6 +451,7 @@ Name | Type | Description  | Notes
  **target** | **str**| Search by target uri | [optional] 
  **variable** | **str**| Search by variable uri | [optional] 
  **provenance** | **str**| Search by provenance uri | [optional] 
+ **batch_uri** | **str**| Search by batch id for a specific import csv/json file | [optional] 
 
 
 ### Return type
@@ -385,6 +465,58 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_datafile**
+> str delete_datafile(uri, authorization, accept_language=accept_language)
+
+Delete a datafile
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+uri = 'uri_example' # str | Datafile URI
+
+
+try:
+    # Delete a datafile
+    api_response = api_instance.delete_datafile(uri, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->delete_datafile: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Datafile URI | 
+
+
+### Return type
+
+**str**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -442,7 +574,58 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **export_data**
-> export_data(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> export_data(authorization, body=body, accept_language=accept_language)
+
+Export data
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
+
+
+try:
+    # Export data
+    api_instance.export_data(body=body, )
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->export_data: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **export_data1**
+> export_data1(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Export data
 
@@ -481,9 +664,9 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Export data
-    api_instance.export_data(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
+    api_instance.export_data1(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, mode=mode, with_raw_data=with_raw_data, order_by=order_by, page=page, page_size=page_size, )
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling DataApi->export_data: %s\n" % e)
+    print("Exception when calling DataApi->export_data1: %s\n" % e)
 ```
 
 ### Parameters
@@ -524,10 +707,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **export_data1**
-> export_data1(authorization, body=body, accept_language=accept_language)
-
-Export data
+# **export_spectra_files**
+> export_spectra_files(authorization, format=format, body=body, include_average=include_average, include_sample_datetime=include_sample_datetime, accept_language=accept_language)
 
 
 
@@ -543,21 +724,26 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
-body = opensilexClientToolsPython.DataSearchDTO() # DataSearchDTO | CSV export configuration (optional)
+format = 'tsv' # str | Export format DX file, TSV file, CSV file if available (optional) (default to tsv)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | URI datafiles (optional)
+include_average = false # bool | Include average line (optional) (default to false)
+include_sample_datetime = false # bool | Include datetime column (optional) (default to false)
 
 
 try:
-    # Export data
-    api_instance.export_data1(body=body, )
+    api_instance.export_spectra_files(format=format, body=body, include_average=include_average, include_sample_datetime=include_sample_datetime, )
 except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling DataApi->export_data1: %s\n" % e)
+    print("Exception when calling DataApi->export_spectra_files: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DataSearchDTO**](DataSearchDTO.md)| CSV export configuration | [optional] 
+ **format** | **str**| Export format DX file, TSV file, CSV file if available | [optional] [default to tsv]
+ **body** | **list[str]**| URI datafiles | [optional] 
+ **include_average** | **bool**| Include average line | [optional] [default to false]
+ **include_sample_datetime** | **bool**| Include datetime column | [optional] [default to false]
 
 
 ### Return type
@@ -571,7 +757,59 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: text/plain
+ - **Accept**: application/octet-stream
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_batch_history**
+> BatchHistoryGetDTO get_batch_history(uri, authorization, accept_language=accept_language)
+
+Get batch
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+uri = 'uri_example' # str | Batch URI
+
+
+try:
+    # Get batch
+    api_response = api_instance.get_batch_history(uri, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->get_batch_history: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Batch URI | 
+
+
+### Return type
+
+[**BatchHistoryGetDTO**](BatchHistoryGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -731,7 +969,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_file_descriptions_by_search**
-> list[DataFileGetDTO] get_data_file_descriptions_by_search(authorization, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[DataFileGetDTO] get_data_file_descriptions_by_search(authorization, name=name, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search data files
 
@@ -749,6 +987,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+name = '.*' # str | Regex pattern for filtering by filename (optional) (default to .*)
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
 start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
 end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
@@ -765,7 +1004,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search data files
-    api_response = api_instance.get_data_file_descriptions_by_search(rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.get_data_file_descriptions_by_search(name=name, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_file_descriptions_by_search: %s\n" % e)
@@ -775,6 +1014,7 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Regex pattern for filtering by filename | [optional] [default to .*]
  **rdf_type** | **str**| Search by rdf type uri | [optional] 
  **start_date** | **str**| Search by minimal date | [optional] 
  **end_date** | **str**| Search by maximal date | [optional] 
@@ -805,7 +1045,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_file_descriptions_by_targets**
-> list[DataFileGetDTO] get_data_file_descriptions_by_targets(authorization, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, targets=targets, accept_language=accept_language)
+> list[DataFileGetDTO] get_data_file_descriptions_by_targets(authorization, name=name, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, targets=targets, accept_language=accept_language)
 
 Search data files for a large list of targets 
 
@@ -823,6 +1063,7 @@ from pprint import pprint
 pythonClient = opensilexClientToolsPython.ApiClient()
 pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 rdf_type = 'rdf_type_example' # str | Search by rdf type uri (optional)
 start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
 end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
@@ -839,7 +1080,7 @@ targets = [opensilexClientToolsPython.list[str]()] # list[str] | Targets uris, c
 
 try:
     # Search data files for a large list of targets 
-    api_response = api_instance.get_data_file_descriptions_by_targets(rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, targets=targets, )
+    api_response = api_instance.get_data_file_descriptions_by_targets(name=name, rdf_type=rdf_type, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, devices=devices, provenances=provenances, metadata=metadata, order_by=order_by, page=page, page_size=page_size, targets=targets, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_data_file_descriptions_by_targets: %s\n" % e)
@@ -849,6 +1090,7 @@ except opensilexClientToolsPython.rest.ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **rdf_type** | **str**| Search by rdf type uri | [optional] 
  **start_date** | **str**| Search by minimal date | [optional] 
  **end_date** | **str**| Search by maximal date | [optional] 
@@ -1010,6 +1252,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DataVariableSeriesGetDTO**](DataVariableSeriesGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_datafile_path**
+> get_datafile_path(uri, authorization, accept_language=accept_language)
+
+Get a datafile path
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+uri = 'uri_example' # str | Search by fileUri
+
+
+try:
+    # Get a datafile path
+    api_instance.get_datafile_path(uri, )
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->get_datafile_path: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uri** | **str**| Search by fileUri | 
+
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -1518,7 +1811,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **import_csv_data**
-> DataCSVValidationDTO import_csv_data(provenance, file, authorization, experiment=experiment, accept_language=accept_language)
+> DataCSVValidationDTO import_csv_data(provenance, file, authorization, experiment=experiment, validation_key=validation_key, accept_language=accept_language)
 
 Import a CSV file for the given provenanceURI
 
@@ -1539,11 +1832,12 @@ api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 provenance = 'http://opensilex.dev/id/provenance/provenancelabel' # str | Provenance URI
 file = '/path/to/file.txt' # file | File
 experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
+validation_key = 'JohnDoe_20241120123045_ab12cd34' # str | The key for file that have already been validated by the API (/core/data/import_validation) (optional)
 
 
 try:
     # Import a CSV file for the given provenanceURI
-    api_response = api_instance.import_csv_data(provenance, file, experiment=experiment, )
+    api_response = api_instance.import_csv_data(provenance, file, experiment=experiment, validation_key=validation_key, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->import_csv_data: %s\n" % e)
@@ -1556,6 +1850,7 @@ Name | Type | Description  | Notes
  **provenance** | **str**| Provenance URI | 
  **file** | **file**| File | 
  **experiment** | **str**| Experiment URI | [optional] 
+ **validation_key** | **str**| The key for file that have already been validated by the API (/core/data/import_validation) | [optional] 
 
 
 ### Return type
@@ -1679,6 +1974,66 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_batch_history**
+> list[BatchHistoryGetDTO] search_batch_history(authorization, start_date=start_date, end_date=end_date, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+
+Search data batch history
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+start_date = '2020-08-21T00:00:00+01:00' # str | Search by minimal date (optional)
+end_date = '2020-09-21T00:00:00+01:00' # str | Search by maximal date (optional)
+order_by = ['date=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+
+
+try:
+    # Search data batch history
+    api_response = api_instance.search_batch_history(start_date=start_date, end_date=end_date, order_by=order_by, page=page, page_size=page_size, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->search_batch_history: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_date** | **str**| Search by minimal date | [optional] 
+ **end_date** | **str**| Search by maximal date | [optional] 
+ **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[BatchHistoryGetDTO]**](BatchHistoryGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_data_list**
 > list[DataGetSearchDTO] search_data_list(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, operators=operators, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -1760,7 +2115,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_data_list_by_targets**
-> list[DataGetSearchDTO] search_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[DataGetSearchDTO] search_data_list_by_targets(authorization, start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, batch_uri=batch_uri, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search data for a large list of targets
 
@@ -1792,6 +2147,7 @@ metadata = '{ \"LabelView\" : \"side90\", \"paramA\" : \"90\"}' # str | Search b
 group_of_germplasm = 'group_of_germplasm_example' # str | Group filter (optional)
 operators = ['dev:id/user/isa.droits'] # list[str] | Search by operators (optional)
 germplasm_uris = ['germplasm_uris_example'] # list[str] | Targets uris, can be an empty array but can't be null (optional)
+batch_uri = 'http://opensilex.test/id/batchHistory/594818cf-808d-4b68-ae0f-906717918804' # str | Search by batch uri for a specific import csv/json file (optional)
 order_by = ['date=desc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -1799,7 +2155,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search data for a large list of targets
-    api_response = api_instance.search_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_data_list_by_targets(start_date=start_date, end_date=end_date, timezone=timezone, experiments=experiments, targets=targets, variables=variables, devices=devices, min_confidence=min_confidence, max_confidence=max_confidence, provenances=provenances, metadata=metadata, group_of_germplasm=group_of_germplasm, operators=operators, germplasm_uris=germplasm_uris, batch_uri=batch_uri, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->search_data_list_by_targets: %s\n" % e)
@@ -1823,6 +2179,7 @@ Name | Type | Description  | Notes
  **group_of_germplasm** | **str**| Group filter | [optional] 
  **operators** | [**list[str]**](str.md)| Search by operators | [optional] 
  **germplasm_uris** | [**list[str]**](str.md)| Targets uris, can be an empty array but can&#39;t be null | [optional] 
+ **batch_uri** | **str**| Search by batch uri for a specific import csv/json file | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
@@ -2065,6 +2422,122 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_and_parse_dx**
+> DataFileGetDTO upload_and_parse_dx(file, authorization, rdf_type=rdf_type, provenance=provenance, experiments=experiments, accept_language=accept_language)
+
+Upload and parse DX file
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+file = '/path/to/file.txt' # file | Data file
+rdf_type = 'rdf_type_example' # str |  (optional)
+provenance = 'provenance_example' # str |  (optional)
+experiments = ['experiments_example'] # list[str] |  (optional)
+
+
+try:
+    # Upload and parse DX file
+    api_response = api_instance.upload_and_parse_dx(file, rdf_type=rdf_type, provenance=provenance, experiments=experiments, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->upload_and_parse_dx: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **file**| Data file | 
+ **rdf_type** | **str**|  | [optional] 
+ **provenance** | **str**|  | [optional] 
+ **experiments** | [**list[str]**](str.md)|  | [optional] 
+
+
+### Return type
+
+[**DataFileGetDTO**](DataFileGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **upload_and_parse_spectra_csv**
+> DataFileGetDTO upload_and_parse_spectra_csv(file, authorization, rdf_type=rdf_type, provenance=provenance, experiment=experiment, accept_language=accept_language)
+
+Upload and parse spectra CSV file
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+file = '/path/to/file.txt' # file | Data file
+rdf_type = 'rdf_type_example' # str |  (optional)
+provenance = 'provenance_example' # str |  (optional)
+experiment = ['experiment_example'] # list[str] |  (optional)
+
+
+try:
+    # Upload and parse spectra CSV file
+    api_response = api_instance.upload_and_parse_spectra_csv(file, rdf_type=rdf_type, provenance=provenance, experiment=experiment, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->upload_and_parse_spectra_csv: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **file**| Data file | 
+ **rdf_type** | **str**|  | [optional] 
+ **provenance** | **str**|  | [optional] 
+ **experiment** | [**list[str]**](str.md)|  | [optional] 
+
+
+### Return type
+
+[**DataFileGetDTO**](DataFileGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

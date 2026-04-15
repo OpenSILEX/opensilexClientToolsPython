@@ -5,6 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**data_type** | **str** |  | [optional] 
 **entity** | [**EntityGetDTO**](EntityGetDTO.md) |  | [optional] 
 **entity_of_interest** | [**NamedResourceDTO**](NamedResourceDTO.md) |  | [optional] 
 **characteristic** | [**CharacteristicGetDTO**](CharacteristicGetDTO.md) |  | [optional] 

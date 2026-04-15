@@ -14,7 +14,10 @@ Name | Type | Description | Notes
 **sites** | [**list[NamedResourceDTOSiteModel]**](NamedResourceDTOSiteModel.md) |  | [optional] 
 **address** | [**FacilityAddressDTO**](FacilityAddressDTO.md) |  | [optional] 
 **variable_groups** | [**list[NamedResourceDTOVariablesGroupModel]**](NamedResourceDTOVariablesGroupModel.md) |  | [optional] 
-**geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
+**variables** | [**list[NamedResourceDTOVariableModel]**](NamedResourceDTOVariableModel.md) |  | [optional] 
+**devices** | [**list[DeviceGetDTO]**](DeviceGetDTO.md) |  | [optional] 
+**description** | **str** |  | [optional] 
+**last_position** | [**LocationObservationDTO**](LocationObservationDTO.md) |  | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

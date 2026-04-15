@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **nb_object_imported** | **int** |  | [optional] 
 **validation_token** | **str** |  | [optional] 
 **csv_header** | [**CsvHeader**](CsvHeader.md) |  | [optional] 
+**invalid_duplicate_header_by_indexes** | **dict(str, str)** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

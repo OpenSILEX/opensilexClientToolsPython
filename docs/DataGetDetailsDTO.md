@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **raw_data** | **list[object]** | list of repetition values | [optional] 
 **issued** | **datetime** |  | [optional] 
 **modified** | **datetime** |  | [optional] 
+**batch_uri** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

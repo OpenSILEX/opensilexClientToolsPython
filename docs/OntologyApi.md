@@ -24,7 +24,7 @@ Method | HTTP request | Description
 [**get_sub_properties_of**](OntologyApi.md#get_sub_properties_of) | **GET** /ontology/subproperties_of | Return property list from a parent property
 [**get_uri_label**](OntologyApi.md#get_uri_label) | **GET** /ontology/uri_label | Return associated rdfs:label of an uri if exists
 [**get_uri_labels_list**](OntologyApi.md#get_uri_labels_list) | **POST** /ontology/uris_labels | Return associated rdfs:label of uris if they exist
-[**get_uri_types**](OntologyApi.md#get_uri_types) | **POST** /ontology/uri_types | Return all rdf types of an uri
+[**get_uri_types**](OntologyApi.md#get_uri_types) | **POST** /ontology/uri_types | Return all rdf types of some URIS
 [**rename_uri**](OntologyApi.md#rename_uri) | **PUT** /ontology/{uri}/rename | Rename all occurrences of the given URI
 [**search_sub_classes_of**](OntologyApi.md#search_sub_classes_of) | **GET** /ontology/subclasses_of/search | Search sub-classes tree of an RDF class
 [**update_class_property_restriction**](OntologyApi.md#update_class_property_restriction) | **PUT** /ontology/rdf_type_property_restriction | Update a rdf type property restriction
@@ -1100,7 +1100,7 @@ No authorization required
 # **get_uri_types**
 > list[URITypesDTO] get_uri_types(body, authorization, accept_language=accept_language)
 
-Return all rdf types of an uri
+Return all rdf types of some URIS
 
 
 
@@ -1120,7 +1120,7 @@ body = [opensilexClientToolsPython.list[str]()] # list[str] | URIs to get types 
 
 
 try:
-    # Return all rdf types of an uri
+    # Return all rdf types of some URIS
     api_response = api_instance.get_uri_types(body, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:

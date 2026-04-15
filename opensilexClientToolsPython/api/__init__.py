@@ -17,6 +17,7 @@ from opensilexClientToolsPython.api.experiments_api import ExperimentsApi
 from opensilexClientToolsPython.api.factors_api import FactorsApi
 from opensilexClientToolsPython.api.faidare_api import FaidareApi
 from opensilexClientToolsPython.api.germplasm_api import GermplasmApi
+from opensilexClientToolsPython.api.locations_api import LocationsApi
 from opensilexClientToolsPython.api.metrics_api import MetricsApi
 from opensilexClientToolsPython.api.ontology_api import OntologyApi
 from opensilexClientToolsPython.api.organizations_api import OrganizationsApi

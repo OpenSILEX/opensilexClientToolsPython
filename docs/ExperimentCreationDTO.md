@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **str** |  | [optional] 
 **name** | **str** |  | 
-**start_date** | **date** |  | 
-**end_date** | **date** |  | [optional] 
+**start_date** | **str** |  | 
+**end_date** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
 **objective** | **str** |  | 
 **organisations** | **list[str]** |  | [optional] 
@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **groups** | **list[str]** |  | [optional] 
 **factors** | **list[str]** |  | [optional] 
 **is_public** | **bool** |  | [optional] 
+**funding** | **list[str]** |  | [optional] 
+**alternative_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

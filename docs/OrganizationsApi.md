@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**delete_site**](OrganizationsApi.md#delete_site) | **DELETE** /core/sites/{uri} | Delete a site
 [**get_all_facilities**](OrganizationsApi.md#get_all_facilities) | **GET** /core/facilities/all_facilities | Get all facilities
 [**get_facilities_by_uri**](OrganizationsApi.md#get_facilities_by_uri) | **GET** /core/facilities/by_uris | Get facilities by their URIs
+[**get_facilities_with_geometry**](OrganizationsApi.md#get_facilities_with_geometry) | **GET** /core/facilities/with_location | Get only a list of facilities with a position (address/spatial coordinates
 [**get_facility**](OrganizationsApi.md#get_facility) | **GET** /core/facilities/{uri} | Get a facility
 [**get_organization**](OrganizationsApi.md#get_organization) | **GET** /core/organisations/{uri} | Get an organisation 
 [**get_site**](OrganizationsApi.md#get_site) | **GET** /core/sites/{uri} | Get a site
@@ -428,6 +429,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[FacilityNamedDTO]**](FacilityNamedDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_facilities_with_geometry**
+> list[FacilityGetWithGeometryDTO] get_facilities_with_geometry(authorization, end_date_time=end_date_time, accept_language=accept_language)
+
+Get only a list of facilities with a position (address/spatial coordinates
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
+end_date_time = '2021-09-08T12:00:00+01:00' # str | End date : match position affected before the given end date (optional)
+
+
+try:
+    # Get only a list of facilities with a position (address/spatial coordinates
+    api_response = api_instance.get_facilities_with_geometry(end_date_time=end_date_time, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->get_facilities_with_geometry: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **end_date_time** | **str**| End date : match position affected before the given end date | [optional] 
+
+
+### Return type
+
+[**list[FacilityGetWithGeometryDTO]**](FacilityGetWithGeometryDTO.md)
 
 ### Authorization
 

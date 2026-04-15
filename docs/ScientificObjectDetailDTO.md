@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **parent_name** | **str** | Scientific object parent name | [optional] 
 **factor_level** | [**list[NamedResourceDTOFactorLevelModel]**](NamedResourceDTOFactorLevelModel.md) | Scientific object factor levels | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
-**geometry** | [**GeoJsonObject**](GeoJsonObject.md) |  | [optional] 
+**location** | [**LocationObservationDTO**](LocationObservationDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

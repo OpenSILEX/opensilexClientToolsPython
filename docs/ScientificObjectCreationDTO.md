@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **name** | **str** | Scientific object name | 
 **experiment** | **str** | Scientific object experiment URI | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
-**geometry** | [**GeoJsonObject**](GeoJsonObject.md) | The geographical coordinates of the Geospatial | [optional] 
+**move** | [**MoveCreationDTO**](MoveCreationDTO.md) |  | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 

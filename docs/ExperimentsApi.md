@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**search_experiment_data_list**](ExperimentsApi.md#search_experiment_data_list) | **GET** /core/experiments/{uri}/data | Search data
 [**search_experiment_provenances**](ExperimentsApi.md#search_experiment_provenances) | **GET** /core/experiments/{uri}/provenances | Get provenances involved in an experiment
 [**search_experiments**](ExperimentsApi.md#search_experiments) | **GET** /core/experiments | Search experiments
+[**search_funding**](ExperimentsApi.md#search_funding) | **GET** /core/experiments/funding | Search funding
 [**update_experiment**](ExperimentsApi.md#update_experiment) | **PUT** /core/experiments | Update an experiment
 [**validate_csv2**](ExperimentsApi.md#validate_csv2) | **POST** /core/experiments/{uri}/data/import_validation | Import a CSV file for the given experiment URI and scientific object type.
 
@@ -723,7 +724,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **search_experiments**
-> list[ExperimentGetListDTO] search_experiments(authorization, name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, facilities=facilities, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+> list[ExperimentGetListDTO] search_experiments(authorization, name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, facilities=facilities, funding=funding, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
 Search experiments
 
@@ -749,6 +750,7 @@ factors = ['http://purl.obolibrary.org/obo/CHEBI_25555'] # list[str] | Search by
 projects = ['http://www.phenome-fppn.fr/projects/ZA17 http://www.phenome-fppn.fr/id/projects/ZA18'] # list[str] | Search by related project uri (optional)
 is_public = true # bool | Search private(false) or public experiments(true) (optional)
 facilities = ['facilities_example'] # list[str] | Search by involved facilities (optional)
+funding = ['anr'] # list[str] | Search by funding (optional)
 order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
 page_size = 20 # int | Page size (optional) (default to 20)
@@ -756,7 +758,7 @@ page_size = 20 # int | Page size (optional) (default to 20)
 
 try:
     # Search experiments
-    api_response = api_instance.search_experiments(name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, facilities=facilities, order_by=order_by, page=page, page_size=page_size, )
+    api_response = api_instance.search_experiments(name=name, year=year, is_ended=is_ended, species=species, factors=factors, projects=projects, is_public=is_public, facilities=facilities, funding=funding, order_by=order_by, page=page, page_size=page_size, )
     pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling ExperimentsApi->search_experiments: %s\n" % e)
@@ -774,6 +776,7 @@ Name | Type | Description  | Notes
  **projects** | [**list[str]**](str.md)| Search by related project uri | [optional] 
  **is_public** | **bool**| Search private(false) or public experiments(true) | [optional] 
  **facilities** | [**list[str]**](str.md)| Search by involved facilities | [optional] 
+ **funding** | [**list[str]**](str.md)| Search by funding | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
@@ -782,6 +785,64 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[ExperimentGetListDTO]**](ExperimentGetListDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_funding**
+> list[FundingGetDTO] search_funding(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
+
+Search funding
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
+name = 'anr' # str | Funding name regex pattern (optional)
+order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
+page = 0 # int | Page number (optional) (default to 0)
+page_size = 20 # int | Page size (optional) (default to 20)
+
+
+try:
+    # Search funding
+    api_response = api_instance.search_funding(name=name, order_by=order_by, page=page, page_size=page_size, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling ExperimentsApi->search_funding: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| Funding name regex pattern | [optional] 
+ **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
+ **page** | **int**| Page number | [optional] [default to 0]
+ **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[FundingGetDTO]**](FundingGetDTO.md)
 
 ### Authorization
 

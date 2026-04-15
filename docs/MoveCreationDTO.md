@@ -11,9 +11,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **targets** | **list[str]** | URI(s) of items concerned by this event | 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
-**_from** | **str** |  | [optional] 
-**to** | **str** |  | [optional] 
-**targets_positions** | [**list[TargetPositionCreationDTO]**](TargetPositionCreationDTO.md) |  | [optional] 
+**location** | [**LocationObservationDTO**](LocationObservationDTO.md) |  | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 

@@ -225,7 +225,7 @@ rdf_type = 'vocabulary:SensingDevice' # str | RDF type filter (optional)
 include_subtypes = false # bool | Set this param to true when filtering on rdf_type to also retrieve sub-types (optional) (default to false)
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 year = 2017 # int | Search by year (optional)
-existence_date = '2013-10-20' # date | Date to filter device existence (optional)
+existence_date = '2013-10-20' # str | Date to filter device existence (optional)
 brand = '.*' # str | Regex pattern for filtering by brand (optional)
 model = '.*' # str | Regex pattern for filtering by model (optional)
 serial_number = '.*' # str | Regex pattern for filtering by serial number (optional)
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
  **include_subtypes** | **bool**| Set this param to true when filtering on rdf_type to also retrieve sub-types | [optional] [default to false]
  **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **year** | **int**| Search by year | [optional] 
- **existence_date** | **date**| Date to filter device existence | [optional] 
+ **existence_date** | **str**| Date to filter device existence | [optional] 
  **brand** | **str**| Regex pattern for filtering by brand | [optional] 
  **model** | **str**| Regex pattern for filtering by model | [optional] 
  **serial_number** | **str**| Regex pattern for filtering by serial number | [optional] 
@@ -919,7 +919,7 @@ include_subtypes = false # bool | Set this param to true when filtering on rdf_t
 name = '.*' # str | Regex pattern for filtering by name (optional) (default to .*)
 variable = 'test:set/variables#air_temperature_thermocouple_degree-celsius' # str | Variable (optional)
 year = 2017 # int | Search by year (optional)
-existence_date = '2013-10-20' # date | Date to filter device existence (optional)
+existence_date = '2013-10-20' # str | Date to filter device existence (optional)
 facility = 'http://example.com' # str | Search by facility (optional)
 brand = '.*' # str | Regex pattern for filtering by brand (optional)
 model = '.*' # str | Regex pattern for filtering by model (optional)
@@ -947,7 +947,7 @@ Name | Type | Description  | Notes
  **name** | **str**| Regex pattern for filtering by name | [optional] [default to .*]
  **variable** | **str**| Variable | [optional] 
  **year** | **int**| Search by year | [optional] 
- **existence_date** | **date**| Date to filter device existence | [optional] 
+ **existence_date** | **str**| Date to filter device existence | [optional] 
  **facility** | **str**| Search by facility | [optional] 
  **brand** | **str**| Regex pattern for filtering by brand | [optional] 
  **model** | **str**| Regex pattern for filtering by model | [optional] 

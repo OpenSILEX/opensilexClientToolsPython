@@ -810,8 +810,8 @@ factor_levels = ['vocabulary:IrrigationStress'] # list[str] | Factor levels URI 
 facility = 'diaphen:serre-2' # str | Facility (optional)
 variables = ['variables_example'] # list[str] | Variables URI (optional)
 devices = ['devices_example'] # list[str] | Devices URI (optional)
-existence_date = '2013-10-20' # str | Date to filter object existence (optional)
-creation_date = '2013-10-20' # str | Date to filter object creation (optional)
+existence_date = '2013-10-20' # date | Date to filter object existence (optional)
+creation_date = '2013-10-20' # date | Date to filter object creation (optional)
 criteria_on_data = 'criteria_on_data_example' # str | A CriteriaDTO to be applied to data, retain objects that are targets in returned data (optional)
 order_by = ['uri=asc'] # list[str] | List of fields to sort as an array of fieldName=asc|desc (optional)
 page = 0 # int | Page number (optional) (default to 0)
@@ -839,8 +839,8 @@ Name | Type | Description  | Notes
  **facility** | **str**| Facility | [optional] 
  **variables** | [**list[str]**](str.md)| Variables URI | [optional] 
  **devices** | [**list[str]**](str.md)| Devices URI | [optional] 
- **existence_date** | **str**| Date to filter object existence | [optional] 
- **creation_date** | **str**| Date to filter object creation | [optional] 
+ **existence_date** | **date**| Date to filter object existence | [optional] 
+ **creation_date** | **date**| Date to filter object creation | [optional] 
  **criteria_on_data** | **str**| A CriteriaDTO to be applied to data, retain objects that are targets in returned data | [optional] 
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]

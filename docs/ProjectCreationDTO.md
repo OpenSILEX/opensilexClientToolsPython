@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **last_updated_date** | **datetime** |  | [optional] 
 **name** | **str** |  | 
 **shortname** | **str** |  | [optional] 
-**start_date** | **str** |  | 
-**end_date** | **str** |  | [optional] 
+**start_date** | **date** |  | 
+**end_date** | **date** |  | [optional] 
 **description** | **str** |  | [optional] 
 **objective** | **str** |  | [optional] 
 **financial_funding** | **str** |  | [optional] 

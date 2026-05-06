@@ -1265,7 +1265,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_datafile_path**
-> get_datafile_path(uri, authorization, accept_language=accept_language)
+> str get_datafile_path(uri, authorization, accept_language=accept_language)
 
 Get a datafile path
 
@@ -1288,7 +1288,8 @@ uri = 'uri_example' # str | Search by fileUri
 
 try:
     # Get a datafile path
-    api_instance.get_datafile_path(uri, )
+    api_response = api_instance.get_datafile_path(uri, )
+    pprint(api_response)
 except opensilexClientToolsPython.rest.ApiException as e:
     print("Exception when calling DataApi->get_datafile_path: %s\n" % e)
 ```
@@ -1302,7 +1303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**str**
 
 ### Authorization
 

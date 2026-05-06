@@ -252,6 +252,7 @@ from opensilexClientToolsPython.models import FacilityAddressDTO
 from opensilexClientToolsPython.models import LocationObservationDTO
 from opensilexClientToolsPython.models import UserGetDTO
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 from opensilexClientToolsPython.models import UserGetDTO
 from opensilexClientToolsPython.models import NamedResourceDTOOrganizationModel
@@ -261,6 +262,7 @@ from opensilexClientToolsPython.models import NamedResourceDTOVariablesGroupMode
 from opensilexClientToolsPython.models import NamedResourceDTOVariableModel
 from opensilexClientToolsPython.models import DeviceGetDTO
 from opensilexClientToolsPython.models import LocationObservationDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
 
 from opensilexClientToolsPython.models import FacilityAddressDTO
@@ -273,6 +275,7 @@ from opensilexClientToolsPython.models import FacilityAddressDTO
 from opensilexClientToolsPython.models import LocationObservationDTO
 from opensilexClientToolsPython.models import UserGetDTO
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 
 from opensilexClientToolsPython.models import FactorLevelCreationDTO
@@ -440,6 +443,7 @@ from opensilexClientToolsPython.models import SPARQLLabel
 
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
 from opensilexClientToolsPython.models import LocationObservationDTO
+from opensilexClientToolsPython.models import TargetPositionCreationDTO
 from opensilexClientToolsPython.models import UserGetDTO
 
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
@@ -451,6 +455,7 @@ from opensilexClientToolsPython.models import UserGetDTO
 
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
 from opensilexClientToolsPython.models import LocationObservationDTO
+from opensilexClientToolsPython.models import TargetPositionCreationDTO
 from opensilexClientToolsPython.models import UserGetDTO
 
 
@@ -502,6 +507,8 @@ from opensilexClientToolsPython.models import SPARQLLabel
 from opensilexClientToolsPython.models import LngLatAlt
 
 
+from opensilexClientToolsPython.models import Point
+
 from opensilexClientToolsPython.models import LocationObservationDTO
 
 
@@ -551,26 +558,32 @@ from opensilexClientToolsPython.models import ModelProperty
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
 from opensilexClientToolsPython.models import MoveCreationDTO
 from opensilexClientToolsPython.models import UserGetDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 from opensilexClientToolsPython.models import UserGetDTO
 from opensilexClientToolsPython.models import NamedResourceDTOFactorLevelModel
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
 from opensilexClientToolsPython.models import LocationObservationDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 from opensilexClientToolsPython.models import UserGetDTO
 from opensilexClientToolsPython.models import NamedResourceDTOFactorLevelModel
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
 from opensilexClientToolsPython.models import LocationObservationDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 from opensilexClientToolsPython.models import OrderBy
 
 from opensilexClientToolsPython.models import LocationObservationDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 from opensilexClientToolsPython.models import LocationObservationDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 from opensilexClientToolsPython.models import RDFObjectRelationDTO
 from opensilexClientToolsPython.models import MoveCreationDTO
 from opensilexClientToolsPython.models import UserGetDTO
+from opensilexClientToolsPython.models import GeoJsonObject
 
 
 
@@ -593,6 +606,8 @@ from opensilexClientToolsPython.models import SiteAddressDTO
 
 
 
+
+from opensilexClientToolsPython.models import PositionCreationDTO
 
 from opensilexClientToolsPython.models import FontConfigDTO
 
@@ -898,6 +913,7 @@ from opensilexClientToolsPython.models.person_dto import PersonDTO
 from opensilexClientToolsPython.models.person_model import PersonModel
 from opensilexClientToolsPython.models.point import Point
 from opensilexClientToolsPython.models.polygon import Polygon
+from opensilexClientToolsPython.models.position_creation_dto import PositionCreationDTO
 from opensilexClientToolsPython.models.position_get_dto import PositionGetDTO
 from opensilexClientToolsPython.models.prefix_mapping import PrefixMapping
 from opensilexClientToolsPython.models.profile_creation_dto import ProfileCreationDTO
@@ -938,6 +954,7 @@ from opensilexClientToolsPython.models.site_update_dto import SiteUpdateDTO
 from opensilexClientToolsPython.models.species_dto import SpeciesDTO
 from opensilexClientToolsPython.models.status_dto import StatusDTO
 from opensilexClientToolsPython.models.string_uris_list_dto import StringURIsListDTO
+from opensilexClientToolsPython.models.target_position_creation_dto import TargetPositionCreationDTO
 from opensilexClientToolsPython.models.theme_config_dto import ThemeConfigDTO
 from opensilexClientToolsPython.models.token_get_dto import TokenGetDTO
 from opensilexClientToolsPython.models.transaction_handler import TransactionHandler
@@ -1206,6 +1223,7 @@ from opensilexClientToolsPython.models.vue_rdf_type_property_dto import VueRDFTy
 # from opensilexClientToolsPython.models.person_model import PersonModel
 # from opensilexClientToolsPython.models.point import Point
 # from opensilexClientToolsPython.models.polygon import Polygon
+# from opensilexClientToolsPython.models.position_creation_dto import PositionCreationDTO
 # from opensilexClientToolsPython.models.position_get_dto import PositionGetDTO
 # from opensilexClientToolsPython.models.prefix_mapping import PrefixMapping
 # from opensilexClientToolsPython.models.profile_creation_dto import ProfileCreationDTO
@@ -1246,6 +1264,7 @@ from opensilexClientToolsPython.models.vue_rdf_type_property_dto import VueRDFTy
 # from opensilexClientToolsPython.models.species_dto import SpeciesDTO
 # from opensilexClientToolsPython.models.status_dto import StatusDTO
 # from opensilexClientToolsPython.models.string_uris_list_dto import StringURIsListDTO
+# from opensilexClientToolsPython.models.target_position_creation_dto import TargetPositionCreationDTO
 # from opensilexClientToolsPython.models.theme_config_dto import ThemeConfigDTO
 # from opensilexClientToolsPython.models.token_get_dto import TokenGetDTO
 # from opensilexClientToolsPython.models.transaction_handler import TransactionHandler

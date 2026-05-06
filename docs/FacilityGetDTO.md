@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **devices** | [**list[DeviceGetDTO]**](DeviceGetDTO.md) |  | [optional] 
 **description** | **str** |  | [optional] 
 **last_position** | [**LocationObservationDTO**](LocationObservationDTO.md) |  | [optional] 
+**geometry** | [**GeoJsonObject**](GeoJsonObject.md) | Object geometry. Depreciated : use lastPosition instead | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -48,6 +48,7 @@ class FacilityGetDTO(object):
         'devices': 'list[DeviceGetDTO]',
         'description': 'str',
         'last_position': 'LocationObservationDTO',
+        'geometry': 'GeoJsonObject',
         'relations': 'list[RDFObjectRelationDTO]'
     }
 
@@ -67,6 +68,7 @@ class FacilityGetDTO(object):
         'devices': 'devices',
         'description': 'description',
         'last_position': 'lastPosition',
+        'geometry': 'geometry',
         'relations': 'relations'
     }
     def __init__(self,
@@ -85,6 +87,7 @@ class FacilityGetDTO(object):
         devices : 'List[DeviceGetDTO]' = None,
         description : 'str' = None,
         last_position : 'LocationObservationDTO' = None,
+        geometry : 'GeoJsonObject' = None,
         relations : 'List[RDFObjectRelationDTO]' = None):  # noqa: E501
         """FacilityGetDTO - a model defined in Swagger"""  # noqa: E501
 
@@ -103,6 +106,7 @@ class FacilityGetDTO(object):
         self._devices = None
         self._description = None
         self._last_position = None
+        self._geometry = None
         self._relations = None
         self.discriminator = None
 
@@ -135,6 +139,8 @@ class FacilityGetDTO(object):
             self.description = description
         if last_position is not None:
             self.last_position = last_position
+        if geometry is not None:
+            self.geometry = geometry
         if relations is not None:
             self.relations = relations
 
@@ -454,6 +460,29 @@ class FacilityGetDTO(object):
         """
 
         self._last_position = last_position
+
+    @property
+    def geometry(self):
+        """Gets the geometry of this FacilityGetDTO.  # noqa: E501
+
+        Object geometry. Depreciated : use lastPosition instead  # noqa: E501
+
+        :return: The geometry of this FacilityGetDTO.  # noqa: E501
+        :rtype: GeoJsonObject
+        """
+        return self._geometry
+
+    @geometry.setter
+    def geometry(self, geometry):
+        """Sets the geometry of this FacilityGetDTO.
+
+        Object geometry. Depreciated : use lastPosition instead  # noqa: E501
+
+        :param geometry: The geometry of this FacilityGetDTO.  # noqa: E501
+        :type: GeoJsonObject
+        """
+
+        self._geometry = geometry
 
     @property
     def relations(self):

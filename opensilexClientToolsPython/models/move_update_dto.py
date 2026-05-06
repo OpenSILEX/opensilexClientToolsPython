@@ -42,6 +42,9 @@ class MoveUpdateDTO(object):
         'targets': 'list[str]',
         'relations': 'list[RDFObjectRelationDTO]',
         'location': 'LocationObservationDTO',
+        '_from': 'str',
+        'to': 'str',
+        'targets_positions': 'list[TargetPositionCreationDTO]',
         'publisher': 'UserGetDTO',
         'publication_date': 'datetime',
         'last_updated_date': 'datetime'
@@ -57,6 +60,9 @@ class MoveUpdateDTO(object):
         'targets': 'targets',
         'relations': 'relations',
         'location': 'location',
+        '_from': 'from',
+        'to': 'to',
+        'targets_positions': 'targets_positions',
         'publisher': 'publisher',
         'publication_date': 'publication_date',
         'last_updated_date': 'last_updated_date'
@@ -71,6 +77,9 @@ class MoveUpdateDTO(object):
         description : 'str' = None,
         relations : 'List[RDFObjectRelationDTO]' = None,
         location : 'LocationObservationDTO' = None,
+        _from : 'str' = None,
+        to : 'str' = None,
+        targets_positions : 'List[TargetPositionCreationDTO]' = None,
         publisher : 'UserGetDTO' = None,
         publication_date : 'datetime' = None,
         last_updated_date : 'datetime' = None):  # noqa: E501
@@ -85,6 +94,9 @@ class MoveUpdateDTO(object):
         self._targets = None
         self._relations = None
         self._location = None
+        self.__from = None
+        self._to = None
+        self._targets_positions = None
         self._publisher = None
         self._publication_date = None
         self._last_updated_date = None
@@ -105,6 +117,12 @@ class MoveUpdateDTO(object):
             self.relations = relations
         if location is not None:
             self.location = location
+        if _from is not None:
+            self._from = _from
+        if to is not None:
+            self.to = to
+        if targets_positions is not None:
+            self.targets_positions = targets_positions
         if publisher is not None:
             self.publisher = publisher
         if publication_date is not None:
@@ -312,6 +330,75 @@ class MoveUpdateDTO(object):
         """
 
         self._location = location
+
+    @property
+    def _from(self):
+        """Gets the _from of this MoveUpdateDTO.  # noqa: E501
+
+        DEPRECATED: use 'location' instead  # noqa: E501
+
+        :return: The _from of this MoveUpdateDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self.__from
+
+    @_from.setter
+    def _from(self, _from):
+        """Sets the _from of this MoveUpdateDTO.
+
+        DEPRECATED: use 'location' instead  # noqa: E501
+
+        :param _from: The _from of this MoveUpdateDTO.  # noqa: E501
+        :type: str
+        """
+
+        self.__from = _from
+
+    @property
+    def to(self):
+        """Gets the to of this MoveUpdateDTO.  # noqa: E501
+
+        DEPRECATED: use 'location' instead  # noqa: E501
+
+        :return: The to of this MoveUpdateDTO.  # noqa: E501
+        :rtype: str
+        """
+        return self._to
+
+    @to.setter
+    def to(self, to):
+        """Sets the to of this MoveUpdateDTO.
+
+        DEPRECATED: use 'location' instead  # noqa: E501
+
+        :param to: The to of this MoveUpdateDTO.  # noqa: E501
+        :type: str
+        """
+
+        self._to = to
+
+    @property
+    def targets_positions(self):
+        """Gets the targets_positions of this MoveUpdateDTO.  # noqa: E501
+
+        DEPRECATED: use 'location' instead  # noqa: E501
+
+        :return: The targets_positions of this MoveUpdateDTO.  # noqa: E501
+        :rtype: list[TargetPositionCreationDTO]
+        """
+        return self._targets_positions
+
+    @targets_positions.setter
+    def targets_positions(self, targets_positions):
+        """Sets the targets_positions of this MoveUpdateDTO.
+
+        DEPRECATED: use 'location' instead  # noqa: E501
+
+        :param targets_positions: The targets_positions of this MoveUpdateDTO.  # noqa: E501
+        :type: list[TargetPositionCreationDTO]
+        """
+
+        self._targets_positions = targets_positions
 
     @property
     def publisher(self):

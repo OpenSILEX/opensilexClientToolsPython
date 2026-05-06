@@ -179,10 +179,6 @@ class ApiClient(object):
                 # with json - 'Content-Type' not in header_param is a case when multipart/form is send 
                     json_data = json.loads(response_data.data)
                     return_data_dict['metadata'] = json_data["metadata"]
-                    if response_type is None:
-                        # Case: response_type is None, return raw data (e.g. for token endpoint) example get datafile path response
-                        return_data = json_data.get("result", None)
-                    
                     return_data_dict['result'] = return_data 
                 else :
                     # with data file - TODO accept and content type need to be fix in webservices 

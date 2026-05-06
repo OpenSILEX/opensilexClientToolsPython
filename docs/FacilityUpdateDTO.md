@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **rdf_type_name** | **str** |  | [optional] 
 **sites** | **list[str]** |  | [optional] 
 **variable_groups** | **list[str]** |  | [optional] 
+**geometry** | [**GeoJsonObject**](GeoJsonObject.md) | Deprecated. Please use the locations property to attach geospatial info to the facility. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

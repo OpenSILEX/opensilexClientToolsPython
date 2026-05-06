@@ -46,7 +46,8 @@ class ScientificObjectDetailByExperimentsDTO(object):
         'experiment_name': 'str',
         'factor_level': 'list[NamedResourceDTOFactorLevelModel]',
         'relations': 'list[RDFObjectRelationDTO]',
-        'location': 'LocationObservationDTO'
+        'location': 'LocationObservationDTO',
+        'geometry': 'GeoJsonObject'
     }
 
     attribute_map = {
@@ -63,7 +64,8 @@ class ScientificObjectDetailByExperimentsDTO(object):
         'experiment_name': 'experiment_name',
         'factor_level': 'factor_level',
         'relations': 'relations',
-        'location': 'location'
+        'location': 'location',
+        'geometry': 'geometry'
     }
     def __init__(self,
         uri : 'str' = None,
@@ -79,7 +81,8 @@ class ScientificObjectDetailByExperimentsDTO(object):
         experiment_name : 'str' = None,
         factor_level : 'List[NamedResourceDTOFactorLevelModel]' = None,
         relations : 'List[RDFObjectRelationDTO]' = None,
-        location : 'LocationObservationDTO' = None):  # noqa: E501
+        location : 'LocationObservationDTO' = None,
+        geometry : 'GeoJsonObject' = None):  # noqa: E501
         """ScientificObjectDetailByExperimentsDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -96,6 +99,7 @@ class ScientificObjectDetailByExperimentsDTO(object):
         self._factor_level = None
         self._relations = None
         self._location = None
+        self._geometry = None
         self.discriminator = None
 
         if uri is not None:
@@ -126,6 +130,8 @@ class ScientificObjectDetailByExperimentsDTO(object):
             self.relations = relations
         if location is not None:
             self.location = location
+        if geometry is not None:
+            self.geometry = geometry
 
     @property
     def uri(self):
@@ -434,6 +440,29 @@ class ScientificObjectDetailByExperimentsDTO(object):
         """
 
         self._location = location
+
+    @property
+    def geometry(self):
+        """Gets the geometry of this ScientificObjectDetailByExperimentsDTO.  # noqa: E501
+
+        Object geometry. Depreciated : use location instead  # noqa: E501
+
+        :return: The geometry of this ScientificObjectDetailByExperimentsDTO.  # noqa: E501
+        :rtype: GeoJsonObject
+        """
+        return self._geometry
+
+    @geometry.setter
+    def geometry(self, geometry):
+        """Sets the geometry of this ScientificObjectDetailByExperimentsDTO.
+
+        Object geometry. Depreciated : use location instead  # noqa: E501
+
+        :param geometry: The geometry of this ScientificObjectDetailByExperimentsDTO.  # noqa: E501
+        :type: GeoJsonObject
+        """
+
+        self._geometry = geometry
 
     def to_dict(self):
         """Returns the model properties as a dict"""

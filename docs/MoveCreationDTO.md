@@ -12,6 +12,9 @@ Name | Type | Description | Notes
 **targets** | **list[str]** | URI(s) of items concerned by this event | 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **location** | [**LocationObservationDTO**](LocationObservationDTO.md) |  | [optional] 
+**_from** | **str** | DEPRECATED: use &#39;location&#39; instead | [optional] 
+**to** | **str** | DEPRECATED: use &#39;location&#39; instead | [optional] 
+**targets_positions** | [**list[TargetPositionCreationDTO]**](TargetPositionCreationDTO.md) | DEPRECATED: use &#39;location&#39; instead | [optional] 
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 

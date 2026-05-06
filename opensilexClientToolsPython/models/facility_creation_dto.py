@@ -46,7 +46,8 @@ class FacilityCreationDTO(object):
         'publication_date': 'datetime',
         'last_updated_date': 'datetime',
         'relations': 'list[RDFObjectRelationDTO]',
-        'rdf_type_name': 'str'
+        'rdf_type_name': 'str',
+        'geometry': 'GeoJsonObject'
     }
 
     attribute_map = {
@@ -63,7 +64,8 @@ class FacilityCreationDTO(object):
         'publication_date': 'publication_date',
         'last_updated_date': 'last_updated_date',
         'relations': 'relations',
-        'rdf_type_name': 'rdf_type_name'
+        'rdf_type_name': 'rdf_type_name',
+        'geometry': 'geometry'
     }
     def __init__(self,
         uri : 'str' = None,
@@ -79,7 +81,8 @@ class FacilityCreationDTO(object):
         publication_date : 'datetime' = None,
         last_updated_date : 'datetime' = None,
         relations : 'List[RDFObjectRelationDTO]' = None,
-        rdf_type_name : 'str' = None):  # noqa: E501
+        rdf_type_name : 'str' = None,
+        geometry : 'GeoJsonObject' = None):  # noqa: E501
         """FacilityCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -96,6 +99,7 @@ class FacilityCreationDTO(object):
         self._last_updated_date = None
         self._relations = None
         self._rdf_type_name = None
+        self._geometry = None
         self.discriminator = None
 
         if uri is not None:
@@ -126,6 +130,8 @@ class FacilityCreationDTO(object):
             self.relations = relations
         if rdf_type_name is not None:
             self.rdf_type_name = rdf_type_name
+        if geometry is not None:
+            self.geometry = geometry
 
     @property
     def uri(self):
@@ -420,6 +426,29 @@ class FacilityCreationDTO(object):
         """
 
         self._rdf_type_name = rdf_type_name
+
+    @property
+    def geometry(self):
+        """Gets the geometry of this FacilityCreationDTO.  # noqa: E501
+
+        Deprecated. Please use the locations property to attach geospatial info to the facility.  # noqa: E501
+
+        :return: The geometry of this FacilityCreationDTO.  # noqa: E501
+        :rtype: GeoJsonObject
+        """
+        return self._geometry
+
+    @geometry.setter
+    def geometry(self, geometry):
+        """Sets the geometry of this FacilityCreationDTO.
+
+        Deprecated. Please use the locations property to attach geospatial info to the facility.  # noqa: E501
+
+        :param geometry: The geometry of this FacilityCreationDTO.  # noqa: E501
+        :type: GeoJsonObject
+        """
+
+        self._geometry = geometry
 
     def to_dict(self):
         """Returns the model properties as a dict"""

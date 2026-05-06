@@ -36,6 +36,7 @@ class ScientificObjectNodeWithChildrenDTO(object):
         'uri': 'str',
         'name': 'str',
         'location': 'LocationObservationDTO',
+        'geometry': 'GeoJsonObject',
         'rdf_type': 'str',
         'rdf_type_name': 'str',
         'publication_date': 'datetime',
@@ -49,6 +50,7 @@ class ScientificObjectNodeWithChildrenDTO(object):
         'uri': 'uri',
         'name': 'name',
         'location': 'location',
+        'geometry': 'geometry',
         'rdf_type': 'rdf_type',
         'rdf_type_name': 'rdf_type_name',
         'publication_date': 'publication_date',
@@ -61,6 +63,7 @@ class ScientificObjectNodeWithChildrenDTO(object):
         uri : 'str' = None,
         name : 'str' = None,
         location : 'LocationObservationDTO' = None,
+        geometry : 'GeoJsonObject' = None,
         rdf_type : 'str' = None,
         rdf_type_name : 'str' = None,
         publication_date : 'datetime' = None,
@@ -73,6 +76,7 @@ class ScientificObjectNodeWithChildrenDTO(object):
         self._uri = None
         self._name = None
         self._location = None
+        self._geometry = None
         self._rdf_type = None
         self._rdf_type_name = None
         self._publication_date = None
@@ -88,6 +92,8 @@ class ScientificObjectNodeWithChildrenDTO(object):
             self.name = name
         if location is not None:
             self.location = location
+        if geometry is not None:
+            self.geometry = geometry
         if rdf_type is not None:
             self.rdf_type = rdf_type
         if rdf_type_name is not None:
@@ -165,6 +171,29 @@ class ScientificObjectNodeWithChildrenDTO(object):
         """
 
         self._location = location
+
+    @property
+    def geometry(self):
+        """Gets the geometry of this ScientificObjectNodeWithChildrenDTO.  # noqa: E501
+
+        Object geometry. Depreciated : use location instead  # noqa: E501
+
+        :return: The geometry of this ScientificObjectNodeWithChildrenDTO.  # noqa: E501
+        :rtype: GeoJsonObject
+        """
+        return self._geometry
+
+    @geometry.setter
+    def geometry(self, geometry):
+        """Sets the geometry of this ScientificObjectNodeWithChildrenDTO.
+
+        Object geometry. Depreciated : use location instead  # noqa: E501
+
+        :param geometry: The geometry of this ScientificObjectNodeWithChildrenDTO.  # noqa: E501
+        :type: GeoJsonObject
+        """
+
+        self._geometry = geometry
 
     @property
     def rdf_type(self):

@@ -41,7 +41,8 @@ class ScientificObjectCreationDTO(object):
         'move': 'MoveCreationDTO',
         'publisher': 'UserGetDTO',
         'publication_date': 'datetime',
-        'last_updated_date': 'datetime'
+        'last_updated_date': 'datetime',
+        'geometry': 'GeoJsonObject'
     }
 
     attribute_map = {
@@ -53,7 +54,8 @@ class ScientificObjectCreationDTO(object):
         'move': 'move',
         'publisher': 'publisher',
         'publication_date': 'publication_date',
-        'last_updated_date': 'last_updated_date'
+        'last_updated_date': 'last_updated_date',
+        'geometry': 'geometry'
     }
     def __init__(self,
         rdf_type : 'str',
@@ -64,7 +66,8 @@ class ScientificObjectCreationDTO(object):
         move : 'MoveCreationDTO' = None,
         publisher : 'UserGetDTO' = None,
         publication_date : 'datetime' = None,
-        last_updated_date : 'datetime' = None):  # noqa: E501
+        last_updated_date : 'datetime' = None,
+        geometry : 'GeoJsonObject' = None):  # noqa: E501
         """ScientificObjectCreationDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -76,6 +79,7 @@ class ScientificObjectCreationDTO(object):
         self._publisher = None
         self._publication_date = None
         self._last_updated_date = None
+        self._geometry = None
         self.discriminator = None
 
         if uri is not None:
@@ -94,6 +98,8 @@ class ScientificObjectCreationDTO(object):
             self.publication_date = publication_date
         if last_updated_date is not None:
             self.last_updated_date = last_updated_date
+        if geometry is not None:
+            self.geometry = geometry
 
     @property
     def uri(self):
@@ -295,6 +301,29 @@ class ScientificObjectCreationDTO(object):
         """
 
         self._last_updated_date = last_updated_date
+
+    @property
+    def geometry(self):
+        """Gets the geometry of this ScientificObjectCreationDTO.  # noqa: E501
+
+        Deprecated. Please use the move property to attach geospatial info to the scientific object.  # noqa: E501
+
+        :return: The geometry of this ScientificObjectCreationDTO.  # noqa: E501
+        :rtype: GeoJsonObject
+        """
+        return self._geometry
+
+    @geometry.setter
+    def geometry(self, geometry):
+        """Sets the geometry of this ScientificObjectCreationDTO.
+
+        Deprecated. Please use the move property to attach geospatial info to the scientific object.  # noqa: E501
+
+        :param geometry: The geometry of this ScientificObjectCreationDTO.  # noqa: E501
+        :type: GeoJsonObject
+        """
+
+        self._geometry = geometry
 
     def to_dict(self):
         """Returns the model properties as a dict"""

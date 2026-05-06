@@ -46,7 +46,8 @@ class FacilityUpdateDTO(object):
         'relations': 'list[RDFObjectRelationDTO]',
         'rdf_type_name': 'str',
         'sites': 'list[str]',
-        'variable_groups': 'list[str]'
+        'variable_groups': 'list[str]',
+        'geometry': 'GeoJsonObject'
     }
 
     attribute_map = {
@@ -63,7 +64,8 @@ class FacilityUpdateDTO(object):
         'relations': 'relations',
         'rdf_type_name': 'rdf_type_name',
         'sites': 'sites',
-        'variable_groups': 'variableGroups'
+        'variable_groups': 'variableGroups',
+        'geometry': 'geometry'
     }
     def __init__(self,
         uri : 'str',
@@ -79,7 +81,8 @@ class FacilityUpdateDTO(object):
         relations : 'List[RDFObjectRelationDTO]' = None,
         rdf_type_name : 'str' = None,
         sites : 'List[str]' = None,
-        variable_groups : 'List[str]' = None):  # noqa: E501
+        variable_groups : 'List[str]' = None,
+        geometry : 'GeoJsonObject' = None):  # noqa: E501
         """FacilityUpdateDTO - a model defined in Swagger"""  # noqa: E501
 
         self._uri = None
@@ -96,6 +99,7 @@ class FacilityUpdateDTO(object):
         self._rdf_type_name = None
         self._sites = None
         self._variable_groups = None
+        self._geometry = None
         self.discriminator = None
 
         self.uri = uri
@@ -125,6 +129,8 @@ class FacilityUpdateDTO(object):
             self.sites = sites
         if variable_groups is not None:
             self.variable_groups = variable_groups
+        if geometry is not None:
+            self.geometry = geometry
 
     @property
     def uri(self):
@@ -421,6 +427,29 @@ class FacilityUpdateDTO(object):
         """
 
         self._variable_groups = variable_groups
+
+    @property
+    def geometry(self):
+        """Gets the geometry of this FacilityUpdateDTO.  # noqa: E501
+
+        Deprecated. Please use the locations property to attach geospatial info to the facility.  # noqa: E501
+
+        :return: The geometry of this FacilityUpdateDTO.  # noqa: E501
+        :rtype: GeoJsonObject
+        """
+        return self._geometry
+
+    @geometry.setter
+    def geometry(self, geometry):
+        """Sets the geometry of this FacilityUpdateDTO.
+
+        Deprecated. Please use the locations property to attach geospatial info to the facility.  # noqa: E501
+
+        :param geometry: The geometry of this FacilityUpdateDTO.  # noqa: E501
+        :type: GeoJsonObject
+        """
+
+        self._geometry = geometry
 
     def to_dict(self):
         """Returns the model properties as a dict"""

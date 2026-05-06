@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **publisher** | [**UserGetDTO**](UserGetDTO.md) |  | [optional] 
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 
+**geometry** | [**GeoJsonObject**](GeoJsonObject.md) | Deprecated. Please use the move property to attach geospatial info to the scientific object. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

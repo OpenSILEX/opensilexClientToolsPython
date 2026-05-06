@@ -36,8 +36,8 @@ class URIGlobalSearchDTO(object):
         'uri': 'str',
         'name': 'str',
         'context': 'str',
-        '_property': 'bool',
         'batch_history': 'bool',
+        '_property': 'bool',
         'rdf_type': 'str',
         'rdf_type_name': 'str',
         'rdfs_comment': 'str',
@@ -57,8 +57,8 @@ class URIGlobalSearchDTO(object):
         'uri': 'uri',
         'name': 'name',
         'context': 'context',
-        '_property': 'property',
         'batch_history': 'batchHistory',
+        '_property': 'property',
         'rdf_type': 'rdf_type',
         'rdf_type_name': 'rdf_type_name',
         'rdfs_comment': 'rdfs_comment',
@@ -77,8 +77,8 @@ class URIGlobalSearchDTO(object):
         uri : 'str' = None,
         name : 'str' = None,
         context : 'str' = None,
-        _property : 'bool' = None,
         batch_history : 'bool' = None,
+        _property : 'bool' = None,
         rdf_type : 'str' = None,
         rdf_type_name : 'str' = None,
         rdfs_comment : 'str' = None,
@@ -97,8 +97,8 @@ class URIGlobalSearchDTO(object):
         self._uri = None
         self._name = None
         self._context = None
-        self.__property = None
         self._batch_history = None
+        self.__property = None
         self._rdf_type = None
         self._rdf_type_name = None
         self._rdfs_comment = None
@@ -120,10 +120,10 @@ class URIGlobalSearchDTO(object):
             self.name = name
         if context is not None:
             self.context = context
-        if _property is not None:
-            self._property = _property
         if batch_history is not None:
             self.batch_history = batch_history
+        if _property is not None:
+            self._property = _property
         if rdf_type is not None:
             self.rdf_type = rdf_type
         if rdf_type_name is not None:
@@ -215,27 +215,6 @@ class URIGlobalSearchDTO(object):
         self._context = context
 
     @property
-    def _property(self):
-        """Gets the _property of this URIGlobalSearchDTO.  # noqa: E501
-
-
-        :return: The _property of this URIGlobalSearchDTO.  # noqa: E501
-        :rtype: bool
-        """
-        return self.__property
-
-    @_property.setter
-    def _property(self, _property):
-        """Sets the _property of this URIGlobalSearchDTO.
-
-
-        :param _property: The _property of this URIGlobalSearchDTO.  # noqa: E501
-        :type: bool
-        """
-
-        self.__property = _property
-
-    @property
     def batch_history(self):
         """Gets the batch_history of this URIGlobalSearchDTO.  # noqa: E501
 
@@ -255,6 +234,27 @@ class URIGlobalSearchDTO(object):
         """
 
         self._batch_history = batch_history
+
+    @property
+    def _property(self):
+        """Gets the _property of this URIGlobalSearchDTO.  # noqa: E501
+
+
+        :return: The _property of this URIGlobalSearchDTO.  # noqa: E501
+        :rtype: bool
+        """
+        return self.__property
+
+    @_property.setter
+    def _property(self, _property):
+        """Sets the _property of this URIGlobalSearchDTO.
+
+
+        :param _property: The _property of this URIGlobalSearchDTO.  # noqa: E501
+        :type: bool
+        """
+
+        self.__property = _property
 
     @property
     def rdf_type(self):

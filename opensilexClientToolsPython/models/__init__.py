@@ -494,6 +494,8 @@ from opensilexClientToolsPython.models.person_dto import PersonDTO
 
 
 
+
+
 from opensilexClientToolsPython.models.prefix_mapping import PrefixMapping
 
 from opensilexClientToolsPython.models.profile_creation_dto import ProfileCreationDTO
@@ -571,6 +573,8 @@ from opensilexClientToolsPython.models.species_dto import SpeciesDTO
 from opensilexClientToolsPython.models.status_dto import StatusDTO
 
 from opensilexClientToolsPython.models.string_uris_list_dto import StringURIsListDTO
+
+
 
 
 
@@ -873,7 +877,9 @@ from opensilexClientToolsPython.models.facility_creation_dto import FacilityCrea
 from opensilexClientToolsPython.models.facility_creation_dto import FacilityCreationDTO
 from opensilexClientToolsPython.models.facility_creation_dto import FacilityCreationDTO
 from opensilexClientToolsPython.models.facility_creation_dto import FacilityCreationDTO
+from opensilexClientToolsPython.models.facility_creation_dto import FacilityCreationDTO
 
+from opensilexClientToolsPython.models.facility_get_dto import FacilityGetDTO
 from opensilexClientToolsPython.models.facility_get_dto import FacilityGetDTO
 from opensilexClientToolsPython.models.facility_get_dto import FacilityGetDTO
 from opensilexClientToolsPython.models.facility_get_dto import FacilityGetDTO
@@ -890,6 +896,7 @@ from opensilexClientToolsPython.models.facility_get_with_geometry_dto import Fac
 from opensilexClientToolsPython.models.facility_get_with_geometry_dto import FacilityGetWithGeometryDTO
 
 
+from opensilexClientToolsPython.models.facility_update_dto import FacilityUpdateDTO
 from opensilexClientToolsPython.models.facility_update_dto import FacilityUpdateDTO
 from opensilexClientToolsPython.models.facility_update_dto import FacilityUpdateDTO
 from opensilexClientToolsPython.models.facility_update_dto import FacilityUpdateDTO
@@ -1058,6 +1065,7 @@ from opensilexClientToolsPython.models.motivation_model import MotivationModel
 from opensilexClientToolsPython.models.move_creation_dto import MoveCreationDTO
 from opensilexClientToolsPython.models.move_creation_dto import MoveCreationDTO
 from opensilexClientToolsPython.models.move_creation_dto import MoveCreationDTO
+from opensilexClientToolsPython.models.move_creation_dto import MoveCreationDTO
 
 from opensilexClientToolsPython.models.move_details_dto import MoveDetailsDTO
 from opensilexClientToolsPython.models.move_details_dto import MoveDetailsDTO
@@ -1066,6 +1074,7 @@ from opensilexClientToolsPython.models.move_details_dto import MoveDetailsDTO
 from opensilexClientToolsPython.models.move_get_dto import MoveGetDTO
 from opensilexClientToolsPython.models.move_get_dto import MoveGetDTO
 
+from opensilexClientToolsPython.models.move_update_dto import MoveUpdateDTO
 from opensilexClientToolsPython.models.move_update_dto import MoveUpdateDTO
 from opensilexClientToolsPython.models.move_update_dto import MoveUpdateDTO
 from opensilexClientToolsPython.models.move_update_dto import MoveUpdateDTO
@@ -1126,6 +1135,8 @@ from opensilexClientToolsPython.models.point import Point
 from opensilexClientToolsPython.models.polygon import Polygon
 from opensilexClientToolsPython.models.polygon import Polygon
 
+from opensilexClientToolsPython.models.position_creation_dto import PositionCreationDTO
+
 from opensilexClientToolsPython.models.position_get_dto import PositionGetDTO
 
 
@@ -1175,12 +1186,15 @@ from opensilexClientToolsPython.models.sparql_model_relation import SPARQLModelR
 from opensilexClientToolsPython.models.scientific_object_creation_dto import ScientificObjectCreationDTO
 from opensilexClientToolsPython.models.scientific_object_creation_dto import ScientificObjectCreationDTO
 from opensilexClientToolsPython.models.scientific_object_creation_dto import ScientificObjectCreationDTO
+from opensilexClientToolsPython.models.scientific_object_creation_dto import ScientificObjectCreationDTO
 
 from opensilexClientToolsPython.models.scientific_object_detail_by_experiments_dto import ScientificObjectDetailByExperimentsDTO
 from opensilexClientToolsPython.models.scientific_object_detail_by_experiments_dto import ScientificObjectDetailByExperimentsDTO
 from opensilexClientToolsPython.models.scientific_object_detail_by_experiments_dto import ScientificObjectDetailByExperimentsDTO
 from opensilexClientToolsPython.models.scientific_object_detail_by_experiments_dto import ScientificObjectDetailByExperimentsDTO
+from opensilexClientToolsPython.models.scientific_object_detail_by_experiments_dto import ScientificObjectDetailByExperimentsDTO
 
+from opensilexClientToolsPython.models.scientific_object_detail_dto import ScientificObjectDetailDTO
 from opensilexClientToolsPython.models.scientific_object_detail_dto import ScientificObjectDetailDTO
 from opensilexClientToolsPython.models.scientific_object_detail_dto import ScientificObjectDetailDTO
 from opensilexClientToolsPython.models.scientific_object_detail_dto import ScientificObjectDetailDTO
@@ -1189,9 +1203,12 @@ from opensilexClientToolsPython.models.scientific_object_detail_dto import Scien
 from opensilexClientToolsPython.models.scientific_object_export_dto import ScientificObjectExportDTO
 
 from opensilexClientToolsPython.models.scientific_object_node_dto import ScientificObjectNodeDTO
+from opensilexClientToolsPython.models.scientific_object_node_dto import ScientificObjectNodeDTO
 
 from opensilexClientToolsPython.models.scientific_object_node_with_children_dto import ScientificObjectNodeWithChildrenDTO
+from opensilexClientToolsPython.models.scientific_object_node_with_children_dto import ScientificObjectNodeWithChildrenDTO
 
+from opensilexClientToolsPython.models.scientific_object_update_dto import ScientificObjectUpdateDTO
 from opensilexClientToolsPython.models.scientific_object_update_dto import ScientificObjectUpdateDTO
 from opensilexClientToolsPython.models.scientific_object_update_dto import ScientificObjectUpdateDTO
 from opensilexClientToolsPython.models.scientific_object_update_dto import ScientificObjectUpdateDTO
@@ -1217,6 +1234,8 @@ from opensilexClientToolsPython.models.site_update_dto import SiteUpdateDTO
 
 
 
+
+from opensilexClientToolsPython.models.target_position_creation_dto import TargetPositionCreationDTO
 
 from opensilexClientToolsPython.models.theme_config_dto import ThemeConfigDTO
 

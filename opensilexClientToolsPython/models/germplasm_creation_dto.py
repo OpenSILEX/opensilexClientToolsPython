@@ -72,7 +72,6 @@ class GermplasmCreationDTO(object):
     def __init__(self,
         rdf_type : 'str',
         name : 'str',
-        is_public : 'bool',
         uri : 'str' = None,
         synonyms : 'List[str]' = None,
         code : 'str' = None,
@@ -85,6 +84,7 @@ class GermplasmCreationDTO(object):
         website : 'str' = None,
         relations : 'List[RDFObjectRelationDTO]' = None,
         metadata : 'Dict[str, str]' = None,
+        is_public : 'bool' = None,
         groups : 'List[str]' = None):  # noqa: E501
         """GermplasmCreationDTO - a model defined in Swagger"""  # noqa: E501
 
@@ -132,7 +132,8 @@ class GermplasmCreationDTO(object):
             self.relations = relations
         if metadata is not None:
             self.metadata = metadata
-        self.is_public = is_public
+        if is_public is not None:
+            self.is_public = is_public
         if groups is not None:
             self.groups = groups
 
@@ -476,8 +477,6 @@ class GermplasmCreationDTO(object):
         :param is_public: The is_public of this GermplasmCreationDTO.  # noqa: E501
         :type: bool
         """
-        if is_public is None:
-            raise ValueError("Invalid value for `is_public`, must not be `None`")  # noqa: E501
 
         self._is_public = is_public
 

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **website** | **str** | website | [optional] 
 **relations** | [**list[RDFObjectRelationDTO]**](RDFObjectRelationDTO.md) |  | [optional] 
 **metadata** | **dict(str, str)** |  | [optional] 
-**is_public** | **bool** | boolean | 
+**is_public** | **bool** | boolean | [optional] 
 **groups** | **list[str]** | groups | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

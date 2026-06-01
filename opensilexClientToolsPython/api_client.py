@@ -702,4 +702,4 @@ class ApiClient(object):
                 self.default_headers["Authorization"] = "Bearer " + \
                     token_api_response['result'].token
             except rest.ApiException as e:
-                print("Exception : %s\n" % e)
+                raise Exception("Connection to OpenSilex failed: " + str(e))

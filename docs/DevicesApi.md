@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**search_device_data**](DevicesApi.md#search_device_data) | **GET** /core/devices/{uri}/data | Search device data
 [**search_device_datafiles**](DevicesApi.md#search_device_datafiles) | **GET** /core/devices/{uri}/datafiles | Search device datafiles descriptions
 [**search_devices**](DevicesApi.md#search_devices) | **GET** /core/devices | Search devices
+[**search_devices_by_uris**](DevicesApi.md#search_devices_by_uris) | **POST** /core/devices/by_uris | Get devices by uris
 [**update_device**](DevicesApi.md#update_device) | **PUT** /core/devices | Update a device
 [**validate_csv1**](DevicesApi.md#validate_csv1) | **POST** /core/devices/import_validation | Validate the import of a CSV file with one device per line
 
@@ -956,6 +957,58 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[DeviceGetDTO]**](DeviceGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_devices_by_uris**
+> list[DeviceGetDTO] search_devices_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get devices by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DevicesApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Device URIs (optional)
+
+
+try:
+    # Get devices by uris
+    api_response = api_instance.search_devices_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DevicesApi->search_devices_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Device URIs | [optional] 
 
 
 ### Return type

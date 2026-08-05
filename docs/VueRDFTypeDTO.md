@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **publication_date** | **datetime** |  | [optional] 
 **last_updated_date** | **datetime** |  | [optional] 
 **icon** | **str** |  | [optional] 
+**class_extension_uri** | **str** |  | [optional] 
 **name_translations** | **dict(str, str)** |  | [optional] 
 **comment_translations** | **dict(str, str)** |  | [optional] 
 **is_abstract** | **bool** |  | [optional] 

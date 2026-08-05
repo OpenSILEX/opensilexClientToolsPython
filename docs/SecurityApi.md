@@ -33,8 +33,11 @@ Method | HTTP request | Description
 [**get_user_groups1**](SecurityApi.md#get_user_groups1) | **GET** /security/users/{uri}/groups | Get groups of a user
 [**get_users_by_uri**](SecurityApi.md#get_users_by_uri) | **GET** /security/users/by_uris | Get users by their URIs
 [**search_accounts**](SecurityApi.md#search_accounts) | **GET** /security/accounts | Search accounts
+[**search_accounts_by_uris**](SecurityApi.md#search_accounts_by_uris) | **POST** /security/accounts/by_uris | Get accounts by their URIs
 [**search_groups**](SecurityApi.md#search_groups) | **GET** /security/groups | Search groups
+[**search_groups_by_uris**](SecurityApi.md#search_groups_by_uris) | **POST** /security/groups/by_uris | Get groups by their URIs
 [**search_persons**](SecurityApi.md#search_persons) | **GET** /security/persons | Search persons
+[**search_persons_by_uris**](SecurityApi.md#search_persons_by_uris) | **POST** /security/persons/by_uris | Get persons by their URIs
 [**search_profiles**](SecurityApi.md#search_profiles) | **GET** /security/profiles | Search profiles
 [**search_users**](SecurityApi.md#search_users) | **GET** /security/users | Search users
 [**update_account**](SecurityApi.md#update_account) | **PUT** /security/accounts | Update an account
@@ -1546,6 +1549,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_accounts_by_uris**
+> list[AccountGetDTO] search_accounts_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get accounts by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Account URIs (optional)
+
+
+try:
+    # Get accounts by their URIs
+    api_response = api_instance.search_accounts_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling SecurityApi->search_accounts_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Account URIs | [optional] 
+
+
+### Return type
+
+[**list[AccountGetDTO]**](AccountGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_groups**
 > list[GroupDTO] search_groups(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -1587,6 +1642,58 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[GroupDTO]**](GroupDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_groups_by_uris**
+> list[GroupDTO] search_groups_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get groups by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Group URIs (optional)
+
+
+try:
+    # Get groups by their URIs
+    api_response = api_instance.search_groups_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling SecurityApi->search_groups_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Group URIs | [optional] 
 
 
 ### Return type
@@ -1647,6 +1754,58 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[PersonDTO]**](PersonDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_persons_by_uris**
+> list[PersonDTO] search_persons_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get persons by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.SecurityApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Person URIs (optional)
+
+
+try:
+    # Get persons by their URIs
+    api_response = api_instance.search_persons_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling SecurityApi->search_persons_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Person URIs | [optional] 
 
 
 ### Return type

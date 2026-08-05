@@ -18,9 +18,10 @@ Method | HTTP request | Description
 [**get_germplasm_group_by_uris**](GermplasmApi.md#get_germplasm_group_by_uris) | **GET** /core/germplasm_group/by-uris | Get germplasm groups by their URIs
 [**get_germplasm_group_content**](GermplasmApi.md#get_germplasm_group_content) | **GET** /core/germplasm_group/{uri}/germplasm | Get a germplasm group&#39;s germplasm, paginated
 [**get_germplasm_group_with_germplasms**](GermplasmApi.md#get_germplasm_group_with_germplasms) | **GET** /core/germplasm_group/with-germplasm/{uri} | Get a germplasm group with nested germplasm details
-[**get_germplasms_by_uri**](GermplasmApi.md#get_germplasms_by_uri) | **POST** /core/germplasm/by_uris | Get a list of germplasms by their URIs
 [**search_germplasm**](GermplasmApi.md#search_germplasm) | **GET** /core/germplasm | Search germplasm
+[**search_germplasm_group_by_uris**](GermplasmApi.md#search_germplasm_group_by_uris) | **POST** /core/germplasm_group/by_uris | Get germplasm groups by their URIs
 [**search_germplasm_groups**](GermplasmApi.md#search_germplasm_groups) | **POST** /core/germplasm_group/search | Search germplasm groups
+[**search_germplasms_by_uris**](GermplasmApi.md#search_germplasms_by_uris) | **POST** /core/germplasm/by_uris | Get a list of germplasms by their URIs
 [**update_germplasm**](GermplasmApi.md#update_germplasm) | **PUT** /core/germplasm | Update a germplasm
 [**update_germplasm_group**](GermplasmApi.md#update_germplasm_group) | **PUT** /core/germplasm_group | Update a germplasm group
 [**upsert_germplasms**](GermplasmApi.md#upsert_germplasms) | **POST** /core/germplasm/import | Add or update many germplasms
@@ -772,58 +773,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_germplasms_by_uri**
-> list[GermplasmGetAllDTO] get_germplasms_by_uri(authorization, body=body, accept_language=accept_language)
-
-Get a list of germplasms by their URIs
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
-body = [opensilexClientToolsPython.list[str]()] # list[str] | Germplasms URIs (optional)
-
-
-try:
-    # Get a list of germplasms by their URIs
-    api_response = api_instance.get_germplasms_by_uri(body=body, )
-    pprint(api_response)
-except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling GermplasmApi->get_germplasms_by_uri: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **list[str]**| Germplasms URIs | [optional] 
-
-
-### Return type
-
-[**list[GermplasmGetAllDTO]**](GermplasmGetAllDTO.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **search_germplasm**
 > list[GermplasmGetAllDTO] search_germplasm(authorization, uri=uri, rdf_type=rdf_type, name=name, code=code, production_year=production_year, species=species, variety=variety, accession=accession, group_of_germplasm=group_of_germplasm, institute=institute, experiment=experiment, parent_germplasms=parent_germplasms, parent_germplasms_m=parent_germplasms_m, parent_germplasms_f=parent_germplasms_f, metadata=metadata, is_public=is_public, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -912,6 +861,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_germplasm_group_by_uris**
+> list[GermplasmGroupGetDTO] search_germplasm_group_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get germplasm groups by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Germplasm group URIs (optional)
+
+
+try:
+    # Get germplasm groups by their URIs
+    api_response = api_instance.search_germplasm_group_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling GermplasmApi->search_germplasm_group_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Germplasm group URIs | [optional] 
+
+
+### Return type
+
+[**list[GermplasmGroupGetDTO]**](GermplasmGroupGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_germplasm_groups**
 > list[GermplasmGroupGetDTO] search_germplasm_groups(authorization, name=name, germplasm=germplasm, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -960,6 +961,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[GermplasmGroupGetDTO]**](GermplasmGroupGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_germplasms_by_uris**
+> list[GermplasmGetAllDTO] search_germplasms_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get a list of germplasms by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.GermplasmApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Germplasms URIs (optional)
+
+
+try:
+    # Get a list of germplasms by their URIs
+    api_response = api_instance.search_germplasms_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling GermplasmApi->search_germplasms_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Germplasms URIs | [optional] 
+
+
+### Return type
+
+[**list[GermplasmGetAllDTO]**](GermplasmGetAllDTO.md)
 
 ### Authorization
 

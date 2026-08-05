@@ -37,12 +37,19 @@ Method | HTTP request | Description
 [**get_variables_group**](VariablesApi.md#get_variables_group) | **GET** /core/variables_group/{uri} | Get a variables group
 [**get_variables_group_by_uris**](VariablesApi.md#get_variables_group_by_uris) | **GET** /core/variables_group/by_uris | Get variables groups by their URIs
 [**search_characteristics**](VariablesApi.md#search_characteristics) | **GET** /core/characteristics | Search characteristics by name
+[**search_characteristics_by_uris**](VariablesApi.md#search_characteristics_by_uris) | **POST** /core/characteristics/by_uris | Get detailed characteristics by uris
 [**search_entities**](VariablesApi.md#search_entities) | **GET** /core/entities | Search entities by name
+[**search_entities_by_uris**](VariablesApi.md#search_entities_by_uris) | **POST** /core/entities/by_uris | Get detailed entities by uris
+[**search_interest_entities_by_uris**](VariablesApi.md#search_interest_entities_by_uris) | **POST** /core/entities_of_interest/by_uris | Get detailed entities of interest by uris
 [**search_interest_entity**](VariablesApi.md#search_interest_entity) | **GET** /core/entities_of_interest | Search entities of interest by name
 [**search_methods**](VariablesApi.md#search_methods) | **GET** /core/methods | Search methods by name
+[**search_methods_by_uris**](VariablesApi.md#search_methods_by_uris) | **POST** /core/methods/by_uris | Get detailed methods by uris
 [**search_units**](VariablesApi.md#search_units) | **GET** /core/units | Search units by name
+[**search_units_by_uris**](VariablesApi.md#search_units_by_uris) | **POST** /core/units/by_uris | Get detailed units by uris
 [**search_variables**](VariablesApi.md#search_variables) | **GET** /core/variables | Search variables
+[**search_variables_by_uris**](VariablesApi.md#search_variables_by_uris) | **POST** /core/variables/by_uris | Get detailed variables by uris
 [**search_variables_details**](VariablesApi.md#search_variables_details) | **GET** /core/variables/details | Search detailed variables by name, long name, entity, characteristic, method or unit name
+[**search_variables_group_by_uris**](VariablesApi.md#search_variables_group_by_uris) | **POST** /core/variables_group/by_uris | Get variables groups by their URIs
 [**search_variables_groups**](VariablesApi.md#search_variables_groups) | **GET** /core/variables_group | Search variables groups
 [**update_characteristic**](VariablesApi.md#update_characteristic) | **PUT** /core/characteristics | Update a characteristic
 [**update_entity**](VariablesApi.md#update_entity) | **PUT** /core/entities | Update an entity
@@ -1785,6 +1792,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_characteristics_by_uris**
+> list[CharacteristicDetailsDTO] search_characteristics_by_uris(body, authorization, accept_language=accept_language)
+
+Get detailed characteristics by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.GetByUrisWithSharedResourceInstanceDTO() # GetByUrisWithSharedResourceInstanceDTO | Characteristics URIs and optional shared resource instance
+
+
+try:
+    # Get detailed characteristics by uris
+    api_response = api_instance.search_characteristics_by_uris(body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling VariablesApi->search_characteristics_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetByUrisWithSharedResourceInstanceDTO**](GetByUrisWithSharedResourceInstanceDTO.md)| Characteristics URIs and optional shared resource instance | 
+
+
+### Return type
+
+[**list[CharacteristicDetailsDTO]**](CharacteristicDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_entities**
 > list[EntityGetDTO] search_entities(authorization, name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
@@ -1833,6 +1892,110 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[EntityGetDTO]**](EntityGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_entities_by_uris**
+> list[EntityDetailsDTO] search_entities_by_uris(body, authorization, accept_language=accept_language)
+
+Get detailed entities by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.GetByUrisWithSharedResourceInstanceDTO() # GetByUrisWithSharedResourceInstanceDTO | Entities URIs and optional shared resource instance
+
+
+try:
+    # Get detailed entities by uris
+    api_response = api_instance.search_entities_by_uris(body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling VariablesApi->search_entities_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetByUrisWithSharedResourceInstanceDTO**](GetByUrisWithSharedResourceInstanceDTO.md)| Entities URIs and optional shared resource instance | 
+
+
+### Return type
+
+[**list[EntityDetailsDTO]**](EntityDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_interest_entities_by_uris**
+> list[InterestEntityDetailsDTO] search_interest_entities_by_uris(body, authorization, accept_language=accept_language)
+
+Get detailed entities of interest by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.GetByUrisWithSharedResourceInstanceDTO() # GetByUrisWithSharedResourceInstanceDTO | Entities of interest URIs and optional shared resource instance
+
+
+try:
+    # Get detailed entities of interest by uris
+    api_response = api_instance.search_interest_entities_by_uris(body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling VariablesApi->search_interest_entities_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetByUrisWithSharedResourceInstanceDTO**](GetByUrisWithSharedResourceInstanceDTO.md)| Entities of interest URIs and optional shared resource instance | 
+
+
+### Return type
+
+[**list[InterestEntityDetailsDTO]**](InterestEntityDetailsDTO.md)
 
 ### Authorization
 
@@ -1965,6 +2128,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_methods_by_uris**
+> list[MethodDetailsDTO] search_methods_by_uris(body, authorization, accept_language=accept_language)
+
+Get detailed methods by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.GetByUrisWithSharedResourceInstanceDTO() # GetByUrisWithSharedResourceInstanceDTO | Methods URIs and optional shared resource instance
+
+
+try:
+    # Get detailed methods by uris
+    api_response = api_instance.search_methods_by_uris(body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling VariablesApi->search_methods_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetByUrisWithSharedResourceInstanceDTO**](GetByUrisWithSharedResourceInstanceDTO.md)| Methods URIs and optional shared resource instance | 
+
+
+### Return type
+
+[**list[MethodDetailsDTO]**](MethodDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_units**
 > list[UnitGetDTO] search_units(authorization, name=name, order_by=order_by, page=page, page_size=page_size, shared_resource_instance=shared_resource_instance, accept_language=accept_language)
 
@@ -2013,6 +2228,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[UnitGetDTO]**](UnitGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_units_by_uris**
+> list[UnitDetailsDTO] search_units_by_uris(body, authorization, accept_language=accept_language)
+
+Get detailed units by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.GetByUrisWithSharedResourceInstanceDTO() # GetByUrisWithSharedResourceInstanceDTO | Units URIs and optional shared resource instance
+
+
+try:
+    # Get detailed units by uris
+    api_response = api_instance.search_units_by_uris(body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling VariablesApi->search_units_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetByUrisWithSharedResourceInstanceDTO**](GetByUrisWithSharedResourceInstanceDTO.md)| Units URIs and optional shared resource instance | 
+
+
+### Return type
+
+[**list[UnitDetailsDTO]**](UnitDetailsDTO.md)
 
 ### Authorization
 
@@ -2113,6 +2380,58 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **search_variables_by_uris**
+> list[VariableDetailsDTO] search_variables_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get detailed variables by uris
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Variable URIs (optional)
+
+
+try:
+    # Get detailed variables by uris
+    api_response = api_instance.search_variables_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling VariablesApi->search_variables_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Variable URIs | [optional] 
+
+
+### Return type
+
+[**list[VariableDetailsDTO]**](VariableDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **search_variables_details**
 > list[VariableDetailsDTO] search_variables_details(authorization, name=name, order_by=order_by, page=page, page_size=page_size, accept_language=accept_language)
 
@@ -2159,6 +2478,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[VariableDetailsDTO]**](VariableDetailsDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_variables_group_by_uris**
+> list[VariablesGroupGetDTO] search_variables_group_by_uris(body, authorization, accept_language=accept_language)
+
+Get variables groups by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.VariablesApi(pythonClient)
+body = opensilexClientToolsPython.GetByUrisWithSharedResourceInstanceDTO() # GetByUrisWithSharedResourceInstanceDTO | Variables group URIs and optional shared resource instance
+
+
+try:
+    # Get variables groups by their URIs
+    api_response = api_instance.search_variables_group_by_uris(body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling VariablesApi->search_variables_group_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetByUrisWithSharedResourceInstanceDTO**](GetByUrisWithSharedResourceInstanceDTO.md)| Variables group URIs and optional shared resource instance | 
+
+
+### Return type
+
+[**list[VariablesGroupGetDTO]**](VariablesGroupGetDTO.md)
 
 ### Authorization
 

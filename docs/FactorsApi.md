@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**search_categories**](FactorsApi.md#search_categories) | **GET** /core/experiments/factors/categories | Search categories
 [**search_factor_levels**](FactorsApi.md#search_factor_levels) | **GET** /core/experiments/factors/factor_levels | Search factors levels
 [**search_factors**](FactorsApi.md#search_factors) | **GET** /core/experiments/factors | Search factors
+[**search_factors_by_uris**](FactorsApi.md#search_factors_by_uris) | **POST** /core/experiments/factors/by_uris | Get a list of factors by their URIs
 [**update_factor**](FactorsApi.md#update_factor) | **PUT** /core/experiments/factors | Update a factor
 
 
@@ -698,6 +699,58 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[FactorGetDTO]**](FactorGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_factors_by_uris**
+> list[FactorGetDTO] search_factors_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get a list of factors by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.FactorsApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Factor URIs (optional)
+
+
+try:
+    # Get a list of factors by their URIs
+    api_response = api_instance.search_factors_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling FactorsApi->search_factors_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Factor URIs | [optional] 
 
 
 ### Return type

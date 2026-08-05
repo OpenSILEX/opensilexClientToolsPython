@@ -15,10 +15,10 @@ Method | HTTP request | Description
 [**get_scientific_object_detail_by_experiments**](ScientificObjectsApi.md#get_scientific_object_detail_by_experiments) | **GET** /core/scientific_objects/{uri}/experiments | Get scientific object detail for each experiments, a null value for experiment in response means a properties defined outside of any experiment (shared object).
 [**get_scientific_object_variables**](ScientificObjectsApi.md#get_scientific_object_variables) | **GET** /core/scientific_objects/{uri}/variables | Get variables measured on this scientific object
 [**get_scientific_objects_children**](ScientificObjectsApi.md#get_scientific_objects_children) | **GET** /core/scientific_objects/children | Get list of scientific object children
-[**get_scientific_objects_list_by_uris**](ScientificObjectsApi.md#get_scientific_objects_list_by_uris) | **POST** /core/scientific_objects/by_uris | Get scientific objet list of a given experiment URI
 [**get_used_types**](ScientificObjectsApi.md#get_used_types) | **GET** /core/scientific_objects/used_types | get used scientific object types
 [**import_csv1**](ScientificObjectsApi.md#import_csv1) | **POST** /core/scientific_objects/import | Import a CSV file for the given experiment URI and scientific object type.
 [**search_scientific_objects**](ScientificObjectsApi.md#search_scientific_objects) | **GET** /core/scientific_objects | Search list of scientific objects
+[**search_scientific_objects_list_by_uris**](ScientificObjectsApi.md#search_scientific_objects_list_by_uris) | **POST** /core/scientific_objects/by_uris | Get scientific objet list of a given experiment URI
 [**search_scientific_objects_with_geometry_list_by_uris**](ScientificObjectsApi.md#search_scientific_objects_with_geometry_list_by_uris) | **GET** /core/scientific_objects/geometry | Get scientific objet list with geometry of a given experiment URI
 [**update_scientific_object**](ScientificObjectsApi.md#update_scientific_object) | **PUT** /core/scientific_objects | Update a scientific object for the given experiment
 [**validate_csv3**](ScientificObjectsApi.md#validate_csv3) | **POST** /core/scientific_objects/import_validation | Validate a CSV file for the given experiment URI and scientific object type.
@@ -622,60 +622,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_scientific_objects_list_by_uris**
-> list[ScientificObjectNodeDTO] get_scientific_objects_list_by_uris(authorization, experiment=experiment, body=body, accept_language=accept_language)
-
-Get scientific objet list of a given experiment URI
-
-
-
-### Example
-```python
-from __future__ import print_function
-import time
-import opensilexClientToolsPython
-from opensilexClientToolsPython.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-pythonClient = opensilexClientToolsPython.ApiClient()
-pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
-api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
-experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
-body = [opensilexClientToolsPython.list[str]()] # list[str] | Scientific object uris (optional)
-
-
-try:
-    # Get scientific objet list of a given experiment URI
-    api_response = api_instance.get_scientific_objects_list_by_uris(experiment=experiment, body=body, )
-    pprint(api_response)
-except opensilexClientToolsPython.rest.ApiException as e:
-    print("Exception when calling ScientificObjectsApi->get_scientific_objects_list_by_uris: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **experiment** | **str**| Experiment URI | [optional] 
- **body** | **list[str]**| Scientific object uris | [optional] 
-
-
-### Return type
-
-[**list[ScientificObjectNodeDTO]**](ScientificObjectNodeDTO.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **get_used_types**
 > list[ListItemDTO] get_used_types(authorization, experiment=experiment, accept_language=accept_language)
 
@@ -845,6 +791,60 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[ScientificObjectNodeDTO]**](ScientificObjectNodeDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_scientific_objects_list_by_uris**
+> list[ScientificObjectNodeDTO] search_scientific_objects_list_by_uris(authorization, experiment=experiment, body=body, accept_language=accept_language)
+
+Get scientific objet list of a given experiment URI
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.ScientificObjectsApi(pythonClient)
+experiment = 'http://opensilex/experiment/id/ZA17' # str | Experiment URI (optional)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Scientific object uris (optional)
+
+
+try:
+    # Get scientific objet list of a given experiment URI
+    api_response = api_instance.search_scientific_objects_list_by_uris(experiment=experiment, body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling ScientificObjectsApi->search_scientific_objects_list_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **experiment** | **str**| Experiment URI | [optional] 
+ **body** | **list[str]**| Scientific object uris | [optional] 
 
 
 ### Return type

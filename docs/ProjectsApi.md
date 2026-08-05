@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_project**](ProjectsApi.md#get_project) | **GET** /core/projects/{uri} | Get a project
 [**get_projects_by_uri**](ProjectsApi.md#get_projects_by_uri) | **GET** /core/projects/by_uris | Get projects by their URIs
 [**search_projects**](ProjectsApi.md#search_projects) | **GET** /core/projects | Search projects
+[**search_projects_by_uris**](ProjectsApi.md#search_projects_by_uris) | **POST** /core/projects/by_uris | Get projects by their URIs
 [**update_project**](ProjectsApi.md#update_project) | **PUT** /core/projects | Update a project
 
 
@@ -267,6 +268,58 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[ProjectGetDTO]**](ProjectGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_projects_by_uris**
+> list[ProjectGetDTO] search_projects_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get projects by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.ProjectsApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Project URIs (optional)
+
+
+try:
+    # Get projects by their URIs
+    api_response = api_instance.search_projects_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling ProjectsApi->search_projects_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Project URIs | [optional] 
 
 
 ### Return type

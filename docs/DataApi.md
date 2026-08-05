@@ -41,6 +41,7 @@ Method | HTTP request | Description
 [**search_data_list**](DataApi.md#search_data_list) | **GET** /core/data | Search data
 [**search_data_list_by_targets**](DataApi.md#search_data_list_by_targets) | **POST** /core/data/search | Search data for a large list of targets
 [**search_provenance**](DataApi.md#search_provenance) | **GET** /core/provenances | Get provenances
+[**search_provenances_by_uris**](DataApi.md#search_provenances_by_uris) | **POST** /core/provenances/by_uris | Get a list of provenances by their URIs
 [**update**](DataApi.md#update) | **PUT** /core/data | Update data
 [**update_confidence**](DataApi.md#update_confidence) | **PUT** /core/data/{uri}/confidence | Update confidence index
 [**update_provenance**](DataApi.md#update_provenance) | **PUT** /core/provenances | Update a provenance
@@ -2252,6 +2253,58 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[ProvenanceGetDTO]**](ProvenanceGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_provenances_by_uris**
+> list[ProvenanceGetDTO] search_provenances_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get a list of provenances by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.DataApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Provenance URIs (optional)
+
+
+try:
+    # Get a list of provenances by their URIs
+    api_response = api_instance.search_provenances_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling DataApi->search_provenances_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Provenance URIs | [optional] 
 
 
 ### Return type

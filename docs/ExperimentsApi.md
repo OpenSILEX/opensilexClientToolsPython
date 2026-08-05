@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**search_experiment_data_list**](ExperimentsApi.md#search_experiment_data_list) | **GET** /core/experiments/{uri}/data | Search data
 [**search_experiment_provenances**](ExperimentsApi.md#search_experiment_provenances) | **GET** /core/experiments/{uri}/provenances | Get provenances involved in an experiment
 [**search_experiments**](ExperimentsApi.md#search_experiments) | **GET** /core/experiments | Search experiments
+[**search_experiments_by_uris**](ExperimentsApi.md#search_experiments_by_uris) | **POST** /core/experiments/by_uris | Get experiments URIs
 [**search_funding**](ExperimentsApi.md#search_funding) | **GET** /core/experiments/funding | Search funding
 [**update_experiment**](ExperimentsApi.md#update_experiment) | **PUT** /core/experiments | Update an experiment
 [**validate_csv2**](ExperimentsApi.md#validate_csv2) | **POST** /core/experiments/{uri}/data/import_validation | Import a CSV file for the given experiment URI and scientific object type.
@@ -780,6 +781,58 @@ Name | Type | Description  | Notes
  **order_by** | [**list[str]**](str.md)| List of fields to sort as an array of fieldName&#x3D;asc|desc | [optional] 
  **page** | **int**| Page number | [optional] [default to 0]
  **page_size** | **int**| Page size | [optional] [default to 20]
+
+
+### Return type
+
+[**list[ExperimentGetListDTO]**](ExperimentGetListDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_experiments_by_uris**
+> list[ExperimentGetListDTO] search_experiments_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get experiments URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.ExperimentsApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Experiment URIs (optional)
+
+
+try:
+    # Get experiments URIs
+    api_response = api_instance.search_experiments_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling ExperimentsApi->search_experiments_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Experiment URIs | [optional] 
 
 
 ### Return type

@@ -20,6 +20,7 @@ Method | HTTP request | Description
 [**get_sites_with_location**](OrganizationsApi.md#get_sites_with_location) | **GET** /core/sites/with_location | Get only the list of sites with a location
 [**minimal_search_facilities**](OrganizationsApi.md#minimal_search_facilities) | **GET** /core/facilities/minimal_search | Search facilities returning minimal embedded information for better performance
 [**search_facilities**](OrganizationsApi.md#search_facilities) | **GET** /core/facilities | Search facilities
+[**search_facilities_by_uris**](OrganizationsApi.md#search_facilities_by_uris) | **POST** /core/facilities/by_uris | Get facilities by their URIs
 [**search_organizations**](OrganizationsApi.md#search_organizations) | **GET** /core/organisations | Search organisations
 [**search_sites**](OrganizationsApi.md#search_sites) | **GET** /core/sites | Search all sites
 [**update_facility**](OrganizationsApi.md#update_facility) | **PUT** /core/facilities | Update a facility
@@ -859,6 +860,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[FacilityGetDTO]**](FacilityGetDTO.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **search_facilities_by_uris**
+> list[FacilityNamedDTO] search_facilities_by_uris(authorization, body=body, accept_language=accept_language)
+
+Get facilities by their URIs
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import opensilexClientToolsPython
+from opensilexClientToolsPython.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+pythonClient = opensilexClientToolsPython.ApiClient()
+pythonClient.connect_to_opensilex_ws(identifier="guest@opensilex.org",password="guest",host="https://localhost")
+api_instance = opensilexClientToolsPython.OrganizationsApi(pythonClient)
+body = [opensilexClientToolsPython.list[str]()] # list[str] | Facility URIs (optional)
+
+
+try:
+    # Get facilities by their URIs
+    api_response = api_instance.search_facilities_by_uris(body=body, )
+    pprint(api_response)
+except opensilexClientToolsPython.rest.ApiException as e:
+    print("Exception when calling OrganizationsApi->search_facilities_by_uris: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **list[str]**| Facility URIs | [optional] 
+
+
+### Return type
+
+[**list[FacilityNamedDTO]**](FacilityNamedDTO.md)
 
 ### Authorization
 
